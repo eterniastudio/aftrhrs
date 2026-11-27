@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " C ",
+  "DSD",
+  " S "
+ ],
+ "key": {
+  "C": "minecraft:coal",
+  "D": "minecraft:red_dye",
+  "S": "minecraft:snow_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_scarf_snowman"
+ }
+}

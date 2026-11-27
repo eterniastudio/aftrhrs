@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:andesite",
+  "W": "minecraft:andesite_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_andesite_column_capital",
+  "count": 2
+ }
+}

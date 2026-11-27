@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:polished_granite_slab",
+  "A": "minecraft:granite",
+  "B": "minecraft:polished_granite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_granite_plinth"
+ }
+}

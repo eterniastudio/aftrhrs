@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "SSS",
+  " C ",
+  "CCC"
+ ],
+ "key": {
+  "S": "minecraft:smooth_stone",
+  "C": "minecraft:cobblestone"
+ },
+ "result": {
+  "id": "aftrhrs:smithing_anvil",
+  "count": 1
+ }
+}

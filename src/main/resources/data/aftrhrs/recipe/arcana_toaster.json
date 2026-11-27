@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "IBI",
+  "IRI"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "B": "minecraft:bread",
+  "R": "minecraft:redstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_toaster"
+ }
+}

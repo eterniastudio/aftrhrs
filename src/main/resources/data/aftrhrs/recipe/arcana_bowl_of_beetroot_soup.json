@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:beetroot_soup",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_bowl_of_beetroot_soup"
+ }
+}

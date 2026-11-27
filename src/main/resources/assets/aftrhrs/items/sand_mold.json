@@ -1,0 +1,209 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "aftrhrs:smith_mold",
+  "cases": [
+   {
+    "when": "pick_head",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_pick_head"
+    }
+   },
+   {
+    "when": "axe_head",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_axe_head"
+    }
+   },
+   {
+    "when": "shovel_blade",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_shovel_blade"
+    }
+   },
+   {
+    "when": "hoe_blade",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_hoe_blade"
+    }
+   },
+   {
+    "when": "blade",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_blade"
+    }
+   },
+   {
+    "when": "broad_blade",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_broad_blade"
+    }
+   },
+   {
+    "when": "hammer_face",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_hammer_face"
+    }
+   },
+   {
+    "when": "broad_axe_head",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_broad_axe_head"
+    }
+   },
+   {
+    "when": "large_plate",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_large_plate"
+    }
+   },
+   {
+    "when": "spearhead",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_spearhead"
+    }
+   },
+   {
+    "when": "guard",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_guard"
+    }
+   },
+   {
+    "when": "pommel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_pommel"
+    }
+   },
+   {
+    "when": "binding",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_binding"
+    }
+   },
+   {
+    "when": "tough_binding",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_tough_binding"
+    }
+   },
+   {
+    "when": "handle",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_handle"
+    }
+   },
+   {
+    "when": "tough_handle",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_tough_handle"
+    }
+   },
+   {
+    "when": "grip",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_grip"
+    }
+   },
+   {
+    "when": "bow_limb",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_bow_limb"
+    }
+   },
+   {
+    "when": "bowstring",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_bowstring"
+    }
+   },
+   {
+    "when": "arrowhead",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_arrowhead"
+    }
+   },
+   {
+    "when": "fletching",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_fletching"
+    }
+   },
+   {
+    "when": "helm_plate",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_helm_plate"
+    }
+   },
+   {
+    "when": "cuirass_plate",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_cuirass_plate"
+    }
+   },
+   {
+    "when": "greave_plate",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_greave_plate"
+    }
+   },
+   {
+    "when": "sabaton_plate",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_sabaton_plate"
+    }
+   },
+   {
+    "when": "mail",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_mail"
+    }
+   },
+   {
+    "when": "ingot",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_ingot"
+    }
+   },
+   {
+    "when": "nugget",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/misc/sand_mold_nugget"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "aftrhrs:item/smithing/misc/sand_mold"
+  }
+ }
+}

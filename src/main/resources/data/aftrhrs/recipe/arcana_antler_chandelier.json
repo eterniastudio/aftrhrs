@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " C ",
+  "A A",
+  "TTT"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_velvet_antler",
+  "C": "minecraft:iron_chain",
+  "T": "minecraft:candle"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_antler_chandelier"
+ }
+}

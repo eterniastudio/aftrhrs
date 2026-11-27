@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BBB",
+  "B  ",
+  "B  "
+ ],
+ "key": {
+  "B": "minecraft:polished_granite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_granite_arch_wide_quarter",
+  "count": 2
+ }
+}

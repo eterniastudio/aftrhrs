@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:stone_bricks",
+  "minecraft:stone_bricks",
+  "aftrhrs:arcana_seashell"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_barnacled_stone_bricks",
+  "count": 2
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W R",
+  "ZZZ",
+  "S S"
+ ],
+ "key": {
+  "W": "minecraft:white_dye",
+  "R": "minecraft:red_dye",
+  "Z": "minecraft:spruce_slab",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_checkers_table"
+ }
+}

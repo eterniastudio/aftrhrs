@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " T ",
+  " Z "
+ ],
+ "key": {
+  "T": "minecraft:stripped_cherry_log",
+  "Z": "minecraft:cherry_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cherry_patio_table"
+ }
+}

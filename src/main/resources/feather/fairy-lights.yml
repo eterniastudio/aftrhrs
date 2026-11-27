@@ -1,0 +1,14 @@
+# Fairy lights (String of Lights, Pine Garland, Tinsel, Pennant Bunting): limits so strands can't be used to lag the
+# server. Based on Fairy Lights by Paul Fulham (pau101), MIT.
+
+# Longest strand, in blocks between its two ends (4-48). A strand held further than this pulls the player back and
+# snaps 5 blocks later.
+max-length: 24
+# Strands at one hook or fence knot (both ends count).
+max-per-fastener: 8
+# Strands that may start in one chunk.
+max-per-chunk: 48
+# Lit String of Lights give real light: an invisible light block at some of the bulbs while the strand hangs still.
+real-light: true
+# Light blocks per lit strand (0 turns real light off).
+light-blocks-per-strand: 6

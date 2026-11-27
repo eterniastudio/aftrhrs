@@ -1,0 +1,7 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "aftrhrs:arcana_polished_ice",
+ "result": {
+  "id": "aftrhrs:arcana_ice_tile_wall"
+ }
+}

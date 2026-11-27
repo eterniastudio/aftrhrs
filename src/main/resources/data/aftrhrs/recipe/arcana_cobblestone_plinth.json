@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:cobblestone_slab",
+  "A": "minecraft:mossy_cobblestone",
+  "B": "minecraft:cobblestone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cobblestone_plinth"
+ }
+}

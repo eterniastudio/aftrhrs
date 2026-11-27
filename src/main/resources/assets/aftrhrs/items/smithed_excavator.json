@@ -1,0 +1,516 @@
+{
+ "model": {
+  "type": "minecraft:composite",
+  "models": [
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_0",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/bone"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/copper"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/head/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/excavator/head/iron"
+    }
+   },
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_1",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/bone"
+      }
+     },
+     {
+      "when": "bamboo",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/bamboo"
+      }
+     },
+     {
+      "when": "leather",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/leather"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/copper"
+      }
+     },
+     {
+      "when": "deer_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/deer_hide"
+      }
+     },
+     {
+      "when": "tufthorn_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/tufthorn_hide"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/binding/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/excavator/binding/iron"
+    }
+   },
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_2",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/bone"
+      }
+     },
+     {
+      "when": "bamboo",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/bamboo"
+      }
+     },
+     {
+      "when": "leather",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/leather"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/copper"
+      }
+     },
+     {
+      "when": "deer_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/deer_hide"
+      }
+     },
+     {
+      "when": "tufthorn_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/tufthorn_hide"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/excavator/handle/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/excavator/handle/iron"
+    }
+   }
+  ]
+ }
+}

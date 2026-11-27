@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "WwW",
+  " S ",
+  " K "
+ ],
+ "key": {
+  "K": "minecraft:smooth_stone_slab",
+  "S": "minecraft:stick",
+  "W": "minecraft:blue_wool",
+  "w": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blue_parasol"
+ }
+}

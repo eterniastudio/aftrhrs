@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SSS",
+  "OEO",
+  "OOO"
+ ],
+ "key": {
+  "S": "minecraft:end_stone_bricks",
+  "O": "minecraft:obsidian",
+  "E": "minecraft:ender_eye"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_ender_cabinet"
+ }
+}

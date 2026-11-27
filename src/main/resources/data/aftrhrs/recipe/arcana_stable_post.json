@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " S ",
+  "FHF"
+ ],
+ "key": {
+  "F": "minecraft:spruce_fence",
+  "H": "minecraft:hay_block",
+  "S": "minecraft:saddle"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stable_post"
+ }
+}

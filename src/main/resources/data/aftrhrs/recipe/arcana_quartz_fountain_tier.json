@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "TWT",
+  " M "
+ ],
+ "key": {
+  "M": "minecraft:quartz_bricks",
+  "T": "minecraft:quartz_slab",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_fountain_tier"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BFB",
+  "ZZZ"
+ ],
+ "key": {
+  "B": "minecraft:bowl",
+  "F": "minecraft:flower_pot",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tea_set"
+ }
+}

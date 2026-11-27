@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " S ",
+  "PBP",
+  "PPP"
+ ],
+ "key": {
+  "B": "minecraft:bucket",
+  "P": "#minecraft:planks",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_butter_churn"
+ }
+}

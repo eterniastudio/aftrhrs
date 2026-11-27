@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_iron_stew_pot"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:survives_explosion"
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/arcana_iron_stew_pot"
+}

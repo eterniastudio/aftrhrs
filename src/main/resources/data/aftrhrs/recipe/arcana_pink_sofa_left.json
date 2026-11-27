@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W  ",
+  "WWW",
+  "S S"
+ ],
+ "key": {
+  "W": "minecraft:pink_wool",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pink_sofa_left"
+ }
+}

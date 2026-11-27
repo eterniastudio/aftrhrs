@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/outdoor/hay_cart"},"facing=east":{"model":"aftrhrs:arcana/outdoor/hay_cart","y":90},"facing=south":{"model":"aftrhrs:arcana/outdoor/hay_cart","y":180},"facing=west":{"model":"aftrhrs:arcana/outdoor/hay_cart","y":270}}}

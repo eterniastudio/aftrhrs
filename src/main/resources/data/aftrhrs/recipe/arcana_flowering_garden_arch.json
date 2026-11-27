@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "VVV",
+  "P P",
+  "P P"
+ ],
+ "key": {
+  "P": "minecraft:birch_planks",
+  "V": "minecraft:flowering_azalea_leaves"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_flowering_garden_arch"
+ }
+}

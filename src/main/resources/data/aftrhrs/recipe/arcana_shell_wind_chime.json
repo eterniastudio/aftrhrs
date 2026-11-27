@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " S ",
+  "DDD",
+  "A A"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_seashell",
+  "D": "aftrhrs:arcana_driftwood",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_shell_wind_chime"
+ }
+}

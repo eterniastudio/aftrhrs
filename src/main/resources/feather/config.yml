@@ -1,0 +1,1065 @@
+# Feather - Aftr Hrs server core.  /feather reload (permission feather.admin) re-reads this file,
+# messages.yml, tab.yml, nametags.yml, motd.yml, trails.yml, guide.yml and tools.yml.
+# Full documentation: the docs/ folder of the Feather source (start at docs/README.md).
+
+# This server's name, shown wherever a text uses <server> (tab list, MOTD, info commands).
+# On a network, give each server its own name here.
+server-name: 'Aftr Hrs'
+
+# Turn whole features on or off (needs a restart).
+modules:
+  teleport-requests: true
+  homes: true
+  nicknames: true
+  hat: true
+  cosmetics: true             # cosmetic armor slots, hide-armor switches and the hat slot in the inventory
+  # The EssentialsX replacements. Chat formatting steps aside automatically while EssentialsXChat is installed.
+  chat: true
+  spawn-warps-back: true
+  messaging: true
+  staff-commands: true
+  taming-guide: true
+  # Arcana Oraxen item behavior (hammers, lumber axes, scythes, magnet, wand, hats, drops, pet whistle).
+  # Only runs when Oraxen is installed. Settings: tools.yml
+  arcana-tools: true
+  # The Aftr Hrs enchantments (Rimebite, Prospector, Pocketing, Second Wind...: docs/enchants.md). Off: they stay on
+  # items and in the enchanting table but most do nothing (Timberfall, Soulbound and the fishing ones keep working).
+  enchants: true
+  # Supplementaries-style furniture: pedestals, hat stands, the statue, flower boxes, doormats, and sneak +
+  # right-click (empty hand) to turn non-rotatable furniture. Only runs when Oraxen is installed. Settings: curios.yml
+  curios: true
+  # Chess tables: right-click one to play (first to sit is White, then Black; anyone else watches). The game is kept
+  # with the table. Seats, forfeits and clocks: docs/chess.md
+  chess: true
+  # Curio block behavior for Arcana Oraxen furniture: bamboo spikes, feather block, sacks, goblets, jars, cages and
+  # climbable ropes. Only runs when Oraxen is installed. Settings: gadgets.yml
+  gadgets: true
+  # Spawn furniture: notice board / warp kiosk / stable post / trash bin / fish scale open their menus, fountains
+  # (particles, server-goal link, coin wishes for Lucky Lure), string lights between posts, Hushwing quiets sculk,
+  # underwater furniture lights stay waterlogged. Only runs when Oraxen is installed. Settings: civic.yml
+  civic: true
+  # Paper only (copied ModelEngine's pack into Oraxen's). Ignored by the mod: models and fonts ship in the mod jar.
+  modelengine-pack-bridge: true
+  # Display-entity boss effects for MythicMobs skills: featherquake (ground shockwave that copies the real blocks),
+  # featherfissure (line of earth spikes) and featherpillar (a giant item slammed down from the sky). Needs MythicMobs.
+  # Also stops MythicMobs that share a Faction from targeting or damaging each other (a boss and its minions).
+  boss-fx: true
+  # Summoning Altars: right-click an altar holding a boss's summon item to call that MythicMobs boss.
+  # Needs MythicMobs and Oraxen. Settings: altars.yml
+  boss-altars: true
+  # Pets: /pets menu, pet cap, bond levels, revive with plushies, pets follow you across worlds.
+  # Needs MythicMobs. Settings: pets.yml
+  pets: true
+  # Tab list header/footer with rotating messages, rank-sorted names, health hearts. Settings: tab.yml
+  tab-list: true
+  # Custom nametags above heads: nickname with gradients, rank, health. Settings: nametags.yml
+  nametags: true
+  # The server-list entry: MOTDs, icons, hover text, maintenance mode. Settings: motd.yml
+  server-list-motd: true
+  # Particle trails while flying, picked with /trail. Settings: trails.yml
+  flight-trails: true
+  # /afk and auto-AFK.
+  afk: true
+  # /mute, /ignore, /clearchat, /mutechat; /kick, /ban, /warn, /history, staff chat (/sc), /report, /freeze,
+  # offline /invsee and /ec snapshots. Settings: moderation (below).
+  moderation: true
+  # /ping /near /list /playtime /whois /trash /anvil ... /repair /day /night /sudo /tpo /tpall /tppos,
+  # info commands and chat announcements (below).
+  utilities: true
+  # /rtp (/wild).
+  random-teleport: true
+  # /sit (and sitting on stairs and slabs), /lay and /swim (/crawl).
+  sit: true
+  # Sneak + right-click a player with an empty hand to carry them on your head.
+  carry: true
+  # Lock chests, trapped chests and barrels with a PIN (Chest Key item, /lock). Settings: locks (below).
+  chest-locks: true
+  # Custom advancement tabs (Aftr Hrs, Companions, Treasures, Legends, Home & Decor). Settings: advancements.yml
+  # and "advancements:" at the end of this file. Turned off, Feather's advancements are taken off the server.
+  advancements: true
+  # [i] / [inv] / [ec] in chat show your held item, inventory or ender chest. Settings: chat-share (below).
+  chat-share: true
+  # Tools, weapons and armor remember their crafter and count blocks, kills, repairs...; /inspect, /timezone.
+  # Settings: tool-stats (below).
+  tool-stats: true
+  # Stats (blocks mined, playtime, kills, distance ...), /stats, /leaderboard and the /analytics staff view.
+  # Settings: analytics and leaderboard (end of this file).
+  analytics: true
+  # /bounty: put diamonds or netherite on a player; their killer gets a head that pays out. Settings: bounty (end of this file).
+  bounties: true
+  # /recipes: make custom crafting, furnace, stonecutter and smithing recipes in a chest GUI. Saved in recipes.yml.
+  custom-recipes: true
+  # Auth gate: players who have never been here type the server code in chat once (the whitelist stays off).
+  # Off until a code is set with /auth setcode <code> (from the console). Settings: auth (end of this file).
+  auth: true
+  # Death points: your last deaths are kept; /deathpoint (/dp) shows them, Track points an arrow there.
+  # Settings: death-point (end of this file).
+  death-point: true
+  # /bossboard (/bosses): this week's altar boss kills, fastest kills and top boss hunters. Settings: bossboard (end of this file).
+  boss-board: true
+  # The bank: Goob Coins, indestructible bank chests, interest, /balance /pay /baltop and the bank robbery.
+  # Settings: bank.yml
+  bank: true
+  # Daily and weekly quests (/quests) and the weekly server goal (/goal). Settings and the quest pool: quests.yml
+  quests: true
+  # The login calendar: daily streak rewards and playtime rewards, /calendar. Settings: daily and calendar (end of this file).
+  calendar: true
+  # /mail: letters for online and offline players, gifts picked up at a mailbox at spawn. Settings: mail (end of this file).
+  mail: true
+  # /trade: a two-player chest window for swapping items safely. Settings: trade (end of this file).
+  trade: true
+  # Graves: dying puts your drops and XP in a grave (your head on the ground) that only you and the players you trust
+  # can open for a while. Settings: graves (end of this file).
+  graves: true
+  # Chat games: maths, trivia and word games posted in chat now and then; first right answer wins coins. Settings:
+  # chatgames (end of this file); questions and words: chatgames.yml.
+  chatgames: true
+  # Land claims: claim chunks (/claim chunk) or rectangles (golden shovel), trust friends, flags; admin claims for spawn
+  # and the bank. Hold a stick to see borders. Settings: claims.yml
+  claims: true
+  # Holograms: /holo for text, items, heads, blocks and mobs with pages and click actions; the bank chest holograms;
+  # damage and heal numbers. Settings: holograms (end of this file); the holograms themselves: holograms.yml.
+  holograms: true
+  # Storage network: Storage Terminals, Crafting Terminals (with Quick Craft) and Inventory Connectors that join
+  # touching chests, barrels and shulker boxes into one searchable view. Settings: storage (end of this file).
+  storage: true
+  # Coal generators power machines within 6 blocks; the Encased Fan pushes, pulls, lifts and bulk-processes items
+  # (washing, smoking, blasting, haunting). Needs Oraxen. Settings: power.yml
+  power: true
+  # The link between the server and the Aftr Hrs client (the same mod jar on both sides): Feather menus as the mod's
+  # screens with the hub's groups as tabs, the server's recipes in JEI, the storage terminals, pets, claims, places,
+  # the HUD pieces. Off: every one of them falls back to its vanilla dialog / chest screen. Settings: companion (end of
+  # this file). Protocol: docs/companion-protocol.md
+  companion: true
+  # The shop: the General Store (/shop), the fishmonger and grocer sell-back counters and rentable market stalls
+  # (/stall); money goes through the bank (needs modules.bank). Settings: shop.yml
+  shop: true
+  # Fishing (Coast & Harvest): custom fish by biome, time and weather, the strike window for rare fish, rods and bait,
+  # the Fish Journal, records at fish scales, trophy plaques, aquarium tanks, crab pots, tournaments and message
+  # bottles. Furniture parts need Oraxen. Settings: fishing.yml
+  fishing: true
+  # Farming: Oraxen crops on farmland (quality, watering can, compost), compost bins, seaweed lines, cooking at the
+  # kitchen furniture, seeds from grass, the weekly Harvest Fair (/farming fair). Needs Oraxen. Settings: farming.yml
+  farming: true
+  # Wild Arcana livestock, wildlife and undead: harvests, breeding, the churn, cheese press, silk frame, nesting box and
+  # feeding trough, Squallgulls and fishing hotspots, the Bestiary, the Restless Moon. Needs MythicMobs. Settings: wildlife.yml
+  wildlife: true
+
+# Natural spawning of the wild Arcana creatures (pets, mounts, wildlife, livestock, duskflies, the tameable hostiles).
+# An extra spawner next to vanilla's, like the old MythicMobs random spawns (Action: ADD): it never replaces, blocks or
+# changes a vanilla spawn, and the creatures neither use nor count toward the vanilla mob cap. Every interval-ticks each
+# online player gets `attempts` random spots min-distance..max-distance blocks away (y-range up/down; ground, cave floor
+# or water). A spot in one of a species' biomes rolls that rule's rarity chance; a spawn puts the rule on cooldown for
+# that player. The species rules (biomes, conditions, caps) are in the mod's species data. Aggressive kinds only spawn
+# at night. Undead variants are not spawned here: they replace a share of vanilla's natural zombie / skeleton spawns
+# (each variant's share / moon_share). Live after /feather reload.
+arcana-spawning:
+  enabled: true
+  interval-ticks: 20
+  attempts: 2
+  min-distance: 12
+  max-distance: 64
+  y-range: 16
+  # No new spawns for a player while this many wild (untamed, not kept, not leashed) Arcana creatures are within
+  # local-cap-radius blocks of them.
+  local-cap: 8
+  local-cap-radius: 64
+  # Chance per spot for a rule of that rarity (the MythicMobs random-spawn chances).
+  chance: {common: 0.06, uncommon: 0.035, rare: 0.012, very_rare: 0.006}
+  # After a rule spawns, it waits this long for that player (the MythicMobs cooldowns).
+  cooldown-seconds: {common: 60, uncommon: 150, rare: 600, very_rare: 1200}
+
+# Feather's /tpa, /home, /hat, /nick ... replace EssentialsX's commands of the same name.
+# Essentials' own versions stay reachable as /essentials:<command>. EssentialsXChat keeps working: Feather
+# writes nicknames into Essentials, so chat's {DISPLAYNAME} shows them.
+# Don't put "nick" in Essentials' disabled-commands: Essentials then ignores every nickname, including Feather's.
+take-over-commands: true
+
+# Sneak + swap hands (Shift+F by default) opens a menu instead of swapping items. Plain F still swaps.
+# opens: hub (main menu), teleport (player heads) or homes. Permission: feather.hotkey (everyone by default).
+hotkey:
+  enabled: true
+  opens: hub
+
+# Placeholders shared by the tab list, nametags, MOTD, announcements and info commands.
+placeholders:
+  # <hearts>: one symbol per heart (MiniMessage), up to max hearts.
+  hearts:
+    full: '<#ff6b81>❤'
+    half: '<#ffb3c0>❤'
+    empty: '<#4a4560>❤'
+    max: 10
+  # <afk>: shown after AFK players' names.
+  afk-tag: ' <dim>[AFK]'
+  # How long one sweep of a <shimmer> gradient takes (milliseconds).
+  shimmer-period-ms: 3000
+
+hub:
+  # The animated Aftr Hrs banner and the moon icons, drawn from the server pack (Feather's art/hub_art.py writes
+  # them into Oraxen). Needs Oraxen; off = plain text title.
+  art: true
+  # Show the player's main pet as a plushie beside the greeting instead of their head.
+  pet-portrait: true
+
+teleport:
+  # Seconds to stand still before a teleport (homes and accepted requests). 0 = instant.
+  # feather.teleport.instant skips it.
+  warmup-seconds: 3
+  cancel-on-move: true
+  cancel-on-damage: true
+  particles: true
+
+tpa:
+  # How long a request stays open.
+  timeout-seconds: 120
+  # Most open requests one player can have waiting; older ones drop off.
+  max-pending-per-player: 5
+  # Seconds between requests from the same player (feather.tpa.nocooldown skips it).
+  request-cooldown-seconds: 5
+  # /tpaccept with several requests waiting opens the request menu instead of taking the newest.
+  menu-when-several: true
+  # What /tpa (no name) and the menu's Teleport button open: "heads" (a chest of online players' heads)
+  # or "dialog" (a list of buttons).
+  picker: heads
+
+homes:
+  # Homes per player. Everyone gets "default"; the others need feather.homes.<name> (or Essentials'
+  # essentials.sethome.multiple.<name>, so existing LuckPerms groups keep working).
+  # feather.homes.unlimited = no limit.
+  limits:
+    default: 3
+    vip: 5
+    staff: 10
+  default-name: home
+  name-pattern: '^[A-Za-z0-9_-]{1,16}$'
+  # /home with several homes opens the homes menu (otherwise it goes to "home" or the first one).
+  menu-on-bare-home: true
+  # On each player's first join with Feather, copy their EssentialsX homes over.
+  import-essentials-homes: true
+
+nick:
+  min-length: 3
+  max-length: 16
+  # Characters allowed in the visible nickname (formatting not counted).
+  allowed-characters: '^[A-Za-z0-9_]+$'
+  # Feather sets the tab-list name itself only when EssentialsX isn't installed (Essentials' change-playerlist
+  # does it otherwise).
+  set-tab-list-name: true
+  # Regular expressions (case-insensitive) that nicknames may not contain.
+  blacklist:
+    - '^admin'
+    - '^mod(erator)?$'
+    - '^owner$'
+
+hat:
+  # Items /hat refuses (feather.hat.any bypasses).
+  blocked-items: []
+
+# Sound cues: "<sound key> [volume] [pitch]", or "none".
+sounds:
+  request-received: block.note_block.pling 0.8 1.5
+  request-sent: block.note_block.hat 0.7 1.6
+  accepted: entity.player.levelup 0.45 1.8
+  denied: block.note_block.bass 0.8 0.7
+  expired: block.note_block.bass 0.6 0.5
+  cancel: block.note_block.bass 0.6 0.9
+  error: block.note_block.bass 0.6 0.6
+  click: ui.button.click 0.35 1.3
+  menu-open: item.book.page_turn 0.9 1.2
+  # Hub buttons, on top of the vanilla click (the menus they open add their own sounds).
+  # Sections: opening a section's submenu (Friends uses hub-teleport, Settings hub-settings).
+  hub-style: ui.cartography_table.take_result 0.5 1.5
+  hub-settings: block.lever.click 0.5 1.2
+  # Entries in the submenus (or on the hub when a section has just one).
+  hub-homes: entity.ender_eye.launch 0.35 1.5
+  hub-warps: entity.ender_eye.launch 0.35 1.5
+  hub-spawn: entity.ender_eye.launch 0.35 1.5
+  hub-wild: entity.ender_eye.launch 0.35 1.5
+  hub-back: entity.ender_eye.launch 0.35 1.3
+  hub-teleport: entity.ender_eye.launch 0.35 1.5
+  hub-pets: block.amethyst_block.chime 1.0 1.2
+  hub-guide: none
+  hub-nick: ui.cartography_table.take_result 0.6 1.3
+  hub-hat: none
+  hub-trails: block.amethyst_block.chime 1.0 1.5
+  hub-pose: block.wool.place 0.8 1.0
+  hub-afk: block.note_block.chime 0.4 0.8
+  # Flipping a toggle in Settings.
+  hub-social: block.note_block.bell 0.5 1.6
+  hub-toggle: block.lever.click 0.5 1.4
+  announcement: block.note_block.chime 0.4 1.6
+  carry: entity.item.pickup 0.8 0.7
+  page: item.book.page_turn 0.6 1.45
+  warmup-tick: block.note_block.chime 0.6 1.0
+  teleport: entity.enderman.teleport 0.6 1.25
+  arrival-host: block.amethyst_block.chime 1.0 1.4
+  home-set: entity.experience_orb.pickup 0.6 1.3
+  deleted: block.note_block.bass 0.6 0.8
+  hat: item.armor.equip_leather 1.0 1.0
+  nick-set: block.amethyst_block.resonate 0.9 1.3
+  book: item.book.page_turn 1.0 1.0
+  # Chest locks: each keypad digit (pitch rises with the digit), a wrong PIN, the right PIN, a PIN set or changed.
+  lock-digit: block.stone_button.click_on 0.5 1.0
+  lock-wrong: block.note_block.bass 0.8 0.6
+  lock-open: block.iron_trapdoor.open 0.7 1.4
+  lock-set: block.iron_door.close 0.7 0.8
+  message: block.note_block.bell 0.6 1.8
+  mention: block.note_block.bell 0.6 1.6
+  healed: entity.player.levelup 0.4 2.0
+  fed: entity.generic.eat 0.8 1.0
+  item-pickup: entity.item.pickup 0.6 1.0
+
+chat:
+  enabled: true
+  # MiniMessage. <prefix>/<suffix> come from LuckPerms (meta prefix/suffix), <name> is the nickname
+  # (hover shows the real name, click starts a /msg), <username> the real name, <message> the message.
+  format: '<prefix><name><suffix> <dim>›</dim> <text><message>'
+  # Per LuckPerms primary group, e.g.  admin: '<bad>[Admin]</bad> <name> <dim>›</dim> <message>'
+  group-formats: {}
+  # Players with feather.chat.color can use &-codes; feather.chat.minimessage allows <gradient> etc.
+  clickable-links: true
+  # Saying someone's name or nickname (or @name, @nickname, @ + a unique 3+ letter prefix) pings them with
+  # the "mention" sound and an action-bar note, and highlights their name in their copy of the line.
+  mentions: true
+  # One sender pings the same player at most once in this many seconds.
+  mention-cooldown-seconds: 3
+  # @everyone / @here for players with feather.chat.everyone (op by default), and their cooldown per sender.
+  mention-everyone: true
+  mention-everyone-cooldown-seconds: 30
+  # Commands from vanilla or other plugins where a nickname typed as an argument is swapped for the real
+  # username (never when the word is also someone's username), and nicknames are tab-completed.
+  nickname-commands: [tp, teleport, give, gamemode, effect, clear, kill, spawnpoint, xp, experience, enchant]
+  # Send chat as unsigned system messages: nothing players type can be reported to Mojang, and no
+  # "not secure" markers. Pair with enforce-secure-profile=false in server.properties.
+  unsigned: true
+  join-quit-messages: true
+  # The welcome lines shown on join (messages.yml chat.motd).
+  motd: true
+  # One "While you were away" message on join instead of a line per module (calendar, quests, mail, bank, stalls,
+  # graves, reports).
+  join-digest: true
+
+spawn:
+  # First-time players are sent to /setspawn's point and given the starter kit.
+  new-players-to-spawn: true
+  # Players without a bed or anchor respawn at spawn.
+  respawn-at-spawn: true
+  # "<item> [amount]" per line; Oraxen items as "oraxen:<id> [amount]".
+  starter-kit:
+    - stone_sword 1
+    - stone_shovel 1
+    - stone_pickaxe 1
+    - stone_axe 1
+    - oraxen:arcana_taming_guide 1
+    - oraxen:arcana_pet_whistle 1
+
+warps:
+  # When true, /warp <name> needs feather.warp.<name>.
+  per-warp-permissions: false
+
+back:
+  # After dying, show a clickable [/back] hint.
+  hint-on-death: true
+
+staff:
+  spawnmob-max: 50
+  item-max: 2304
+  heal-clears-effects: true
+  smite-damage: 5
+  # Mobs ignore players in god mode.
+  god-mobs-ignore: false
+  # /vanish shows a fake quit/join message to players who can't see vanished staff.
+  vanish-fake-messages: true
+
+afk:
+  # Seconds without moving, chatting or clicking before a player is marked AFK. 0 = only /afk.
+  # feather.afk.exempt is never marked automatically.
+  auto-seconds: 300
+  # Kick players idle this long (seconds). 0 = never. feather.afk.kickexempt is never kicked.
+  kick-seconds: 0
+  # Tell everyone when someone goes AFK or comes back (vanished players are never announced).
+  broadcast: true
+  # AFK players don't count when the server checks whether enough players are sleeping.
+  ignore-for-sleep: true
+
+rtp:
+  # Seconds between uses (feather.rtp.nocooldown skips it).
+  cooldown-seconds: 600
+  # Seconds before another try after a search that failed or a warm-up canceled by moving. Stops /rtp spam
+  # from loading chunks over and over. 0 = no wait.
+  retry-seconds: 30
+  # Random spots to try before giving up.
+  max-attempts: 12
+  # Worlds /rtp works in. Distances are blocks from the world spawn (or 0,0 with around-spawn: false),
+  # and always inside the world border. Biomes whose id contains one of avoid-biomes are skipped.
+  worlds:
+    world:
+      enabled: true
+      min-radius: 300
+      max-radius: 3000
+      around-spawn: true
+      avoid-biomes: [ocean, river]
+    world_nether:
+      enabled: false
+      min-radius: 100
+      max-radius: 1000
+      around-spawn: true
+      avoid-biomes: []
+    world_the_end:
+      enabled: false
+      min-radius: 500
+      max-radius: 2000
+      around-spawn: false
+      avoid-biomes: [the_end]
+  # Using /rtp in one world sends you to another, e.g.  spawn_world: world
+  redirect: {}
+
+sit:
+  # Right-click a stair or bottom slab with an empty hand to sit on it (sneak-click places blocks as usual).
+  click-stairs: true
+  click-slabs: true
+  # Raise (+) or lower (-) the seat, in blocks.
+  height-offset: 0.0
+
+near:
+  default-radius: 100
+  # Largest radius without feather.near.unlimited.
+  max-radius: 200
+
+moderation:
+  # Commands a muted player can't use (besides chat and Feather's /msg and /r).
+  muted-blocked-commands: [me, say, tell, w, msg, whisper, minecraft:me, minecraft:say, teammsg, tm]
+  # What happens when a player reaches exactly this many warnings: kick, "mute <time|perm>", "tempban <time>" or
+  # "ban [time]". Off by default. For example:
+  #   warn-actions:
+  #     3: tempban 1d
+  #     5: ban
+  warn-actions: {}
+  # Seconds a player waits between two /report (staff with feather.reports don't).
+  report-cooldown-seconds: 60
+  # A frozen player who logs out: "notify" tells staff, "ban" also bans them for good.
+  freeze-quit-action: notify
+  # The only commands a frozen player can use, so they can still talk to staff.
+  freeze-allowed-commands: [msg, tell, w, m, whisper, pm, dm, r, reply]
+  # Minutes between inventory snapshots of online players (also taken on every quit), for /invsee and /ec on
+  # offline players. 0 = only on quit.
+  snapshot-minutes: 5
+
+# Chat announcements that take turns every interval. Each entry is one line or a list of lines;
+# placeholders work (see tab.yml). The frame around them is messages.yml announcements.format.
+announcements:
+  enabled: true
+  interval-seconds: 600
+  # in-order or random
+  order: in-order
+  # Skip announcements while fewer players are online.
+  min-players: 1
+  messages:
+    - '<muted>Psst - press</muted> <accent>Shift+F</accent> <muted>to open the menu.'
+    - '<muted>Found a cute critter? The</muted> <accent>/codex</accent> <muted>explains how to tame it.'
+    - '<muted>Need fresh land? Try</muted> <accent>/rtp</accent><muted>.'
+    - '<muted>Stepping away? Type</muted> <accent>/afk</accent> <muted>so friends know.'
+
+# Simple text commands. Each key becomes a command (/rules, /discord ...) that prints its lines.
+# Placeholders work. Click events too: <click:open_url:'https://...'>link</click>.
+#   permission: optional permission node    aliases: other names
+# New or renamed commands need a restart; text changes only need /feather reload.
+info-commands:
+  rules:
+    description: Server rules.
+    lines:
+      - ''
+      - ' <gradient:#c3a6ff:#8fd3ff><b>✦ <server> rules</b></gradient>'
+      - ' <text>1.</text> <muted>Be kind. Everyone is welcome here.'
+      - ' <text>2.</text> <muted>No griefing or stealing.'
+      - ' <text>3.</text> <muted>No cheats, x-ray or exploits.'
+      - ' <text>4.</text> <muted>Keep chat friendly and family-safe.'
+      - ''
+  discord:
+    description: Our Discord.
+    aliases: [dc]
+    lines:
+      - '<gradient:#c3a6ff:#8fd3ff><b>✦</b></gradient> <muted>Join us on Discord:</muted> <click:open_url:''https://discord.gg/''><accent><u>discord.gg</u></accent></click>'
+
+carry:
+  # Whether players can be picked up until they change it (hub Settings or /carry toggle).
+  allowed-by-default: true
+  # A carrier who takes damage (other than falling) drops whoever they carry (players and mobs; a block stays).
+  drop-when-hurt: true
+  # Sneak + right-click a block with empty hands to pick it up with everything in it; right-click any surface to set
+  # it down there, facing you. Kept through logging out; dying sets it down where you fell.
+  blocks: true
+  # Only blocks that keep something (chests, barrels, furnaces, shulker boxes, jukeboxes ...). false: any block.
+  blocks-with-contents-only: true
+  # Never picked up: block ids, #tags or a whole mod (aftrhrs:*). Beds, doors, tall plants, unbreakable, locked,
+  # bank, mailbox and protected blocks never are, and players need build trust where the block is and goes.
+  block-deny: [spawner, trial_spawner, vault, end_portal, end_gateway, end_portal_frame, command_block, chain_command_block,
+    repeating_command_block, structure_block, jigsaw, test_block, test_instance_block, moving_piston, piston_head, 'aftrhrs:*']
+  # Sneak + right-click an animal or other friendly mob with an empty hand to hold it; right-click the ground to set it
+  # down (or sneak + right-click it again). Tamed mobs only by their owner, who can always pick up their own pets.
+  mobs: true
+  # Hostile mobs too (zombies, creepers ...).
+  hostile-mobs: false
+  # The biggest mob that fits in your arms, in blocks (a cow is 0.9 x 1.4, a villager 0.6 x 1.95, a horse 1.4 wide).
+  mob-max-width: 1.0
+  mob-max-height: 2.0
+  # Never picked up: entity ids, #tags or a whole mod.
+  mob-deny: ['#c:bosses', wither, ender_dragon, warden, elder_guardian, iron_golem, snow_golem, allay]
+  # Walking speed while carrying a block or a mob (1 = normal).
+  speed: 0.8
+
+# ------------------------------------------------------------------ Chest locks (modules.chest-locks)
+# Use a Chest Key on a chest (or look at it and type /lock) to lock it with a PIN. Others type the PIN on a keypad;
+# owners sneak + right-click their lock (or /lock) to open it, change the PIN, turn auto-unlock on and pick who may
+# open it without the PIN. Messages: messages.yml locks. Data: data/locks.yml. See docs/chest-locks.md.
+locks:
+  # Blocks that can be locked. A lock on either half of a double chest protects both halves.
+  lockable: [chest, trapped_chest, barrel]
+  # Digits in a new PIN (4-8; digits are 1-9). Existing locks keep the length they were made with.
+  pin-length: 4
+  # Locking uses up one Chest Key. false: anyone with feather.locks can lock with /lock or a key, for free.
+  require-key: true
+  # Give the key back when the owner removes their lock (dialog, /unlock or breaking it).
+  refund-key: true
+  # Wrong PINs in a row (per player, per lock) before that player is locked out for lockout-seconds.
+  max-attempts: 5
+  lockout-seconds: 60
+  # After the right PIN, that player can reopen or break the chest without the PIN for this long.
+  grace-seconds: 30
+  # Hoppers and hopper minecarts can't pull items out of locked containers.
+  block-hoppers: true
+  # Explosions (creepers, TNT, beds ...) leave locked blocks standing.
+  block-explosions: true
+  key:
+    # The Chest Key's item. Its name and lore are in messages.yml (locks.key).
+    material: tripwire_hook
+    # A shapeless crafting recipe for the key (needs a restart or /feather reload).
+    recipe: true
+    ingredients: [iron_ingot, tripwire_hook]
+advancements:
+  # How often (seconds) inventories, helmets, playtime and pets are checked for the obtain / wear / playtime / pet
+  # advancements. Everything else is awarded the moment it happens.
+  scan-seconds: 5
+  # The icon used for an "oraxen:<id>" icon when Oraxen is missing or doesn't know the item.
+  fallback-icon: book
+  # false: no advancement is announced in chat ("<player> has made the advancement ..."). When true, each entry's own
+  # "announce" decides. The vanilla gamerule for advancement announcements applies on top.
+  announce-to-chat: true
+# ---------------------------------------------------------------- chat sharing and tool stats
+# Chat sharing (modules.chat-share): [i] or [item] shows the held item (hover for its tooltip), [inv] or
+# [inventory] the inventory, [ec] or [enderchest] the ender chest. Clicking opens a look-only chest holding a copy
+# taken when the message was sent. Each token works once per message. Permission: feather.chat.share.
+chat-share:
+  enabled: true
+  # How long a shared item or inventory can still be opened from chat.
+  expire-seconds: 600
+
+# Tool stats (modules.tool-stats): tools, weapons and armor remember who crafted them and when, and count
+# blocks broken, kills, damage, repairs and more. The lore shows blocks broken and mobs slain; /inspect shows it all.
+tool-stats:
+  enabled: true
+  # The small stats block at the bottom of the lore.
+  lore: true
+  # The lore is redrawn at most this often while counting (the counters themselves update straight away).
+  lore-refresh-seconds: 3
+  # Which items keep stats: pickaxes, axes, shovels, hoes, swords, spears, armor, elytra, bows, crossbows,
+  # tridents, maces, fishing-rods, shears, shields.
+  items: [pickaxes, axes, shovels, hoes, swords, spears, armor, elytra, bows, crossbows, tridents, maces, fishing-rods, shears, shields]
+  # How many mob types /inspect lists under "Top kills".
+  top-kills: 5
+  # Times show in each player's /timezone; players who haven't picked one see this zone. Blank = the server's zone.
+  # Any Java zone id: Europe/Paris, America/New_York, UTC ...
+  default-timezone: ''
+  # Java DateTimeFormatter pattern for dates and times.
+  date-format: 'd MMM yyyy, HH:mm'
+  # Quick picks in the /timezone menu.
+  timezone-shortcuts:
+    - America/Los_Angeles
+    - America/Chicago
+    - America/New_York
+    - Europe/London
+    - Europe/Paris
+    - Asia/Tokyo
+    - Australia/Sydney
+    - UTC
+# ------------------------------------------------------------------ analytics, leaderboards, bounties
+# Stats are counted in memory and written to plugins/Feather/data/stats/ (one file per player + server.yml) by a
+# background thread every flush-minutes and on shutdown. /stats shows a player theirs, /analytics is the staff view,
+# /analytics export writes CSVs to plugins/Feather/exports/. Full docs: docs/analytics.md, docs/leaderboards.md, docs/bounties.md
+analytics:
+  # Which stat groups are counted (false = not counted, and hidden from leaderboards).
+  track:
+    blocks: true        # blocks-mined, blocks-placed
+    playtime: true      # playtime, playtime-active, playtime-afk
+    kills: true         # mob-kills (and per mob type), player-kills, deaths
+    damage: true        # damage-dealt, damage-taken
+    distance: true      # distance walked, flown, swum and ridden
+    fishing: true
+    crafting: true
+    enchanting: true
+    chat: true          # messages-sent
+    commands: true      # commands-used
+    teleports: true
+    homes: true         # homes-set
+    pets: true          # pets-tamed (Feather pets and vanilla taming)
+    bosses: true        # bosses-defeated (MythicMobs)
+    bounties: true      # bounties-placed, bounties-claimed
+    sessions: true      # sessions, first/last join, longest session
+  # Seconds between position/playtime samples. Distance is measured between samples, not on every move.
+  sample-seconds: 5
+  # Minutes between background writes of changed stats.
+  flush-minutes: 5
+  # Daily server buckets (unique/new players, peak, sessions) older than this are dropped.
+  retention-days: 90
+  # Mob types listed in /stats.
+  top-mobs: 5
+  # Time zone for days and the busy-hours chart, e.g. Europe/Berlin. "system" = the server's.
+  timezone: system
+  bosses:
+    # MythicMobs internal names that count as bosses. Empty = every MythicMob with a boss bar.
+    types: []
+    # Everyone within this many blocks of a boss when it dies gets the kill (0 = only the killer).
+    share-radius: 32
+
+leaderboard:
+  # Players listed per board.
+  size: 10
+  # Minutes between ranking refreshes (computed off the main thread).
+  refresh-minutes: 5
+  # Names or UUIDs kept off the boards (test or staff accounts).
+  hidden: []
+
+bounty:
+  # Items that can be put up as a reward, with their worth in diamonds. Only plain items count (not renamed or custom).
+  rewards:
+    diamond: 1
+    diamond_block: 9
+    netherite_scrap: 2
+    netherite_ingot: 8
+    emerald: 0.5
+    gold_ingot: 0.25
+  # The smallest reward one placer can put up, in diamonds (see rewards).
+  min-value: 1
+  # Reward slots in the bounty chest (1-45).
+  max-stacks: 18
+  # Seconds between two bounties placed by the same player (staff with feather.bounty.admin skip it).
+  cooldown-seconds: 60
+  # Hours until an unclaimed reward goes back to whoever put it up (0 = never). 168 = 7 days.
+  expire-hours: 168
+  # Bounties on players who are offline (they must have played here before).
+  offline-targets: true
+  # The <bounty> placeholder (used in tab.yml list-name). <reward> = a short summary, <value> = worth in diamonds.
+  tab-tag: ' <#ff6b81>☠ <reward></#ff6b81>'
+  # How many item types the tab summary names before "+N".
+  tab-summary-items: 1
+  announce:
+    placed: true
+    killed: true
+    claimed: true
+  anti-farm:
+    # Ignore bounty kills of the same player by the same killer within this many minutes.
+    same-killer-minutes: 30
+    # Ignore kills where killer and victim connect from the same IP address (alts).
+    same-ip: false
+# Custom recipes (/recipes, permission feather.recipes.admin). Recipes themselves live in recipes.yml and are
+# made in game; see docs/custom-recipes.md.
+custom-recipes:
+  # Put saved recipes in every online player's recipe book, and all enabled custom recipes in it on join.
+  discover: true
+# Auth gate (modules.auth): a player who has never been here is blinded and frozen until they type the server code
+# in chat. Their chat never reaches anyone or any log. Set the code from the console with /auth setcode <code>
+# (only a salted hash is stored, in data/auth.yml); while no code is set the gate is off. See docs/auth.md.
+auth:
+  # Wrong codes before they are disconnected.
+  max-tries: 3
+  # Seconds to type the code before they are disconnected.
+  timeout-seconds: 120
+  # How often the title and chat prompt repeat, in seconds.
+  prompt-interval-seconds: 5
+  # The first time the gate comes on, trust everyone who already has a Feather profile, every op and everyone
+  # online, so the friends already playing here never need the code.
+  trust-existing-players: true
+  # A failed session (out of tries, or leaving after a wrong guess) blocks that account and its IP from rejoining
+  # for this long; each further failure within a day doubles it, up to cooldown-max-minutes.
+  cooldown-start-minutes: 1
+  cooldown-max-minutes: 60
+# Death points (modules.death-point): /deathpoint (/dp), the respawn note and the Warps & Spawn button.
+death-point:
+  # How many deaths each player keeps (newest first, 1-10).
+  keep: 3
+  # Track stops when you are this close (blocks).
+  arrive-distance: 5
+  # After respawning, tell the player where they died (click the coordinates to copy them).
+  respawn-message: true
+# The weekly boss board (/bossboard, /bosses). Every boss killed after a Summoning Altar fight is recorded with its
+# party, each player's share of the damage and the fight time. Data: data/bossboard.yml.
+bossboard:
+  # When the week turns over: day (MONDAY ... SUNDAY) and hour (0-23) in this time zone ("" = the server's own).
+  reset-day: MONDAY
+  reset-hour: 0
+  time-zone: ''
+  # A player counts as a hunter of a kill with at least this share of the boss's damage (the top damager always counts).
+  min-share: 0.05
+  # Hunters listed in the dialog.
+  hunters-shown: 8
+  # Announce the first kill of each boss in a week and every new fastest kill.
+  announce-records: true
+  # At the reset, last week's champions are announced. Optional console commands for them (<player>, and <boss> for
+  # fastest-kill), e.g. "give <player> diamond 3". Empty = just the announcement.
+  rewards:
+    top-hunter: []
+    fastest-kill: []
+# The shared server day for Daily features (the login calendar, quests). Days turn over at 00:00 in this zone,
+# weeks on Monday 00:00. Players still see times in their own zone (/timezone); changing it never moves the day.
+daily:
+  reset-zone: America/Toronto
+# The login calendar (/calendar, Daily -> Calendar): a daily reward on a 7-day streak cycle, and playtime rewards
+# for active time (AFK time and time before the server code don't count). docs/calendar.md. Data: data/calendar.yml.
+# A reward can mix: coins (Goob Coins paid into the bank balance), pet-bond (bond XP for each pet following the
+# player), items ("<item> [amount]", vanilla only), commands (run from the console; <player>, <uuid>), and an
+# optional label (MiniMessage shown instead of the generated description). Keep them modest: alts can farm them.
+calendar:
+  # On the first join of a server day (or at midnight while online), one chat line with [Claim] if it's waiting.
+  join-prompt: true
+  # Show this month's days on the server in the calendar screen.
+  month-view: true
+  # At most this many accounts can claim rewards from one connection (IP) per day. 0 = no limit.
+  max-accounts-per-ip: 2
+  # Sound cues (keys of the sounds block above).
+  sounds:
+    ready: request-received
+    claim: accepted
+    goal: home-set
+  streak:
+    # Missed days a streak survives per week (Monday to Sunday). More missed days start it over at day 1.
+    grace-days-per-week: 1
+    # The 7-day cycle; it starts again after day 7.
+    days:
+      1: {coins: 3}
+      2: {coins: 3, items: [bread 3]}
+      3: {coins: 5, pet-bond: 5}
+      4: {coins: 5, items: [torch 16]}
+      5: {coins: 5, pet-bond: 10}
+      6: {coins: 8, items: [cookie 6]}
+      7: {coins: 20, pet-bond: 25, items: [golden_apple 1]}
+  playtime:
+    # Active time played today (resets with the server day). Claimed in /calendar.
+    daily:
+      - {minutes: 30, coins: 2}
+      - {minutes: 60, coins: 3}
+      - {minutes: 120, coins: 5}
+    # Unclaimed daily playtime rewards wait this many days before they go.
+    keep-unclaimed-days: 7
+    # Lifetime active playtime (counted from when this feature was added), one time each.
+    milestones:
+      - {hours: 1, coins: 5}
+      - {hours: 10, coins: 15}
+      - {hours: 24, coins: 25, pet-bond: 25}
+      - {hours: 50, coins: 40}
+      - {hours: 100, coins: 75, items: [name_tag 1]}
+      - {hours: 250, coins: 150}
+      - {hours: 500, coins: 300, items: [totem_of_undying 1]}
+# Offline mail and gifts (/mail, docs/mail.md). Data: data/mail.yml; every gift and pick-up: data/mail-gifts.log.
+mail:
+  # Longest letter and gift note (characters).
+  max-letter-length: 256
+  max-note-length: 100
+  # Letters kept per player. When full, the oldest read letters make room; if every letter is unread, new ones are refused.
+  max-letters: 50
+  # Gifts that can wait for one player at once.
+  max-waiting-gifts: 10
+  # Sending letters and gifts: seconds between two sends, and at most this many per hour.
+  cooldown-seconds: 3
+  max-per-hour: 30
+  # Unclaimed gifts go back to their sender after this many days (0 = they wait for good).
+  return-after-days: 0
+  # How close (blocks) a player must stand to a mailbox for Take and /mail gifts.
+  access-distance: 6
+  # The sparkle at the mailbox for players with gifts waiting (a particle without extra data, or none), and a soft chime.
+  particle: END_ROD
+  chime: true
+  # Letters per page in the Mail screen.
+  page-size: 5
+# Trading (modules.trade): /trade <player> asks to trade; accepting opens a chest window for both. See docs/trade.md.
+trade:
+  # Both players must be in the same world and at most this many blocks apart to send a request and open the window.
+  max-distance: 16
+  # An open trade is called off (everyone keeps their own items) once the two are further apart than this.
+  break-distance: 24
+  # How long a request stays open, in seconds.
+  request-timeout-seconds: 60
+  # Seconds between requests from the same player.
+  request-cooldown-seconds: 5
+  # When both are Ready, the swap happens after this many seconds (any change stops it).
+  countdown-seconds: 3
+# Graves (modules.graves): a death's drops and XP go into a grave near where you died. Data: data/graves.yml.
+graves:
+  # Only the owner and the players they trust (/grave trust, or Settings) can open it for this long (real time) ...
+  locked-minutes: 60
+  # ... then anyone can, for this long; after that the items spill out on the ground.
+  open-minutes: 30
+  # Locked graves per player. A death past this opens the oldest locked one to everyone early.
+  max-per-player: 3
+  # How far (blocks) from the death to look for a safe spot. No safe spot: the items drop as usual.
+  search-radius: 8
+  # Graves are never placed in vanilla spawn protection, nor within these distances (blocks, 0 = off).
+  keep-clear:
+    spawn-radius: 16      # around Feather's /spawn
+    bank-radius: 10       # around each bank chest (the vault)
+    altar-fights: true    # inside a running boss altar fight's arena (the leash radius)
+  # The floating "<name>'s grave" text with the time left.
+  hologram: true
+  # Worlds without graves (deaths there drop items as usual).
+  disabled-worlds: []
+# Chat games (modules.chatgames): a little game in chat now and then; the first right answer wins. docs/chat-games.md.
+# The questions, words and phrases are in chatgames.yml. Data: data/chatgames.yml.
+chatgames:
+  # A random game every min..max minutes (counted from the end of the last one), only while at least min-players
+  # players who see chat games are online and not AFK. max 0 = only staff start games (/chatgames start).
+  interval-minutes: {min: 8, max: 15}
+  min-players: 2
+  # Seconds to answer before the answer is revealed.
+  answer-seconds: 60
+  # Rewarded wins per player per hour (0 = no cap). Past it, the player's answers don't count (so others get a go),
+  # unless capped-can-win is true: then they still win, without a reward.
+  hourly-cap: 5
+  capped-can-win: false
+  # Bond XP for each pet following the winner (pets.yml bond.xp.near-radius), 0 = none.
+  bond-xp: 5
+  # Share of maths problems that are medium (a × b − c, a ÷ b ...) rather than easy (a + b, a × b).
+  math-medium-chance: 0.5
+  # Fast Type: an answer faster than this many ms per letter can't have been typed by hand and doesn't count.
+  fast-type-min-ms-per-char: 60
+  # Each game: on/off, how often it's picked (weight), and the Goob Coins it pays (into the bank balance).
+  games:
+    math: {enabled: true, weight: 3, coins: 3, coins-medium: 5}
+    trivia: {enabled: true, weight: 4, coins: 6}
+    unscramble: {enabled: true, weight: 3, coins: 5}
+    fast-type: {enabled: true, weight: 2, coins: 4}
+    creature: {enabled: true, weight: 2, coins: 6}
+    gaps: {enabled: true, weight: 2, coins: 4}
+  # "<sound key> [volume] [pitch]" or none.
+  sounds:
+    post: block.note_block.chime 0.7 1.6
+    win: entity.player.levelup 0.5 1.6
+    timeout: block.note_block.bass 0.5 0.8
+# Holograms (modules.holograms): floating text, items, heads, blocks and mobs made of display entities, /holo.
+# docs/holograms.md. The holograms themselves are in holograms.yml. Also the bank chest holograms and damage numbers.
+# Click actions: in "console" actions prefer {uuid} (the clicker's UUID) over {player}; a console action that uses
+# {player} is skipped for anyone whose name isn't a plain username (A-Z, 0-9, _; at most 16).
+holograms:
+  # How often (ticks) Feather checks who is near each hologram. Entities only exist while someone is near.
+  track-ticks: 10
+  # Lines with placeholders (<online>, {player}, <hp> ...) are redrawn this often (ticks) while someone is near.
+  # A hologram's update-interval setting overrides it; 0 here = only animations move.
+  placeholder-refresh-ticks: 30
+  # Item lines spin unless the line says "still": a quarter turn every item-spin-ticks.
+  items-spin: true
+  item-spin-ticks: 20
+  max-lines-per-page: 40
+  max-pages: 30
+  # Played to a player who clicks a hologram (a page switch or an action). "<sound> [volume] [pitch]" or none.
+  click-sound: ui.button.click 0.4 1.6
+  # Every hologram starts with these; /holo set <name> <setting> <value> (or the editor's Settings) changes one.
+  defaults:
+    billboard: center        # center (faces you), vertical (turns only sideways), horizontal, fixed (uses yaw)
+    background: none         # none, default (the vanilla gray box) or #AARRGGBB / #RRGGBB
+    shadow: true
+    see-through: false       # text shows through blocks
+    alignment: center        # center, left, right
+    line-width: 200          # text wraps after this many pixels
+    scale: 1
+    view-distance: 48        # blocks; players farther away don't get its entities at all
+    brightness: 15           # 0..15, or natural (lit like the spot it is in)
+    update-interval: 0       # ticks; 0 = automatic (placeholder-refresh-ticks for placeholder lines, never for plain ones)
+    autocycle: 0             # seconds per page when it has several; 0 = only clicks change pages
+    page-indicator: true     # dots under a hologram with several pages
+    permission: none         # a permission needed to see it
+    left-click: prev         # prev, next or none
+    right-click: next
+    yaw: 0                   # facing of a fixed hologram
+  # Space (blocks) each kind of line takes at scale 1. A line's own height (/holo line ... height) wins.
+  line-heights: {text: 0.3, item: 0.6, head: 0.6, block: 0.6, entity: 1.0, blank: 0.3}
+  # {anim:<name>} in a text line: frames shown <interval> ticks each, or a typewriter (letter by letter, then held).
+  animations:
+    sparkle: {interval: 8, frames: ['<accent>✦', '<sky>✧', '<warn>✦', '<good>✧']}
+    dots: {interval: 10, frames: ['<dim>·  ', '<dim>·· ', '<dim>···']}
+    welcome: {interval: 3, typewriter: 'Welcome to Aftr Hrs', style: '<accent>', cursor: '_', hold: 60}
+  # The hologram above every bank chest (needs modules.bank): "Goob Bank", the bank's state, a spinning coin.
+  bank:
+    enabled: true
+    height: 1.1              # where its lowest line starts, above the chest's block
+    coin: true
+    coin-item: 'oraxen:arcana_goob_coin|gold_nugget'
+    view-distance: 24
+    check-seconds: 5         # how often new and removed bank chests are noticed
+  # Damage and heal numbers: a small number pops above whatever is hurt or healed, rises and fades in about a second.
+  # Players turn them off in Settings (Damage Numbers).
+  damage-numbers:
+    enabled: true
+    kinds: {players: true, mobs: true, pets: true, bosses: true}
+    boss-health: 150         # a MythicMobs mob with at least this much max health counts as a boss
+    min-damage: 0.5
+    min-heal: 1
+    heal-ignore: [SATIATED, REGEN]   # natural regeneration doesn't pop numbers
+    range: 16                # blocks from the target
+    show-own: false          # also see the numbers of your own damage and heals
+    max-per-player: 8        # at once, per viewer
+    max-active: 64           # at once, on the whole server
+    lifetime-ticks: 20
+    rise: 0.9
+
+# Storage network + Quick Craft (docs/storage.md).
+storage:
+  # Most storage blocks (chests, barrels, shulker boxes, copper chests, Storage Vault blocks) plus Inventory Connectors
+  # one network reaches. A Storage Vault is read as one storage however many blocks it has.
+  max-blocks: 512
+  # How far a network reaches from its terminal, in blocks along any axis. It never loads chunks.
+  max-distance: 48
+  # Walk further than this from the terminal (or change world) and its window closes.
+  view-distance: 8
+  # How often open windows redraw what changed, in ticks (20 = once a second). They also redraw after every change.
+  refresh-ticks: 20
+  # Open windows also redraw fully this often even when nothing seems changed (lock or claim changes, other mods' containers), in ticks. At least refresh-ticks.
+  full-refresh-ticks: 100
+  # The crafting recipes for the three blocks (planks, comparators, chests ... see docs/storage.md). Read when data
+  # packs load (server start, /reload), not on /feather reload.
+  recipes: true
+  # Paper only: the blocks are real blocks now (aftrhrs:feather_storage_terminal, feather_crafting_terminal,
+  # feather_inventory_connector), so skin, fallback and display are ignored. Paper's placed blocks convert on load.
+  blocks:
+    terminal:
+      skin: oraxen:feather_storage_terminal
+      fallback: CHISELED_POLISHED_BLACKSTONE
+    crafting:
+      skin: oraxen:feather_crafting_terminal
+      fallback: CHISELED_TUFF_BRICKS
+    connector:
+      skin: oraxen:feather_inventory_connector
+      fallback: CHISELED_TUFF
+  # The skin's item display: size (1 = one block) and an extra turn in degrees if the model faces the wrong way.
+  display:
+    scale: 1.0
+    yaw-offset: 0
+  quick-craft:
+    # Quick Craft in the terminals: the Craft button of the chest window and the Craftable / All Recipes views of the
+    # Aftr Hrs terminal screen. false hides them on every terminal (/quickcraft still works with its permission).
+    in-terminals: true
+    # A right-click crafts at most this many times in one go (and only as many as there is room for).
+    max-batch: 256
+    # Where ingredients come from first until a player switches it in Quick Craft: inventory or network.
+    ingredients-first: inventory
+    # Auto-Craft: missing ingredients that can themselves be crafted are crafted first (sticks for a pickaxe,
+    # planks for a chest). This is the default until a player switches it in Quick Craft.
+    auto-craft: true
+    # How many crafting steps deep Auto-Craft goes (logs -> planks -> sticks is 2). 0 turns Auto-Craft off for
+    # everyone. At most 6.
+    recursive-depth: 3
+  # Crafting Terminal Remotes (tier I: the Overworld only; tier II, Ender: any dimension). docs/storage.md.
+  remote:
+    # false: remotes can't be linked or used.
+    enabled: true
+    # Keep every network a remote is linked to loaded (chunk tickets), so it stays connected and live. false: a
+    # remote still opens its terminal (loading that chunk for the moment), but nothing is kept loaded.
+    keep-loaded: true
+    # Kept-loaded networks also tick (hoppers, furnaces and farms there keep running). false: their chunks are only
+    # loaded, which is enough for the remote to read and use the storage, and costs the server less.
+    keep-ticking: true
+    # Stop keeping a network loaded once every player with a remote linked to it is offline and none of those
+    # remotes was carried or used for this many hours. Using a remote loads it again. 0: always keep it loaded.
+    offline-release-hours: 0
+    # Most chunks kept loaded for one network, and for all the networks one player linked. A warning is logged
+    # when a network needs more; the rest of it then only loads while someone is near.
+    max-chunks-per-network: 16
+    max-chunks-per-player: 48
+    # Furthest a remote reaches within one dimension, in blocks. 0: no limit. Between dimensions (tier II) there is
+    # no distance to measure, so this doesn't apply there.
+    max-distance: 0
+    # A link nobody has carried or used for this many days is forgotten (its chunks are let go); the remote then has
+    # to be linked again on its terminal.
+    forget-after-days: 30
+    # Most links one player can have at once. Past that, linking another remote is refused (relinking one of your
+    # remotes replaces its own link).
+    max-links-per-player: 4
+
+# What the Aftr Hrs client draws itself (modules.companion). Every player has the mod, so these screens are the
+# default; each feature can be turned off on its own, and then everyone gets that feature's vanilla screen instead.
+companion:
+  features:
+    # Feather menus drawn by the mod (every dialog, hub groups as tabs).
+    menus: true
+    # The server's crafting, smelting, stonecutting and smithing recipes (the mod's own, datapacks and /recipes custom
+    # ones) and the cooking meals, sent to JEI (a dedicated server doesn't send its recipe list to clients).
+    recipes: true
+    # Storage and Crafting Terminals as mod screens (network panel, JEI "move items" from the network).
+    storage: true
+    # Unused: every Aftr Hrs item is registered mod content with its own creative tabs. Kept so old configs stay valid.
+    creative: true
+    # Claim borders, the shovel's selection, the claim HUD and the claim map drawn by the mod (off: the particles).
+    claims: true
+    # /pets, the stable and the codex as the mod's screens, with the creatures' own animated models (drawn by the
+    # client; nothing is sent but the pet data). Every action goes through the same checks. Also the pet HUD
+    # (portraits of the pets that are out), kept up to date as pets come and go or get hurt.
+    pets: true
+    # Homes, warps, spawn, the newest death point and your graves as data: the mod's compass, place beams and travel
+    # screen (it travels with the usual /home, /warp, /spawn and /back commands).
+    places: true
+    # Today's and this week's quests and the server goal on the mod's HUD tracker, with a toast when one is done.
+    quests: true
+    # A toast for incoming /tpa and /tpahere requests with accept/deny keys (the chat card is still sent).
+    tpa: true
+    # A "HUD & Display" button on the hub's Settings page: switch the mod's HUD pieces and world
+    # effects on or off, and move / resize them. The choices live in the player's own client.
+    hud: true
+    # A toast for incoming /trade requests with the same accept/deny keys as teleport requests (the chat card is
+    # still sent).
+    trade: true
+    # Chat games as a card on the mod's HUD: the game, the question as chat shows it, the reward and a timer, then who
+    # won (or the answer on a timeout). Answers are still typed in chat, and the chat lines still come.
+    chatgames: true
+    # Your own bank balance as a coin purse on the mod's HUD, with a short line for each change (a sale, stall rent,
+    # interest) and coins waiting for you. Data only: /balance and the bank's History page stay as they are.
+    wallet: true
+    # /fishing journal, /fishing records and the hub's Fish Journal button as the mod's Angler's Journal screen
+    # (shelves of caught fish, a Claim button per finished rarity, the records wall). Claims run the same checks.
+    fishing: true
+    # A small look-at card under the crosshair for Arcana crops (stage, watered, why it isn't growing), crab pots and
+    # the wildlife stations: what a right-click would tell. Only within reach and in sight; claims are checked as for a click.
+    inspect: true
+    # The chess table's screen (board, clocks, move list). Off: chess tables can't be played.
+    chess: true
+  # Unused (the old server-item creative tabs): items are the mod's own content with its own tabs now. Kept so old
+  # configs stay valid; nothing reads it.
+  creative:
+    rules:
+      - {tab: mobs, files: [arcana_bosses, arcana_plushies]}
+      - {tab: tools, files: ["arcana_hats_*", arcana_hammers, arcana_fieldtools, arcana_gear, arcana_relics]}
+      - {tab: tools, kinds: [tool]}
+      - {tab: food, files: [arcana_crops, arcana_fishing]}
+      - {tab: food, kinds: [food]}
+      - {tab: mobs, files: [arcana_wildlife]}
+      - {tab: furniture, kinds: [furniture]}
+      - {tab: blocks, kinds: [block]}
+      - {tab: misc}
+    # Never shown, whatever the rules say.
+    exclude:
+      files: [guis]
+  # Unused: client and server are the same jar now, so there is no outdated client to nudge. Kept so old configs
+  # stay valid; nothing reads them.
+  latest-mod: "0.4.0"
+  mod-download: "https://github.com/eterniastudio/aftrhrs-companion/releases/latest"
+  # Log every hello and the mod version.
+  log-joins: true
+  # Log every message to and from the mod (troubleshooting).
+  debug: false
+
+# Releases and auto-update (github.com/eterniastudio/aftrhrs, signed releases). Clients update themselves; this is the
+# dedicated server's side. Console: /feather update [status|check|stage|cancel] (permission feather.admin).
+updater:
+  # stage: check the latest release at start and every 6 hours, download a newer one in the background (with the
+  # GeckoLib / Fabric API versions it lists) and install it when the server stops, so the next start runs it.
+  # off: never contact GitHub on its own; "/feather update stage" still stages an update by hand.
+  server: off
+  # On join, the server sends its mod version first: a client on another version is told which one to get
+  # ("This server runs Aftr Hrs 1.0.1 — restart to update") instead of a registry mismatch. false lets anyone try.
+  version-check: true

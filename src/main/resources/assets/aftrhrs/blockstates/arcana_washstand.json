@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/bathroom/washstand"},"facing=east":{"model":"aftrhrs:arcana/bathroom/washstand","y":90},"facing=south":{"model":"aftrhrs:arcana/bathroom/washstand","y":180},"facing=west":{"model":"aftrhrs:arcana/bathroom/washstand","y":270}}}

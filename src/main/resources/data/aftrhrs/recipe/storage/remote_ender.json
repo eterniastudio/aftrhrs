@@ -1,0 +1,19 @@
+{
+ "fabric:load_conditions": [
+  {
+   "condition": "aftrhrs:feather_config",
+   "keys": [
+    "modules.storage",
+    "storage.recipes"
+   ]
+  }
+ ],
+ "type": "minecraft:crafting_transmute",
+ "category": "misc",
+ "group": "feather_storage",
+ "input": "aftrhrs:feather_terminal_remote",
+ "material": "minecraft:end_crystal",
+ "result": {
+  "id": "aftrhrs:feather_terminal_remote_ender"
+ }
+}

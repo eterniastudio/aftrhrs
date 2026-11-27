@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "SLS",
+  " W "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "S": "minecraft:string",
+  "L": "minecraft:glowstone_dust",
+  "W": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_orb_lantern",
+  "count": 2
+ }
+}

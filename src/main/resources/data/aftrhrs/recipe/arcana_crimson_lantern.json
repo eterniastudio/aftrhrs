@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "PSP",
+  "PPP"
+ ],
+ "key": {
+  "Z": "minecraft:crimson_slab",
+  "P": "minecraft:crimson_planks",
+  "S": "minecraft:shroomlight"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_crimson_lantern"
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AAA"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_driftwood_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_driftwood_slab",
+  "count": 6
+ }
+}

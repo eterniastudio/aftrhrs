@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "aftrhrs:block/smithing/crucible"
+  },
+  "facing=east": {
+   "model": "aftrhrs:block/smithing/crucible",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "aftrhrs:block/smithing/crucible",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "aftrhrs:block/smithing/crucible",
+   "y": 270
+  }
+ }
+}

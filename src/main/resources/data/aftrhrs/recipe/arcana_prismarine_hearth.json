@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "B B",
+  "BCB"
+ ],
+ "key": {
+  "Z": "minecraft:prismarine_brick_slab",
+  "B": "minecraft:prismarine_bricks",
+  "C": "minecraft:charcoal"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_hearth"
+ }
+}

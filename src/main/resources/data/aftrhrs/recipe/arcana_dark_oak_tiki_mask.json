@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " W ",
+  "WTW",
+  " W "
+ ],
+ "key": {
+  "T": "minecraft:red_terracotta",
+  "W": "minecraft:stripped_dark_oak_log"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_tiki_mask"
+ }
+}

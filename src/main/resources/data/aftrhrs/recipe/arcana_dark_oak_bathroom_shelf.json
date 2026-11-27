@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "N N"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "Z": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_bathroom_shelf"
+ }
+}

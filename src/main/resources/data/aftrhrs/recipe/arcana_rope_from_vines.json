@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "V",
+  "V",
+  "V"
+ ],
+ "key": {
+  "V": "minecraft:vine"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rope",
+  "count": 3
+ }
+}

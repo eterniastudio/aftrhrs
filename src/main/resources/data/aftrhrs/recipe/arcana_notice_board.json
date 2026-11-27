@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "PXP",
+  "F F"
+ ],
+ "key": {
+  "F": "minecraft:spruce_fence",
+  "P": "minecraft:spruce_planks",
+  "X": "minecraft:paper"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_notice_board"
+ }
+}

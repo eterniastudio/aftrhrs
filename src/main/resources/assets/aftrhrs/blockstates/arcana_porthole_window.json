@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/coastal/porthole_window"},"facing=east":{"model":"aftrhrs:arcana/coastal/porthole_window","y":90},"facing=south":{"model":"aftrhrs:arcana/coastal/porthole_window","y":180},"facing=west":{"model":"aftrhrs:arcana/coastal/porthole_window","y":270}}}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "Z",
+  "Z"
+ ],
+ "key": {
+  "Z": "minecraft:cut_red_sandstone_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_sandstone_vertical_slab",
+  "count": 3
+ }
+}

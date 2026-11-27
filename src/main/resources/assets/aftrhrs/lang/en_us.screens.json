@@ -1,0 +1,17 @@
+{
+  "aftrhrs.menu.no-answer": "No answer from the server.",
+  "aftrhrs.pets.why.unloaded": "Your pet isn't nearby right now",
+  "aftrhrs.pets.why.working": "Already working",
+  "aftrhrs.pets.why.work-off": "Pet work is turned off on this server",
+  "aftrhrs.pets.why.no-color": "Unlocks with %s at bond level %s",
+  "aftrhrs.pets.why.color-off": "Name colors aren't available for this pet",
+  "aftrhrs.pets.why.no-custom": "Your pet has no custom name to reset",
+  "aftrhrs.hud.narrate.size-up": "%s size %s, increase",
+  "aftrhrs.hud.narrate.size-down": "%s size %s, decrease",
+  "aftrhrs.hud.narrate.reset-position": "%s: reset position",
+  "aftrhrs.hud.narrate.step-up": "%s %s, increase",
+  "aftrhrs.hud.narrate.step-down": "%s %s, decrease",
+  "aftrhrs.places.narrate": "%s, %s, %s away",
+  "aftrhrs.pets.narrate.swatch": "Name color %s",
+  "aftrhrs.fish.narrate": "%s, %s"
+}

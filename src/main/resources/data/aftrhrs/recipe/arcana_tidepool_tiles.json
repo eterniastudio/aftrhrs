@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PS",
+  "SP"
+ ],
+ "key": {
+  "P": "minecraft:prismarine_bricks",
+  "S": "minecraft:cut_sandstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tidepool_tiles",
+  "count": 4
+ }
+}

@@ -1,0 +1,566 @@
+{
+ "id": "kelpback",
+ "mm_id": "ArcanaKelpback",
+ "kind": "wildlife",
+ "name": "Kelpback",
+ "color": "f",
+ "health": 10,
+ "damage": 0,
+ "speed": 0.16,
+ "follow_range": 16,
+ "despawn": "true",
+ "damage_mods": {},
+ "note": "Gentle sea cow of warm and temperate seagrass meadows with a kelp garden on its back. Feather: shear the garden for kelp (it regrows), brush the barnacles off for a sea pickle.",
+ "base": "COW",
+ "sounds": {
+  "ambient": {
+   "id": "entity.cow.ambient",
+   "pitch": 0.55,
+   "volume": 0.45
+  },
+  "hurt": {
+   "id": "entity.cow.hurt",
+   "pitch": 0.6,
+   "volume": 0.9
+  },
+  "death": {
+   "id": "entity.cow.death",
+   "pitch": 0.55,
+   "volume": 1.0
+  },
+  "every": 240,
+  "chance": 0.3
+ },
+ "life": {
+  "every": 100,
+  "chance": 0.4,
+  "day": {
+   "graze": 4,
+   "graze_long": 3,
+   "lie": 1,
+   "look": 2,
+   "breathe": 1
+  },
+  "night": {
+   "lie_long": 4,
+   "graze": 1,
+   "breathe": 1
+  },
+  "graze_block": "SEAGRASS",
+  "graze_sound": [
+   "block.wet_grass.break",
+   0.7,
+   0.3
+  ],
+  "lie_ticks": 600,
+  "lie_long_ticks": 1400
+ },
+ "herd": {
+  "types": [
+   "ArcanaKelpback"
+  ],
+  "members": [
+   [
+    "ArcanaKelpback",
+    0.6
+   ]
+  ]
+ },
+ "harvest": [
+  "sound{s=entity.cow.ambient;v=0.6;p=0.6} @self",
+  "particles{p=bubble;amount=12;hS=0.6;vS=0.4;y=0.8} @self"
+ ],
+ "ai": {
+  "goals": [
+   "clear",
+   "panic",
+   "randomswim",
+   "lookatplayers",
+   "randomlookaround"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "init": [
+  "setvariable{var=caster.shorn;type=INTEGER;value=0} ?!variableisset{var=caster.shorn}"
+ ],
+ "restore": [
+  "partvis{mid=%M%;p=garden;v=false;c=true} @self ?variableEquals{var=caster.shorn;value=1}"
+ ],
+ "base_idle": "idle",
+ "base_walk": "swim",
+ "aquatic": {
+  "swim": 0.5,
+  "water_only": true
+ },
+ "lines": [
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "bubble",
+    "amount": 2,
+    "hS": 0.5,
+    "vS": 0.2,
+    "y": 1.2
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 80,
+   "conditions": [],
+   "chance": 0.5,
+   "line": "- particles{p=bubble;amount=2;hS=0.5;vS=0.2;y=1.2} @self ~onTimer:80 0.5"
+  }
+ ],
+ "drops": [
+  {
+   "item": "minecraft:leather",
+   "min": 0,
+   "max": 2,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:kelp",
+   "min": 1,
+   "max": 3,
+   "chance": 1.0
+  },
+  {
+   "exp": 1,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:ocean",
+    "minecraft:warm_ocean",
+    "minecraft:lukewarm_ocean",
+    "minecraft:deep_lukewarm_ocean",
+    "terralith:deep_warm_ocean"
+   ],
+   "rarity": "uncommon",
+   "position": "SEA",
+   "conditions": [],
+   "cap": 3,
+   "cap_radius": 48,
+   "cap_types": [
+    "ArcanaKelpback"
+   ]
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "death": "death",
+  "hurt": "hurt",
+  "graze": "graze",
+  "lie": "lie",
+  "harvest": "harvest",
+  "swim": "swim"
+ },
+ "model": "kelpback",
+ "clips": {
+  "idle": {
+   "length": 5,
+   "loop": "loop"
+  },
+  "swim": {
+   "length": 2.4,
+   "loop": "loop"
+  },
+  "graze": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "graze_tear": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "lie": {
+   "length": 5,
+   "loop": "loop"
+  },
+  "sleep": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "lie_look": {
+   "length": 3,
+   "loop": "once"
+  },
+  "lie_down": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "stand_up": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "harvest": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  },
+  "death": {
+   "length": 2.2,
+   "loop": "hold"
+  },
+  "look_around": {
+   "length": 3,
+   "loop": "once"
+  },
+  "surface_breath": {
+   "length": 3.2,
+   "loop": "once"
+  },
+  "roll": {
+   "length": 3.4,
+   "loop": "once"
+  },
+  "flipper_scratch": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "look_up": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "chew": {
+   "length": 2,
+   "loop": "once"
+  }
+ },
+ "scale": 0.78,
+ "model_hitbox": [
+  1.014,
+  0.663
+ ],
+ "shadow": 0.663,
+ "name_tag_y": 1.121,
+ "render_box": [
+  1.146,
+  0.999
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 5.0,
+    "drv": "hbt"
+   },
+   "swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.4,
+    "gait": "swim",
+    "drv": "hbt"
+   },
+   "graze": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbt"
+   },
+   "graze_tear": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hbt"
+   },
+   "lie": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 5.0,
+    "drv": "hbt"
+   },
+   "sleep": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "eyes": true,
+    "drv": "hbt"
+   },
+   "lie_look": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "lie_down": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "from": "standing",
+    "drv": "hbt"
+   },
+   "stand_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.4,
+    "from": "lying",
+    "drv": "hbt"
+   },
+   "harvest": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "ht"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 2.2,
+    "eyes": true,
+    "drv": "bt"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "surface_breath": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.2,
+    "drv": "hbt"
+   },
+   "roll": {
+    "p": "belly",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.4,
+    "drv": "b"
+   },
+   "flipper_scratch": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hbt"
+   },
+   "look_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "chew": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbt"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "swim",
+   "swim": "swim",
+   "sleep": "sleep",
+   "lie": "lie",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {
+   "standing>lying": "lie_down",
+   "lying>standing": "stand_up"
+  },
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 5,
+     "min": 6,
+     "max": 14
+    },
+    {
+     "clip": "look_around",
+     "w": 2,
+     "cd": 14
+    },
+    {
+     "clip": "flipper_scratch",
+     "w": 2,
+     "cd": 18
+    },
+    {
+     "clip": "roll",
+     "w": 1,
+     "cd": 40
+    },
+    {
+     "clip": "chew",
+     "w": 2,
+     "cd": 10
+    }
+   ],
+   "sitting": [],
+   "lying": [
+    {
+     "clip": "@sleep",
+     "w": 1,
+     "min": 30,
+     "max": 90
+    },
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 10,
+     "max": 25
+    },
+    {
+     "clip": "lie_look",
+     "w": 2,
+     "cd": 12
+    },
+    {
+     "clip": "sleep",
+     "w": 0.6,
+     "min": 20,
+     "max": 60,
+     "boost": {
+      "night": 10
+     }
+    }
+   ],
+   "graze": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "graze_tear",
+     "w": 3,
+     "cd": 6
+    },
+    {
+     "clip": "chew",
+     "w": 1,
+     "cd": 8
+    }
+   ],
+   "notice": [
+    {
+     "clip": "look_up",
+     "w": 3
+    },
+    {
+     "clip": "chew",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail",
+    "tail_fluke"
+   ],
+   "tail_sway": 0,
+   "breath": 0.008
+  },
+  "authored": [
+   "chew",
+   "death",
+   "flipper_scratch",
+   "graze",
+   "graze_tear",
+   "harvest",
+   "hurt",
+   "idle",
+   "lie",
+   "lie_down",
+   "lie_look",
+   "look_around",
+   "look_up",
+   "roll",
+   "sleep",
+   "stand_up",
+   "surface_breath",
+   "swim"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "garden"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.06,
+    "layer": 8
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "step": {
+    "jitter": 0.08
+   },
+   "eat": {
+    "jitter": 0.08
+   },
+   "snore": {
+    "jitter": 0.05
+   }
+  },
+  "every": 360,
+  "snore_every": 160
+ }
+}

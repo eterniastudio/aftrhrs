@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:emerald",
+  "minecraft:emerald",
+  "minecraft:iron_pickaxe",
+  "minecraft:torch"
+ ],
+ "result": {
+  "id": "aftrhrs:keeper_miner"
+ }
+}

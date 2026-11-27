@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:purple_candle",
+  "minecraft:purple_candle",
+  "minecraft:purple_candle",
+  "minecraft:pink_candle",
+  "minecraft:spruce_leaves",
+  "minecraft:spruce_leaves"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_advent_wreath"
+ }
+}

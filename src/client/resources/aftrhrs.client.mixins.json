@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "net.axther.aftrhrs.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "BossHealthOverlayAccessor",
+    "GuiMixin",
+    "ChatComponentMixin",
+    "HudMixin",
+    "HudSubtitleAccessor",
+    "SubtitleOverlayAccessor",
+    "ToastManagerAccessor",
+    "ItemEdgeBarMixin",
+    "PlayerModelCarryMixin",
+    "FirstPersonCarryMixin",
+    "LevelRendererMixin",
+    "RenderTypeAccessor",
+    "GuiGraphicsExtractorMixin",
+    "BannerGlyphMixin",
+    "ClearDialogMixin",
+    "GameRendererShakeMixin",
+    "MinecraftStrandMixin",
+    "InventoryScreenBackSlotMixin",
+    "AbstractRecipeBookScreenAccessor",
+    "RecipeBookScreenOutfitMixin",
+    "AvatarRendererCosmeticsMixin",
+    "GeckoKeyframeInternMixin",
+    "GeckoLibResourcesMixin",
+    "jei.JeiVanillaPluginMixin"
+  ],
+  "injectors": { "defaultRequire": 1 },
+  "minVersion": "0.8"
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " M ",
+  "GNG",
+  " P "
+ ],
+ "key": {
+  "M": "minecraft:map",
+  "G": "minecraft:gold_nugget",
+  "N": "minecraft:gold_ingot",
+  "P": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_globe"
+ }
+}

@@ -1,0 +1,175 @@
+# Boss altars (config.yml modules.boss-altars; needs MythicMobs and Oraxen). /feather reload re-reads this file.
+#
+# Players craft a Summoning Altar (Oraxen furniture, below: altar-item) and right-click it holding a boss's summon
+# item. Right-click with an empty hand lists the offerings. When every check passes the item is used up, the altar
+# charges for a few seconds and the MythicMobs boss appears a few blocks from the altar.
+#
+# Checks, in order: feather.altars.use, the altar isn't charging or still has its own boss out, the boss's place rules
+# (where:), altar and player cooldowns, distance from spawn, no altar boss (or boss below) alive nearby, room for the
+# boss, and build rights where it appears (a test block place, so protection plugins can refuse).
+# feather.altars.bypass (ops) skips the place rules, cooldowns, spawn distance and build check, not the others.
+# Admin: /altars list | reset <player|here|all> | end <#|all> [refund] | summon <boss> [player]   (feather.altars.admin)
+# /altars summon calls a boss next to a player with no altar, offering or cooldowns (events, testing); it is tracked,
+# leashed and scaled like an altar fight but never refunds anything.
+
+altar-item: arcana_summoning_altar
+
+# Seconds before the same altar, and the same player, can summon again (counted from the boss's arrival).
+altar-cooldown-seconds: 900
+player-cooldown-seconds: 1800
+# Charge-up (particles, title countdown, sounds) before the boss appears.
+buildup-seconds: 5
+# No summoning while an altar boss (or any boss listed below) is alive within this many blocks of the altar.
+boss-check-radius: 96
+# Not within this many blocks of the server spawn (Feather's /spawn and the main world's spawn).
+# Vanilla spawn protection (server.properties) is respected too.
+spawn-exclusion-radius: 160
+# The summoner must be allowed to build where the boss appears.
+require-build-permission: true
+
+# A summoned boss that strays further than this from where it appeared is pulled back (teleported).
+leash-radius: 48
+# Nobody (alive, not spectating) within abandon-radius of the boss for abandon-seconds: the boss leaves.
+abandon-radius: 64
+abandon-seconds: 180
+refund-on-abandon: true
+# A fight that runs longer than this ends: the boss leaves. No refund by default (the players had their chance).
+max-fight-minutes: 30
+refund-on-timeout: false
+# The boss disappears without dying (removed by a command or plugin) while players watch its arena: refund.
+refund-on-vanish: true
+# Who hears "<player> summoned <boss>": server, nearby (96 blocks) or none.
+announce: server
+
+# Party scaling: when the boss arrives it counts the players (alive, not spectating) within leash-radius of where it
+# appeared, and every second after that it checks again and scales UP (never down) when more have joined.
+# For n players (capped at max-players): max health x (1 + health-per-extra-player x (n - 1)), keeping the boss's
+# current health percentage, and the damage it deals x (1 + damage-per-extra-player x (n - 1)).
+# Example with the defaults, 3 players: health x2.2, damage x1.3. One attribute modifier (feather:party_scaling) that
+# is replaced, never stacked. If the server's max-health cap (spigot.yml attribute.maxHealth.max) stops the health
+# short, the rest is applied as damage reduction so the boss is still as tough as the curve says.
+party-scaling:
+  enabled: true
+  health-per-extra-player: 0.6
+  damage-per-extra-player: 0.15
+  max-players: 6
+
+messages:
+  no-permission: "<prefix><bad>You can't use summoning altars."
+  info-header: "<prefix><warn>Summoning Altar</warn> <muted>- hold an offering and right-click the altar:"
+  info-line: "<dim> • </dim><item> <dim>→</dim> <boss> <dim>(<hint>)"
+  hint-use-altar: "<muted>Offer this at a</muted> <warn>Summoning Altar</warn> <muted>to call</muted> <boss><muted>."
+  busy: "<prefix><bad>This altar is already awakening."
+  fight-active: "<prefix><bad>This altar's <boss> is still out there."
+  unknown-boss: "<prefix><bad><boss> isn't installed on this server."
+  wrong-place: "<prefix><bad><boss> won't answer here.</bad> <muted>It needs <hint>."
+  altar-cooldown: "<prefix><bad>The altar is still dormant.</bad> <muted>Try again in</muted> <text><time></text><muted>."
+  player-cooldown: "<prefix><bad>You're still drained from your last summoning.</bad> <muted>Try again in</muted> <text><time></text><muted>."
+  near-spawn: "<prefix><bad>Too close to spawn.</bad> <muted>Build the altar at least <radius> blocks away."
+  boss-nearby: "<prefix><bad>Another boss is already loose nearby."
+  no-space: "<prefix><bad>Not enough room.</bad> <muted><boss> needs an open area of about <w>×<w>×<h> blocks next to the altar."
+  no-build: "<prefix><bad>You can't call a boss where you can't build."
+  accepted: "<prefix><warn>The altar accepts your offering...</warn> <muted>Stand ready."
+  countdown: "<warn><n>"
+  summoned: "<prefix><text><player></text> <muted>summoned</muted> <boss> <muted>at a Summoning Altar!"
+  spawn-failed: "<prefix><bad>The ritual fizzled.</bad> <muted>Your <item> was returned."
+  refund-broken: "<prefix><bad>The altar was broken mid-ritual.</bad> <muted>Your <item> was returned."
+  refund: "<prefix><warn>Your <item> was returned to you."
+  abandoned: "<prefix><muted>With no one left to fight, <boss> departs."
+  timeout: "<prefix><muted><boss> tires of the fight and departs."
+  vanished: "<prefix><muted><boss> is gone."
+  ended: "<prefix><muted><boss> was sent away by staff."
+  # Party scaling: <players>, <health> (max health multiplier), <damage> (damage multiplier).
+  scaled: "<prefix><boss> <muted>senses</muted> <text><players></text> <muted>challengers.</muted> <dim>Scaled for <players> players (health x<health>, damage x<damage>)."
+  rescaled: "<prefix><boss> <muted>grows stronger as more join the fight!</muted> <dim>Scaled for <players> players (health x<health>, damage x<damage>)."
+  # /altars (feather.altars.admin). <label> is the command as typed.
+  admin-list-header: "<prefix><warn>Boss altar fights:</warn> <text><fights></text> <muted>| altars cooling down:</muted> <text><altars></text> <muted>| players cooling down:</muted> <text><players></text>"
+  admin-list-row: "<muted>#<n></muted> <text><boss></text> <muted>by</muted> <text><player></text><muted>, <ago> ago, <where><scaled><staff>"
+  admin-list-staff: " (staff summon)"
+  admin-usage: "<dim>/<label> reset <player|here|all>  ·  /<label> end <#|all> [refund]  ·  /<label> summon <boss> [player]"
+  admin-summon-usage: "<prefix><bad>/<label> summon <boss> [player]"
+  admin-summon-unknown: "<prefix><bad>Unknown boss <boss></bad> <muted>(one of <bosses>)."
+  admin-summon-no-player: "<prefix><bad>Name an online player:</bad> <muted>/<label> summon <boss> <player>"
+  admin-summon-no-room: "<prefix><bad>No room for <boss> near <player>."
+  admin-summoned: "<prefix><good>Summoned <boss> for <player></good> <muted>(no item, no cooldowns, no refunds)."
+  admin-reset-usage: "<prefix><bad>/<label> reset <player|here|all>"
+  admin-reset-all: "<prefix><good>All altar and player cooldowns cleared."
+  admin-reset-here: "<prefix><good>Cleared the cooldown of <count> altar(s) within 16 blocks."
+  admin-reset-player: "<prefix><good>Cleared <player>'s summon cooldown."
+  admin-end-usage: "<prefix><bad>/<label> end <#|all> [refund]"
+  admin-ended: "<prefix><good>Ended <count> fight(s)<refund>."
+  admin-ended-refund: " with refunds"
+  admin-unknown: "<prefix><bad>/<label> [list|reset|end|summon]"
+# One entry per summonable boss, keyed by its MythicMobs internal name.
+#   item: Oraxen summon item id.  name: MiniMessage name for messages and the title.
+#   flying: appears 3 blocks up and needs no ground.  space: [width, height] of the clear box it needs.
+#   where: environments (NORMAL, NETHER, THE_END); biome-keywords (parts of the biome key, so datapack biomes like
+#     terralith:volcanic_peaks work) OR min/max-temperature (block temperature: deserts 2.0, snowy < 0.15) -
+#     either one passing is enough when both are set; min-y / max-y; open-sky: the altar must see the sky.
+#     hint: shown when the place is wrong.
+#   particle / charge-sound / arrival-sound: the ritual's look and sound.
+bosses:
+  ArcanaCinderwingPhoenix:
+    item: arcana_summon_cinder_offering
+    name: "<gold>Cinderwing Phoenix"
+    flying: true
+    space: [3, 3]
+    where:
+      environments: [NORMAL, NETHER]
+      biome-keywords: [badlands, desert, savanna, mesa, canyon, volcan, ash, dune, basalt, nether_wastes, crimson]
+      min-temperature: 1.0
+      hint: "scorching ground: badlands, desert, savanna or the Nether"
+    particle: FLAME
+    charge-sound: entity.blaze.ambient
+    arrival-sound: entity.blaze.shoot
+
+  ArcanaTempestRoc:
+    item: arcana_summon_tempest_totem
+    name: "<blue>Tempest Roc"
+    flying: true
+    space: [3, 3]
+    where:
+      environments: [NORMAL]
+      min-y: 110
+      open-sky: true
+      hint: "a high, open peak (Y 110 or more, under the open sky)"
+    particle: ELECTRIC_SPARK
+    charge-sound: entity.breeze.idle_air
+    arrival-sound: entity.lightning_bolt.thunder
+
+  ArcanaGlacialWyrm:
+    item: arcana_summon_rime_heart
+    name: "<aqua>Glacial Wyrm"
+    space: [5, 3]
+    where:
+      environments: [NORMAL]
+      biome-keywords: [snow, frozen, ice, grove, glacier, tundra, frost, cold]
+      max-temperature: 0.15
+      hint: "a frozen land: snowy plains, ice spikes, groves or frozen peaks"
+    particle: SNOWFLAKE
+    charge-sound: block.glass.break
+    arrival-sound: entity.elder_guardian.curse
+
+  ArcanaRuneboundColossus:
+    item: arcana_summon_runic_keystone
+    name: "<dark_green>Runebound Colossus"
+    space: [3, 4]
+    where:
+      environments: [NORMAL]
+      max-y: 0
+      hint: "the deep earth, below Y 0"
+    particle: ENCHANT
+    charge-sound: block.deepslate.place
+    arrival-sound: entity.iron_golem.repair
+
+  ArcanaWukong:
+    item: arcana_summon_immortal_peach
+    name: "<gold><bold>Sun Wukong</bold>"
+    space: [3, 4]
+    where:
+      environments: [NORMAL]
+      biome-keywords: [jungle, bamboo, cherry, peak, mountain, highland]
+      hint: "a jungle, bamboo forest, cherry grove or mountain peak (his Flower-Fruit Mountain)"
+    particle: WAX_OFF
+    charge-sound: block.bell.resonate
+    arrival-sound: entity.fox.screech

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " W ",
+  "FFF",
+  " B "
+ ],
+ "key": {
+  "B": "minecraft:bamboo",
+  "F": "minecraft:feather",
+  "W": "minecraft:light_gray_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_grey_parrot_perch"
+ }
+}

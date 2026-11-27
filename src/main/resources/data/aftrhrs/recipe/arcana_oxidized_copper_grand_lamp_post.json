@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "L L",
+  "CCC",
+  " B "
+ ],
+ "key": {
+  "B": "minecraft:oxidized_copper",
+  "C": "minecraft:oxidized_cut_copper",
+  "L": "minecraft:oxidized_copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oxidized_copper_grand_lamp_post"
+ }
+}

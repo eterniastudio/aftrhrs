@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "C C",
+  "ZZZ",
+  "S S"
+ ],
+ "key": {
+  "C": "minecraft:iron_chain",
+  "S": "minecraft:stick",
+  "Z": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_porch_swing"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "SSS",
+  " L ",
+  " L "
+ ],
+ "key": {
+  "S": "#minecraft:wooden_slabs",
+  "L": "#minecraft:logs"
+ },
+ "result": {
+  "id": "aftrhrs:carving_bench",
+  "count": 1
+ }
+}

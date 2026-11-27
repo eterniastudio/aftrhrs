@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "SSS",
+  "S S"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "Z": "minecraft:jungle_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_jungle_bar_stool"
+ }
+}

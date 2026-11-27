@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "I I",
+  "Z Z"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "Z": "minecraft:birch_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_picnic_table_birch"
+ }
+}

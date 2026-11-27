@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AA",
+  " B",
+  " B"
+ ],
+ "key": {
+  "A": "minecraft:diamond_block",
+  "B": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_diamond_scythe"
+ }
+}

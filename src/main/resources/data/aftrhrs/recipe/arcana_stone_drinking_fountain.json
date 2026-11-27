@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  "TWT",
+  " M "
+ ],
+ "key": {
+  "M": "minecraft:stone_bricks",
+  "N": "minecraft:gold_ingot",
+  "T": "minecraft:smooth_stone_slab",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_drinking_fountain"
+ }
+}

@@ -1,0 +1,488 @@
+{
+ "id": "sandshroud",
+ "mm_id": "ArcanaSandshroud",
+ "kind": "undead",
+ "name": "Sandshroud",
+ "color": "f",
+ "health": 20,
+ "damage": 3,
+ "speed": 0.23,
+ "follow_range": 35,
+ "despawn": "true",
+ "damage_mods": {},
+ "note": "Desert husk in a sun-faded indigo head-wrap and veil, a lost caravan drifter with a cracked, empty water urn. Vanilla husk: never burns in the sun, its touch brings on Hunger.",
+ "base": "HUSK",
+ "sounds": {
+  "ambient": {
+   "id": "entity.husk.ambient",
+   "pitch": 0.9,
+   "volume": 0.9
+  },
+  "hurt": {
+   "id": "entity.husk.hurt",
+   "pitch": 0.9,
+   "volume": 0.9
+  },
+  "death": {
+   "id": "entity.husk.death",
+   "pitch": 0.9,
+   "volume": 0.9
+  },
+  "step": {
+   "id": "entity.husk.step",
+   "pitch": 1.0,
+   "volume": 0.15
+  },
+  "every": 160,
+  "chance": 0.35,
+  "step_every": 10
+ },
+ "life": {
+  "every": 100,
+  "chance": 0.3,
+  "day": {
+   "pour_urn": 1,
+   "veil_tug": 2
+  },
+  "extra": {
+   "pour_urn": [
+    "delay 24",
+    "particles{p=block;m=SAND;amount=10;hS=0.15;vS=0.3;y=0.6} @self",
+    "sound{s=block.sand.fall;v=0.5;p=1.2} @self"
+   ]
+  }
+ },
+ "replace": {
+  "vanilla": "minecraft:husk",
+  "share": 0.4,
+  "moon_share": 0.8,
+  "biomes": [
+   "minecraft:desert",
+   "terralith:ancient_sands",
+   "terralith:desert_canyon",
+   "terralith:desert_oasis",
+   "terralith:desert_spires",
+   "terralith:lush_desert",
+   "terralith:sandstone_valley",
+   "terralith:red_oasis"
+  ]
+ },
+ "attack_clip": "attack",
+ "ai_toggle": true,
+ "options": {
+  "PreventRandomEquipment": "true",
+  "PreventSunburn": "true"
+ },
+ "armor": 2,
+ "lines": [
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "block",
+    "m": "SAND",
+    "amount": 2,
+    "hS": 0.25,
+    "vS": 0.4,
+    "y": 0.3
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 30,
+   "conditions": [],
+   "chance": 0.5,
+   "line": "- particles{p=block;m=SAND;amount=2;hS=0.25;vS=0.4;y=0.3} @self ~onTimer:30 0.5"
+  }
+ ],
+ "drops": [
+  {
+   "item": "minecraft:rotten_flesh",
+   "min": 0,
+   "max": 2,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:sand",
+   "min": 0,
+   "max": 1,
+   "chance": 1.0
+  },
+  {
+   "custom": "arcana_sandstone_urn",
+   "min": 1,
+   "max": 1,
+   "chance": 0.025
+  },
+  {
+   "exp": 5,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "death": "death",
+  "hurt": "hurt",
+  "attack": "attack"
+ },
+ "model": "sandshroud",
+ "clips": {
+  "idle": {
+   "length": 3.2,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 1,
+   "loop": "loop"
+  },
+  "attack": {
+   "length": 0.7,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.3,
+   "loop": "hold"
+  },
+  "idle_sway": {
+   "length": 6.4,
+   "loop": "loop"
+  },
+  "slump": {
+   "length": 7,
+   "loop": "loop"
+  },
+  "twitch": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "sniff": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "look_around": {
+   "length": 3.4,
+   "loop": "once"
+  },
+  "veil_tug": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "pour_urn": {
+   "length": 3,
+   "loop": "once"
+  },
+  "walk_trudge": {
+   "length": 1.3,
+   "loop": "loop"
+  },
+  "walk_drag": {
+   "length": 1.4,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.8,
+   "loop": "loop"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.6,
+  1.95
+ ],
+ "shadow": 0.3,
+ "name_tag_y": 2.375,
+ "render_box": [
+  0.5,
+  2.047
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "eyes"
+ ],
+ "glow_out": [
+  "eyes"
+ ],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.2,
+    "drv": "hb"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.0,
+    "gait": "walk",
+    "drv": "hb"
+   },
+   "attack": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.7,
+    "drv": "hb"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.3,
+    "eyes": true,
+    "drv": "hb"
+   },
+   "idle_sway": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.4,
+    "drv": "hbt"
+   },
+   "slump": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 7.0,
+    "drv": "hb"
+   },
+   "twitch": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hb"
+   },
+   "sniff": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.2,
+    "drv": "h"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.4,
+    "drv": "hb"
+   },
+   "veil_tug": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "pour_urn": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hb"
+   },
+   "walk_trudge": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbt",
+    "gait": "walk"
+   },
+   "walk_drag": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.4,
+    "drv": "hbt",
+    "gait": "walk"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.8,
+    "gait": "run",
+    "drv": "hbt"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "h"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "sniff",
+     "w": 1,
+     "cd": 14
+    },
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 4,
+     "max": 10
+    },
+    {
+     "clip": "idle_sway",
+     "w": 3,
+     "min": 6,
+     "max": 14
+    },
+    {
+     "clip": "slump",
+     "w": 2,
+     "min": 6,
+     "max": 12,
+     "boost": {
+      "hot": 2
+     }
+    },
+    {
+     "clip": "twitch",
+     "w": 1.5,
+     "cd": 8
+    },
+    {
+     "clip": "veil_tug",
+     "w": 2,
+     "cd": 14
+    },
+    {
+     "clip": "pour_urn",
+     "w": 1.5,
+     "cd": 25,
+     "boost": {
+      "hot": 2
+     }
+    },
+    {
+     "clip": "look_around",
+     "w": 1,
+     "cd": 12
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "sniff",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "walk": [
+    {
+     "clip": "@mood",
+     "w": 2,
+     "min": 6,
+     "max": 16
+    },
+    {
+     "clip": "walk_trudge",
+     "w": 2.5,
+     "min": 8,
+     "max": 20
+    },
+    {
+     "clip": "walk_drag",
+     "w": 1,
+     "min": 8,
+     "max": 16
+    }
+   ],
+   "notice": [
+    {
+     "clip": "sniff",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body"
+  },
+  "authored": [
+   "hurt",
+   "idle_sway",
+   "look_around",
+   "pour_urn",
+   "run",
+   "slump",
+   "sniff",
+   "twitch",
+   "veil_tug",
+   "walk_drag",
+   "walk_trudge"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "eyes"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 6
+   },
+   "ambient_angry": {
+    "jitter": 0.06,
+    "dist": 20
+   },
+   "hurt": {
+    "jitter": 0.07,
+    "dist": 20
+   },
+   "death": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 4
+   },
+   "step": {
+    "jitter": 0.08,
+    "dist": 20
+   },
+   "attack": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 0
+   }
+  },
+  "every": 240,
+  "dist": 20
+ }
+}

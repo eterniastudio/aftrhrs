@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "P P",
+  "PIP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "I": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:quench_trough",
+  "count": 1
+ }
+}

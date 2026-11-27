@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:paper"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_rolling_paper",
+  "count": 4
+ }
+}

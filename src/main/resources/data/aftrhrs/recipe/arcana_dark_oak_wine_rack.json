@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PBP",
+  "PBP",
+  "PBP"
+ ],
+ "key": {
+  "P": "minecraft:dark_oak_planks",
+  "B": "minecraft:glass_bottle"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_wine_rack"
+ }
+}

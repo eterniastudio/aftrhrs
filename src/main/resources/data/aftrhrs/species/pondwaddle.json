@@ -1,0 +1,796 @@
+{
+ "id": "pondwaddle",
+ "mm_id": "ArcanaPondwaddle",
+ "kind": "livestock",
+ "name": "Pondwaddle",
+ "color": "f",
+ "health": 4,
+ "damage": 0,
+ "speed": 0.25,
+ "follow_range": 16,
+ "despawn": "persistent",
+ "damage_mods": {
+  "FALL": 0.0
+ },
+ "note": "Pond duck of rivers and swamps. Feather: lays duck eggs (nesting box), brush for down feathers.",
+ "base": "CHICKEN",
+ "sounds": {
+  "ambient": {
+   "id": "entity.chicken.ambient",
+   "pitch": 0.7,
+   "volume": 0.8
+  },
+  "hurt": {
+   "id": "entity.chicken.hurt",
+   "pitch": 0.75,
+   "volume": 1.0
+  },
+  "death": {
+   "id": "entity.chicken.death",
+   "pitch": 0.75,
+   "volume": 1.0
+  },
+  "step": {
+   "id": "entity.chicken.step",
+   "pitch": 0.8,
+   "volume": 0.15
+  },
+  "every": 160,
+  "chance": 0.35,
+  "step_every": 10
+ },
+ "life": {
+  "every": 100,
+  "chance": 0.4,
+  "day": {
+   "graze": 3,
+   "lie": 1,
+   "look": 1,
+   "flap": 2
+  },
+  "night": {
+   "lie_long": 5,
+   "graze": 1
+  },
+  "graze_block": "GRASS_BLOCK",
+  "graze_sound": [
+   "block.grass.hit",
+   1.4,
+   0.2
+  ],
+  "extra": {
+   "flap": [
+    "sound{s=entity.parrot.fly;v=0.5;p=1.1} @self"
+   ]
+  }
+ },
+ "gaits": [
+  {
+   "name": "swim",
+   "idle": "swim",
+   "walk": "swim",
+   "cond": "?inblock{m=WATER}"
+  }
+ ],
+ "herd": {
+  "types": [
+   "ArcanaPondwaddle",
+   "ArcanaPondwaddleYoung"
+  ],
+  "members": [
+   [
+    "ArcanaPondwaddle",
+    1
+   ],
+   [
+    "ArcanaPondwaddleYoung",
+    0.6
+   ],
+   [
+    "ArcanaPondwaddleYoung",
+    0.5
+   ],
+   [
+    "ArcanaPondwaddleYoung",
+    0.3
+   ]
+  ]
+ },
+ "harvest": [
+  "sound{s=entity.chicken.ambient;v=0.8;p=1.0} @self",
+  "particles{p=block;m=WHITE_WOOL;amount=8;hS=0.3;vS=0.3;y=0.5} @self"
+ ],
+ "ai": {
+  "goals": [
+   "clear",
+   "float",
+   "panic",
+   "randomstroll",
+   "lookatplayers",
+   "randomlookaround"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "options": {
+  "Jockey": "true"
+ },
+ "young_id": "ArcanaPondwaddleYoung",
+ "lines": [
+  {
+   "mechanic": "setvariable",
+   "args": {
+    "var": "caster.led",
+    "type": "INTEGER",
+    "value": 0
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 100,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- setvariable{var=caster.led;type=INTEGER;value=0} @self ~onTimer:100"
+  }
+ ],
+ "drops": [
+  {
+   "custom": "arcana_raw_duck",
+   "min": 1,
+   "max": 1,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:feather",
+   "min": 0,
+   "max": 1,
+   "chance": 1.0
+  },
+  {
+   "exp": 1,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:river",
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp",
+    "terralith:warm_river",
+    "terralith:orchid_swamp"
+   ],
+   "rarity": "uncommon",
+   "position": "LAND",
+   "conditions": [
+    "outside true"
+   ],
+   "cap": 3,
+   "cap_radius": 48,
+   "cap_types": [
+    "ArcanaPondwaddle",
+    "ArcanaPondwaddleYoung"
+   ]
+  },
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:beach",
+    "terralith:gravel_beach"
+   ],
+   "rarity": "rare",
+   "position": "LAND",
+   "conditions": [
+    "outside true"
+   ],
+   "cap": 2,
+   "cap_radius": 48,
+   "cap_types": [
+    "ArcanaPondwaddle",
+    "ArcanaPondwaddleYoung"
+   ]
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "death": "death",
+  "hurt": "hurt",
+  "graze": "graze",
+  "lie": "lie",
+  "harvest": "harvest",
+  "swim": "swim"
+ },
+ "model": "pondwaddle",
+ "clips": {
+  "idle": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.6,
+   "loop": "loop"
+  },
+  "graze": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "lie": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "harvest": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "swim": {
+   "length": 1,
+   "loop": "loop"
+  },
+  "flap": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "lay": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.2,
+   "loop": "hold"
+  },
+  "look_around": {
+   "length": 3,
+   "loop": "once"
+  },
+  "herd_glance": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "preen": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "wing_stretch": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "tail_wag": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "quack": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "crane": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "hop": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "graze_peck": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "graze_look": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "lie_down": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "stand_up": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "lie_preen": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "sleep": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "swim_dabble": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "swim_preen": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "swim_flap": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "swim_wag": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.438,
+  0.75
+ ],
+ "shadow": 0.281,
+ "name_tag_y": 1,
+ "render_box": [
+  0.5,
+  0.844
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "young": "pondwaddle_young",
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.6,
+    "gait": "walk",
+    "drv": "hbt"
+   },
+   "graze": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbt"
+   },
+   "lie": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "harvest": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.4,
+    "drv": "hbt"
+   },
+   "swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.0,
+    "gait": "swim",
+    "drv": "hbt"
+   },
+   "flap": {
+    "p": "airborne",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.2,
+    "gait": "fly",
+    "drv": "hbt"
+   },
+   "lay": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.2,
+    "drv": "hbt"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.2,
+    "eyes": true,
+    "drv": "hbt"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "herd_glance": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "preen": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hbt"
+   },
+   "wing_stretch": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "tail_wag": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.9,
+    "drv": "hbt"
+   },
+   "quack": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.9,
+    "drv": "h"
+   },
+   "crane": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "hop": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.8,
+    "drv": "hbt"
+   },
+   "graze_peck": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "hbt"
+   },
+   "graze_look": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbt"
+   },
+   "lie_down": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.9,
+    "from": "standing",
+    "drv": "hbt"
+   },
+   "stand_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.8,
+    "from": "lying",
+    "drv": "hbt"
+   },
+   "lie_preen": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbt"
+   },
+   "sleep": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "eyes": true,
+    "drv": "hbt"
+   },
+   "swim_dabble": {
+    "p": "swimming",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbt"
+   },
+   "swim_preen": {
+    "p": "swimming",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "swim_flap": {
+    "p": "swimming",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "hbt"
+   },
+   "swim_wag": {
+    "p": "swimming",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.9,
+    "drv": "hbt"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "ht"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "swim": "swim",
+   "sleep": "lie",
+   "lie": "lie",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {
+   "standing>lying": "lie_down",
+   "lying>standing": "stand_up"
+  },
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 4,
+     "max": 10
+    },
+    {
+     "clip": "look_around",
+     "w": 2,
+     "cd": 12
+    },
+    {
+     "clip": "preen",
+     "w": 3,
+     "cd": 10
+    },
+    {
+     "clip": "wing_stretch",
+     "w": 1.5,
+     "cd": 25
+    },
+    {
+     "clip": "tail_wag",
+     "w": 2.5,
+     "cd": 6
+    },
+    {
+     "clip": "quack",
+     "w": 1.5,
+     "cd": 10
+    },
+    {
+     "clip": "herd_glance",
+     "w": 2,
+     "cd": 12,
+     "when": "herd_near:10"
+    },
+    {
+     "clip": "hop",
+     "w": 3,
+     "cd": 5,
+     "when": "young"
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "quack",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [
+    {
+     "clip": "@sleep",
+     "w": 1,
+     "min": 30,
+     "max": 90
+    },
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 10,
+     "max": 25
+    },
+    {
+     "clip": "lie_preen",
+     "w": 2,
+     "min": 6,
+     "max": 12
+    },
+    {
+     "clip": "sleep",
+     "w": 0.6,
+     "min": 20,
+     "max": 60,
+     "boost": {
+      "night": 10
+     }
+    },
+    {
+     "clip": "quack",
+     "w": 0.5,
+     "cd": 20,
+     "when": "!night"
+    }
+   ],
+   "graze": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 2,
+     "max": 5
+    },
+    {
+     "clip": "graze_peck",
+     "w": 3,
+     "cd": 4
+    },
+    {
+     "clip": "graze_look",
+     "w": 2,
+     "cd": 8
+    },
+    {
+     "clip": "quack",
+     "w": 0.6,
+     "cd": 10
+    }
+   ],
+   "notice": [
+    {
+     "clip": "crane",
+     "w": 3
+    },
+    {
+     "clip": "quack",
+     "w": 1
+    }
+   ],
+   "swim": [
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 3,
+     "max": 8
+    },
+    {
+     "clip": "swim_dabble",
+     "w": 3,
+     "cd": 8
+    },
+    {
+     "clip": "swim_preen",
+     "w": 2,
+     "cd": 10
+    },
+    {
+     "clip": "swim_flap",
+     "w": 1,
+     "cd": 20
+    },
+    {
+     "clip": "swim_wag",
+     "w": 2,
+     "cd": 6
+    },
+    {
+     "clip": "quack",
+     "w": 1.5,
+     "cd": 10
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail"
+   ],
+   "tail_sway": 6,
+   "breath": 0.016
+  },
+  "authored": [
+   "crane",
+   "graze_look",
+   "graze_peck",
+   "herd_glance",
+   "hop",
+   "hurt",
+   "lie_down",
+   "lie_preen",
+   "look_around",
+   "preen",
+   "quack",
+   "sleep",
+   "stand_up",
+   "swim_dabble",
+   "swim_flap",
+   "swim_preen",
+   "swim_wag",
+   "tail_wag",
+   "wing_stretch"
+  ]
+ },
+ "glowmask": false,
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.08
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "step": {
+    "jitter": 0.08,
+    "layer": 0
+   },
+   "eat": {
+    "jitter": 0.06
+   },
+   "splash": {
+    "jitter": 0.06
+   }
+  },
+  "every": 320
+ }
+}

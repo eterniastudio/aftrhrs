@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:acacia_planks",
+  "Z": "minecraft:acacia_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_nightstand"
+ }
+}

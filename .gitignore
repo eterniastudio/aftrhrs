@@ -1,0 +1,63 @@
+# Build output
+build/
+out/
+bin/
+*.jar
+*.class
+# ...but the Gradle wrapper must be committed, or nothing builds from a fresh clone
+!gradle/wrapper/gradle-wrapper.jar
+.gradle/
+
+# Dev runs (./gradlew runClient / runServer / runSoak) and test worlds
+run/
+run-server/
+run-soak/
+run-mig/
+.scratch/
+
+# release.py output and download cache
+release/
+
+# Generator previews and scratch renders
+tools/out/
+
+# Discord announcement panels and webhook posting (kept private)
+tools/announce_*.py
+tools/showcase.py
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and crash dumps
+*.log
+logs/
+crash-reports/
+hs_err_pid*.log
+*.jfr
+
+# IDEs and editors
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+*.swp
+*~
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets: the release signing key, webhook configs, env files (none belong in git)
+*.pem
+*.key
+webhooks.json
+.env
+.env.*

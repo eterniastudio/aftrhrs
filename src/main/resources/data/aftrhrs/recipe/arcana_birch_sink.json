@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " U ",
+  "PCP",
+  "PPP"
+ ],
+ "key": {
+  "U": "minecraft:cauldron",
+  "P": "minecraft:birch_planks",
+  "C": "minecraft:chest"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_birch_sink"
+ }
+}

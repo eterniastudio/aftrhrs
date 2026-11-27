@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:tuff_bricks",
+  "W": "minecraft:polished_tuff_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuff_column_capital",
+  "count": 2
+ }
+}

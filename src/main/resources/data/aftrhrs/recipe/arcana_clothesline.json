@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "FRF",
+  "ABC",
+  "F F"
+ ],
+ "key": {
+  "A": "minecraft:red_wool",
+  "B": "minecraft:white_wool",
+  "C": "minecraft:light_blue_wool",
+  "F": "minecraft:spruce_fence",
+  "R": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_clothesline"
+ }
+}

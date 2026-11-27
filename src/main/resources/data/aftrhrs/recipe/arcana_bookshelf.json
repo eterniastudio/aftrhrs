@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "BAB",
+  "PPP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "B": "minecraft:book",
+  "A": "minecraft:amethyst_shard"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bookshelf"
+ }
+}

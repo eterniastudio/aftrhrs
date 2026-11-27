@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z Z",
+  "B B",
+  " B "
+ ],
+ "key": {
+  "Z": "minecraft:cut_sandstone_slab",
+  "B": "minecraft:cut_sandstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_urn"
+ }
+}

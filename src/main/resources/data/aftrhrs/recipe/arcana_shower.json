@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "G G",
+  "QQQ"
+ ],
+ "key": {
+  "G": "minecraft:glass_pane",
+  "I": "minecraft:iron_ingot",
+  "Q": "minecraft:quartz_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_shower"
+ }
+}

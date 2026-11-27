@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SSS",
+  "W W",
+  "W W"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "W": "minecraft:light_gray_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_light_gray_curtains"
+ }
+}

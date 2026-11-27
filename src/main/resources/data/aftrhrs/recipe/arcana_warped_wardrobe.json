@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_warped_stem",
+  "P": "minecraft:warped_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_warped_wardrobe"
+ }
+}

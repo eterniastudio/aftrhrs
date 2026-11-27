@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "P S",
+  "P S"
+ ],
+ "key": {
+  "P": "minecraft:warped_planks",
+  "S": "minecraft:stick",
+  "Z": "minecraft:warped_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_warped_desk"
+ }
+}

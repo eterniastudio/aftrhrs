@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:polished_blackstone_slab",
+  "A": "minecraft:gilded_blackstone",
+  "B": "minecraft:polished_blackstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blackstone_plinth"
+ }
+}

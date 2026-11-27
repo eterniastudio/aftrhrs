@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " G ",
+  "GCG",
+  " G "
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "G": "minecraft:gold_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_treasure_chest"
+ }
+}

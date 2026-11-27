@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "minecraft:amethyst_shard",
+  "minecraft:amethyst_shard",
+  "minecraft:amethyst_shard",
+  "minecraft:ender_pearl"
+ ],
+ "result": {
+  "id": "aftrhrs:scribes_crystal",
+  "count": 1
+ }
+}

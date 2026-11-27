@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " L ",
+  "PBP",
+  "FCF"
+ ],
+ "key": {
+  "L": "minecraft:lightning_rod",
+  "P": "minecraft:phantom_membrane",
+  "B": "minecraft:breeze_rod",
+  "F": "minecraft:feather",
+  "C": "minecraft:copper_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_summon_tempest_totem"
+ }
+}

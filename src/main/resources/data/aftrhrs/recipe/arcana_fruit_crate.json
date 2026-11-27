@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "MCM",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:cocoa_beans",
+  "M": "minecraft:melon_slice",
+  "P": "minecraft:jungle_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_fruit_crate"
+ }
+}

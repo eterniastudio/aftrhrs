@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_acacia_log",
+  "P": "minecraft:acacia_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_wardrobe"
+ }
+}

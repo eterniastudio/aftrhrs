@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel",
+  "aftrhrs:nugget_emberforged_steel"
+ ],
+ "result": {
+  "id": "aftrhrs:ingot_emberforged_steel",
+  "count": 1
+ }
+}

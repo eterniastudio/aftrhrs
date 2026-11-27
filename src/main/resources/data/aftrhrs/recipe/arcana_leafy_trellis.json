@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SVS",
+  "S S",
+  "SVS"
+ ],
+ "key": {
+  "S": "minecraft:spruce_planks",
+  "V": "minecraft:azalea_leaves"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_leafy_trellis"
+ }
+}

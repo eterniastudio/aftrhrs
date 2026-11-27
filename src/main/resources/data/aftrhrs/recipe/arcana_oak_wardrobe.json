@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_oak_log",
+  "P": "minecraft:oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_wardrobe"
+ }
+}

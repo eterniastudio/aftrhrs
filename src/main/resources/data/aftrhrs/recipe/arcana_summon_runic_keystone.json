@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KAK",
+  "EXE",
+  "KAK"
+ ],
+ "key": {
+  "K": "minecraft:chiseled_deepslate",
+  "A": "minecraft:amethyst_shard",
+  "E": "minecraft:emerald",
+  "X": "minecraft:echo_shard"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_summon_runic_keystone"
+ }
+}

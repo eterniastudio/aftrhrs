@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "I I",
+  " I ",
+  " N "
+ ],
+ "key": {
+  "I": "minecraft:copper_ingot",
+  "N": "minecraft:copper_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_copper_goblet"
+ }
+}

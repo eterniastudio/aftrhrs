@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  "LSL"
+ ],
+ "key": {
+  "L": "minecraft:spruce_leaves",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_garland",
+  "count": 1
+ }
+}

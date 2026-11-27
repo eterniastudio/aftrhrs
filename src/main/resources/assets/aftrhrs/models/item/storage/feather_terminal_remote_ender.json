@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "aftrhrs:item/storage/terminal_remote_ender"
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "aftrhrs:arcana_polished_calcite",
+ "result": {
+  "id": "aftrhrs:arcana_polished_calcite_slab",
+  "count": 2
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KKK",
+  "NNN"
+ ],
+ "key": {
+  "K": "minecraft:candle",
+  "N": "minecraft:gold_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gold_candle_sconce"
+ }
+}

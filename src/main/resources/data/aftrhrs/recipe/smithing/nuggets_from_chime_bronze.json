@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:ingot_chime_bronze"
+ ],
+ "result": {
+  "id": "aftrhrs:nugget_chime_bronze",
+  "count": 9
+ }
+}

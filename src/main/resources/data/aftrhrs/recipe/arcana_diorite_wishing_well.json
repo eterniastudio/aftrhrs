@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "F F",
+  "BXB"
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "F": "minecraft:spruce_fence",
+  "B": "minecraft:polished_diorite",
+  "X": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_diorite_wishing_well"
+ }
+}

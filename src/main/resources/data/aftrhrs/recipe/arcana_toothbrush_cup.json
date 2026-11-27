@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "S S",
+  " T "
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "T": "minecraft:light_blue_concrete_powder"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_toothbrush_cup"
+ }
+}

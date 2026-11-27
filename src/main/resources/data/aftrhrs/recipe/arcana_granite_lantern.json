@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "ZTZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:polished_granite_slab",
+  "T": "minecraft:torch",
+  "W": "minecraft:granite_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_granite_lantern"
+ }
+}

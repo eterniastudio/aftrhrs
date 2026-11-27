@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "IBI"
+ ],
+ "key": {
+  "I": "minecraft:copper_ingot",
+  "B": "minecraft:exposed_copper"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_exposed_copper_pipe",
+  "count": 4
+ }
+}

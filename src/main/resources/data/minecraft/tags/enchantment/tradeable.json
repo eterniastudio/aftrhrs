@@ -1,0 +1,15 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:leeching",
+  "aftrhrs:seeker",
+  "aftrhrs:volley",
+  "aftrhrs:prospector",
+  "aftrhrs:pocketing",
+  "aftrhrs:vitality",
+  "aftrhrs:second_wind",
+  "aftrhrs:pack_bond",
+  "aftrhrs:fragility_curse",
+  "aftrhrs:weight_curse"
+ ]
+}

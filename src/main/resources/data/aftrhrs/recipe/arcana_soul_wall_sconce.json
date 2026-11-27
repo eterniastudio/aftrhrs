@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NN",
+  "NL"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "L": "minecraft:soul_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_soul_wall_sconce"
+ }
+}

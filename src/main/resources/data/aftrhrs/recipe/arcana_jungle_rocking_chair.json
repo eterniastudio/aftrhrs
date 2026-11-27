@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P  ",
+  "PPP",
+  "ZZZ"
+ ],
+ "key": {
+  "P": "minecraft:jungle_planks",
+  "Z": "minecraft:jungle_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_jungle_rocking_chair"
+ }
+}

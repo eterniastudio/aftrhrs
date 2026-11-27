@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "N",
+  "C",
+  "L"
+ ],
+ "key": {
+  "N": "minecraft:copper_nugget",
+  "C": "minecraft:copper_chain",
+  "L": "minecraft:copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_copper_hanging_lantern"
+ }
+}

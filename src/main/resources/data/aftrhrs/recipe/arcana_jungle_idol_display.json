@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_jungle_idol",
+  "minecraft:mossy_stone_brick_slab"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_jungle_idol_display"
+ }
+}

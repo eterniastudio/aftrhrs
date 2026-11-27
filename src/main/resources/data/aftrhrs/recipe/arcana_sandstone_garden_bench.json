@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "W W"
+ ],
+ "key": {
+  "Z": "minecraft:cut_sandstone_slab",
+  "W": "minecraft:sandstone_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_garden_bench",
+  "count": 2
+ }
+}

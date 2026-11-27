@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "S S",
+  "RRR",
+  "C C"
+ ],
+ "key": {
+  "C": "minecraft:cobblestone",
+  "R": "minecraft:string",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_seaweed_line"
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:snow_block",
+ "result": {
+  "id": "aftrhrs:arcana_polished_snow_slab",
+  "count": 2
+ }
+}

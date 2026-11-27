@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " U ",
+  "NBN"
+ ],
+ "key": {
+  "B": "minecraft:barrel",
+  "N": "minecraft:iron_nugget",
+  "U": "minecraft:bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rain_barrel"
+ }
+}

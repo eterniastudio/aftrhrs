@@ -1,0 +1,44 @@
+{
+ "anvil_cost": 4,
+ "description": {
+  "translate": "enchantment.aftrhrs.springstep"
+ },
+ "effects": {
+  "minecraft:attributes": [
+   {
+    "attribute": "minecraft:jump_strength",
+    "id": "aftrhrs:enchantment.springstep",
+    "amount": {
+     "type": "minecraft:linear",
+     "base": 0.07,
+     "per_level_above_first": 0.07
+    },
+    "operation": "add_value"
+   },
+   {
+    "attribute": "minecraft:safe_fall_distance",
+    "id": "aftrhrs:enchantment.springstep",
+    "amount": {
+     "type": "minecraft:linear",
+     "base": 1.0,
+     "per_level_above_first": 1.0
+    },
+    "operation": "add_value"
+   }
+  ]
+ },
+ "max_cost": {
+  "base": 60,
+  "per_level_above_first": 12
+ },
+ "max_level": 2,
+ "min_cost": {
+  "base": 10,
+  "per_level_above_first": 12
+ },
+ "slots": [
+  "feet"
+ ],
+ "supported_items": "#minecraft:enchantable/foot_armor",
+ "weight": 2
+}

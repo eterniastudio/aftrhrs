@@ -1,0 +1,9 @@
+# Anvil & Ember: hands-on smithing (forge, crucible, casting, anvil, quench, carving, assembly, runes).
+# The guide in game is the Smith's Almanac (a book and an iron ingot).
+
+# How fast a forge heats up: 1.0 is normal, 2.0 twice as fast (cooling is never sped up).
+heat-speed: 1.0
+# Bladed tools keep an Edge (up to +15% damage) that wears with use and is restored at the Whetstone Wheel.
+edge: true
+# Hot pieces carried loose in an inventory (not in tongs) hurt a little every 2 seconds.
+hot-pieces-burn: true

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "B B",
+  "BCB"
+ ],
+ "key": {
+  "Z": "minecraft:polished_andesite_slab",
+  "B": "minecraft:polished_andesite",
+  "C": "minecraft:charcoal"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_andesite_hearth"
+ }
+}

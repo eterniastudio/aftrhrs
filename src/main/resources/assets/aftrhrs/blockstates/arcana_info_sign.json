@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/civic/info_sign"},"facing=east":{"model":"aftrhrs:arcana/civic/info_sign","y":90},"facing=south":{"model":"aftrhrs:arcana/civic/info_sign","y":180},"facing=west":{"model":"aftrhrs:arcana/civic/info_sign","y":270}}}

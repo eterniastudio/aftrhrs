@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " C ",
+  " I ",
+  " K "
+ ],
+ "key": {
+  "C": "minecraft:clock",
+  "I": "minecraft:iron_block",
+  "K": "minecraft:stone_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_town_clock"
+ }
+}

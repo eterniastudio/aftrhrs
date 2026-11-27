@@ -1,0 +1,25 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/trough_long", "trough_feet": "aftrhrs:block/smithing/trough_feet", "trough_floor": "aftrhrs:block/smithing/trough_floor", "trough_inner": "aftrhrs:block/smithing/trough_inner", "trough_long": "aftrhrs:block/smithing/trough_long", "trough_rim": "aftrhrs:block/smithing/trough_rim", "trough_short": "aftrhrs:block/smithing/trough_short"},
+ "elements": [
+  {"name": "wall_n", "from": [1, 1, 3], "to": [15, 8, 4], "faces": {"north": {"uv": [1, 8, 15, 15], "texture": "#trough_long"}, "east": {"uv": [12, 8, 13, 15], "texture": "#trough_short"}, "south": {"uv": [1, 8, 15, 15], "texture": "#trough_inner"}, "west": {"uv": [3, 8, 4, 15], "texture": "#trough_short"}, "up": {"uv": [1, 3, 15, 4], "texture": "#trough_rim"}, "down": {"uv": [1, 12, 15, 13], "texture": "#trough_feet"}}},
+  {"name": "wall_s", "from": [1, 1, 12], "to": [15, 8, 13], "faces": {"north": {"uv": [1, 8, 15, 15], "texture": "#trough_inner"}, "east": {"uv": [3, 8, 4, 15], "texture": "#trough_short"}, "south": {"uv": [1, 8, 15, 15], "texture": "#trough_long"}, "west": {"uv": [12, 8, 13, 15], "texture": "#trough_short"}, "up": {"uv": [1, 12, 15, 13], "texture": "#trough_rim"}, "down": {"uv": [1, 3, 15, 4], "texture": "#trough_feet"}}},
+  {"name": "wall_w", "from": [1, 1, 4], "to": [2, 8, 12], "faces": {"east": {"uv": [4, 8, 12, 15], "texture": "#trough_inner"}, "west": {"uv": [4, 8, 12, 15], "texture": "#trough_short"}, "up": {"uv": [1, 4, 2, 12], "texture": "#trough_rim"}, "down": {"uv": [1, 4, 2, 12], "texture": "#trough_feet"}}},
+  {"name": "wall_e", "from": [14, 1, 4], "to": [15, 8, 12], "faces": {"east": {"uv": [4, 8, 12, 15], "texture": "#trough_short"}, "west": {"uv": [4, 8, 12, 15], "texture": "#trough_inner"}, "up": {"uv": [14, 4, 15, 12], "texture": "#trough_rim"}, "down": {"uv": [14, 4, 15, 12], "texture": "#trough_feet"}}},
+  {"name": "floor", "from": [2, 1, 4], "to": [14, 1, 12], "faces": {"up": {"uv": [2, 4, 14, 12], "texture": "#trough_floor"}, "down": {"uv": [2, 4, 14, 12], "texture": "#trough_feet"}}},
+  {"name": "foot", "from": [1, 0, 3], "to": [3, 1, 5], "faces": {"north": {"uv": [13, 15, 15, 16], "texture": "#trough_feet"}, "east": {"uv": [11, 15, 13, 16], "texture": "#trough_feet"}, "south": {"uv": [1, 15, 3, 16], "texture": "#trough_feet"}, "west": {"uv": [3, 15, 5, 16], "texture": "#trough_feet"}, "down": {"uv": [1, 11, 3, 13], "texture": "#trough_feet", "cullface": "down"}}},
+  {"name": "foot", "from": [13, 0, 3], "to": [15, 1, 5], "faces": {"north": {"uv": [1, 15, 3, 16], "texture": "#trough_feet"}, "east": {"uv": [11, 15, 13, 16], "texture": "#trough_feet"}, "south": {"uv": [13, 15, 15, 16], "texture": "#trough_feet"}, "west": {"uv": [3, 15, 5, 16], "texture": "#trough_feet"}, "down": {"uv": [13, 11, 15, 13], "texture": "#trough_feet", "cullface": "down"}}},
+  {"name": "foot", "from": [1, 0, 11], "to": [3, 1, 13], "faces": {"north": {"uv": [13, 15, 15, 16], "texture": "#trough_feet"}, "east": {"uv": [3, 15, 5, 16], "texture": "#trough_feet"}, "south": {"uv": [1, 15, 3, 16], "texture": "#trough_feet"}, "west": {"uv": [11, 15, 13, 16], "texture": "#trough_feet"}, "down": {"uv": [1, 3, 3, 5], "texture": "#trough_feet", "cullface": "down"}}},
+  {"name": "foot", "from": [13, 0, 11], "to": [15, 1, 13], "faces": {"north": {"uv": [1, 15, 3, 16], "texture": "#trough_feet"}, "east": {"uv": [3, 15, 5, 16], "texture": "#trough_feet"}, "south": {"uv": [13, 15, 15, 16], "texture": "#trough_feet"}, "west": {"uv": [11, 15, 13, 16], "texture": "#trough_feet"}, "down": {"uv": [13, 3, 15, 5], "texture": "#trough_feet", "cullface": "down"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

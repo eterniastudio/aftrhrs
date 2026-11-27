@@ -1,0 +1,25 @@
+{
+ "events": {
+  "bond_up": {
+   "jitter": 0.06
+  },
+  "fanfare_note": {
+   "jitter": 0.0
+  },
+  "fanfare_end": {
+   "jitter": 0.0,
+   "layer": 4
+  },
+  "tame": {
+   "jitter": 0.0,
+   "layer": 3
+  },
+  "revive": {
+   "jitter": 0.0,
+   "layer": 6
+  },
+  "whistle": {
+   "jitter": 0.05
+  }
+ }
+}

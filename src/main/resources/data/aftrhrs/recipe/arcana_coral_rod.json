@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " F ",
+  "TRB",
+  " P "
+ ],
+ "key": {
+  "F": "minecraft:fire_coral",
+  "T": "minecraft:tube_coral",
+  "B": "minecraft:brain_coral",
+  "R": "aftrhrs:arcana_driftwood_rod",
+  "P": "minecraft:prismarine_shard"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_coral_rod"
+ }
+}

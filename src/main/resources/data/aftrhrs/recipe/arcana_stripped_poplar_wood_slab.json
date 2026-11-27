@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:stripped_poplar_wood"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stripped_poplar_wood_slab",
+  "count": 6
+ }
+}

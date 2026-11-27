@@ -1,0 +1,12 @@
+{
+ "values": [
+  "aftrhrs:arcana_rice_crop",
+  "aftrhrs:arcana_tomato_crop",
+  "aftrhrs:arcana_grape_crop",
+  "aftrhrs:arcana_pepper_crop",
+  "aftrhrs:arcana_blueberry_crop",
+  "aftrhrs:arcana_tea_crop",
+  "aftrhrs:arcana_corn_crop",
+  "aftrhrs:arcana_weed_crop"
+ ]
+}

@@ -1,0 +1,96 @@
+# Power (modules.power): coal generators and the machines they run. docs/power.md
+#
+# A coal generator gives `capacity` power units to machines within `range` blocks (measured between the blocks).
+# It burns only while a machine draws from it, and fuel lasts longer under a lighter load: the seconds below are at
+# full load (all 8 units in use). Right-click a generator for its fuel slot; hoppers pointing into it feed it too.
+
+generator:
+  item: feather_coal_generator            # Oraxen item that places it (the model shown in the world)
+  overlay: feather_coal_generator_fx_on   # Oraxen model shown on top while it burns (full brightness)
+  capacity: 8
+  range: 6
+  hopper-feed: true
+  # Fuel -> seconds at full load. oraxen:<id> works for Oraxen items (ignored until the item exists).
+  fuel:
+    coal: 120
+    charcoal: 120
+    coal_block: 1200
+    blaze_rod: 180
+    oraxen:arcana_produce_ember_ash: 240
+    oraxen:arcana_produce_coalheart: 2400
+
+# The Encased Fan: blows the way you look when you place it. Sneak + right-click (empty hand) flips push and pull;
+# right-click shows its state. Air passes through fences, bars, campfires, leaves and signs, and stops at other solid
+# blocks and at claims its owner can't build in.
+fan:
+  item: feather_encased_fan
+  propeller: feather_encased_fan_propeller  # spinning model inside the casing
+  power-cost: 2
+  reach: 8                  # blocks
+  push: 0.11                # velocity added per 2 ticks next to the fan (fades to 30% at the end of the stream)
+  mob-push-factor: 0.6      # mobs and players get this much of it
+  max-speed: 0.6            # the stream never speeds anything up past this (blocks/tick)
+  push-players: true
+  push-mobs: true
+  mob-effects: true         # smoking/blasting burn, washing extinguishes (and hurts endermen, blazes, snow golems), haunting slows and blinds
+  spin-degrees-per-tick: 18
+  # Bulk processing: items in the stream after it passes water (washing), fire or a lit campfire (smoking), lava
+  # (blasting) or soul fire / a lit soul campfire (haunting). Smoking uses smoker recipes; blasting uses furnace and
+  # blast furnace recipes (food cooks too). Several fans on the same spot add up. Items in a stream can't burn in its
+  # lava or flames.
+  processing:
+    ticks-per-16-items: 150   # 7.5 s for up to 16 items, 15 s for 17-32 ...
+    washing-removes-dye: true # concrete powder -> concrete; dyed wool, carpet, beds, glass, terracotta -> plain
+    # "<item> <count> <chance>" per input item; the input is used up even when nothing rolls.
+    washing:
+      gravel: [ "flint 1 0.25", "iron_nugget 1 0.125" ]
+      sand: [ "clay_ball 1 0.25" ]
+      red_sand: [ "gold_nugget 3 0.125", "dead_bush 1 0.05" ]
+      soul_sand: [ "quartz 4 0.125", "gold_nugget 1 0.02" ]
+      magma_block: [ "obsidian 1 1" ]
+      sticky_piston: [ "piston 1 1", "slime_ball 1 1" ]
+    haunting:
+      ink_sac: [ "glow_ink_sac 1 1" ]
+      red_mushroom: [ "crimson_fungus 1 1" ]
+      brown_mushroom: [ "warped_fungus 1 1" ]
+      sand: [ "soul_sand 1 1" ]
+      red_sand: [ "soul_sand 1 1" ]
+      dirt: [ "soul_soil 1 1" ]
+      potato: [ "poisonous_potato 1 1" ]
+      quartz: [ "prismarine_crystals 1 1" ]
+      torch: [ "soul_torch 1 1" ]
+      lantern: [ "soul_lantern 1 1" ]
+      campfire: [ "soul_campfire 1 1" ]
+      jack_o_lantern: [ "carved_pumpkin 1 1" ]
+
+messages:
+  no-permission: "<bad>You can't place that."
+  no-room: "<bad>The generator needs two blocks of space."
+  claim: "<bad>You can't do that here."
+  placed-fan: "<muted>Encased Fan placed · needs a</muted> <text>Coal Generator</text> <muted>within 6 blocks"
+  placed-generator: "<muted>Coal Generator placed · right-click to add coal"
+  generator-title: "Coal Generator"
+  generator-burning: "<#f0a35e>Burning · <load>/<capacity> power"
+  generator-idle: "<muted>Idle · <load>/<capacity> power"
+  generator-lore:
+    - "<muted>Machines in range (<range> blocks):</muted> <text><machines>"
+    - "<muted>Fuel left in this load:</muted> <text><seconds>s</text> <muted>at full load"
+    - "<dim>Burns only while a machine draws power."
+  fan-status: "<muted>Fan · <mode> · <power><process> ·</muted> <text><length></text> <muted>blocks"
+  fan-push: "<text>Pushing"
+  fan-pull: "<text>Pulling"
+  fan-powered: "<good>Powered"
+  fan-unpowered: "<bad>No power</bad> <dim>(needs a fueled generator within <range>)"
+  process-wash: " · <aqua>Washing"
+  process-smoke: " · <gray>Smoking"
+  process-blast: " · <gold>Blasting"
+  process-haunt: " · <dark_aqua>Haunting"
+  # /power (feather.power.admin).
+  admin-no-permission: "<prefix><bad>You can't use that."
+  admin-no-player: "<prefix><bad>No such player."
+  admin-unknown-item: "<prefix><bad>That item doesn't exist (fan or generator)."
+  admin-gave: "<prefix><good>Gave <count> <kind> to <player>."
+  admin-info-row: "<muted><kind> @ <x> <y> <z>: <state>"
+  admin-info-none: "<prefix><muted>No power blocks loaded."
+  admin-info-none-near: "<prefix><muted>No power blocks within 32."
+  admin-usage: "<prefix><muted>/power give <player> <fan|generator> [amount] | /power info"

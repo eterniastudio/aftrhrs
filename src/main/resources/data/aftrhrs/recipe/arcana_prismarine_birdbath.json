@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:prismarine_brick_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:prismarine_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_birdbath"
+ }
+}

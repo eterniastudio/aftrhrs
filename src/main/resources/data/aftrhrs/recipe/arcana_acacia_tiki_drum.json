@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " E ",
+  "RLR",
+  " L "
+ ],
+ "key": {
+  "E": "minecraft:leather",
+  "L": "minecraft:acacia_log",
+  "R": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_tiki_drum"
+ }
+}

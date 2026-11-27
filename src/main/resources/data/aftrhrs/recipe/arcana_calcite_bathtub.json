@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "I  ",
+  "Q Q",
+  "QQQ"
+ ],
+ "key": {
+  "I": "minecraft:gold_ingot",
+  "Q": "minecraft:calcite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_calcite_bathtub"
+ }
+}

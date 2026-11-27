@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "FF",
+  "FF"
+ ],
+ "key": {
+  "F": "aftrhrs:arcana_warped_fleece"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_warped_fleece_block"
+ }
+}

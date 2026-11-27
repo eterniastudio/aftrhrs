@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " F ",
+  "BDB"
+ ],
+ "key": {
+  "F": "minecraft:poppy",
+  "B": "minecraft:cut_sandstone",
+  "D": "minecraft:dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_planter"
+ }
+}

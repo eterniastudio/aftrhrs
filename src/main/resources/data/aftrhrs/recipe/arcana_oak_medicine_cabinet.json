@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "PCG",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "G": "minecraft:glass_pane",
+  "P": "minecraft:oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_medicine_cabinet"
+ }
+}

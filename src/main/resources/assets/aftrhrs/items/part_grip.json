@@ -1,0 +1,181 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "aftrhrs:smith_material",
+  "cases": [
+   {
+    "when": "wood",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/wood"
+    }
+   },
+   {
+    "when": "stone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/stone"
+    }
+   },
+   {
+    "when": "flint",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/flint"
+    }
+   },
+   {
+    "when": "bone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/bone"
+    }
+   },
+   {
+    "when": "bamboo",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/bamboo"
+    }
+   },
+   {
+    "when": "leather",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/leather"
+    }
+   },
+   {
+    "when": "copper",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/copper"
+    }
+   },
+   {
+    "when": "deer_hide",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/deer_hide"
+    }
+   },
+   {
+    "when": "tufthorn_hide",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/tufthorn_hide"
+    }
+   },
+   {
+    "when": "iron",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/iron"
+    }
+   },
+   {
+    "when": "gold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/gold"
+    }
+   },
+   {
+    "when": "obsidian",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/obsidian"
+    }
+   },
+   {
+    "when": "steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/steel"
+    }
+   },
+   {
+    "when": "rose_gold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/rose_gold"
+    }
+   },
+   {
+    "when": "chime_bronze",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/chime_bronze"
+    }
+   },
+   {
+    "when": "tidebronze",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/tidebronze"
+    }
+   },
+   {
+    "when": "rimesteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/rimesteel"
+    }
+   },
+   {
+    "when": "emberforged_steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/emberforged_steel"
+    }
+   },
+   {
+    "when": "pearlsteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/pearlsteel"
+    }
+   },
+   {
+    "when": "netherite",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/netherite"
+    }
+   },
+   {
+    "when": "echo_steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/echo_steel"
+    }
+   },
+   {
+    "when": "blazebone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/blazebone"
+    }
+   },
+   {
+    "when": "voidgold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/voidgold"
+    }
+   },
+   {
+    "when": "starforged",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/grip/starforged"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "aftrhrs:item/smithing/part/grip/iron"
+  }
+ }
+}

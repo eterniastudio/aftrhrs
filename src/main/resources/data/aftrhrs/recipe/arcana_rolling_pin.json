@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SLS",
+  "WWW"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "L": "minecraft:stripped_birch_log",
+  "W": "minecraft:wheat"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rolling_pin"
+ }
+}

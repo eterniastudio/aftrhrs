@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A  ",
+  "AA ",
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:mushroom_stem"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_mushroom_stem_stairs",
+  "count": 4
+ }
+}

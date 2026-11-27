@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  "PSP",
+  "P P"
+ ],
+ "key": {
+  "P": "minecraft:paper",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_pennant_swallowtail",
+  "count": 4
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel",
+  "aftrhrs:nugget_pearlsteel"
+ ],
+ "result": {
+  "id": "aftrhrs:ingot_pearlsteel",
+  "count": 1
+ }
+}

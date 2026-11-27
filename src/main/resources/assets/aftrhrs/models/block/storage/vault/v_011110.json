@@ -1,0 +1,1 @@
+{"parent":"minecraft:block/cube","textures":{"up":"aftrhrs:block/storage/vault/cap_1000","down":"aftrhrs:block/storage/vault/cap_0010","north":"aftrhrs:block/storage/vault/side_0010","south":"aftrhrs:block/storage/vault/side_0010","west":"aftrhrs:block/storage/vault/side_0011","east":"aftrhrs:block/storage/vault/side_0110","particle":"aftrhrs:block/storage/vault/side_1111"}}

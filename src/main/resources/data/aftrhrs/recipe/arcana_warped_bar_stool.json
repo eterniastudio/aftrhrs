@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "SSS",
+  "S S"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "Z": "minecraft:warped_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_warped_bar_stool"
+ }
+}

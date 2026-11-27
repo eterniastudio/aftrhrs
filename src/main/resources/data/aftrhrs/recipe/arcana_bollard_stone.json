@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "S",
+  "K",
+  "K"
+ ],
+ "key": {
+  "K": "minecraft:stone_bricks",
+  "S": "minecraft:smooth_stone_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bollard_stone",
+  "count": 2
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " I ",
+  "SBS",
+  "S S"
+ ],
+ "key": {
+  "B": "minecraft:barrel",
+  "I": "minecraft:copper_ingot",
+  "S": "minecraft:stripped_jungle_log"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rum_keg"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " W ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:quartz_slab",
+  "W": "minecraft:quartz_pillar"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_table"
+ }
+}

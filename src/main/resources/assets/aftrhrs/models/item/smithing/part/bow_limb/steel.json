@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/part/bow_limb/steel"
+ }
+}

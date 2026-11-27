@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P",
+  "S",
+  "Z"
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "S": "minecraft:stick",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_spruce_hat_stand"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "PTP",
+  "PPP"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "P": "minecraft:paper",
+  "T": "minecraft:torch"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_paper_lantern",
+  "count": 2
+ }
+}

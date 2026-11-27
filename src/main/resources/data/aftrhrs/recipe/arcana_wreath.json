@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "LLL",
+  "L L",
+  "LRL"
+ ],
+ "key": {
+  "L": "minecraft:spruce_leaves",
+  "R": "minecraft:red_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_wreath"
+ }
+}

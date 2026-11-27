@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ACA",
+  "CCC",
+  "ACA"
+ ],
+ "key": {
+  "A": "minecraft:purple_carpet",
+  "C": "minecraft:magenta_carpet"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_magenta_rug"
+ }
+}

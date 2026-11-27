@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AAA",
+  "ASA",
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:stone_bricks",
+  "S": "minecraft:nautilus_shell"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_barnacled_stone_bricks",
+  "count": 8
+ }
+}

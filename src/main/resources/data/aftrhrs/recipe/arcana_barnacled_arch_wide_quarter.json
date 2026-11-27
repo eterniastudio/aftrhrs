@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BBB",
+  "B  ",
+  "B  "
+ ],
+ "key": {
+  "B": "aftrhrs:arcana_barnacled_stone_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_barnacled_arch_wide_quarter",
+  "count": 2
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NNN",
+  " P "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "P": "minecraft:dark_oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_knife_block"
+ }
+}

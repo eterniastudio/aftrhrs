@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " C ",
+  "IBI",
+  " P "
+ ],
+ "key": {
+  "B": "minecraft:iron_bars",
+  "C": "minecraft:clock",
+  "I": "minecraft:iron_ingot",
+  "P": "minecraft:spruce_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_fish_scale"
+ }
+}

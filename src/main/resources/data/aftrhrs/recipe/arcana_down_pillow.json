@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " D ",
+  "DWD",
+  " D "
+ ],
+ "key": {
+  "D": "aftrhrs:arcana_down_feather",
+  "W": "#minecraft:wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_down_pillow"
+ }
+}

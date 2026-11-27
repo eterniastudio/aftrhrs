@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " S ",
+  "YSY"
+ ],
+ "key": {
+  "S": "minecraft:slime_ball",
+  "Y": "minecraft:yellow_dye"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rubber_duck"
+ }
+}

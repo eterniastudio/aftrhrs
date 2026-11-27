@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:mushroom_stew",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_bowl_of_mushroom_stew"
+ }
+}

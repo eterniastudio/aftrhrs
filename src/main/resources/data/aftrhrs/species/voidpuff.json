@@ -1,0 +1,469 @@
+{
+ "id": "voidpuff",
+ "mm_id": "ArcanaVoidpuff",
+ "kind": "wildlife",
+ "name": "Voidpuff",
+ "color": "f",
+ "health": 10,
+ "damage": 0,
+ "speed": 0.16,
+ "follow_range": 16,
+ "despawn": "true",
+ "damage_mods": {
+  "FALL": 0.0
+ },
+ "note": "Balloon puffer drifting between the outer End islands. Bottle its breath (Dragon's Breath); puffs up and rises when hurt.",
+ "base": "GLOW_SQUID",
+ "sounds": {
+  "ambient": {
+   "id": "entity.puffer_fish.blow_out",
+   "pitch": 0.8,
+   "volume": 0.6
+  },
+  "hurt": {
+   "id": "entity.puffer_fish.blow_up",
+   "pitch": 0.9,
+   "volume": 1.0
+  },
+  "death": {
+   "id": "entity.puffer_fish.death",
+   "pitch": 0.8,
+   "volume": 1.0
+  },
+  "every": 240,
+  "chance": 0.4
+ },
+ "life": {
+  "every": 120,
+  "chance": 0.5,
+  "day": {
+   "look": 1
+  }
+ },
+ "harvest": [
+  "sound{s=item.bottle.fill_dragonbreath;v=0.8;p=1.2} @self",
+  "particles{p=reverse_portal;amount=14;hS=0.25;vS=0.2;y=0.4;speed=0.01} @self"
+ ],
+ "panic_run": true,
+ "ai": {
+  "goals": [
+   "clear",
+   "fleeConditional{d=6;s=1.6;ss=1.3;mc=[  - variableEquals{var=caster.spooked;value=1} true ];conditions=[  - entitytype{t=PLAYER} true ]}",
+   "randomfly",
+   "lookatplayers",
+   "randomlookaround"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "options": {
+  "NoGravity": true
+ },
+ "base_idle": "hover",
+ "base_walk": "fly",
+ "lines": [
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaVoidpuff_Puff"
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaVoidpuff_Puff",
+   "line": "- skill{s=ArcanaVoidpuff_Puff} @self ~onDamaged"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaVoidpuff_Home"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 60,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaVoidpuff_Home",
+   "line": "- skill{s=ArcanaVoidpuff_Home} @self ~onTimer:60"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaVoidpuff_Breath"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 100,
+   "conditions": [],
+   "chance": 0.25,
+   "skill": "ArcanaVoidpuff_Breath",
+   "line": "- skill{s=ArcanaVoidpuff_Breath} @self ~onTimer:100 0.25"
+  }
+ ],
+ "drops": [
+  {
+   "item": "minecraft:phantom_membrane",
+   "min": 0,
+   "max": 1,
+   "chance": 1.0
+  },
+  {
+   "exp": 1,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:the_end",
+   "biomes": [
+    "minecraft:the_end",
+    "minecraft:small_end_islands",
+    "minecraft:end_barrens",
+    "minecraft:end_midlands",
+    "minecraft:end_highlands",
+    "stellarity:the_void",
+    "stellarity:the_nest",
+    "stellarity:endless_dunes",
+    "stellarity:ashfall_deltas",
+    "stellarity:blazing_dunes",
+    "stellarity:fiery_hills",
+    "stellarity:flesh_tundra",
+    "stellarity:sculk_growth",
+    "stellarity:prismarine_forest",
+    "stellarity:warped_marsh",
+    "stellarity:prismatic_dunes",
+    "stellarity:the_hallow",
+    "stellarity:frosted_valley",
+    "stellarity:ender_wastes"
+   ],
+   "rarity": "common",
+   "position": "LAND",
+   "conditions": [],
+   "cap": 4,
+   "cap_radius": 32
+  }
+ ],
+ "anims": {
+  "death": "death",
+  "hurt": "hurt",
+  "harvest": "harvest"
+ },
+ "model": "voidpuff",
+ "clips": {
+  "hover": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "fly": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "puff": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "breathe": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "harvest": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.4,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.8,
+   "loop": "hold"
+  },
+  "barrel_turn": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "gulp": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "tail_flick": {
+   "length": 1,
+   "loop": "once"
+  },
+  "notice_puff": {
+   "length": 1.4,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.8,
+  0.8
+ ],
+ "shadow": 0.25,
+ "name_tag_y": 1.188,
+ "render_box": [
+  0.641,
+  0.891
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "sac"
+ ],
+ "glow_out": [],
+ "anim": {
+  "clips": {
+   "hover": {
+    "p": "airborne",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "gait": "idle",
+    "drv": "bt"
+   },
+   "fly": {
+    "p": "airborne",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "gait": "fly",
+    "drv": "bt"
+   },
+   "puff": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.6,
+    "drv": "bt"
+   },
+   "breathe": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "hb"
+   },
+   "harvest": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "b"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.4,
+    "drv": "b"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.8,
+    "eyes": true,
+    "drv": "b"
+   },
+   "barrel_turn": {
+    "p": "belly",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4
+   },
+   "gulp": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.2,
+    "drv": "b"
+   },
+   "tail_flick": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.0,
+    "drv": "t"
+   },
+   "notice_puff": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hb"
+   }
+  },
+  "states": {
+   "idle": "hover",
+   "walk": "fly",
+   "fly": "fly",
+   "hover": "hover",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    },
+    {
+     "clip": "barrel_turn",
+     "w": 1,
+     "cd": 25
+    },
+    {
+     "clip": "gulp",
+     "w": 1.5,
+     "cd": 18
+    },
+    {
+     "clip": "breathe",
+     "w": 2,
+     "cd": 12
+    },
+    {
+     "clip": "tail_flick",
+     "w": 2,
+     "cd": 8
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "puff",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "breathe",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "tail_flick",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "notice_puff",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "hover": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 4,
+     "max": 10
+    },
+    {
+     "clip": "barrel_turn",
+     "w": 1,
+     "cd": 25
+    },
+    {
+     "clip": "gulp",
+     "w": 1.5,
+     "cd": 18
+    },
+    {
+     "clip": "breathe",
+     "w": 2,
+     "cd": 12
+    },
+    {
+     "clip": "tail_flick",
+     "w": 2,
+     "cd": 8
+    }
+   ],
+   "fly": [
+    {
+     "clip": "tail_flick",
+     "w": 1,
+     "cd": 10
+    }
+   ],
+   "notice": [
+    {
+     "clip": "notice_puff",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail",
+    "tail_tip"
+   ],
+   "tail_sway": 6
+  },
+  "authored": [
+   "barrel_turn",
+   "breathe",
+   "death",
+   "fly",
+   "gulp",
+   "harvest",
+   "hover",
+   "hurt",
+   "notice_puff",
+   "puff",
+   "tail_flick"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "sac"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.07,
+    "dist": 14,
+    "layer": 8
+   },
+   "ambient_scared": {
+    "jitter": 0.06,
+    "dist": 14
+   },
+   "hurt": {
+    "jitter": 0.07,
+    "dist": 14,
+    "layer": 2
+   },
+   "death": {
+    "jitter": 0.06,
+    "dist": 14,
+    "layer": 4
+   },
+   "eat": {
+    "jitter": 0.06,
+    "dist": 14
+   }
+  },
+  "every": 300,
+  "dist": 14
+ }
+}

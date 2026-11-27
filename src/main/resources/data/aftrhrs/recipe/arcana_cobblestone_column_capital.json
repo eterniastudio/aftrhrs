@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:mossy_cobblestone",
+  "W": "minecraft:cobblestone_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cobblestone_column_capital",
+  "count": 2
+ }
+}

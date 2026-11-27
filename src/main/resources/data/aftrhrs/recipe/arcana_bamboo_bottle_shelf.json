@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GHG",
+  "ZZZ"
+ ],
+ "key": {
+  "G": "minecraft:glass_bottle",
+  "H": "minecraft:honey_bottle",
+  "Z": "minecraft:bamboo_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_bottle_shelf"
+ }
+}

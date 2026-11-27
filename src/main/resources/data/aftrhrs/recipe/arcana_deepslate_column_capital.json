@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:deepslate_tiles",
+  "W": "minecraft:polished_deepslate_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_deepslate_column_capital",
+  "count": 2
+ }
+}

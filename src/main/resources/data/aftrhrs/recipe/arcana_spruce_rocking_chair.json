@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P  ",
+  "PPP",
+  "ZZZ"
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_spruce_rocking_chair"
+ }
+}

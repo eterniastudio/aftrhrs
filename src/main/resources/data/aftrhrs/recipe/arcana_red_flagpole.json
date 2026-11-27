@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "WWI",
+  "wwI",
+  "  I"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "W": "minecraft:red_wool",
+  "w": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_flagpole"
+ }
+}

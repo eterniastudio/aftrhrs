@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ESW",
+  " B "
+ ],
+ "key": {
+  "E": "minecraft:egg",
+  "S": "minecraft:sugar",
+  "W": "minecraft:wheat",
+  "B": "minecraft:bowl"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_mixing_bowl"
+ }
+}

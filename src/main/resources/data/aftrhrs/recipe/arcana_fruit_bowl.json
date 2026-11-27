@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ABA"
+ ],
+ "key": {
+  "A": "minecraft:apple",
+  "B": "minecraft:bowl"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_fruit_bowl"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "SFS"
+ ],
+ "key": {
+  "S": "minecraft:sandstone",
+  "F": "minecraft:flint"
+ },
+ "result": {
+  "id": "aftrhrs:whetstone",
+  "count": 1
+ }
+}

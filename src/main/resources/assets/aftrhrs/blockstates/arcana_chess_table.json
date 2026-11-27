@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:block/arcana_chess_table/base"},"facing=east":{"model":"aftrhrs:block/arcana_chess_table/base","y":90},"facing=south":{"model":"aftrhrs:block/arcana_chess_table/base","y":180},"facing=west":{"model":"aftrhrs:block/arcana_chess_table/base","y":270}}}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ACA",
+  "CCC",
+  "ACA"
+ ],
+ "key": {
+  "A": "minecraft:light_gray_carpet",
+  "C": "minecraft:gray_carpet"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gray_rug"
+ }
+}

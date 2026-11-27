@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BBB",
+  "B  ",
+  "B  "
+ ],
+ "key": {
+  "B": "minecraft:polished_deepslate"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_deepslate_arch_wide_quarter",
+  "count": 2
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_diorite_arch_quarter"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:all_of",
+    "terms": [
+     {
+      "type": "minecraft:match_block",
+      "blocks": "aftrhrs:arcana_diorite_arch_quarter",
+      "state": {
+       "part": "0"
+      }
+     },
+     {
+      "type": "minecraft:survives_explosion"
+     }
+    ]
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/arcana_diorite_arch_quarter"
+}

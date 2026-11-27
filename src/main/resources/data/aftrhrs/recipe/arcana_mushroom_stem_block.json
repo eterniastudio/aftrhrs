@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AA",
+  "AA"
+ ],
+ "key": {
+  "A": "minecraft:mushroom_stem"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_mushroom_stem_block",
+  "count": 4
+ }
+}

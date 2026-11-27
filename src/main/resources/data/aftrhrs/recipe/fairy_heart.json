@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "PLP",
+  " P "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "L": "minecraft:glowstone_dust",
+  "P": "minecraft:pink_stained_glass_pane"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_heart",
+  "count": 4
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_copper_excavator",
+  "aftrhrs:arcana_diamond_excavator",
+  "aftrhrs:arcana_golden_excavator",
+  "aftrhrs:arcana_iron_excavator",
+  "aftrhrs:arcana_netherite_excavator"
+ ]
+}

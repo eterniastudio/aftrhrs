@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "S  ",
+  "SWw",
+  "S S"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "W": "minecraft:blue_wool",
+  "w": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blue_deck_chair"
+ }
+}

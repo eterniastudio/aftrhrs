@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "P S",
+  "P S"
+ ],
+ "key": {
+  "P": "minecraft:bamboo_planks",
+  "S": "minecraft:stick",
+  "Z": "minecraft:bamboo_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_desk"
+ }
+}

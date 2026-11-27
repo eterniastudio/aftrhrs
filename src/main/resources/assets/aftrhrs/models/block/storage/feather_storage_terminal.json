@@ -1,0 +1,10 @@
+{
+ "parent": "minecraft:block/orientable_with_bottom",
+ "textures": {
+  "front": "aftrhrs:block/storage/terminal_front",
+  "side": "minecraft:block/chiseled_polished_blackstone",
+  "top": "minecraft:block/polished_blackstone",
+  "bottom": "minecraft:block/polished_blackstone",
+  "particle": "minecraft:block/chiseled_polished_blackstone"
+ }
+}

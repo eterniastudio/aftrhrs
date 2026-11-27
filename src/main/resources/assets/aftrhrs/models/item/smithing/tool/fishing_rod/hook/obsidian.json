@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/handheld_rod",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/tool/fishing_rod/hook/obsidian"
+ }
+}

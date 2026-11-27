@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " R ",
+  "RLR",
+  " L "
+ ],
+ "key": {
+  "L": "minecraft:dark_oak_log",
+  "R": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_dock_post"
+ }
+}

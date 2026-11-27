@@ -1,0 +1,516 @@
+{
+ "model": {
+  "type": "minecraft:composite",
+  "models": [
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_0",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/bone"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/copper"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/head/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/broad_axe/head/iron"
+    }
+   },
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_1",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/bone"
+      }
+     },
+     {
+      "when": "bamboo",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/bamboo"
+      }
+     },
+     {
+      "when": "leather",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/leather"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/copper"
+      }
+     },
+     {
+      "when": "deer_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/deer_hide"
+      }
+     },
+     {
+      "when": "tufthorn_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/tufthorn_hide"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/binding/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/broad_axe/binding/iron"
+    }
+   },
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_2",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/bone"
+      }
+     },
+     {
+      "when": "bamboo",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/bamboo"
+      }
+     },
+     {
+      "when": "leather",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/leather"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/copper"
+      }
+     },
+     {
+      "when": "deer_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/deer_hide"
+      }
+     },
+     {
+      "when": "tufthorn_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/tufthorn_hide"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/broad_axe/handle/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/broad_axe/handle/iron"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PDP",
+  "ZZZ"
+ ],
+ "key": {
+  "P": "minecraft:oak_planks",
+  "D": "minecraft:dirt",
+  "Z": "minecraft:oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_flower_box"
+ }
+}

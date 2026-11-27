@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "B B",
+  "BCB"
+ ],
+ "key": {
+  "Z": "minecraft:cut_sandstone_slab",
+  "B": "minecraft:cut_sandstone",
+  "C": "minecraft:charcoal"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_hearth"
+ }
+}

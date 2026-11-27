@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:ingot_rimesteel"
+ ],
+ "result": {
+  "id": "aftrhrs:nugget_rimesteel",
+  "count": 9
+ }
+}

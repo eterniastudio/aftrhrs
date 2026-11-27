@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "C",
+  "W"
+ ],
+ "key": {
+  "C": "minecraft:yellow_carpet",
+  "W": "minecraft:yellow_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_yellow_floor_cushion"
+ }
+}

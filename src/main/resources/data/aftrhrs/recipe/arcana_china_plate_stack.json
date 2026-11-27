@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_china_plate",
+  "aftrhrs:arcana_china_plate",
+  "aftrhrs:arcana_china_plate"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_china_plate_stack"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KK"
+ ],
+ "key": {
+  "K": "minecraft:pink_carpet"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pink_bath_mat"
+ }
+}

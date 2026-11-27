@@ -1,0 +1,565 @@
+{
+ "id": "squallgull",
+ "mm_id": "ArcanaSquallgull",
+ "kind": "wildlife",
+ "name": "Squallgull",
+ "color": "f",
+ "health": 4,
+ "damage": 0,
+ "speed": 0.3,
+ "follow_range": 16,
+ "despawn": "true",
+ "damage_mods": {
+  "FALL": 0.0
+ },
+ "note": "Cheeky shore gull, in flocks of 2-4. Circles players in boats. Feather: steals raw fish, follows a feeder's boat and dives on fishing hotspots.",
+ "base": "BEE",
+ "sounds": {
+  "ambient": {
+   "id": "entity.parrot.ambient",
+   "pitch": 0.6,
+   "volume": 0.8
+  },
+  "ambient2": {
+   "id": "entity.parrot.fly",
+   "pitch": 0.8,
+   "volume": 0.3
+  },
+  "hurt": {
+   "id": "entity.parrot.hurt",
+   "pitch": 0.7,
+   "volume": 1.0
+  },
+  "death": {
+   "id": "entity.parrot.death",
+   "pitch": 0.7,
+   "volume": 1.0
+  },
+  "every": 200,
+  "chance": 0.35,
+  "every2": 40,
+  "chance2": 0.3
+ },
+ "herd": {
+  "types": [
+   "ArcanaSquallgull"
+  ],
+  "sip": true,
+  "members": [
+   [
+    "ArcanaSquallgull",
+    1
+   ],
+   [
+    "ArcanaSquallgull",
+    0.7
+   ],
+   [
+    "ArcanaSquallgull",
+    0.4
+   ]
+  ]
+ },
+ "ai": {
+  "goals": [
+   "clear",
+   "gotoparent{fr=10;mr=4;s=1.1}",
+   "randomfly",
+   "lookatplayers"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "init": [
+  "defaultstate{mid=%M%;type=idle;state=fly;li=2;lo=2} @self",
+  "defaultstate{mid=%M%;type=walk;state=fly;li=2;lo=2} @self",
+  "setvariable{var=caster.holding;type=INTEGER;value=0}",
+  "setvariable{var=caster.perched;type=INTEGER;value=0}"
+ ],
+ "load": [
+  "defaultstate{mid=%M%;type=idle;state=fly;li=2;lo=2} @self",
+  "defaultstate{mid=%M%;type=walk;state=fly;li=2;lo=2} @self",
+  "setvariable{var=caster.perched;type=INTEGER;value=0}",
+  "setgravity{g=false} @self",
+  "setai{ai=true} @self"
+ ],
+ "restore": [
+  "partvis{mid=%M%;p=held_fish;v=false;c=true} @self ?!variableEquals{var=caster.holding;value=1}",
+  "partvis{mid=%M%;p=held_fish;v=true;c=true} @self ?variableEquals{var=caster.holding;value=1}"
+ ],
+ "base_idle": "fly",
+ "base_walk": "fly",
+ "lines": [
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaSquallgull_Glide"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 100,
+   "conditions": [],
+   "chance": 0.35,
+   "skill": "ArcanaSquallgull_Glide",
+   "line": "- skill{s=ArcanaSquallgull_Glide} @self ~onTimer:100 0.35"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaSquallgull_Call"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 160,
+   "conditions": [
+    "variableEquals{var=caster.perched;value=1}"
+   ],
+   "chance": 0.3,
+   "extra": [
+    "false"
+   ],
+   "skill": "ArcanaSquallgull_Call",
+   "line": "- skill{s=ArcanaSquallgull_Call} @self ?variableEquals{var=caster.perched;value=1} false ~onTimer:160 0.3"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaSquallgull_Perch"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 200,
+   "conditions": [],
+   "chance": 0.3,
+   "skill": "ArcanaSquallgull_Perch",
+   "line": "- skill{s=ArcanaSquallgull_Perch} @self ~onTimer:200 0.3"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaSquallgull_PerchEnd"
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaSquallgull_PerchEnd",
+   "line": "- skill{s=ArcanaSquallgull_PerchEnd} @self ~onDamaged"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaSquallgull_PerchEnd"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 20,
+   "conditions": [
+    "playerwithin{d=4}"
+   ],
+   "chance": 1.0,
+   "skill": "ArcanaSquallgull_PerchEnd",
+   "line": "- skill{s=ArcanaSquallgull_PerchEnd} @self ?playerwithin{d=4} ~onTimer:20"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaSquallgull_Circle"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 40,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaSquallgull_Circle",
+   "line": "- skill{s=ArcanaSquallgull_Circle} @self ~onTimer:40"
+  }
+ ],
+ "drops": [
+  {
+   "item": "minecraft:feather",
+   "min": 0,
+   "max": 0,
+   "chance": 1.0
+  },
+  {
+   "exp": 1,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:beach",
+    "minecraft:stony_shore",
+    "terralith:gravel_beach",
+    "terralith:basalt_cliffs",
+    "terralith:granite_cliffs",
+    "terralith:white_cliffs"
+   ],
+   "rarity": "uncommon",
+   "position": "LAND",
+   "conditions": [
+    "outside true",
+    "worldtime{t=0to12000} true"
+   ],
+   "cap": 4,
+   "cap_radius": 48
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "death": "death",
+  "hurt": "hurt"
+ },
+ "model": "squallgull",
+ "clips": {
+  "idle": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.5,
+   "loop": "loop"
+  },
+  "fly": {
+   "length": 0.6,
+   "loop": "loop"
+  },
+  "glide": {
+   "length": 2.4,
+   "loop": "loop"
+  },
+  "dive": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "peck": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "squawk": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.2,
+   "loop": "hold"
+  },
+  "preen": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "wing_stretch": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "ruffle": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "perch_shuffle": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "head_tilt": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "long_call": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "call_fly": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.5,
+  0.75
+ ],
+ "shadow": 0.312,
+ "name_tag_y": 0.938,
+ "render_box": [
+  0.625,
+  0.75
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.5,
+    "gait": "walk",
+    "drv": "bt"
+   },
+   "fly": {
+    "p": "airborne",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.6,
+    "gait": "fly",
+    "drv": "hbt"
+   },
+   "glide": {
+    "p": "airborne",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.4,
+    "gait": "fly",
+    "drv": "hbt"
+   },
+   "dive": {
+    "p": "airborne",
+    "move": true,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.4,
+    "gait": "fly",
+    "drv": "hbt"
+   },
+   "peck": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.9,
+    "drv": "hbt"
+   },
+   "squawk": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hbt"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.2,
+    "eyes": true,
+    "drv": "hbt"
+   },
+   "preen": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hbt"
+   },
+   "wing_stretch": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "ruffle": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbt"
+   },
+   "perch_shuffle": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "hbt"
+   },
+   "head_tilt": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "hbt"
+   },
+   "long_call": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbt"
+   },
+   "call_fly": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.2,
+    "drv": "h"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "ht"
+   }
+  },
+  "states": {
+   "idle": "fly",
+   "walk": "fly",
+   "fly": "fly",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "call_fly",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "idle": [
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 3,
+     "max": 8
+    },
+    {
+     "clip": "preen",
+     "w": 3,
+     "cd": 8
+    },
+    {
+     "clip": "wing_stretch",
+     "w": 1.5,
+     "cd": 20
+    },
+    {
+     "clip": "ruffle",
+     "w": 2,
+     "cd": 10
+    },
+    {
+     "clip": "perch_shuffle",
+     "w": 2,
+     "cd": 6
+    },
+    {
+     "clip": "head_tilt",
+     "w": 2,
+     "cd": 6
+    },
+    {
+     "clip": "long_call",
+     "w": 1.2,
+     "cd": 15
+    }
+   ],
+   "fly": [
+    {
+     "clip": "call_fly",
+     "w": 1,
+     "cd": 12
+    }
+   ],
+   "notice": [
+    {
+     "clip": "head_tilt",
+     "w": 2,
+     "when": "var:perched"
+    },
+    {
+     "clip": "call_fly",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail"
+   ],
+   "tail_sway": 4
+  },
+  "authored": [
+   "call_fly",
+   "head_tilt",
+   "hurt",
+   "long_call",
+   "perch_shuffle",
+   "preen",
+   "ruffle",
+   "wing_stretch"
+  ]
+ },
+ "glowmask": false,
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.07,
+    "layer": 10
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "step": {
+    "jitter": 0.08
+   },
+   "eat": {
+    "jitter": 0.06
+   },
+   "flap": {
+    "jitter": 0.08
+   }
+  },
+  "every": 260
+ }
+}

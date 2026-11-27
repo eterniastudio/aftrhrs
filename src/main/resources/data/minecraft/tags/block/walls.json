@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_blue_ice_brick_wall",
+  "aftrhrs:arcana_blue_ice_tile_wall",
+  "aftrhrs:arcana_calcite_brick_wall",
+  "aftrhrs:arcana_calcite_tile_wall",
+  "aftrhrs:arcana_calcite_wall",
+  "aftrhrs:arcana_ice_brick_wall",
+  "aftrhrs:arcana_ice_tile_wall",
+  "aftrhrs:arcana_snow_brick_wall",
+  "aftrhrs:arcana_snow_tile_wall"
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "aftrhrs:blocks/feather_inventory_connector",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:feather_inventory_connector"
+    }
+   ]
+  }
+ ]
+}

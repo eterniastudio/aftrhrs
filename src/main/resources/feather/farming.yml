@@ -1,0 +1,274 @@
+# Farming (modules.farming): custom crops, quality, compost, seaweed lines, cooking and the weekly Harvest Fair.
+# Docs: docs/farming.md. Every item is an Oraxen id; missing ids are logged once and that feature waits for them.
+# /feather reload picks up changes. Crops already planted keep growing with the new times from their next stage on.
+
+growth:
+  # How often crop timers are looked at (seconds). Only chunks whose next stage is due are touched; nothing scans.
+  check-seconds: 5
+  # A crop that can't grow right now (too dark, dry farmland, rice without water) tries again after this long.
+  retry-minutes: 2
+  # Light at the crop (sky light ignoring the time of day, or block light) must be at least this.
+  min-light: 9
+  # After a chunk loads, its crops catch up on the time it was unloaded this many ticks later (so the area around it
+  # has loaded too). Catch-up assumes the crop could grow while unloaded if it can grow now.
+  load-delay-ticks: 20
+  # At most this much unloaded time is caught up at once.
+  max-catchup-hours: 72
+  # Growth speed in an affinity biome (and for tomato/grape next to a trellis).
+  affinity-multiplier: 1.5
+  # Tomato and grape: a trellis (any of these furniture ids, * = anything) within this many blocks counts.
+  trellis-radius: 1.5
+  trellis-ids: ['arcana_*_trellis']
+
+# Each crop: seeds arcana_seeds_<crop>, produce arcana_crop_<crop>, stage blocks arcana_crop_<crop>_stage0..3.
+#   stage-minutes: one stage (3 stages to ripe). affinity: biome keys that grow it x1.5 (see below).
+#   trellis: true = no biome affinity; next to a trellis it grows x1.5 instead. needs-water: rice: water (or a
+#   waterlogged block) right next to its farmland, at the farmland's height. produce / seeds: dropped when ripe.
+#   weight-grams: average weight of one Prize crop (Harvest Fair). seed-biomes: where its seeds drop from grass
+#   (default: the affinity list).
+# Biome entries: 'swamp' matches minecraft:swamp and any namespace's swamp; 'terralith:sakura_grove' a full key;
+# '*' is a wildcard ('*marsh*' catches every marsh, Terralith's too); '#minecraft:is_river' a biome tag.
+crops:
+  rice:
+    stage-minutes: 10
+    affinity: ['swamp', 'mangrove_swamp', '*river*', '*marsh*', '*bayou*', '*swamp*', '*mangrove*', '#minecraft:is_river']
+    needs-water: true
+    produce: 2-4
+    seeds: 1-2
+    weight-grams: 40
+  tomato:
+    stage-minutes: 9
+    trellis: true
+    produce: 1-3
+    seeds: 1-2
+    weight-grams: 180
+    seed-biomes: ['plains', 'forest', 'flower_forest', 'meadow', 'terralith:*valley*', 'terralith:shrubland']
+  grape:
+    stage-minutes: 11
+    trellis: true
+    produce: 2-4
+    seeds: 1-2
+    weight-grams: 260
+    seed-biomes: ['savanna', 'forest', 'birch_forest', 'terralith:*hills*', 'terralith:*highlands*', 'terralith:lavender_*']
+  pepper:
+    stage-minutes: 9
+    affinity: ['*desert*', '*savanna*', '*badlands*', '*mesa*', 'terralith:*canyon*', 'terralith:*shrubland*', 'terralith:steppe', 'terralith:*sands*', 'terralith:*oasis*', '#minecraft:is_savanna', '#minecraft:is_badlands']
+    produce: 1-3
+    seeds: 1-2
+    weight-grams: 90
+  blueberry:
+    stage-minutes: 8
+    affinity: ['minecraft:grove', '*taiga*', 'terralith:siberian_*', 'terralith:wintry_*', 'terralith:alpine_*', 'terralith:snowy_maple_forest', '#minecraft:is_taiga']
+    produce: 2-5
+    seeds: 1-2
+    weight-grams: 25
+  tea:
+    stage-minutes: 10
+    affinity: ['cherry_grove', 'meadow', '*jungle*', '*sakura*', '*cherry*', '*blossom*', 'terralith:blooming_*', 'terralith:cloud_forest', 'terralith:lavender_*', '#minecraft:is_jungle']
+    produce: 2-3
+    seeds: 1-2
+    weight-grams: 20
+  corn:
+    stage-minutes: 10
+    affinity: ['plains', 'sunflower_plains', 'terralith:*plains*', 'terralith:*clearing*', 'terralith:lush_valley', 'terralith:*prairie*']
+    produce: 1-3
+    seeds: 1-2
+    weight-grams: 320
+  # Weed: warm, humid jungles and savannas (Terralith's tropical/rocky jungles, jungle mountains, savannas and the
+  # amethyst rainforest too). The buds roll into joints (smoking: below).
+  weed:
+    stage-minutes: 10
+    affinity: ['jungle', 'sparse_jungle', 'bamboo_jungle', 'savanna', 'savanna_plateau', 'terralith:*jungle*', 'terralith:*savanna*', 'terralith:*rainforest*', '#minecraft:is_jungle']
+    produce: 1-3
+    seeds: 1-2
+    weight-grams: 28
+
+# Quality: every harvest rolls Normal / Fine / Prize. Watering (once per stage, 3 stages), compost on the farmland and
+# a Sporeling (following within sporeling-radius of the crop, or told to Work Here within it) raise it. The Sporeling
+# moves the result one step up (Normal -> Fine -> Prize). Prize crops get a weight (crop_weight) for the Harvest Fair.
+quality:
+  fine-chance: 0.10
+  prize-chance: 0.01
+  per-watered-stage: {fine: 0.07, prize: 0.02}
+  compost: {fine: 0.15, prize: 0.04}
+  sporeling-type: ArcanaSporeling
+  sporeling-radius: 8
+  # Each bond level widens a Sporeling's reach by this many blocks (bond 5: 10 blocks).
+  sporeling-radius-per-bond: 0.4
+  # Prize weight = weight-grams x a random factor in this range (a little spread on top).
+  prize-weight-factor: 1.2-2.2
+  lore:
+    fine: '<#7fd6a3>✦ Fine'
+    prize: '<#ffd36b>✦✦ Prize'
+    weight: '<muted>Weight <text><kg> kg'
+
+watering-can:
+  id: arcana_watering_can_tool
+  uses: 16
+  lore: '<muted>Water <text><uses></text>/<max>'
+
+compost:
+  id: arcana_compost
+  # One compost on farmland lasts this many harvests.
+  harvests: 3
+
+compost-bins:
+  ids: [arcana_oak_compost_bin, arcana_spruce_compost_bin]
+  # This many plant items make one compost, ready this many minutes after the batch is full.
+  items-per-compost: 8
+  minutes: 3
+  # Batches that can wait in one bin.
+  max-batches: 16
+  # What counts as a plant: material names, item tags (#minecraft:leaves) or Oraxen ids (oraxen:arcana_crop_*).
+  accepts: ['#minecraft:leaves', '#minecraft:saplings', '#minecraft:flowers', 'short_grass', 'tall_grass', 'fern',
+            'large_fern', 'wheat', 'wheat_seeds', 'carrot', 'potato', 'beetroot', 'beetroot_seeds', 'melon_slice',
+            'melon_seeds', 'pumpkin', 'pumpkin_seeds', 'sugar_cane', 'kelp', 'dried_kelp', 'seagrass', 'apple',
+            'sweet_berries', 'glow_berries', 'cactus', 'vine', 'lily_pad', 'moss_block', 'moss_carpet', 'bamboo',
+            'hay_block', 'oraxen:arcana_crop_*', 'oraxen:arcana_seeds_*', 'oraxen:arcana_seaweed_spores']
+
+# Seaweed lines: arcana_seaweed_line furniture placed under water. Right-click with spores to seed it; it grows 4
+# stages (overlay arcana_seaweed_line_fx_0..3) and a right-click harvests the last one.
+seaweed:
+  line-id: arcana_seaweed_line
+  spores-id: arcana_seaweed_spores
+  produce-id: arcana_crop_seaweed
+  overlay-prefix: arcana_seaweed_line_fx_
+  stage-minutes: 8
+  produce: 2-4
+  spores-chance: 0.25
+
+# Cooking: right-click a station with the ingredients in your inventory. Stoves keep their oven: with nothing to cook
+# (or sneaking), the oven opens as before.
+# Ingredients: 'oraxen:<id> <n>' (a * wildcard works), a material '<name> <n>', or '#fish <n>' (any custom fish, raw
+# cod or salmon). Effects: '<effect> <seconds> <level>'. The best ingredients (not Prize) are used first; the meal's
+# quality is the average of its crops' quality and stretches every effect: normal x1, fine x1.5, prize x2.
+cooking:
+  stations:
+    stove: [arcana_stone_stove, arcana_iron_stove]
+    cutting_board: [arcana_cutting_board]
+    stew_pot: ['arcana_*_stew_pot']
+  quality-multiplier: {normal: 1.0, fine: 1.5, prize: 2.0}
+  # Meals whose item can't be eaten the vanilla way are eaten on right-click and feed this much.
+  fallback-food: 6
+  fallback-saturation: 7.0
+  meals:
+    fish_taco:
+      name: 'Fish Taco'
+      stations: [cutting_board, stove]
+      ingredients: ['#fish 1', 'oraxen:arcana_crop_pepper 1', 'oraxen:arcana_crop_corn 1']
+      effects: ['luck 300 1']
+    sushi_roll:
+      name: 'Sushi Roll'
+      stations: [cutting_board]
+      ingredients: ['#fish 1', 'oraxen:arcana_crop_rice 2', 'oraxen:arcana_crop_seaweed 1']
+      effects: ['water_breathing 240 1', 'dolphins_grace 60 1']
+    tomato_soup:
+      name: 'Tomato Soup'
+      stations: [stew_pot, stove]
+      ingredients: ['oraxen:arcana_crop_tomato 3', 'bowl 1']
+      effects: ['regeneration 20 1']
+    blueberry_pie:
+      name: 'Blueberry Pie'
+      stations: [stove]
+      ingredients: ['oraxen:arcana_crop_blueberry 3', 'wheat 1', 'sugar 1', 'egg 1']
+      effects: ['speed 180 1', 'saturation 1 2']
+    grape_juice:
+      name: 'Grape Juice'
+      stations: [cutting_board]
+      ingredients: ['oraxen:arcana_crop_grape 3', 'glass_bottle 1']
+      effects: ['absorption 120 1']
+    spicy_chili:
+      name: 'Spicy Chili'
+      stations: [stew_pot]
+      ingredients: ['oraxen:arcana_crop_pepper 2', 'oraxen:arcana_crop_tomato 1', 'bowl 1']
+      effects: ['fire_resistance 180 1']
+    green_tea:
+      name: 'Green Tea'
+      stations: [stove, stew_pot]
+      ingredients: ['oraxen:arcana_crop_tea 2', 'glass_bottle 1']
+      effects: ['haste 180 1']
+    grilled_corn:
+      name: 'Grilled Corn'
+      stations: [stove]
+      ingredients: ['oraxen:arcana_crop_corn 1']
+      effects: []
+    # Wildlife & Undead meals (wildlife module products). item: the Oraxen id cooked (default arcana_meal_<id>).
+    # Their buffs are given here, not by wildlife.yml, while this module is on.
+    truffle_risotto:
+      name: 'Truffle Risotto'
+      item: arcana_truffle_risotto
+      stations: [stove, stew_pot]
+      ingredients: ['oraxen:arcana_truffle 1', 'oraxen:arcana_crop_rice 1', 'oraxen:arcana_butter 1', 'bowl 1']
+      effects: ['health_boost 300 1']
+    duck_and_rice:
+      name: 'Duck and Rice'
+      item: arcana_duck_and_rice
+      stations: [stove]
+      ingredients: ['oraxen:arcana_roast_duck 1', 'oraxen:arcana_crop_rice 1']
+      effects: ['slow_falling 120 1']
+    venison_stew:
+      name: 'Venison Stew'
+      item: arcana_venison_stew
+      stations: [stew_pot, stove]
+      ingredients: ['oraxen:arcana_raw_venison 1', 'carrot 1', 'potato 1', 'bowl 1']
+      effects: ['jump_boost 180 1']
+    warped_stew:
+      name: 'Warped Stew'
+      item: arcana_warped_stew
+      stations: [stew_pot, stove]
+      ingredients: ['oraxen:arcana_raw_wartgrazer 1', 'warped_fungus 1', 'crimson_fungus 1', 'bowl 1']
+      effects: ['night_vision 180 1']
+    cheese_board:
+      name: 'Cheese Board'
+      item: arcana_cheese_board
+      stations: [cutting_board, stove]
+      ingredients: ['oraxen:arcana_cheese_wedge 2', 'oraxen:arcana_crop_grape 1', 'bread 1']
+      effects: ['resistance 120 1']
+
+# Smoking: one weed bud (bud) and one rolling paper (paper) roll a joint (joint); a Fine or Prize bud makes a Fine or
+# Prize joint. Smoking it (hold right-click, about 2 s) gives Regeneration for regeneration.<quality> seconds, then the
+# effects below (the same for every quality: '<effect> <seconds> <level>'), and puffs smoke from the mouth. The next
+# joint waits cooldown-seconds (the joint's Oraxen use_cooldown shows it on the hotbar). enabled: false turns it off.
+smoking:
+  enabled: true
+  joint: arcana_joint
+  bud: arcana_crop_weed
+  paper: arcana_rolling_paper
+  regeneration: {normal: 10, fine: 15, prize: 20, level: 1}
+  effects: ['slowness 30 1', 'hunger 20 1']
+  cooldown-seconds: 30
+  smoke-particles: 8
+  sound: block.fire.extinguish
+  sound-volume: 0.35
+  sound-pitch: 1.6
+
+# Breaking grass (not in creative) sometimes drops seeds of a crop whose seed-biomes match the spot.
+seed-drops:
+  chance: 0.02
+  blocks: [short_grass, tall_grass, fern, large_fern]
+
+# Canopip (MythicMobs type): while it follows within radius of its owner, crops the owner harvests are replanted.
+canopip:
+  type: ArcanaCanopip
+  radius: 6
+
+# The Work Here job "farmhand" (pets.yml work.jobs, type: farmhand): ripe crops in range are harvested, replanted,
+# and the harvest goes into a chest or barrel within container-radius of the spot (without one the job waits).
+farmhand:
+  container-radius: 3
+  # Per round, the chance to also find a random seed.
+  seed-find-chance: 0.03
+
+# Harvest Fair: every week, the heaviest Prize crop of each kind submitted at a grocer counter wins coins
+# (bank balance). /farming fair shows the leaders; /farming fair submit enters the Prize crop in your hand.
+fair:
+  enabled: true
+  day: SUNDAY
+  time: '18:00'
+  # Time zone for the judging (empty = the server's).
+  zone: ''
+  counter-ids: [arcana_shop_counter_grocer]
+  counter-radius: 6
+  # Coins for 1st, 2nd, 3rd ... per crop kind.
+  prizes: [40, 20, 10]
+  broadcast: true

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "aftrhrs:block/storage/connector_side",
+  "end": "aftrhrs:block/storage/connector_top",
+  "particle": "minecraft:block/chiseled_tuff"
+ }
+}

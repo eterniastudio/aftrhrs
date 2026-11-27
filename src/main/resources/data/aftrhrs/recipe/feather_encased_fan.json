@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PIP",
+  "IBI",
+  "PCP"
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "I": "minecraft:iron_ingot",
+  "B": "minecraft:iron_bars",
+  "C": "minecraft:copper_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:feather_encased_fan"
+ }
+}

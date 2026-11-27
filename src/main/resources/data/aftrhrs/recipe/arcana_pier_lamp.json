@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ASA",
+  " L ",
+  " L "
+ ],
+ "key": {
+  "A": "minecraft:lantern",
+  "L": "minecraft:dark_oak_log",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pier_lamp"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/carving_top", "carving_log": "aftrhrs:block/smithing/carving_log", "carving_log_end": "aftrhrs:block/smithing/carving_log_end", "carving_side": "aftrhrs:block/smithing/carving_side", "carving_side_east": "aftrhrs:block/smithing/carving_side_east", "carving_top": "aftrhrs:block/smithing/carving_top", "carving_under": "aftrhrs:block/smithing/carving_under"},
+ "elements": [
+  {"name": "base", "from": [3, 0, 4], "to": [13, 10, 12], "faces": {"north": {"uv": [3, 6, 13, 16], "texture": "#carving_log"}, "east": {"uv": [4, 6, 12, 16], "texture": "#carving_log"}, "south": {"uv": [3, 6, 13, 16], "texture": "#carving_log"}, "west": {"uv": [4, 6, 12, 16], "texture": "#carving_log"}, "down": {"uv": [3, 4, 13, 12], "texture": "#carving_log_end", "cullface": "down"}}},
+  {"name": "board", "from": [1, 10, 2], "to": [15, 12, 14], "faces": {"north": {"uv": [1, 4, 15, 6], "texture": "#carving_side"}, "east": {"uv": [2, 4, 14, 6], "texture": "#carving_side_east"}, "south": {"uv": [1, 4, 15, 6], "texture": "#carving_side"}, "west": {"uv": [2, 4, 14, 6], "texture": "#carving_side"}, "up": {"uv": [1, 2, 15, 14], "texture": "#carving_top"}, "down": {"uv": [1, 2, 15, 14], "texture": "#carving_under"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

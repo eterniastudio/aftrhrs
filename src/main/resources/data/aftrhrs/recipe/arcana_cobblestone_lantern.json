@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "ZTZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:cobblestone_slab",
+  "T": "minecraft:torch",
+  "W": "minecraft:cobblestone_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cobblestone_lantern"
+ }
+}

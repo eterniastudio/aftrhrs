@@ -1,0 +1,516 @@
+{
+ "model": {
+  "type": "minecraft:composite",
+  "models": [
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_0",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/bone"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/copper"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/head/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/hatchet/head/iron"
+    }
+   },
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_1",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/bone"
+      }
+     },
+     {
+      "when": "bamboo",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/bamboo"
+      }
+     },
+     {
+      "when": "leather",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/leather"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/copper"
+      }
+     },
+     {
+      "when": "deer_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/deer_hide"
+      }
+     },
+     {
+      "when": "tufthorn_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/tufthorn_hide"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/binding/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/hatchet/binding/iron"
+    }
+   },
+   {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "aftrhrs:smith_look_2",
+    "cases": [
+     {
+      "when": "wood",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/wood"
+      }
+     },
+     {
+      "when": "stone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/stone"
+      }
+     },
+     {
+      "when": "flint",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/flint"
+      }
+     },
+     {
+      "when": "bone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/bone"
+      }
+     },
+     {
+      "when": "bamboo",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/bamboo"
+      }
+     },
+     {
+      "when": "leather",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/leather"
+      }
+     },
+     {
+      "when": "copper",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/copper"
+      }
+     },
+     {
+      "when": "deer_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/deer_hide"
+      }
+     },
+     {
+      "when": "tufthorn_hide",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/tufthorn_hide"
+      }
+     },
+     {
+      "when": "iron",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/iron"
+      }
+     },
+     {
+      "when": "gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/gold"
+      }
+     },
+     {
+      "when": "obsidian",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/obsidian"
+      }
+     },
+     {
+      "when": "steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/steel"
+      }
+     },
+     {
+      "when": "rose_gold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/rose_gold"
+      }
+     },
+     {
+      "when": "chime_bronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/chime_bronze"
+      }
+     },
+     {
+      "when": "tidebronze",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/tidebronze"
+      }
+     },
+     {
+      "when": "rimesteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/rimesteel"
+      }
+     },
+     {
+      "when": "emberforged_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/emberforged_steel"
+      }
+     },
+     {
+      "when": "pearlsteel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/pearlsteel"
+      }
+     },
+     {
+      "when": "netherite",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/netherite"
+      }
+     },
+     {
+      "when": "echo_steel",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/echo_steel"
+      }
+     },
+     {
+      "when": "blazebone",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/blazebone"
+      }
+     },
+     {
+      "when": "voidgold",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/voidgold"
+      }
+     },
+     {
+      "when": "starforged",
+      "model": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/hatchet/handle/starforged"
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/tool/hatchet/handle/iron"
+    }
+   }
+  ]
+ }
+}

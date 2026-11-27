@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "SSS",
+  "C C"
+ ],
+ "key": {
+  "S": "minecraft:smooth_stone_slab",
+  "C": "minecraft:cobblestone"
+ },
+ "result": {
+  "id": "aftrhrs:casting_bench",
+  "count": 1
+ }
+}

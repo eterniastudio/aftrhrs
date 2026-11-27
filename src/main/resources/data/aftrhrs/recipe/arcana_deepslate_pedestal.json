@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " B ",
+  "ZZZ"
+ ],
+ "key": {
+  "Z": "minecraft:polished_deepslate_slab",
+  "B": "minecraft:deepslate_tiles"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_deepslate_pedestal"
+ }
+}

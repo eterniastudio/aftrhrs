@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:polished_tuff_slab",
+  "A": "minecraft:tuff_bricks",
+  "B": "minecraft:polished_tuff"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuff_plinth"
+ }
+}

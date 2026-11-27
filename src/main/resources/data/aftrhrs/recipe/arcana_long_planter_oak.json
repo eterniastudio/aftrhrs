@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ADC",
+  "KKK"
+ ],
+ "key": {
+  "A": "minecraft:azalea",
+  "C": "minecraft:cornflower",
+  "D": "minecraft:dirt",
+  "K": "minecraft:oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_long_planter_oak"
+ }
+}

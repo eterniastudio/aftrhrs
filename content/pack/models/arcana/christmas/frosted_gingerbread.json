@@ -1,0 +1,8 @@
+{
+ "parent": "block/cube_bottom_top",
+ "textures": {
+  "top": "arcana/christmas/frosted_gingerbread_top",
+  "bottom": "arcana/christmas/gingerbread",
+  "side": "arcana/christmas/frosted_gingerbread_side"
+ }
+}

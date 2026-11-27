@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smoking",
+ "category": "food",
+ "cookingtime": 100,
+ "experience": 0.35,
+ "ingredient": "aftrhrs:arcana_raw_duck",
+ "result": {
+  "id": "aftrhrs:arcana_roast_duck"
+ }
+}

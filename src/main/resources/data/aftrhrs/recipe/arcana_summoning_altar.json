@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CEC",
+  "GOG",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:candle",
+  "E": "minecraft:ender_eye",
+  "G": "minecraft:gold_ingot",
+  "O": "minecraft:crying_obsidian",
+  "P": "minecraft:polished_blackstone_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_summoning_altar"
+ }
+}

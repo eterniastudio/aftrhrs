@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "S S"
+ ],
+ "key": {
+  "Z": "minecraft:mangrove_slab",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_mangrove_stool"
+ }
+}

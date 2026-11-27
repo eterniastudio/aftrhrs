@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:crimson_planks",
+  "Z": "minecraft:crimson_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_crimson_counter"
+ }
+}

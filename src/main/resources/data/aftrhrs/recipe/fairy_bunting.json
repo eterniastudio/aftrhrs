@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  "S-S"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "-": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_bunting",
+  "count": 1
+ }
+}

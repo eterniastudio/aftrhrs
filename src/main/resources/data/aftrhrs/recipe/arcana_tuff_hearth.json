@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "B B",
+  "BCB"
+ ],
+ "key": {
+  "Z": "minecraft:polished_tuff_slab",
+  "B": "minecraft:polished_tuff",
+  "C": "minecraft:charcoal"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuff_hearth"
+ }
+}

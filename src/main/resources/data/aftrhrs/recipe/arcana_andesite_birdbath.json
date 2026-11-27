@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:polished_andesite_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:andesite_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_andesite_birdbath"
+ }
+}

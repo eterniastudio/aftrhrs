@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "S S",
+  "S S"
+ ],
+ "key": {
+  "Z": "minecraft:oak_slab",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_table"
+ }
+}

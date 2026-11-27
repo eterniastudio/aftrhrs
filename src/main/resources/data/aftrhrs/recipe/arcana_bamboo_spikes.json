@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "B B",
+  "BBB"
+ ],
+ "key": {
+  "B": "minecraft:bamboo"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_spikes"
+ }
+}

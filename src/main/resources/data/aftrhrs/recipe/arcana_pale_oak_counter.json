@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:pale_oak_planks",
+  "Z": "minecraft:pale_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pale_oak_counter"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "aftrhrs:block/smithing/carving_bench"
+  },
+  "facing=east": {
+   "model": "aftrhrs:block/smithing/carving_bench",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "aftrhrs:block/smithing/carving_bench",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "aftrhrs:block/smithing/carving_bench",
+   "y": 270
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KTK",
+  " I "
+ ],
+ "key": {
+  "K": "minecraft:candle",
+  "T": "minecraft:copper_torch",
+  "I": "minecraft:copper_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_copper_candle_holder"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:rabbit_stew",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_bowl_of_rabbit_stew"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:paper",
+  "minecraft:paper",
+  "minecraft:paper",
+  "minecraft:string",
+  "minecraft:red_dye",
+  "minecraft:green_dye",
+  "minecraft:blue_dye"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_present_pile"
+ }
+}

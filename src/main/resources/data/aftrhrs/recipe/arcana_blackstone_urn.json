@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z Z",
+  "B B",
+  " B "
+ ],
+ "key": {
+  "Z": "minecraft:polished_blackstone_slab",
+  "B": "minecraft:polished_blackstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blackstone_urn"
+ }
+}

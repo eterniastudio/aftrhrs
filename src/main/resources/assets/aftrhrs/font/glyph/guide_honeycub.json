@@ -1,0 +1,13 @@
+{
+ "providers": [
+  {
+   "type": "bitmap",
+   "file": "aftrhrs:font/glyph/guide_honeycub.png",
+   "ascent": 87,
+   "height": 88,
+   "chars": [
+    "\ue000"
+   ]
+  }
+ ]
+}

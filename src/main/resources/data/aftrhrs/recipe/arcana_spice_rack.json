@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SCR",
+  "ZZZ"
+ ],
+ "key": {
+  "S": "minecraft:sugar",
+  "C": "minecraft:cocoa_beans",
+  "R": "minecraft:red_dye",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_spice_rack"
+ }
+}

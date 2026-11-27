@@ -1,0 +1,26 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_sack",
+     "modifier": {
+      "type": "minecraft:copy_components",
+      "source": "block_entity",
+      "include": [
+       "minecraft:custom_name",
+       "minecraft:container"
+      ]
+     }
+    }
+   ],
+   "condition": {
+    "type": "minecraft:survives_explosion"
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/arcana_sack"
+}

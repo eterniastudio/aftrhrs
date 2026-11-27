@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  " T ",
+  " M "
+ ],
+ "key": {
+  "M": "minecraft:prismarine_bricks",
+  "N": "minecraft:gold_nugget",
+  "T": "minecraft:dark_prismarine_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_fountain_spout"
+ }
+}

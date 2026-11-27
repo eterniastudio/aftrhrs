@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CCC",
+  "CAC",
+  "CCC"
+ ],
+ "key": {
+  "C": "minecraft:purple_carpet",
+  "A": "minecraft:amethyst_shard"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rune_rug"
+ }
+}

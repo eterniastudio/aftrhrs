@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "B"
+ ],
+ "key": {
+  "W": "minecraft:cobblestone_wall",
+  "B": "minecraft:cobblestone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cobblestone_column_base",
+  "count": 2
+ }
+}

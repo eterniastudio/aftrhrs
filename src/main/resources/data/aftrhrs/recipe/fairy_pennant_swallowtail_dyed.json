@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_dye",
+ "dye": "#minecraft:dyes",
+ "group": "fairy_pennants_dyed",
+ "target": "aftrhrs:fairy_pennant_swallowtail",
+ "result": {
+  "id": "aftrhrs:fairy_pennant_swallowtail"
+ }
+}

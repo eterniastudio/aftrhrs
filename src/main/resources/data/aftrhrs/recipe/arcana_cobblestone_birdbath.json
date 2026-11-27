@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:cobblestone_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:cobblestone_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cobblestone_birdbath"
+ }
+}

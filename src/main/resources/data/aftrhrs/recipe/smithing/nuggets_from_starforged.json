@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:ingot_starforged"
+ ],
+ "result": {
+  "id": "aftrhrs:nugget_starforged",
+  "count": 9
+ }
+}

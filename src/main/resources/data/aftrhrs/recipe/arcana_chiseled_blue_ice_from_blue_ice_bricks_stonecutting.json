@@ -1,0 +1,7 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "aftrhrs:arcana_blue_ice_bricks",
+ "result": {
+  "id": "aftrhrs:arcana_chiseled_blue_ice"
+ }
+}

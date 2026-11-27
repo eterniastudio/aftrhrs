@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "SWS",
+  "P P"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "W": "aftrhrs:whetstone",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "aftrhrs:whetstone_wheel",
+  "count": 1
+ }
+}

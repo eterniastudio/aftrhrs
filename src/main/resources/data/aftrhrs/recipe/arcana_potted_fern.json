@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " X ",
+  "TDT",
+  " T "
+ ],
+ "key": {
+  "X": "minecraft:large_fern",
+  "T": "minecraft:terracotta",
+  "D": "minecraft:podzol"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_potted_fern"
+ }
+}

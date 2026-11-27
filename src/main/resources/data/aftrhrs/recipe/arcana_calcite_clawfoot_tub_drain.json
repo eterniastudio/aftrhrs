@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_calcite_clawfoot_tub_filled"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_calcite_clawfoot_tub"
+ }
+}

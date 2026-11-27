@@ -1,0 +1,181 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "aftrhrs:smith_material",
+  "cases": [
+   {
+    "when": "wood",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/wood"
+    }
+   },
+   {
+    "when": "stone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/stone"
+    }
+   },
+   {
+    "when": "flint",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/flint"
+    }
+   },
+   {
+    "when": "bone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/bone"
+    }
+   },
+   {
+    "when": "bamboo",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/bamboo"
+    }
+   },
+   {
+    "when": "leather",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/leather"
+    }
+   },
+   {
+    "when": "copper",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/copper"
+    }
+   },
+   {
+    "when": "deer_hide",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/deer_hide"
+    }
+   },
+   {
+    "when": "tufthorn_hide",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/tufthorn_hide"
+    }
+   },
+   {
+    "when": "iron",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/iron"
+    }
+   },
+   {
+    "when": "gold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/gold"
+    }
+   },
+   {
+    "when": "obsidian",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/obsidian"
+    }
+   },
+   {
+    "when": "steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/steel"
+    }
+   },
+   {
+    "when": "rose_gold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/rose_gold"
+    }
+   },
+   {
+    "when": "chime_bronze",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/chime_bronze"
+    }
+   },
+   {
+    "when": "tidebronze",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/tidebronze"
+    }
+   },
+   {
+    "when": "rimesteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/rimesteel"
+    }
+   },
+   {
+    "when": "emberforged_steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/emberforged_steel"
+    }
+   },
+   {
+    "when": "pearlsteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/pearlsteel"
+    }
+   },
+   {
+    "when": "netherite",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/netherite"
+    }
+   },
+   {
+    "when": "echo_steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/echo_steel"
+    }
+   },
+   {
+    "when": "blazebone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/blazebone"
+    }
+   },
+   {
+    "when": "voidgold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/voidgold"
+    }
+   },
+   {
+    "when": "starforged",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/mail/starforged"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "aftrhrs:item/smithing/part/mail/iron"
+  }
+ }
+}

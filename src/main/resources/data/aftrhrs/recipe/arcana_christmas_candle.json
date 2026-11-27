@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:red_candle",
+  "minecraft:spruce_leaves",
+  "minecraft:gold_nugget"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_christmas_candle"
+ }
+}

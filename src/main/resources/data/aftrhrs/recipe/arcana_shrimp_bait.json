@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_shellfish_shrimp"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_shrimp_bait",
+  "count": 4
+ }
+}

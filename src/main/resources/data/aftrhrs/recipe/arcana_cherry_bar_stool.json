@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "SSS",
+  "S S"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "Z": "minecraft:cherry_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cherry_bar_stool"
+ }
+}

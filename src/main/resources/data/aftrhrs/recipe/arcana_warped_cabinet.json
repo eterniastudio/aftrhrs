@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:warped_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_warped_cabinet"
+ }
+}

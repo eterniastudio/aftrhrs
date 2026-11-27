@@ -1,0 +1,794 @@
+{
+ "id": "glacial_wyrm",
+ "mm_id": "ArcanaGlacialWyrm",
+ "kind": "boss",
+ "name": "Glacial Wyrm",
+ "color": "b",
+ "health": 280,
+ "damage": 9,
+ "armor": 8,
+ "speed": 0.22,
+ "follow_range": 40,
+ "knockback_resistance": 1,
+ "base": "RAVAGER",
+ "damage_mods": {
+  "FREEZE": 0.0,
+  "FALL": 0.0
+ },
+ "drops": [
+  {
+   "item": "minecraft:blue_ice",
+   "min": 8,
+   "max": 16,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:diamond",
+   "min": 2,
+   "max": 4,
+   "chance": 1.0
+  },
+  {
+   "exp": 250,
+   "chance": 1.0
+  }
+ ],
+ "flyer": false,
+ "abilities": [
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.elder_guardian.ambient",
+    "v": 2,
+    "p": 0.5
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 120,
+   "conditions": [],
+   "chance": 0.5,
+   "line": "- sound{s=entity.elder_guardian.ambient;v=2;p=0.5} @self ~onTimer:120 0.5"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.polar_bear.hurt",
+    "v": 2,
+    "p": 0.5
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.polar_bear.hurt;v=2;p=0.5} @self ~onDamaged"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "block.glass.hit",
+    "v": 1.5,
+    "p": 0.8
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=block.glass.hit;v=1.5;p=0.8} @self ~onDamaged"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.ender_dragon.growl",
+    "v": 3,
+    "p": 0.6
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.ender_dragon.growl;v=3;p=0.6} @self ~onDeath"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "block.glass.break",
+    "v": 1.5,
+    "p": 0.6
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=block.glass.break;v=1.5;p=0.6} @self ~onDeath"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWyrm_Glow"
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWyrm_Glow",
+   "line": "- skill{s=ArcanaWyrm_Glow} @self ~onSpawn"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWyrm_Glow"
+   },
+   "target": "self",
+   "trigger": "onload",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWyrm_Glow",
+   "line": "- skill{s=ArcanaWyrm_Glow} @self ~onLoad"
+  },
+  {
+   "mechanic": "state",
+   "args": {
+    "s": "summon",
+    "lo": 6
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- state{s=summon;lo=6} @self ~onSpawn"
+  },
+  {
+   "mechanic": "state",
+   "args": {
+    "s": "frost_fang",
+    "li": 2,
+    "lo": 4
+   },
+   "target": "self",
+   "trigger": "onattack",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- state{s=frost_fang;li=2;lo=4} @self ~onAttack"
+  },
+  {
+   "mechanic": "potion",
+   "args": {
+    "type": "SLOWNESS",
+    "duration": 60,
+    "level": 1
+   },
+   "target": "target",
+   "trigger": "onattack",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- potion{type=SLOWNESS;duration=60;level=1} @target ~onAttack"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWyrm_GlacialBreath"
+   },
+   "target": "target",
+   "trigger": "ontimer",
+   "every": 160,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWyrm_GlacialBreath",
+   "line": "- skill{s=ArcanaWyrm_GlacialBreath} @target ~onTimer:160"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWyrm_TailSweep"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 220,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWyrm_TailSweep",
+   "line": "- skill{s=ArcanaWyrm_TailSweep} @self ~onTimer:220"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWyrm_RimeSpikes"
+   },
+   "target": "target",
+   "trigger": "ontimer",
+   "every": 300,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWyrm_RimeSpikes",
+   "line": "- skill{s=ArcanaWyrm_RimeSpikes} @target ~onTimer:300"
+  }
+ ],
+ "boss_bar": {
+  "title": "Glacial Wyrm",
+  "color": "BLUE",
+  "style": "SEGMENTED_10",
+  "range": 64
+ },
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "death": "death",
+  "hurt": "hurt",
+  "summon": "summon",
+  "spawn": "summon",
+  "attack": "frost_fang"
+ },
+ "model": "glacial_wyrm",
+ "clips": {
+  "idle": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "summon": {
+   "length": 3,
+   "loop": "once"
+  },
+  "death": {
+   "length": 3,
+   "loop": "hold"
+  },
+  "shatter_roar": {
+   "length": 2.5,
+   "loop": "once"
+  },
+  "frost_fang": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "glacial_breath": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "tail_sweep": {
+   "length": 1.9,
+   "loop": "once"
+  },
+  "rime_spikes": {
+   "length": 2,
+   "loop": "once"
+  },
+  "burrow_strike": {
+   "length": 3,
+   "loop": "once"
+  },
+  "absolute_winter": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "idle_sway": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "idle_scan": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "idle_breath": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "idle_coil": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "stance": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "stance2": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "taunt": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "phase2": {
+   "length": 3,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.45,
+   "loop": "once"
+  },
+  "hurt_heavy": {
+   "length": 0.9,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  3,
+  3.2
+ ],
+ "shadow": 1.5,
+ "name_tag_y": 4.175,
+ "render_box": [
+  2.264,
+  3.925
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "spine_1_crystal_main_r",
+  "left_spine_1_crystal_r",
+  "right_spine_1_crystal_r",
+  "spine_2_crystal_main_r",
+  "left_spine_2_crystal_r",
+  "right_spine_2_crystal_r",
+  "spine_3_crystal_main_r",
+  "left_spine_3_crystal_r",
+  "right_spine_3_crystal_r",
+  "glow_frill_center",
+  "glow_frill_left_a",
+  "glow_frill_right_a",
+  "glow_frill_left_b",
+  "glow_frill_right_b"
+ ],
+ "glow_out": [],
+ "spawns": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "ht"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "gait": "walk",
+    "drv": "ht"
+   },
+   "summon": {
+    "p": "lying",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.0,
+    "drv": "h"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 3.0,
+    "eyes": true,
+    "drv": "h"
+   },
+   "shatter_roar": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.5,
+    "drv": "h"
+   },
+   "frost_fang": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "h",
+    "hit": 0.95
+   },
+   "glacial_breath": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.4,
+    "drv": "h"
+   },
+   "tail_sweep": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.9,
+    "drv": "ht"
+   },
+   "rime_spikes": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.0,
+    "drv": "h"
+   },
+   "burrow_strike": {
+    "p": "lying",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.0,
+    "drv": "h"
+   },
+   "absolute_winter": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.8,
+    "drv": "h"
+   },
+   "idle_sway": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "ht"
+   },
+   "idle_scan": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "ht"
+   },
+   "idle_breath": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "ht"
+   },
+   "idle_coil": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "ht"
+   },
+   "stance": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "ht"
+   },
+   "stance2": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "ht"
+   },
+   "taunt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.4,
+    "drv": "ht"
+   },
+   "phase2": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.0,
+    "drv": "ht"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.45,
+    "drv": "h"
+   },
+   "hurt_heavy": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.9,
+    "drv": "ht"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "death": "death",
+   "hurt": "hurt",
+   "stance1": "stance",
+   "stance2": "stance2",
+   "phase2": "phase2",
+   "hurt_heavy": "hurt_heavy"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "summon",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "shatter_roar",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "frost_fang",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "glacial_breath",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "rime_spikes",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "burrow_strike",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "absolute_winter",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "taunt",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "phase2",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "hurt_heavy",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "boss_calm": [
+    {
+     "clip": "idle",
+     "w": 2,
+     "min": 6,
+     "max": 12
+    },
+    {
+     "clip": "idle_sway",
+     "w": 3,
+     "min": 6,
+     "max": 12
+    },
+    {
+     "clip": "idle_scan",
+     "w": 2,
+     "min": 6,
+     "max": 6
+    },
+    {
+     "clip": "idle_breath",
+     "w": 2,
+     "min": 6,
+     "max": 6,
+     "cd": 15
+    },
+    {
+     "clip": "idle_coil",
+     "w": 1,
+     "min": 6,
+     "max": 6,
+     "cd": 20
+    }
+   ],
+   "boss_combat": [
+    {
+     "clip": "stance",
+     "w": 5,
+     "min": 6,
+     "max": 12,
+     "when": "p1"
+    },
+    {
+     "clip": "stance2",
+     "w": 5,
+     "min": 6,
+     "max": 12,
+     "when": "p2+"
+    },
+    {
+     "clip": "idle_sway",
+     "w": 1,
+     "min": 3,
+     "max": 6,
+     "when": "p1"
+    },
+    {
+     "clip": "taunt",
+     "w": 1,
+     "cd": 22,
+     "when": "far"
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail_1",
+    "tail_2",
+    "tail_1_seg_r"
+   ],
+   "breath": 0.008,
+   "look_yaw": 45,
+   "look_pitch": 25
+  },
+  "authored": [
+   "absolute_winter",
+   "burrow_strike",
+   "death",
+   "frost_fang",
+   "glacial_breath",
+   "hurt",
+   "hurt_heavy",
+   "idle_breath",
+   "idle_coil",
+   "idle_scan",
+   "idle_sway",
+   "phase2",
+   "rime_spikes",
+   "shatter_roar",
+   "stance",
+   "stance2",
+   "summon",
+   "tail_sweep",
+   "taunt"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "glow_frill_center",
+  "glow_frill_left_a",
+  "glow_frill_right_a",
+  "glow_frill_left_b",
+  "glow_frill_right_b",
+  "spine_3_crystal_main_r",
+  "left_spine_3_crystal_r",
+  "right_spine_3_crystal_r",
+  "spine_2_crystal_main_r",
+  "left_spine_2_crystal_r",
+  "right_spine_2_crystal_r",
+  "spine_1_crystal_main_r",
+  "left_spine_1_crystal_r",
+  "right_spine_1_crystal_r"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 6
+   },
+   "ambient_angry": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 6
+   },
+   "hurt": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 0
+   },
+   "death": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 6
+   },
+   "step": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 0
+   },
+   "ability": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 4
+   },
+   "ability_inhale": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 4
+   },
+   "ability_breath": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 3
+   },
+   "ability_grind": {
+    "jitter": 0.05,
+    "dist": 48
+   },
+   "ability_hiss": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 2
+   },
+   "ability_roar": {
+    "jitter": 0.05,
+    "dist": 56,
+    "layer": 6
+   },
+   "ability_shatter": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 3
+   },
+   "ability_slam": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 1
+   },
+   "ability_whoosh": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 1
+   },
+   "ability_dig": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 4
+   },
+   "ability_bite": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 1
+   }
+  },
+  "every": 160,
+  "dist": 48
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/tool/dagger/binding/wood"
+ }
+}

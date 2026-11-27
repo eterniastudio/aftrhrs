@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:cut_sandstone_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:sandstone_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_birdbath"
+ }
+}

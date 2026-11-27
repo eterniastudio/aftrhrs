@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "F F",
+  "WwW",
+  "F F"
+ ],
+ "key": {
+  "F": "minecraft:spruce_fence",
+  "W": "minecraft:red_wool",
+  "w": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_hammock"
+ }
+}

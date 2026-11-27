@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "I I",
+  " I ",
+  " S "
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:smith_ladle",
+  "count": 1
+ }
+}

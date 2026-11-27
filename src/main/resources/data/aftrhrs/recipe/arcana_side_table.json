@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "XAX",
+  " P ",
+  " P "
+ ],
+ "key": {
+  "X": "#minecraft:wooden_slabs",
+  "A": "minecraft:amethyst_shard",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_side_table"
+ }
+}

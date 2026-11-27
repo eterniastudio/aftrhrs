@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BBB",
+  "B  ",
+  "B  "
+ ],
+ "key": {
+  "B": "minecraft:quartz_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_arch_wide_quarter",
+  "count": 2
+ }
+}

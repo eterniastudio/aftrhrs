@@ -1,0 +1,7 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "aftrhrs:arcana_polished_snow",
+ "result": {
+  "id": "aftrhrs:arcana_snow_bricks"
+ }
+}

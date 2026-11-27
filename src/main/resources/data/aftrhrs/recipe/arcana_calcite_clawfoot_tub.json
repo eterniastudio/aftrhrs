@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Q Q",
+  "QQQ",
+  "N N"
+ ],
+ "key": {
+  "N": "minecraft:gold_nugget",
+  "Q": "minecraft:calcite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_calcite_clawfoot_tub"
+ }
+}

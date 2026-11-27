@@ -1,0 +1,1406 @@
+name: Feather
+version: 1.0.0
+main: net.axther.feather.Feather
+api-version: "1.21"
+description: Aftr Hrs server core - teleport requests, homes, hats and nicknames with native menus, plus the Arcana taming guide, Arcana item behavior and the ModelEngine/Oraxen pack bridge.
+softdepend: [Essentials, EssentialsChat, Oraxen, MythicMobs, ModelEngine, LuckPerms, PlaceholderAPI]
+commands:
+  feather:
+    description: Open the Feather menu (or /feather reload, /feather update for the server updater).
+    usage: /feather [reload|update [status|check|stage|cancel]]
+    aliases: [menu, arcanatools]
+  tpa:
+    description: Ask to teleport to a player (no name opens the player picker).
+    usage: /tpa [player]
+    aliases: [tpask, call]
+    permission: feather.tpa
+  tpahere:
+    description: Ask a player to teleport to you.
+    usage: /tpahere <player>
+    aliases: [tpaskhere]
+    permission: feather.tpahere
+  tpaccept:
+    description: Accept a teleport request.
+    usage: /tpaccept [player]
+    aliases: [tpyes]
+    permission: feather.tpaccept
+  tpdeny:
+    description: Deny a teleport request.
+    usage: /tpdeny [player]
+    aliases: [tpno]
+    permission: feather.tpaccept
+  tpacancel:
+    description: Cancel your outgoing teleport request(s).
+    usage: /tpacancel [player]
+    aliases: [tpcancel]
+    permission: feather.tpa
+  tptoggle:
+    description: Turn incoming teleport requests on or off.
+    usage: /tptoggle
+    permission: feather.tptoggle
+  home:
+    description: Teleport home (no name opens your homes).
+    usage: /home [name]
+    permission: feather.home
+  homes:
+    description: Open your homes.
+    usage: /homes
+    aliases: [listhomes]
+    permission: feather.home
+  sethome:
+    description: Save a home where you stand.
+    usage: /sethome [name]
+    aliases: [createhome]
+    permission: feather.sethome
+  delhome:
+    description: Delete a home.
+    usage: /delhome <name>
+    aliases: [deletehome, remhome, rmhome]
+    permission: feather.sethome
+  homeicon:
+    description: Set a home's icon (the item in your hand, a named item, or clear).
+    usage: /homeicon <home> [item|clear]
+    permission: feather.sethome
+  hat:
+    description: Wear the item in your hand (/hat off to take it off).
+    usage: /hat [off]
+    aliases: [head]
+    permission: feather.hat
+  nick:
+    description: Set your nickname (no name opens the editor).
+    usage: /nick [nickname|off] or /nick <player> <nickname|off>
+    aliases: [nickname]
+    permission: feather.nick
+  codex:
+    description: Open the creature codex (every Arcana creature, how to tame it, where it lives; the old taming guide).
+    usage: /codex [category|creature|book]
+    aliases: [tamingguide, taming, arcanaguide, creatures]
+    permission: feather.guide
+  spawn:
+    description: Teleport to spawn.
+    usage: /spawn [player]
+    permission: feather.spawn
+  setspawn:
+    description: Set the spawn point here.
+    usage: /setspawn
+    permission: feather.setspawn
+  warp:
+    description: Warp somewhere (no name opens the list).
+    usage: /warp [name]
+    aliases: [warps]
+    permission: feather.warp
+  setwarp:
+    description: Create or move a warp here.
+    usage: /setwarp <name>
+    aliases: [createwarp]
+    permission: feather.setwarp
+  warpicon:
+    description: Set a warp's icon (the item in your hand, a named item, or clear).
+    usage: /warpicon <warp> [item|clear]
+    permission: feather.setwarp
+  delwarp:
+    description: Delete a warp.
+    usage: /delwarp <name>
+    aliases: [rmwarp, deletewarp]
+    permission: feather.setwarp
+  back:
+    description: Go back to where you were before teleporting or dying.
+    usage: /back
+    aliases: [return]
+    permission: feather.back
+  msg:
+    description: Send a private message.
+    usage: /msg <player> <message>
+    aliases: [tell, w, m, whisper, pm, dm]
+    permission: feather.msg
+  reply:
+    description: Reply to your last private message.
+    usage: /r <message>
+    aliases: [r]
+    permission: feather.msg
+  msgtoggle:
+    description: Turn incoming private messages on or off.
+    usage: /msgtoggle
+    aliases: [togglemsg]
+    permission: feather.msgtoggle
+  socialspy:
+    description: See everyone's private messages.
+    usage: /socialspy
+    aliases: [spy]
+    permission: feather.socialspy
+  realname:
+    description: Find who is behind a nickname.
+    usage: /realname <nickname>
+    permission: feather.realname
+  seen:
+    description: When a player was last online.
+    usage: /seen <player>
+    permission: feather.seen
+  gmc:
+    description: Creative mode.
+    usage: /gmc [player]
+    aliases: [creative]
+    permission: feather.gamemode
+  gms:
+    description: Survival mode.
+    usage: /gms [player]
+    aliases: [survival]
+    permission: feather.gamemode
+  gma:
+    description: Adventure mode.
+    usage: /gma [player]
+    aliases: [adventure]
+    permission: feather.gamemode
+  gmsp:
+    description: Spectator mode.
+    usage: /gmsp [player]
+    aliases: [spectator]
+    permission: feather.gamemode
+  god:
+    description: Toggle god mode.
+    usage: /god [player]
+    aliases: [tgm, godmode]
+    permission: feather.god
+  heal:
+    description: Heal fully (also fire, air, hunger and effects).
+    usage: /heal [player]
+    permission: feather.heal
+  feed:
+    description: Fill hunger.
+    usage: /feed [player]
+    aliases: [eat]
+    permission: feather.feed
+  smite:
+    description: Strike lightning where you look, or at a player.
+    usage: /smite [player]
+    aliases: [lightning, strike, thor]
+    permission: feather.smite
+  spawnmob:
+    description: Spawn mobs where you look.
+    usage: /spawnmob <mob> [amount] [player]
+    aliases: [mob, smob]
+    permission: feather.spawnmob
+  i:
+    description: Give yourself an item (oraxen:<id> for Oraxen items).
+    usage: /i <item> [amount] [player]
+    aliases: [item]
+    permission: feather.item
+  itemname:
+    description: Rename the held item (color codes and gradients work).
+    usage: /itemname <name|off>
+    aliases: [iname, rename]
+    permission: feather.itemname
+  fly:
+    description: Toggle flight.
+    usage: /fly [player]
+    permission: feather.fly
+  speed:
+    description: Set walk or fly speed (1 = normal, 10 = max).
+    usage: /speed <1-10> [player]
+    permission: feather.speed
+  vanish:
+    description: Toggle vanish.
+    usage: /vanish [player]
+    aliases: [v]
+    permission: feather.vanish
+  invsee:
+    description: Open a player's inventory.
+    usage: /invsee <player>
+    aliases: [inv]
+    permission: feather.invsee
+  enderchest:
+    description: Open your (or a player's) ender chest.
+    usage: /ec [player]
+    aliases: [ec, echest]
+    permission: feather.enderchest
+  top:
+    description: Go to the highest block above you.
+    usage: /top
+    permission: feather.top
+  tphere:
+    description: Bring a player to you.
+    usage: /tphere <player>
+    aliases: [tph, s]
+    permission: feather.tphere
+  broadcast:
+    description: Announce to the server.
+    usage: /broadcast <message>
+    aliases: [bc, announce]
+    permission: feather.broadcast
+  craft:
+    description: Open a crafting table.
+    usage: /craft
+    aliases: [workbench, wb]
+    permission: feather.craft
+  altars:
+    description: Boss altar admin (list fights, reset cooldowns, end fights).
+    usage: /altars [list|reset <player|here|all>|end <#|all> [refund]|summon <boss> [player]]
+    aliases: [bossaltars]
+    permission: feather.altars.admin
+  pets:
+    description: Your pets (summon, stay/follow, rename, release, revive, stable). /pets summon calls the following ones. /pets codex opens /codex.
+    usage: /pets [summon|stable|admin setbond <player> <level> [pet]|admin codexreset <player>|admin nextvariant/setvariant/breedreset/worktime/workinfo <player> ...]
+    aliases: [pet]
+    permission: feather.pets
+  bestiary:
+    description: The bestiary of wild creatures (seen, harvested, slain, page rewards), on the codex's Wildlife tab.
+    usage: /bestiary
+    permission: feather.bestiary
+  wildlife:
+    description: Wild creatures (staff - info, due, tick, fedexpire, shed, dive, hotspot, moon, record, book, reset).
+    usage: /wildlife [info|due|tick|fedexpire|shed|dive|hotspot|moon [on|off]|record <player> <mob> <seen|harvested|slain>|book [player]|reset <player>]
+    permission: feather.bestiary
+  afk:
+    description: Mark yourself as away (again to come back).
+    usage: /afk [message]
+    aliases: [away]
+    permission: feather.afk
+  trail:
+    description: Pick your flight trail (no style opens the menu).
+    usage: /trail [style|off]
+    aliases: [trails, flytrail]
+    permission: feather.trails
+  rtp:
+    description: Teleport to a random spot in the wild.
+    usage: /rtp [player] [world]
+    aliases: [wild, randomtp, wilderness]
+    permission: feather.rtp
+  sit:
+    description: Sit down (again to stand up).
+    usage: /sit
+    permission: feather.sit
+  lay:
+    description: Lie down (move, jump or sneak to get up).
+    usage: /lay
+    aliases: [lie, laydown]
+    permission: feather.lay
+  carry:
+    description: Carrying players, blocks and mobs (toggle whether others can carry you, or put down what you carry).
+    usage: /carry [toggle|drop]
+    permission: feather.carry
+  swim:
+    description: Crawl on the ground (again or sneak to stand up).
+    usage: /swim
+    aliases: [crawl]
+    permission: feather.swim
+  maintenance:
+    description: Turn maintenance mode on or off.
+    usage: /maintenance [on|off]
+    permission: feather.maintenance
+  mute:
+    description: Stop a player from chatting.
+    usage: /mute <player> [10m|2h|7d|perm] [reason]
+    aliases: [silence]
+    permission: feather.mute
+  unmute:
+    description: Let a muted player chat again.
+    usage: /unmute <player>
+    permission: feather.mute
+  ignore:
+    description: Hide a player's chat, messages and teleport requests (no name lists them).
+    usage: /ignore [player]
+    aliases: [block]
+    permission: feather.ignore
+  unignore:
+    description: Stop ignoring a player.
+    usage: /unignore <player>
+    aliases: [unblock]
+    permission: feather.ignore
+  clearchat:
+    description: Clear the chat for everyone.
+    usage: /clearchat
+    aliases: [cc, chatclear]
+    permission: feather.clearchat
+  mutechat:
+    description: Pause or reopen public chat.
+    usage: /mutechat
+    aliases: [lockchat]
+    permission: feather.mutechat
+  # --- Moderation suite (modules.moderation)
+  kick:
+    description: Kick a player, with a reason on their screen.
+    usage: /kick <player> [reason]
+    permission: feather.kick
+  ban:
+    description: Ban a player (online or not), for good or for a time.
+    usage: /ban <player> [time] [reason]
+    permission: feather.ban
+  tempban:
+    description: Ban a player for a while.
+    usage: /tempban <player> <time> [reason]
+    permission: feather.tempban
+  unban:
+    description: Lift a ban.
+    usage: /unban <player>
+    aliases: [pardon]
+    permission: feather.unban
+  banlist:
+    description: List banned players, with reason and time left.
+    usage: /banlist
+    aliases: [bans]
+    permission: feather.ban
+  warn:
+    description: Warn a player (they get a title; offline players see it when they next join).
+    usage: /warn <player> <reason>
+    permission: feather.warn
+  warnings:
+    description: Your warnings, or a player's (staff).
+    usage: /warnings [player]
+    aliases: [warns]
+    permission: feather.warnings
+  delwarn:
+    description: Remove one of a player's warnings by its number.
+    usage: /delwarn <player> <number>
+    aliases: [unwarn]
+    permission: feather.warn
+  history:
+    description: A player's moderation history (warnings, mutes, kicks, bans, freezes).
+    usage: /history <player>
+    aliases: [modhistory]
+    permission: feather.history
+  staffchat:
+    description: Talk to staff only (no message toggles staff chat mode).
+    usage: /sc [message]
+    aliases: [sc]
+    permission: feather.staffchat
+  report:
+    description: Report a player to the staff.
+    usage: /report <player> <reason>
+    permission: feather.report
+  reports:
+    description: Open reports (staff), with teleport, view and close.
+    usage: /reports [tp|view|close <id>]
+    permission: feather.reports
+  freeze:
+    description: Freeze a player in place (lasts across relogs until /unfreeze).
+    usage: /freeze <player>
+    aliases: [ss]
+    permission: feather.freeze
+  unfreeze:
+    description: Unfreeze a player.
+    usage: /unfreeze <player>
+    permission: feather.freeze
+  ping:
+    description: Show your (or a player's) ping.
+    usage: /ping [player]
+    permission: feather.ping
+  near:
+    description: List players near you.
+    usage: /near [radius]
+    aliases: [nearby]
+    permission: feather.near
+  list:
+    description: Who's online, by rank.
+    usage: /list
+    aliases: [online, who, players]
+    permission: feather.list
+  playtime:
+    description: How long you (or a player) have played.
+    usage: /playtime [player]
+    aliases: [pt]
+    permission: feather.playtime
+  whois:
+    description: Details about an online player.
+    usage: /whois <player>
+    permission: feather.whois
+  trash:
+    description: Open a bin; whatever is in it when you close it is deleted.
+    usage: /trash
+    aliases: [disposal, bin]
+    permission: feather.trash
+  anvil:
+    description: Open an anvil.
+    usage: /anvil
+    permission: feather.workstation.anvil
+  grindstone:
+    description: Open a grindstone.
+    usage: /grindstone
+    permission: feather.workstation.grindstone
+  stonecutter:
+    description: Open a stonecutter.
+    usage: /stonecutter
+    permission: feather.workstation.stonecutter
+  loom:
+    description: Open a loom.
+    usage: /loom
+    permission: feather.workstation.loom
+  cartography:
+    description: Open a cartography table.
+    usage: /cartography
+    aliases: [cartographytable]
+    permission: feather.workstation.cartography
+  smithing:
+    description: Open a smithing table.
+    usage: /smithing
+    aliases: [smithingtable]
+    permission: feather.workstation.smithing
+  skull:
+    description: Get your (or a player's) head.
+    usage: /skull [player]
+    aliases: [playerhead]
+    permission: feather.skull
+  repair:
+    description: Repair the held item (or everything with "all").
+    usage: /repair [all]
+    aliases: [fix]
+    permission: feather.repair
+  day:
+    description: Set your world to morning.
+    usage: /day
+    permission: feather.time
+  night:
+    description: Set your world to night.
+    usage: /night
+    permission: feather.time
+  sun:
+    description: Clear the weather in your world.
+    usage: /sun
+    permission: feather.weather
+  storm:
+    description: Start rain in your world.
+    usage: /storm
+    aliases: [rain]
+    permission: feather.weather
+  sudo:
+    description: Make a player run a command (c:<text> to chat).
+    usage: /sudo <player> <command>
+    permission: feather.sudo
+  tpo:
+    description: Teleport to a player straight away (ignores their request setting).
+    usage: /tpo <player>
+    aliases: [tpto, goto]
+    permission: feather.tpo
+  tpall:
+    description: Bring every online player to you.
+    usage: /tpall
+    permission: feather.tpall
+  tppos:
+    description: Teleport to coordinates.
+    usage: /tppos <x> <y> <z> [world]
+    aliases: [tpcoords]
+    permission: feather.tppos
+  # --- Chest locks (modules.chest-locks)
+  lock:
+    description: Lock the chest or barrel you're looking at with a PIN, or manage your lock.
+    usage: /lock [pin|auto [on|off]|allow [player]|disallow <player>|remove|givekey [player] [amount]]
+    aliases: [chestlock, lockchest]
+    permission: feather.locks
+  unlock:
+    description: Remove the lock from the chest or barrel you're looking at.
+    usage: /unlock
+    aliases: [chestunlock]
+    permission: feather.locks
+  inspect:
+    description: Show the stats of the item in your hand (staff - someone else's).
+    usage: /inspect [player]
+    aliases: [itemstats, toolstats]
+    permission: feather.inspect
+  timezone:
+    description: Pick the time zone times are shown in (no zone opens the picker).
+    usage: /timezone [Area/City|reset]
+    aliases: [tz]
+    permission: feather.timezone
+  stats:
+    description: Your stats (or another player's).
+    usage: /stats [player]
+    aliases: [mystats]
+    permission: feather.stats
+  leaderboard:
+    description: The leaderboards (blocks mined, playtime, kills ...).
+    usage: /leaderboard [category]
+    aliases: [lb, leaderboards]
+    permission: feather.leaderboard
+  analytics:
+    description: Server analytics (or /analytics export | get <player> <stat> | flush).
+    usage: /analytics [export|get|flush]
+    permission: feather.analytics
+  bounty:
+    description: Put a bounty on a player, or list the active ones.
+    usage: /bounty <player> | list | remove <player>
+    aliases: [bounties]
+    permission: feather.bounty
+  bossboard:
+    description: The weekly boss board (altar boss kills, fastest kills, top boss hunters).
+    usage: /bossboard [last] | rollover | reset
+    aliases: [bosses]
+    permission: feather.bossboard
+  recipes:
+    description: Open the custom recipe manager (or list, reload, give <id> [player]).
+    usage: /recipes [list|reload|give <id> [player]]
+    aliases: [customrecipes]
+    permission: feather.recipes.admin
+  # --- Auth gate (modules.auth)
+  auth:
+    description: The auth gate - status, list, reset <player>, setcode <code>, clearcode.
+    usage: /auth [status|list|reset <player>|setcode <code>|clearcode]
+    aliases: [servercode]
+    permission: feather.auth.admin
+  # --- Death points (modules.death-point)
+  deathpoint:
+    description: Your last death points - coordinates, distance, Track (and Teleport for staff).
+    usage: /deathpoint [track [n]|tp <n>]
+    aliases: [dp, deathpoints]
+    permission: feather.deathpoint
+  grave:
+    description: Your graves and who you trust with them; staff list, teleport to, open and remove graves.
+    usage: /grave [trust|untrust <player>|trusted|list [player]|tp|open|remove <id>|age <id|player> <minutes>]
+    aliases: [graves]
+    permission: feather.grave
+  bank:
+    description: The bank screen (anywhere), /bank rob, /bank defend, or staff tools (create, remove, give, take, set, info, interest, robbery).
+    usage: /bank [rob|defend|create|remove|list|give|take|set|info|interest|robbery]
+    permission: feather.bank
+  balance:
+    description: Your Goob Coin balance in the bank.
+    usage: /balance
+    aliases: [bal, money]
+    permission: feather.balance
+  pay:
+    description: Send Goob Coins from your bank balance to another player.
+    usage: /pay <player> <amount>
+    permission: feather.pay
+  baltop:
+    description: The richest players.
+    usage: /baltop
+    aliases: [balancetop, richest]
+    permission: feather.baltop
+  # --- Quests and the server goal (modules.quests)
+  quests:
+    description: Your daily and weekly quests (staff - admin reset, give, complete, progress, list).
+    usage: /quests [admin reset|give|complete|progress|list ...]
+    aliases: [quest, dailies]
+    permission: feather.quests
+  goal:
+    description: This week's server goal (staff - admin set, skip, complete, add, info; rescale).
+    usage: /goal [rescale | admin set|skip|complete|add|info|rescale ...]
+    aliases: [servergoal]
+    permission: feather.goal
+  # --- Login calendar (modules.calendar)
+  calendar:
+    description: Your login streak, daily reward and playtime rewards (or claim, or staff tools with admin).
+    usage: /calendar [claim [playtime]] | admin <player> info|streak <n>|playtime today|total <time>|nextday [days]|reset
+    aliases: [streak]
+    permission: feather.calendar
+  # --- Mail and gifts (modules.mail)
+  mail:
+    description: Your letters, or send a letter or a gift (picked up at the mailbox at spawn); staff place mailboxes.
+    usage: /mail [send <player> <message>|gift <player>|gifts|clear|mailbox create|remove|list]
+    aliases: [inbox]
+    permission: feather.mail
+  trade:
+    description: Trade items safely with a player nearby (a shared chest window), or answer a trade request.
+    usage: /trade <player> | accept [player] | deny [player] | toggle
+    permission: feather.trade
+  # --- Chat games (modules.chatgames)
+  chatgames:
+    description: Your chat game wins and the top players (or turn the games off; staff start and stop games).
+    usage: /chatgames [top|toggle] | start [type] [--answer] [--time <seconds>] | stop | reload | reset <player>
+    aliases: [cg, chatgame]
+    permission: feather.chatgames
+  # --- Land claims (modules.claims)
+  claim:
+    description: The Land menu, or claim the chunk you stand in, list, rename, flags, show borders (staff - bypass and admin claims).
+    usage: /claim [chunk|list|info|name <name>|abandon|flags|show|mode|transfer <player>|bypass|admin ...]
+    aliases: [claims, land]
+    permission: feather.claims
+  unclaim:
+    description: Unclaim the chunk you stand in (or the whole claim with "all").
+    usage: /unclaim [all]
+    aliases: [abandonclaim]
+    permission: feather.claims
+  trust:
+    description: Trust a player (or everyone, "public") in the claim you stand in, or in all your claims.
+    usage: /trust <player|public> [access|container|build|manager]
+    aliases: [claimtrust]
+    permission: feather.claims
+  untrust:
+    description: Take a player's (or everyone's) trust away.
+    usage: /untrust <player|public>
+    aliases: [claimuntrust]
+    permission: feather.claims
+  claimblocks:
+    description: Your claim chunks (staff - another player's, or give, take or set them).
+    usage: /claimblocks [player] [give|take|set <n>]
+    aliases: [cblocks, claimchunks]
+    permission: feather.claims
+
+  # --- Holograms (modules.holograms)
+  holo:
+    description: Make and edit holograms (text, items, heads, blocks, mobs; pages, click actions, placeholders).
+    usage: /holo create <name> [text] | delete | list | near [radius] | info | tp | movehere | move | addline | setline | insertline | removeline | line | page | set | action | copy | edit | view | reload
+    aliases: [hologram, holograms]
+    permission: feather.holograms.admin
+  # --- Storage network + Quick Craft (modules.storage)
+  storage:
+    description: Storage network blocks (staff give them out with /storage give).
+    usage: /storage give <player> <terminal|crafting|connector> [amount]
+    aliases: [storagenetwork]
+    permission: feather.storage.use
+  quickcraft:
+    description: Quick Craft from your inventory - every recipe you can make right now, one click each.
+    usage: /quickcraft
+    aliases: [qc, fastcraft]
+    permission: feather.storage.quickcraft
+  # --- Shop: General Store, sell-back counters, market stalls (modules.shop)
+  shop:
+    description: The General Store (paid from your bank balance); /shop sell at a fishmonger or grocer counter.
+    usage: /shop [sell|featured]
+    aliases: [store, generalstore]
+    permission: feather.shop
+  stall:
+    description: Market stalls - rent one, place its keeper, sell from it, buy from others (staff - create, remove, list, expire, keepers).
+    usage: /stall [rent|renew|leave|collect|info|keeper|create <name>|remove <name>|list|expire <name>|keeper <name>|keeper place <name> <x> <y> <z>|keeper remove <name>]
+    aliases: [stalls, market]
+    permission: feather.stall
+  # --- Fishing (modules.fishing)
+  fishing:
+    description: Fishing - the Fish Journal, records and tournaments (staff - tournament start/stop, debug).
+    usage: /fishing [journal|records|tournament [start <minutes>|stop]]
+    aliases: [fish, fishjournal]
+    permission: feather.fishing
+  # --- Civic spawn furniture (modules.civic)
+  civic:
+    description: Spawn furniture tools (staff) - fountain goal link, info.
+    usage: /civic fountain goal|info
+    permission: feather.civic.admin
+  # --- Farming (modules.farming)
+  farming:
+    description: Farming - the Harvest Fair (/farming fair, /farming fair submit) and staff test tools.
+    usage: /farming fair [submit|judge] | debug ...
+    aliases: [farm, harvestfair]
+    permission: feather.farming
+  # --- Gadgets / power (modules.gadgets, modules.power); Paper registered these at runtime
+  gadgets:
+    description: Inspect Feather gadgets near you, or reload gadgets.yml (staff).
+    usage: /gadgets [info|reload]
+    permission: feather.gadgets.admin
+  power:
+    description: Coal generators and fans (staff).
+    usage: /power give <player> <fan|generator> [amount] | /power info
+    permission: feather.power.admin
+permissions:
+  feather.player:
+    description: Every player feature.
+    default: true
+    children:
+      feather.tpa: true
+      feather.tpahere: true
+      feather.tpaccept: true
+      feather.tptoggle: true
+      feather.home: true
+      feather.sethome: true
+      feather.hat: true
+      feather.nick: true
+      feather.nick.color: true
+      feather.nick.format: true
+      feather.nick.gradient: true
+      feather.guide: true
+      feather.hotkey: true
+      feather.spawn: true
+      feather.warp: true
+      feather.back: true
+      feather.msg: true
+      feather.msgtoggle: true
+      feather.realname: true
+      feather.seen: true
+      feather.afk: true
+      feather.afk.message: true
+      feather.trails: true
+      feather.rtp: true
+      feather.sit: true
+      feather.lay: true
+      feather.swim: true
+      feather.carry: true
+      feather.locks: true
+      feather.ignore: true
+      feather.ping: true
+      feather.near: true
+      feather.list: true
+      feather.playtime: true
+      feather.trash: true
+      feather.pets: true
+      feather.bestiary: true
+      feather.altars.use: true
+      feather.chat.share: true
+      feather.inspect: true
+      feather.timezone: true
+      feather.stats: true
+      feather.leaderboard: true
+      feather.bounty: true
+      feather.report: true
+      feather.warnings: true
+      feather.bossboard: true
+      feather.bank: true
+      feather.balance: true
+      feather.pay: true
+      feather.baltop: true
+      feather.bank.robbery: true
+      feather.bank.defend: true
+      feather.shop: true
+      feather.shop.sell: true
+      feather.stall: true
+      feather.calendar: true
+      feather.mail: true
+      feather.mail.gift: true
+      feather.trade: true
+      feather.grave: true
+      feather.chatgames: true
+  feather.staff:
+    description: Staff extras.
+    default: op
+    children:
+      feather.player: true
+      feather.admin: true
+      feather.inspect.others: true
+      feather.stats.others: true
+      feather.analytics: true
+      feather.bounty.admin: true
+      feather.bossboard.admin: true
+      feather.bank.admin: true
+      feather.stall.admin: true
+      feather.calendar.admin: true
+      feather.mail.admin: true
+      feather.grave.admin: true
+      feather.chatgames.admin: true
+      feather.nick.others: true
+      feather.nick.magic: true
+      feather.nick.blacklist.bypass: true
+      feather.tptoggle.bypass: true
+      feather.tpa.nocooldown: true
+      feather.teleport.instant: true
+      feather.homes.unlimited: true
+      feather.hat.any: true
+      feather.setspawn: true
+      feather.spawn.others: true
+      feather.setwarp: true
+      feather.socialspy: true
+      feather.msgtoggle.bypass: true
+      feather.gamemode: true
+      feather.gamemode.others: true
+      feather.god: true
+      feather.god.others: true
+      feather.heal: true
+      feather.heal.others: true
+      feather.feed: true
+      feather.feed.others: true
+      feather.smite: true
+      feather.smite.others: true
+      feather.spawnmob: true
+      feather.spawnmob.others: true
+      feather.item: true
+      feather.item.others: true
+      feather.itemname: true
+      feather.fly: true
+      feather.fly.others: true
+      feather.speed: true
+      feather.speed.others: true
+      feather.vanish: true
+      feather.vanish.others: true
+      feather.vanish.see: true
+      feather.invsee: true
+      feather.enderchest: true
+      feather.enderchest.others: true
+      feather.top: true
+      feather.tphere: true
+      feather.broadcast: true
+      feather.craft: true
+      feather.chat.color: true
+      feather.chat.minimessage: true
+      feather.chat.everyone: true
+      feather.maintenance: true
+      feather.maintenance.bypass: true
+      feather.mute: true
+      feather.mute.exempt: true
+      feather.ignore.exempt: true
+      feather.clearchat: true
+      feather.clearchat.bypass: true
+      feather.mutechat: true
+      feather.mutechat.bypass: true
+      feather.ping.others: true
+      feather.near.unlimited: true
+      feather.playtime.others: true
+      feather.whois: true
+      feather.workstation.*: true
+      feather.skull: true
+      feather.skull.others: true
+      feather.repair: true
+      feather.repair.all: true
+      feather.time: true
+      feather.weather: true
+      feather.sudo: true
+      feather.sudo.exempt: true
+      feather.tpo: true
+      feather.tpall: true
+      feather.tppos: true
+      feather.rtp.others: true
+      feather.rtp.nocooldown: true
+      feather.afk.exempt: true
+      feather.afk.kickexempt: true
+      feather.carry.bypass: true
+      feather.locks.bypass: true
+      feather.locks.admin: true
+      feather.recipes.admin: true
+      feather.kick: true
+      feather.ban: true
+      feather.tempban: true
+      feather.unban: true
+      feather.warn: true
+      feather.warnings.others: true
+      feather.history: true
+      feather.staffchat: true
+      feather.reports: true
+      feather.freeze: true
+      feather.invsee.offline: true
+      feather.whois.ip: true
+      feather.moderation.notify: true
+      feather.moderation.exempt: true
+  feather.admin:
+    description: /feather reload.
+    default: op
+  feather.tpa:
+    default: true
+  feather.tpahere:
+    default: true
+  feather.tpaccept:
+    default: true
+  feather.tptoggle:
+    default: true
+  feather.home:
+    default: true
+  feather.sethome:
+    default: true
+  feather.hat:
+    default: true
+  feather.nick:
+    default: true
+  feather.nick.color:
+    default: true
+  feather.nick.format:
+    default: true
+  feather.nick.gradient:
+    default: true
+  feather.guide:
+    description: /codex (the creature codex; also /tamingguide, the taming guide item and the hub's Codex button).
+    default: true
+  feather.hotkey:
+    description: Sneak + swap hands (Shift+F) opens the Feather menu.
+    default: true
+  feather.nick.others:
+    default: op
+  feather.nick.magic:
+    default: op
+  feather.nick.anycharacters:
+    default: op
+  feather.nick.impersonate:
+    default: op
+  feather.nick.blacklist.bypass:
+    default: op
+  feather.tptoggle.bypass:
+    default: op
+  feather.tpa.nocooldown:
+    default: op
+  feather.teleport.instant:
+    description: Skip the teleport warm-up.
+    default: op
+  feather.homes.unlimited:
+    default: op
+  feather.hat.any:
+    default: op
+  feather.spawn:
+    default: true
+  feather.warp:
+    default: true
+  feather.back:
+    default: true
+  feather.msg:
+    default: true
+  feather.msgtoggle:
+    default: true
+  feather.realname:
+    default: true
+  feather.seen:
+    default: true
+  feather.setspawn:
+    default: op
+  feather.spawn.others:
+    default: op
+  feather.setwarp:
+    default: op
+  feather.socialspy:
+    default: op
+  feather.msgtoggle.bypass:
+    default: op
+  feather.gamemode:
+    default: op
+  feather.gamemode.others:
+    default: op
+  feather.god:
+    default: op
+  feather.god.others:
+    default: op
+  feather.heal:
+    default: op
+  feather.heal.others:
+    default: op
+  feather.feed:
+    default: op
+  feather.feed.others:
+    default: op
+  feather.smite:
+    default: op
+  feather.smite.others:
+    default: op
+  feather.spawnmob:
+    default: op
+  feather.spawnmob.others:
+    default: op
+  feather.item:
+    default: op
+  feather.item.others:
+    default: op
+  feather.itemname:
+    default: op
+  feather.fly:
+    default: op
+  feather.fly.others:
+    default: op
+  feather.speed:
+    default: op
+  feather.speed.others:
+    default: op
+  feather.vanish:
+    default: op
+  feather.vanish.others:
+    default: op
+  feather.vanish.see:
+    default: op
+  feather.invsee:
+    default: op
+  feather.enderchest:
+    default: op
+  feather.enderchest.others:
+    default: op
+  feather.top:
+    default: op
+  feather.tphere:
+    default: op
+  feather.broadcast:
+    default: op
+  feather.craft:
+    default: op
+  feather.chat.color:
+    default: op
+  feather.chat.minimessage:
+    default: op
+  feather.chat.everyone:
+    description: Ping everyone with @everyone, or everyone not AFK with @here.
+    default: op
+  feather.spawnmob.unlimited:
+    default: op
+  feather.altars.use:
+    description: Summon bosses at a Summoning Altar.
+    default: true
+  feather.altars.bypass:
+    description: Skip altar place rules, cooldowns, spawn distance and the build check.
+    default: op
+  feather.altars.admin:
+    description: /altars (list fights, reset cooldowns, end fights, summon a boss without an altar).
+    default: op
+  feather.bossboard:
+    description: /bossboard - this week's and last week's altar boss kills.
+    default: true
+  feather.bossboard.admin:
+    description: /bossboard rollover (end the week now) and /bossboard reset (clear the board).
+    default: op
+  feather.pets:
+    description: /pets - list, summon, rename, release and revive your pets.
+    default: true
+  feather.pets.cap.unlimited:
+    description: No pet cap (feather.pets.cap.<n> sets a custom cap; the highest wins).
+    default: false
+  feather.pets.stable.unlimited:
+    description: No stable limit (feather.pets.stable.<n> sets a custom stable size; the highest wins).
+    default: false
+  feather.pets.admin:
+    description: /pets admin setbond, codexreset, nextvariant, setvariant, breedreset, worktime and workinfo.
+    default: op
+  feather.afk:
+    default: true
+  feather.afk.message:
+    description: Add a message to /afk.
+    default: true
+  feather.afk.exempt:
+    description: Never marked AFK automatically.
+    default: op
+  feather.afk.kickexempt:
+    description: Never kicked for idling.
+    default: op
+  feather.trails:
+    description: Leave a particle trail while flying and use /trail.
+    default: true
+  feather.rtp:
+    default: true
+  feather.rtp.others:
+    description: /rtp <player> [world].
+    default: op
+  feather.rtp.nocooldown:
+    default: op
+  feather.sit:
+    default: true
+  feather.lay:
+    default: true
+  feather.swim:
+    description: /swim and /crawl.
+    default: true
+  feather.maintenance:
+    description: /maintenance.
+    default: op
+  feather.maintenance.bypass:
+    description: Join while maintenance mode is on.
+    default: op
+  feather.mute:
+    description: /mute and /unmute.
+    default: op
+  feather.mute.exempt:
+    default: op
+  feather.ignore:
+    default: true
+  feather.ignore.exempt:
+    description: Can't be ignored.
+    default: op
+  feather.clearchat:
+    default: op
+  feather.clearchat.bypass:
+    description: Keep your chat when /clearchat runs.
+    default: op
+  feather.mutechat:
+    default: op
+  feather.mutechat.bypass:
+    description: Chat while chat is paused.
+    default: op
+  feather.ping:
+    default: true
+  feather.ping.others:
+    default: op
+  feather.near:
+    default: true
+  feather.near.unlimited:
+    default: op
+  feather.list:
+    default: true
+  feather.playtime:
+    default: true
+  feather.playtime.others:
+    default: op
+  feather.whois:
+    default: op
+  feather.whois.address:
+    description: See IP addresses in /whois.
+    default: false
+  feather.trash:
+    default: true
+  feather.workstation.*:
+    description: Every virtual workstation.
+    default: op
+    children:
+      feather.workstation.anvil: true
+      feather.workstation.grindstone: true
+      feather.workstation.stonecutter: true
+      feather.workstation.loom: true
+      feather.workstation.cartography: true
+      feather.workstation.smithing: true
+  feather.workstation.anvil:
+    default: op
+  feather.workstation.grindstone:
+    default: op
+  feather.workstation.stonecutter:
+    default: op
+  feather.workstation.loom:
+    default: op
+  feather.workstation.cartography:
+    default: op
+  feather.workstation.smithing:
+    default: op
+  feather.skull:
+    default: op
+  feather.skull.others:
+    default: op
+  feather.repair:
+    default: op
+  feather.repair.all:
+    default: op
+  feather.time:
+    default: op
+  feather.weather:
+    default: op
+  feather.sudo:
+    default: op
+  feather.sudo.exempt:
+    description: Can't be forced with /sudo (except from the console).
+    default: op
+  feather.tpo:
+    default: op
+  feather.tpall:
+    default: op
+  feather.tppos:
+    default: op
+  feather.carry:
+    description: Pick up players, blocks and mobs (sneak + right-click with an empty hand).
+    default: true
+  feather.carry.bypass:
+    description: Carry players who turned carrying off.
+    default: op
+  # --- Chest locks (modules.chest-locks)
+  feather.locks:
+    description: Lock chests and barrels with a PIN (/lock, /unlock, the Chest Key) and open others' locks with the PIN.
+    default: true
+  feather.locks.bypass:
+    description: Open, break and remove anyone's chest lock without the PIN.
+    default: op
+  feather.locks.admin:
+    description: /lock givekey.
+    default: op
+  feather.chat.share:
+    description: Share your held item, inventory or ender chest in chat with [i], [inv] and [ec].
+    default: true
+  feather.inspect:
+    description: See the stats of the item in your hand with /inspect.
+    default: true
+  feather.inspect.others:
+    description: /inspect <player> - see the stats of someone else's held item.
+    default: op
+  feather.timezone:
+    description: Pick your time zone with /timezone.
+    default: true
+  feather.stats:
+    description: /stats for your own stats.
+    default: true
+  feather.stats.others:
+    description: /stats <player> for someone else's stats.
+    default: op
+  feather.leaderboard:
+    description: /leaderboard.
+    default: true
+  feather.analytics:
+    description: /analytics (server analytics, CSV export).
+    default: op
+  feather.bounty:
+    description: Place bounties and see /bounty list.
+    default: true
+  feather.bounty.admin:
+    description: /bounty remove, no bounty cooldown, remove buttons in /bounty list.
+  # --- Moderation suite (modules.moderation)
+  feather.kick:
+    description: /kick.
+    default: op
+  feather.ban:
+    description: /ban (for good or timed) and /banlist.
+    default: op
+  feather.tempban:
+    description: /tempban.
+    default: op
+  feather.unban:
+    description: /unban.
+    default: op
+  feather.warn:
+    description: /warn and /delwarn; remove buttons in /warnings.
+    default: op
+  feather.warnings:
+    description: /warnings - see your own warnings.
+    default: true
+  feather.warnings.others:
+    description: /warnings <player>.
+    default: op
+  feather.history:
+    description: /history <player>.
+    default: op
+  feather.staffchat:
+    description: Read and write staff chat (/sc).
+    default: op
+  feather.report:
+    description: /report a player to the staff.
+    default: true
+  feather.reports:
+    description: Get report notices, /reports, and no /report cooldown.
+    default: op
+  feather.freeze:
+    description: /freeze and /unfreeze (and keep using commands while frozen).
+    default: op
+  feather.invsee.offline:
+    description: /invsee and /ec on offline players (their last saved snapshot, read-only).
+    default: op
+  feather.whois.ip:
+    description: See IP addresses in /whois (online and offline).
+    default: op
+  feather.moderation.notify:
+    description: Get a chat line whenever staff mute, kick, ban, warn, freeze or close a report.
+    default: op
+  feather.moderation.exempt:
+    description: Can't be kicked, banned or frozen by other staff (the console still can).
+    default: op
+  # Custom recipes (/recipes).
+  feather.recipes.admin:
+    description: Make, edit, delete and give custom recipes with /recipes.
+    default: op
+  # --- Auth gate (modules.auth)
+  feather.auth.admin:
+    description: /auth - set or clear the server code, reset a player, list trusted players, status.
+    default: op
+  feather.auth.bypass:
+    description: Never asked for the server code (ops never are either).
+    default: op
+  # --- Death points (modules.death-point)
+  feather.deathpoint:
+    description: /deathpoint (/dp), the death coordinates after respawning and the Death Point button in Warps & Spawn.
+    default: true
+  feather.deathpoint.teleport:
+    description: The Teleport button in /deathpoint and /deathpoint tp.
+    default: op
+  # Graves (docs/graves.md).
+  feather.grave:
+    description: Get a grave when you die, /grave, /grave trust and the Grave Trust setting.
+    default: true
+  feather.grave.admin:
+    description: /grave list, tp, open, remove and age (any grave).
+    default: op
+  # The bank (docs/bank.md, docs/bank-robbery.md).
+  feather.bank:
+    description: Use bank chests (buy, sell, deposit, withdraw, history).
+    default: true
+  feather.balance:
+    description: /balance.
+    default: true
+  feather.pay:
+    description: /pay other players from your bank balance.
+    default: true
+  feather.baltop:
+    description: /baltop.
+    default: true
+  feather.bank.robbery:
+    description: Rob the bank by breaking a bank chest.
+    default: true
+  feather.bank.admin:
+    description: /bank create, remove, list, give, take, set, info, interest and robbery; /balance <player>.
+    default: op
+  feather.bank.robbery.bypass:
+    description: The robbery travel lock doesn't apply (staff testing). Ops have it unless it is negated.
+    default: op
+  feather.bank.defend:
+    description: Get the robbery call and /bank defend (help the police, share the deputy reward).
+    default: true
+  # The shop (docs/shop.md).
+  feather.shop:
+    description: /shop and the Shop button - the General Store.
+    default: true
+  feather.shop.sell:
+    description: Sell fish, shellfish, crops and meals at the fishmonger and grocer counters.
+    default: true
+  feather.stall:
+    description: Rent a market stall, sell from it and buy from other players' stalls.
+    default: true
+  feather.stall.admin:
+    description: /stall create, remove, list and expire, and staff stall keepers (/stall keeper <name>, place, remove).
+    default: op
+  # Quests and the server goal (docs/quests.md).
+  feather.quests:
+    description: /quests and the Quests button - daily and weekly quests and their rewards.
+    default: true
+  feather.goal:
+    description: /goal and the Server Goal button - the weekly goal and its reward.
+    default: true
+  feather.quests.admin:
+    description: /quests admin - new quests now, give or finish a quest, report progress, list the pool.
+    default: op
+  feather.goal.admin:
+    description: /goal admin - set, skip or complete the server goal, add progress, info.
+    default: op
+  # The login calendar (docs/calendar.md).
+  feather.calendar:
+    description: /calendar - the login streak, daily reward and playtime rewards.
+    default: true
+  feather.calendar.admin:
+    description: /calendar admin - set streaks and playtime, force a new day, reset a player (also skips the per-connection claim limit).
+    default: op
+  # Mail and gifts (docs/mail.md).
+  feather.mail:
+    description: /mail - read, write, reply to and delete letters; take gifts at a mailbox; the Mail button in the hub.
+    default: true
+  feather.mail.gift:
+    description: /mail gift - send gifts (up to 9 stacks) that wait at the mailbox.
+    default: true
+  feather.mail.admin:
+    description: /mail mailbox create, remove and list.
+    default: op
+  # Trading (docs/trade.md).
+  feather.trade:
+    description: /trade with nearby players, the hub's Trade button and the Trade Requests setting.
+    default: true
+  # Chat games (docs/chat-games.md).
+  feather.chatgames:
+    description: See and win chat games, /chatgames (stats and top players), the Chat Games button and setting.
+    default: true
+  feather.chatgames.admin:
+    description: /chatgames start [type] [--answer] [--time], stop, reload and reset <player>.
+    default: op
+  # Land claims (docs/claims.md).
+  feather.claims:
+    description: Claim land (chunks and rectangles), trust players, flags, /claim, /trust, /unclaim, the Land button.
+    default: true
+  feather.claims.admin:
+    description: Admin claims (/claim admin), manage, abandon or list anyone's claims, the admin selection tool mode.
+    default: op
+  feather.claims.bypass:
+    description: /claim admin [on|off] (or /claim bypass) - claim admin mode, ignore claims while it is on (off by default and after every relog).
+    default: op
+  feather.claims.blocks.admin:
+    description: /claimblocks <player> give, take or set.
+    default: op
+  # Holograms (docs/holograms.md).
+  feather.holograms.admin:
+    description: /holo - make, edit, move and delete holograms, and the hologram editor.
+    default: op
+  feather.holograms.console:
+    description: Add "console" click actions to holograms in game (they run as the server for whoever clicks).
+    default: op
+  feather.storage.use:
+    description: Place, break and use Storage Terminals, Crafting Terminals and Inventory Connectors.
+    default: true
+  feather.power.use:
+    description: Place coal generators and encased fans.
+    default: true
+  feather.power.admin:
+    description: /power give <player> <fan|generator> [amount] and /power info.
+    default: op
+  feather.gadgets.admin:
+    description: /gadgets - inspect gadgets near you and reload gadgets.yml.
+    default: op
+  feather.storage.admin:
+    description: /storage give <player> <terminal|crafting|connector> [amount].
+    default: op
+  feather.storage.quickcraft:
+    description: /quickcraft (and /craft opens Quick Craft) with ingredients from your own inventory.
+    default: false
+  # Fishing (docs/fishing.md).
+  feather.fishing:
+    description: /fishing journal, records and tournament status, the Fish Journal button, tournament boss bar.
+    default: true
+  feather.fishing.admin:
+    description: /fishing tournament start|stop and /fishing debug.
+    default: op
+  feather.civic.admin:
+    description: /civic - link a fountain to the server goal (look at its basin), list civic furniture near you.
+    default: op
+  # Farming (docs/farming.md).
+  feather.farming:
+    description: /farming fair (see the Harvest Fair, enter a Prize crop at a grocer counter).
+    default: true
+  feather.farming.admin:
+    description: /farming fair judge and /farming debug (grow, ripen, skew, clock, quality, info).
+    default: op
+  # Wildlife (docs/wildlife.md).
+  feather.bestiary:
+    description: /bestiary and the Bestiary tab of the creature codex.
+    default: true
+  feather.wildlife.admin:
+    description: /wildlife info and the test hooks (due, tick, dive, moon, record, reset).
+    default: op

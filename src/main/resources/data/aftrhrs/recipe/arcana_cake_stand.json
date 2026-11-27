@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "K",
+  "G",
+  "Q"
+ ],
+ "key": {
+  "K": "minecraft:cake",
+  "G": "minecraft:gold_nugget",
+  "Q": "minecraft:quartz_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cake_stand"
+ }
+}

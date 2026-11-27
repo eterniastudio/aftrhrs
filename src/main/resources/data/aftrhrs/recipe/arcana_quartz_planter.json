@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " F ",
+  "BDB"
+ ],
+ "key": {
+  "F": "minecraft:poppy",
+  "B": "minecraft:quartz_bricks",
+  "D": "minecraft:dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_planter"
+ }
+}

@@ -1,0 +1,79 @@
+# Land claims (modules.claims). docs/claims.md. Data: data/claims.yml. /feather reload re-reads this file.
+
+# Claim chunks: a claim costs one claim chunk per 256 columns it covers (a 16 x 16 chunk is exactly one; every started
+# chunk counts, so a 10 x 10 rectangle costs 1). Everyone starts with "start", earns "per-hour" for every hour of active
+# (not AFK) play until they reach "max", and staff can give or take more (/claimblocks <player> give|take|set <n>),
+# on top of the max.
+chunks:
+  start: 64
+  per-hour: 8
+  max: 2000
+
+# Claims per player (each set of touching pieces is one claim).
+max-claims: 10
+
+# The smallest rectangle (both sides, in blocks). Chunks are always 16 × 16.
+min-size: 5
+
+# Circle claims (the tool's circle mode: right-click the center, walk to the edge, right-click again). Full height like
+# every claim. Radius in blocks.
+circle:
+  min-radius: 3
+  max-radius: 160
+
+# Blocks kept free between your claim and another player's (0 = claims may touch). Admin claims don't count.
+gap: 0
+
+# Worlds where players may claim (empty = every world), and worlds where they never can.
+worlds: []
+disabled-worlds: []
+
+# The claim tool: right-click two corners for a rectangle, or a corner of your claim and then a new spot to resize.
+# Sneak + right-click switches between rectangle, chunk and circle mode (and admin selection for staff). Circle mode:
+# right-click the center of your base, walk to its edge and right-click again (the center of one of your circles resizes it).
+tool: golden_shovel
+
+# Claim borders as particles, seen only by you.
+view:
+  # Hold this (either hand) to see the claims around you.
+  item: stick
+  # How far (blocks) borders show.
+  radius: 48
+  # How often (ticks) borders are drawn.
+  refresh-ticks: 10
+  # The most particles drawn per player per refresh.
+  max-particles: 700
+  # Chunk mode shows the chunk grid around you.
+  chunk-grid: true
+  colors:
+    own: '#4FD1C5'
+    trusted: '#9DB4FF'
+    others: '#FF8A3D'
+    admin: '#FFE066'
+    preview: '#F1EDFF'
+    chunk-grid: '#A49DC2'
+
+# How long /claim show (and the menu's Show Borders) shows borders without the stick, in seconds.
+show-seconds: 20
+
+# "Entering Sunny's land" when you walk into someone's claim: actionbar, title or off. Owners can turn it off per
+# claim (the Enter Message flag); admin claims can have their own greeting (/claim admin greeting).
+enter-messages: actionbar
+
+# At most one "This land belongs to ..." action bar per player this often (milliseconds).
+deny-message-cooldown-ms: 1500
+
+# /sethome inside someone else's claim needs Access trust there.
+homes-need-access: true
+
+# Allow lists /claim admin preset <name> adds to an admin claim: "use <what>" or "break <what>", where <what> is a
+# block id (oak_door), a block tag (#doors) or bank-chest (the bank's chest; robbing it starts with a hit).
+admin-presets:
+  bank:
+    - use bank-chest
+    - break bank-chest
+  spawn:
+    - use #doors
+    - use #buttons
+    - use #pressure_plates
+    - use #fence_gates

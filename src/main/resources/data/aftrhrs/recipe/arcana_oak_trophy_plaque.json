@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "PNP",
+  " P "
+ ],
+ "key": {
+  "N": "minecraft:gold_nugget",
+  "P": "minecraft:oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_trophy_plaque"
+ }
+}

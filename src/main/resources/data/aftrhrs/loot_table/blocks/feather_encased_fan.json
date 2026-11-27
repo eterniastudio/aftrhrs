@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:feather_encased_fan"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:survives_explosion"
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/feather_encased_fan"
+}

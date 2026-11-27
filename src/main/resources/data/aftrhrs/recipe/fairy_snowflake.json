@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "SLS",
+  " S "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "S": "minecraft:snowball",
+  "L": "minecraft:glowstone_dust"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_snowflake",
+  "count": 4
+ }
+}

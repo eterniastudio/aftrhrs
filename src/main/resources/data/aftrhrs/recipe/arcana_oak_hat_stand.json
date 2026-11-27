@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P",
+  "S",
+  "Z"
+ ],
+ "key": {
+  "P": "minecraft:oak_planks",
+  "S": "minecraft:stick",
+  "Z": "minecraft:oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_hat_stand"
+ }
+}

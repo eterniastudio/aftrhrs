@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "GLG",
+  " g "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "G": "minecraft:glass_pane",
+  "L": "minecraft:glowstone_dust",
+  "g": "minecraft:gold_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_star",
+  "count": 4
+ }
+}

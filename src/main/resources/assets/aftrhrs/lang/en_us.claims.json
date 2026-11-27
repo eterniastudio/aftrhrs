@@ -1,0 +1,5 @@
+{
+  "aftrhrs.claims.map.keys": "Arrow keys pick a chunk · Enter claims it · Shift + Enter unclaims yours",
+  "aftrhrs.claims.map.narrate.player": "You are in chunk %s, %s",
+  "aftrhrs.claims.map.narrate.usage": "Arrow keys move the chunk cursor, Enter claims the chunk, Shift and Enter unclaims one of yours, mouse wheel zooms"
+}

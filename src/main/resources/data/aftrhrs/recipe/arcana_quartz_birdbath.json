@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:quartz_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:quartz_pillar"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_birdbath"
+ }
+}

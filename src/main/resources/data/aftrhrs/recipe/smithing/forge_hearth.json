@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "BBB",
+  "B B",
+  "BIB"
+ ],
+ "key": {
+  "B": "minecraft:stone_bricks",
+  "I": "minecraft:iron_bars"
+ },
+ "result": {
+  "id": "aftrhrs:forge_hearth",
+  "count": 1
+ }
+}

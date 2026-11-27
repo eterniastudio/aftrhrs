@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "G G",
+  "GGG"
+ ],
+ "key": {
+  "Z": "minecraft:spruce_slab",
+  "G": "minecraft:glass"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_jar"
+ }
+}

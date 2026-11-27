@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "FAF",
+  "PDP",
+  "PPP"
+ ],
+ "key": {
+  "F": "minecraft:fern",
+  "A": "minecraft:allium",
+  "P": "#minecraft:planks",
+  "D": "minecraft:dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_herb_planter"
+ }
+}

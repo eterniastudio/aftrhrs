@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/decor/wall_clock"},"facing=east":{"model":"aftrhrs:arcana/decor/wall_clock","y":90},"facing=south":{"model":"aftrhrs:arcana/decor/wall_clock","y":180},"facing=west":{"model":"aftrhrs:arcana/decor/wall_clock","y":270}}}

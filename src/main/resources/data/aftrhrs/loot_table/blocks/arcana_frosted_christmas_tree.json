@@ -1,0 +1,30 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_frosted_christmas_tree"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:all_of",
+    "terms": [
+     {
+      "type": "minecraft:match_block",
+      "blocks": "aftrhrs:arcana_frosted_christmas_tree",
+      "state": {
+       "part": "0"
+      }
+     },
+     {
+      "type": "minecraft:survives_explosion"
+     }
+    ]
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/arcana_frosted_christmas_tree"
+}

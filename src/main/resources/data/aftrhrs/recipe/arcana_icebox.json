@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PFP",
+  "F F",
+  "PFP"
+ ],
+ "key": {
+  "F": "aftrhrs:arcana_permafrost_shard",
+  "P": "minecraft:spruce_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_icebox"
+ }
+}

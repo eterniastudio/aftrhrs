@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Q Q",
+  "QQQ",
+  "N N"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "Q": "minecraft:quartz_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_clawfoot_tub"
+ }
+}

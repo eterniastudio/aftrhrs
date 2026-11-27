@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "S S"
+ ],
+ "key": {
+  "Z": "minecraft:bamboo_slab",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_bench",
+  "count": 2
+ }
+}

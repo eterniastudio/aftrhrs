@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "HHH",
+  "PPP",
+  "L L"
+ ],
+ "key": {
+  "H": "minecraft:hay_block",
+  "L": "minecraft:spruce_log",
+  "P": "minecraft:spruce_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_hay_cart"
+ }
+}

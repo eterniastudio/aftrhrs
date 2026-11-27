@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_feather_block",
+  "aftrhrs:arcana_rope_block",
+  "aftrhrs:arcana_warped_fleece_block"
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "  G",
+  " G ",
+  "PJP"
+ ],
+ "key": {
+  "G": "minecraft:gold_ingot",
+  "P": "#minecraft:planks",
+  "J": "minecraft:jukebox"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gramophone"
+ }
+}

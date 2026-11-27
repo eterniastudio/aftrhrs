@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_dye",
+ "dye": "#minecraft:dyes",
+ "group": "fairy_lights_dyed",
+ "target": "aftrhrs:fairy_paper_lantern",
+ "result": {
+  "id": "aftrhrs:fairy_paper_lantern"
+ }
+}

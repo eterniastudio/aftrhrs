@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GAG",
+  " C ",
+  " C "
+ ],
+ "key": {
+  "G": "minecraft:glass_pane",
+  "A": "minecraft:amethyst_shard",
+  "C": "minecraft:copper_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_floor_lamp"
+ }
+}

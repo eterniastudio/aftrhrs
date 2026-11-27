@@ -1,0 +1,20 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/whet_face", "iron": "aftrhrs:block/smithing/iron", "whet_face": "aftrhrs:block/smithing/whet_face", "whet_rim": "aftrhrs:block/smithing/whet_rim"},
+ "elements": [
+  {"name": "disc", "from": [5, 2.5, 5], "to": [11, 13.5, 11], "faces": {"north": {"uv": [5, 2.5, 11, 13.5], "texture": "#whet_rim"}, "east": {"uv": [5, 2.5, 11, 13.5], "texture": "#whet_face"}, "south": {"uv": [5, 2.5, 11, 13.5], "texture": "#whet_rim"}, "west": {"uv": [5, 2.5, 11, 13.5], "texture": "#whet_face"}, "up": {"uv": [5, 5, 11, 11], "texture": "#whet_rim"}, "down": {"uv": [5, 5, 11, 11], "texture": "#whet_rim"}}},
+  {"name": "disc", "from": [5, 5, 2.5], "to": [11, 11, 13.5], "faces": {"north": {"uv": [5, 5, 11, 11], "texture": "#whet_rim"}, "east": {"uv": [2.5, 5, 13.5, 11], "texture": "#whet_face"}, "south": {"uv": [5, 5, 11, 11], "texture": "#whet_rim"}, "west": {"uv": [2.5, 5, 13.5, 11], "texture": "#whet_face"}, "up": {"uv": [5, 2.5, 11, 13.5], "texture": "#whet_rim"}, "down": {"uv": [5, 2.5, 11, 13.5], "texture": "#whet_rim"}}},
+  {"name": "disc", "from": [5, 4, 4], "to": [11, 12, 12], "faces": {"north": {"uv": [5, 4, 11, 12], "texture": "#whet_rim"}, "east": {"uv": [4, 4, 12, 12], "texture": "#whet_face"}, "south": {"uv": [5, 4, 11, 12], "texture": "#whet_rim"}, "west": {"uv": [4, 4, 12, 12], "texture": "#whet_face"}, "up": {"uv": [5, 4, 11, 12], "texture": "#whet_rim"}, "down": {"uv": [5, 4, 11, 12], "texture": "#whet_rim"}}},
+  {"name": "axle", "from": [3, 7, 7], "to": [13, 9, 9], "faces": {"north": {"uv": [3, 7, 13, 9], "texture": "#iron"}, "east": {"uv": [7, 7, 9, 9], "texture": "#iron"}, "south": {"uv": [3, 7, 13, 9], "texture": "#iron"}, "west": {"uv": [7, 7, 9, 9], "texture": "#iron"}, "up": {"uv": [3, 7, 13, 9], "texture": "#iron"}, "down": {"uv": [3, 7, 13, 9], "texture": "#iron"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

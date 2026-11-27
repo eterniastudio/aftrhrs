@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/utility/trash_can"},"facing=east":{"model":"aftrhrs:arcana/utility/trash_can","y":90},"facing=south":{"model":"aftrhrs:arcana/utility/trash_can","y":180},"facing=west":{"model":"aftrhrs:arcana/utility/trash_can","y":270}}}

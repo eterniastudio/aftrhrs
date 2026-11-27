@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "R R",
+  "RSR",
+  "R R"
+ ],
+ "key": {
+  "R": "minecraft:string",
+  "S": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_rope_ladder"
+ }
+}

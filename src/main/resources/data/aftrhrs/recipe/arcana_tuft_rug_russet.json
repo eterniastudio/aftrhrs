@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "TCT"
+ ],
+ "key": {
+  "C": "minecraft:brown_carpet",
+  "T": "aftrhrs:arcana_tuft_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuft_rug_russet"
+ }
+}

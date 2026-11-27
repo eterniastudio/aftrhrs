@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "WWW",
+  " B ",
+  " K "
+ ],
+ "key": {
+  "B": "minecraft:bamboo",
+  "K": "minecraft:cut_sandstone",
+  "W": "minecraft:wheat"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_thatch_umbrella"
+ }
+}

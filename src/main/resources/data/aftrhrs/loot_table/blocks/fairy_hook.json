@@ -1,0 +1,30 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "aftrhrs:blocks/fairy_hook",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:fairy_hook"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:all_of",
+    "terms": [
+     {
+      "type": "minecraft:survives_explosion"
+     },
+     {
+      "type": "minecraft:match_block",
+      "blocks": "aftrhrs:fairy_hook",
+      "state": {
+       "placed": "true"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

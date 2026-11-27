@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AA",
+  "AA"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_sea_glass_shard_green"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sea_glass_block_green"
+ }
+}

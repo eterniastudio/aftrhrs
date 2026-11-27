@@ -1,0 +1,12 @@
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "aftrhrs:fairylights/item/fairy_heart",
+  "tints": [
+   {
+    "type": "minecraft:dye",
+    "default": -36961
+   }
+  ]
+ }
+}

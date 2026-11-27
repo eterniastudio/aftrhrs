@@ -1,0 +1,76 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "aftrhrs:smith_material",
+  "cases": [
+   {
+    "when": "wood",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/wood"
+    }
+   },
+   {
+    "when": "bone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/bone"
+    }
+   },
+   {
+    "when": "bamboo",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/bamboo"
+    }
+   },
+   {
+    "when": "copper",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/copper"
+    }
+   },
+   {
+    "when": "iron",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/iron"
+    }
+   },
+   {
+    "when": "steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/steel"
+    }
+   },
+   {
+    "when": "pearlsteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/pearlsteel"
+    }
+   },
+   {
+    "when": "netherite",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/netherite"
+    }
+   },
+   {
+    "when": "starforged",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/bow_limb/starforged"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "aftrhrs:item/smithing/part/bow_limb/iron"
+  }
+ }
+}

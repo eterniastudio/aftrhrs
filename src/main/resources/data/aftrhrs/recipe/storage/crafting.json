@@ -1,0 +1,28 @@
+{
+ "fabric:load_conditions": [
+  {
+   "condition": "aftrhrs:feather_config",
+   "keys": [
+    "modules.storage",
+    "storage.recipes"
+   ]
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "feather_storage",
+ "pattern": [
+  "TDT",
+  "DSD",
+  "TDT"
+ ],
+ "key": {
+  "T": "minecraft:crafting_table",
+  "D": "minecraft:diamond",
+  "S": "aftrhrs:feather_storage_terminal"
+ },
+ "result": {
+  "id": "aftrhrs:feather_crafting_terminal",
+  "count": 1
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P  ",
+  "PPP",
+  "ZZZ"
+ ],
+ "key": {
+  "P": "minecraft:cherry_planks",
+  "Z": "minecraft:cherry_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cherry_rocking_chair"
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "aftrhrs.cosmetics.shown": "%s: shown",
+  "aftrhrs.cosmetics.hidden": "%s: hidden",
+  "aftrhrs.cosmetics.switch_hint": "Click to show or hide it. A cosmetic piece in the slot always shows.",
+  "aftrhrs.cosmetics.piece.helmet": "Helmet",
+  "aftrhrs.cosmetics.piece.chestplate": "Chestplate",
+  "aftrhrs.cosmetics.piece.leggings": "Leggings",
+  "aftrhrs.cosmetics.piece.boots": "Boots",
+  "aftrhrs.cosmetics.slot.hat": "Hat",
+  "aftrhrs.cosmetics.slot.hat.hint": "Any item, worn on top of your helmet",
+  "aftrhrs.cosmetics.slot.helmet": "Cosmetic Helmet",
+  "aftrhrs.cosmetics.slot.helmet.hint": "Shown instead of your helmet. Your real armor still protects you.",
+  "aftrhrs.cosmetics.slot.chestplate": "Cosmetic Chestplate",
+  "aftrhrs.cosmetics.slot.chestplate.hint": "Shown instead of your chestplate. Your real armor still protects you.",
+  "aftrhrs.cosmetics.slot.leggings": "Cosmetic Leggings",
+  "aftrhrs.cosmetics.slot.leggings.hint": "Shown instead of your leggings. Your real armor still protects you.",
+  "aftrhrs.cosmetics.slot.boots": "Cosmetic Boots",
+  "aftrhrs.cosmetics.slot.boots.hint": "Shown instead of your boots. Your real armor still protects you."
+}

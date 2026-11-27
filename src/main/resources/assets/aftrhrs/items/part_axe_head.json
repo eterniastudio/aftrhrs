@@ -1,0 +1,153 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "aftrhrs:smith_material",
+  "cases": [
+   {
+    "when": "wood",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/wood"
+    }
+   },
+   {
+    "when": "stone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/stone"
+    }
+   },
+   {
+    "when": "flint",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/flint"
+    }
+   },
+   {
+    "when": "bone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/bone"
+    }
+   },
+   {
+    "when": "copper",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/copper"
+    }
+   },
+   {
+    "when": "iron",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/iron"
+    }
+   },
+   {
+    "when": "gold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/gold"
+    }
+   },
+   {
+    "when": "obsidian",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/obsidian"
+    }
+   },
+   {
+    "when": "steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/steel"
+    }
+   },
+   {
+    "when": "rose_gold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/rose_gold"
+    }
+   },
+   {
+    "when": "chime_bronze",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/chime_bronze"
+    }
+   },
+   {
+    "when": "tidebronze",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/tidebronze"
+    }
+   },
+   {
+    "when": "rimesteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/rimesteel"
+    }
+   },
+   {
+    "when": "emberforged_steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/emberforged_steel"
+    }
+   },
+   {
+    "when": "pearlsteel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/pearlsteel"
+    }
+   },
+   {
+    "when": "netherite",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/netherite"
+    }
+   },
+   {
+    "when": "echo_steel",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/echo_steel"
+    }
+   },
+   {
+    "when": "blazebone",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/blazebone"
+    }
+   },
+   {
+    "when": "voidgold",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/voidgold"
+    }
+   },
+   {
+    "when": "starforged",
+    "model": {
+     "type": "minecraft:model",
+     "model": "aftrhrs:item/smithing/part/axe_head/starforged"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "aftrhrs:item/smithing/part/axe_head/iron"
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:prismarine_brick_slab",
+  "A": "minecraft:dark_prismarine",
+  "B": "minecraft:prismarine_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_plinth"
+ }
+}

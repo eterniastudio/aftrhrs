@@ -1,0 +1,30 @@
+{
+ "fabric:load_conditions": [
+  {
+   "condition": "aftrhrs:feather_config",
+   "keys": [
+    "modules.storage",
+    "storage.recipes"
+   ]
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "feather_storage",
+ "pattern": [
+  "PCP",
+  "HGL",
+  "PCP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "C": "minecraft:comparator",
+  "H": "minecraft:chest",
+  "G": "minecraft:glowstone_dust",
+  "L": "minecraft:glass"
+ },
+ "result": {
+  "id": "aftrhrs:feather_storage_terminal",
+  "count": 1
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_weathered_copper_pipe_corner",
+  "minecraft:honeycomb"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_waxed_weathered_copper_pipe_corner"
+ }
+}

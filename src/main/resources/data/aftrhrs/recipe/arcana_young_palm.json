@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "LLL",
+  " J ",
+  " J "
+ ],
+ "key": {
+  "J": "minecraft:jungle_log",
+  "L": "minecraft:jungle_leaves"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_young_palm"
+ }
+}

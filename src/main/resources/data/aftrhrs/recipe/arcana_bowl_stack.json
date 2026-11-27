@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:bowl",
+  "minecraft:bowl",
+  "minecraft:bowl",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_bowl_stack"
+ }
+}

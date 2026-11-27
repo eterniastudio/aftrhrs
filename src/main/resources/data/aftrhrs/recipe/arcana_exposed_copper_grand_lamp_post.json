@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "L L",
+  "CCC",
+  " B "
+ ],
+ "key": {
+  "B": "minecraft:exposed_copper",
+  "C": "minecraft:exposed_cut_copper",
+  "L": "minecraft:exposed_copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_exposed_copper_grand_lamp_post"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " P ",
+  "PCP",
+  " P "
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "C": "minecraft:clock"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_wall_clock"
+ }
+}

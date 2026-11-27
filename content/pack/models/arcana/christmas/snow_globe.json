@@ -1,0 +1,986 @@
+{
+ "credit": "Aftr Hrs Christmas set (mod/tools/xmasart/gen.py)",
+ "textures": {
+  "base": "block/dark_oak_planks",
+  "trim": "arcana/christmas/paint_gold",
+  "snow": "arcana/christmas/snow_ground",
+  "glass": "arcana/christmas/globe_glass",
+  "house": "arcana/christmas/paint_red",
+  "roof": "arcana/christmas/snow_ground",
+  "door": "arcana/christmas/paint_brown",
+  "window": "arcana/christmas/lantern_glow",
+  "side": "arcana/christmas/fir_needles",
+  "top": "arcana/christmas/fir_needles",
+  "under": "arcana/christmas/fir_needles",
+  "particle": "arcana/christmas/globe_glass"
+ },
+ "elements": [
+  {
+   "name": "base",
+   "from": [
+    3.6,
+    0.0,
+    3.6
+   ],
+   "to": [
+    12.4,
+    2.0,
+    12.4
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      3.6,
+      14.0,
+      12.4,
+      16.0
+     ],
+     "texture": "#base"
+    },
+    "east": {
+     "uv": [
+      3.6,
+      14.0,
+      12.4,
+      16.0
+     ],
+     "texture": "#base"
+    },
+    "south": {
+     "uv": [
+      3.6,
+      14.0,
+      12.4,
+      16.0
+     ],
+     "texture": "#base"
+    },
+    "west": {
+     "uv": [
+      3.6,
+      14.0,
+      12.4,
+      16.0
+     ],
+     "texture": "#base"
+    },
+    "up": {
+     "uv": [
+      3.6,
+      3.6,
+      12.4,
+      12.4
+     ],
+     "texture": "#base"
+    },
+    "down": {
+     "uv": [
+      3.6,
+      3.6,
+      12.4,
+      12.4
+     ],
+     "texture": "#base"
+    }
+   }
+  },
+  {
+   "name": "trim",
+   "from": [
+    3.4,
+    0.5,
+    3.4
+   ],
+   "to": [
+    12.6,
+    1.2,
+    12.6
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      3.4,
+      14.8,
+      12.6,
+      15.5
+     ],
+     "texture": "#trim"
+    },
+    "east": {
+     "uv": [
+      3.4,
+      14.8,
+      12.6,
+      15.5
+     ],
+     "texture": "#trim"
+    },
+    "south": {
+     "uv": [
+      3.4,
+      14.8,
+      12.6,
+      15.5
+     ],
+     "texture": "#trim"
+    },
+    "west": {
+     "uv": [
+      3.4,
+      14.8,
+      12.6,
+      15.5
+     ],
+     "texture": "#trim"
+    }
+   }
+  },
+  {
+   "name": "plinth",
+   "from": [
+    4.2,
+    2.0,
+    4.2
+   ],
+   "to": [
+    11.8,
+    2.6,
+    11.8
+   ],
+   "faces": {
+    "up": {
+     "uv": [
+      4.2,
+      4.2,
+      11.8,
+      11.8
+     ],
+     "texture": "#snow"
+    }
+   }
+  },
+  {
+   "name": "house",
+   "from": [
+    5.2,
+    2.6,
+    6.6
+   ],
+   "to": [
+    8.0,
+    4.6,
+    9.2
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      8.0,
+      11.4,
+      10.8,
+      13.4
+     ],
+     "texture": "#house"
+    },
+    "east": {
+     "uv": [
+      6.8,
+      11.4,
+      9.4,
+      13.4
+     ],
+     "texture": "#house"
+    },
+    "south": {
+     "uv": [
+      5.2,
+      11.4,
+      8.0,
+      13.4
+     ],
+     "texture": "#house"
+    },
+    "west": {
+     "uv": [
+      6.6,
+      11.4,
+      9.2,
+      13.4
+     ],
+     "texture": "#house"
+    }
+   }
+  },
+  {
+   "name": "roof",
+   "from": [
+    4.9,
+    4.6,
+    6.3
+   ],
+   "to": [
+    8.3,
+    5.4,
+    9.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.7,
+      10.6,
+      11.1,
+      11.4
+     ],
+     "texture": "#roof"
+    },
+    "east": {
+     "uv": [
+      6.5,
+      10.6,
+      9.7,
+      11.4
+     ],
+     "texture": "#roof"
+    },
+    "south": {
+     "uv": [
+      4.9,
+      10.6,
+      8.3,
+      11.4
+     ],
+     "texture": "#roof"
+    },
+    "west": {
+     "uv": [
+      6.3,
+      10.6,
+      9.5,
+      11.4
+     ],
+     "texture": "#roof"
+    },
+    "up": {
+     "uv": [
+      4.9,
+      6.3,
+      8.3,
+      9.5
+     ],
+     "texture": "#roof"
+    },
+    "down": {
+     "uv": [
+      4.9,
+      6.5,
+      8.3,
+      9.7
+     ],
+     "texture": "#roof"
+    }
+   }
+  },
+  {
+   "name": "roof2",
+   "from": [
+    5.6,
+    5.4,
+    6.8
+   ],
+   "to": [
+    7.6,
+    6.0,
+    9.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      8.4,
+      10.0,
+      10.4,
+      10.6
+     ],
+     "texture": "#roof"
+    },
+    "east": {
+     "uv": [
+      7.0,
+      10.0,
+      9.2,
+      10.6
+     ],
+     "texture": "#roof"
+    },
+    "south": {
+     "uv": [
+      5.6,
+      10.0,
+      7.6,
+      10.6
+     ],
+     "texture": "#roof"
+    },
+    "west": {
+     "uv": [
+      6.8,
+      10.0,
+      9.0,
+      10.6
+     ],
+     "texture": "#roof"
+    },
+    "up": {
+     "uv": [
+      5.6,
+      6.8,
+      7.6,
+      9.0
+     ],
+     "texture": "#roof"
+    },
+    "down": {
+     "uv": [
+      5.6,
+      7.0,
+      7.6,
+      9.2
+     ],
+     "texture": "#roof"
+    }
+   }
+  },
+  {
+   "name": "door",
+   "from": [
+    6.2,
+    2.6,
+    6.45
+   ],
+   "to": [
+    7.0,
+    3.9,
+    6.6
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      12.1,
+      9.8,
+      13.4
+     ],
+     "texture": "#door"
+    }
+   }
+  },
+  {
+   "name": "window",
+   "from": [
+    7.25,
+    3.4,
+    6.45
+   ],
+   "to": [
+    7.75,
+    3.9,
+    6.6
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      8.25,
+      12.1,
+      8.75,
+      12.6
+     ],
+     "texture": "#window"
+    }
+   },
+   "light_emission": 10
+  },
+  {
+   "name": "chimney",
+   "from": [
+    7.2,
+    5.2,
+    8.0
+   ],
+   "to": [
+    7.8,
+    6.6,
+    8.6
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      8.2,
+      9.4,
+      8.8,
+      10.8
+     ],
+     "texture": "#house"
+    },
+    "east": {
+     "uv": [
+      7.4,
+      9.4,
+      8.0,
+      10.8
+     ],
+     "texture": "#house"
+    },
+    "south": {
+     "uv": [
+      7.2,
+      9.4,
+      7.8,
+      10.8
+     ],
+     "texture": "#house"
+    },
+    "west": {
+     "uv": [
+      8.0,
+      9.4,
+      8.6,
+      10.8
+     ],
+     "texture": "#house"
+    },
+    "up": {
+     "uv": [
+      7.2,
+      8.0,
+      7.8,
+      8.6
+     ],
+     "texture": "#house"
+    },
+    "down": {
+     "uv": [
+      7.2,
+      7.4,
+      7.8,
+      8.0
+     ],
+     "texture": "#house"
+    }
+   }
+  },
+  {
+   "name": "tree_lo",
+   "from": [
+    8.7,
+    2.6,
+    7.9
+   ],
+   "to": [
+    10.9,
+    4.4,
+    10.1
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.1,
+      11.6,
+      7.3,
+      13.4
+     ],
+     "texture": "#side"
+    },
+    "east": {
+     "uv": [
+      5.9,
+      11.6,
+      8.1,
+      13.4
+     ],
+     "texture": "#side"
+    },
+    "south": {
+     "uv": [
+      8.7,
+      11.6,
+      10.9,
+      13.4
+     ],
+     "texture": "#side"
+    },
+    "west": {
+     "uv": [
+      7.9,
+      11.6,
+      10.1,
+      13.4
+     ],
+     "texture": "#side"
+    },
+    "up": {
+     "uv": [
+      8.7,
+      7.9,
+      10.9,
+      10.1
+     ],
+     "texture": "#top"
+    }
+   }
+  },
+  {
+   "name": "tree_lo_d",
+   "from": [
+    8.7,
+    2.7,
+    7.9
+   ],
+   "to": [
+    10.9,
+    4.25,
+    10.1
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.1,
+      11.75,
+      7.3,
+      13.3
+     ],
+     "texture": "#side"
+    },
+    "east": {
+     "uv": [
+      5.9,
+      11.75,
+      8.1,
+      13.3
+     ],
+     "texture": "#side"
+    },
+    "south": {
+     "uv": [
+      8.7,
+      11.75,
+      10.9,
+      13.3
+     ],
+     "texture": "#side"
+    },
+    "west": {
+     "uv": [
+      7.9,
+      11.75,
+      10.1,
+      13.3
+     ],
+     "texture": "#side"
+    },
+    "up": {
+     "uv": [
+      8.7,
+      7.9,
+      10.9,
+      10.1
+     ],
+     "texture": "#top"
+    }
+   },
+   "rotation": {
+    "angle": 45,
+    "axis": "y",
+    "origin": [
+     9.8,
+     0.0,
+     9.0
+    ]
+   }
+  },
+  {
+   "name": "tree_hi",
+   "from": [
+    9.1,
+    4.4,
+    8.3
+   ],
+   "to": [
+    10.5,
+    6.0,
+    9.7
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.5,
+      10.0,
+      6.9,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "east": {
+     "uv": [
+      6.3,
+      10.0,
+      7.7,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "south": {
+     "uv": [
+      9.1,
+      10.0,
+      10.5,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "west": {
+     "uv": [
+      8.3,
+      10.0,
+      9.7,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "up": {
+     "uv": [
+      9.1,
+      8.3,
+      10.5,
+      9.7
+     ],
+     "texture": "#top"
+    }
+   }
+  },
+  {
+   "name": "tree_hi_d",
+   "from": [
+    9.1,
+    4.4,
+    8.3
+   ],
+   "to": [
+    10.5,
+    5.85,
+    9.7
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.5,
+      10.15,
+      6.9,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "east": {
+     "uv": [
+      6.3,
+      10.15,
+      7.7,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "south": {
+     "uv": [
+      9.1,
+      10.15,
+      10.5,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "west": {
+     "uv": [
+      8.3,
+      10.15,
+      9.7,
+      11.6
+     ],
+     "texture": "#side"
+    },
+    "up": {
+     "uv": [
+      9.1,
+      8.3,
+      10.5,
+      9.7
+     ],
+     "texture": "#top"
+    }
+   },
+   "rotation": {
+    "angle": 45,
+    "axis": "y",
+    "origin": [
+     9.8,
+     0.0,
+     9.0
+    ]
+   }
+  },
+  {
+   "name": "glass",
+   "from": [
+    4.1,
+    2.0,
+    4.1
+   ],
+   "to": [
+    11.9,
+    9.3,
+    11.9
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      4.1,
+      6.7,
+      11.9,
+      14.0
+     ],
+     "texture": "#glass"
+    },
+    "east": {
+     "uv": [
+      4.1,
+      6.7,
+      11.9,
+      14.0
+     ],
+     "texture": "#glass"
+    },
+    "south": {
+     "uv": [
+      4.1,
+      6.7,
+      11.9,
+      14.0
+     ],
+     "texture": "#glass"
+    },
+    "west": {
+     "uv": [
+      4.1,
+      6.7,
+      11.9,
+      14.0
+     ],
+     "texture": "#glass"
+    },
+    "up": {
+     "uv": [
+      4.1,
+      4.1,
+      11.9,
+      11.9
+     ],
+     "texture": "#glass"
+    }
+   }
+  },
+  {
+   "name": "glass_cap",
+   "from": [
+    5.0,
+    9.3,
+    5.0
+   ],
+   "to": [
+    11.0,
+    10.3,
+    11.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      5.7,
+      11.0,
+      6.7
+     ],
+     "texture": "#glass"
+    },
+    "east": {
+     "uv": [
+      5.0,
+      5.7,
+      11.0,
+      6.7
+     ],
+     "texture": "#glass"
+    },
+    "south": {
+     "uv": [
+      5.0,
+      5.7,
+      11.0,
+      6.7
+     ],
+     "texture": "#glass"
+    },
+    "west": {
+     "uv": [
+      5.0,
+      5.7,
+      11.0,
+      6.7
+     ],
+     "texture": "#glass"
+    },
+    "up": {
+     "uv": [
+      5.0,
+      5.0,
+      11.0,
+      11.0
+     ],
+     "texture": "#glass"
+    }
+   }
+  }
+ ],
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    -0.0,
+    2.4,
+    1.386
+   ],
+   "scale": [
+    0.9724,
+    0.9724,
+    0.9724
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0,
+    3.937,
+    -0.0
+   ],
+   "scale": [
+    0.6796,
+    0.6796,
+    0.6796
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    180,
+    0
+   ],
+   "translation": [
+    -0.0,
+    3.597,
+    -0.0
+   ],
+   "scale": [
+    1.2621,
+    1.2621,
+    1.2621
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    -0.0,
+    2.887,
+    1.446
+   ],
+   "scale": [
+    0.5252,
+    0.5252,
+    0.5252
+   ]
+  },
+  "thirdperson_lefthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    -0.0,
+    2.887,
+    1.446
+   ],
+   "scale": [
+    0.5252,
+    0.5252,
+    0.5252
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    -0.0,
+    3.428,
+    -0.0
+   ],
+   "scale": [
+    0.6764,
+    0.6764,
+    0.6764
+   ]
+  },
+  "firstperson_lefthand": {
+   "rotation": [
+    0,
+    225,
+    0
+   ],
+   "translation": [
+    -0.0,
+    3.428,
+    -0.0
+   ],
+   "scale": [
+    0.6764,
+    0.6764,
+    0.6764
+   ]
+  },
+  "head": {
+   "rotation": [
+    0,
+    180,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.6,
+    0.6,
+    0.6
+   ]
+  }
+ }
+}

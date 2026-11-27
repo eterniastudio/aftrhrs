@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:granite",
+  "W": "minecraft:granite_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_granite_column_capital",
+  "count": 2
+ }
+}

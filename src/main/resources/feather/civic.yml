@@ -1,0 +1,105 @@
+# Civic: spawn furniture behavior (modules.civic, needs Oraxen). docs/civic.md
+# Everything is keyed by Oraxen furniture id; ids take * as a wildcard. Missing Oraxen items are logged once and
+# skipped, so the module runs before the art is installed. Player text lives in messages.yml under "civic".
+
+# Hub furniture: a plain right-click (any hand item, not sneaking) runs the command AS THE PLAYER, so the usual
+# permissions apply. Sneak + right-click with an empty hand still turns the furniture (curios.yml rotate).
+# A hub whose command doesn't exist on the server (module off) says "civic.hub-closed" instead.
+hubs:
+  arcana_notice_board: quests
+  arcana_warp_kiosk: warps
+  arcana_stable_post: pets stable
+  arcana_trash_bin: trash
+  # The fishing module handles the scale itself (weighing a held fish, records); this is only the fallback.
+  arcana_fish_scale: fishing records
+hub-sound: block.wood.hit
+
+fountains:
+  enabled: true
+  basins: ["arcana_*_fountain_basin"]
+  tiers: ["arcana_*_fountain_tier"]
+  spouts: ["arcana_*_fountain_spout"]
+  # Small one-block fountains: a gentle bubble and the water sound, no assembly needed.
+  drinking: ["arcana_*_drinking_fountain"]
+  # A fountain: the basin's center block holds the first tier (or the spout), more tiers stack above it, the spout
+  # sits on the top tier. Heights in blocks above the floor of each piece's own block (model px / 16): basin water
+  # y 7, tier bowl y 14, spout jet tip y 14.5 and four side jets at y 7, 3.5 px out. tier-rim-radius: where water
+  # runs off a tier.
+  basin-water-height: 0.44
+  basin-water-radius: 1.15
+  tier-rim-height: 0.875
+  tier-rim-radius: 0.55
+  spout-top-height: 0.9
+  spout-side-jet-height: 0.44
+  spout-side-jet-radius: 0.22
+  drinking-top-height: 0.95
+  # Particles and the water sound play only while a player is this close, and only for those players.
+  range: 24
+  particle-interval-ticks: 4
+  sound: block.water.ambient
+  sound-volume: 0.3
+  sound-interval-ticks: 70
+  # Particle names (Paper): falling water from the spout and tier, splashes on the basin, a little mist.
+  particles:
+    stream: FALLING_WATER
+    splash: SPLASH
+    mist: CLOUD
+    glow: GLOW
+    sparkle: END_ROD
+  # How high the spout sprays (blocks above its top) with the goal at 0 / 25 / 50 / 75 / 100 %. Unlinked: the first.
+  spray-height: [0.35, 0.6, 0.85, 1.1, 1.4]
+  # Light level above the spout per goal tier (0 = no light block). Unlinked fountains never place light.
+  goal-light: [0, 7, 10, 13, 15]
+
+coin-toss:
+  enabled: true
+  # The coin (bank.yml coin) goes into the vault reserve; the player gets Lucky Lure (player PDC
+  # feather:lucky_lure_until, read by fishing) for this long, at most once per cooldown.
+  lucky-lure-minutes: 60
+  cooldown-minutes: 60
+  sound: block.note_block.chime
+  splash-sound: entity.generic.splash
+
+string-lights:
+  enabled: true
+  item: arcana_string_lights
+  posts: ["arcana_string_light_post"]
+  # The bulb model hangs from its own (8,8,8) and carries a 1-block piece of wire along model x: one bulb sits in the
+  # middle of each segment, turned and scaled along it, so the wire pieces join from post to post.
+  bulb: arcana_string_light_bulb_fx
+  # Without the bulb item: a small glowing block per bulb plus a thin wire (wire-block below).
+  bulb-fallback: SHROOMLIGHT
+  bulb-fallback-scale: 0.12
+  bulb-scale: 1.0
+  # Anchor on each post: blocks above the post's floor (the post's ring is at the top of its first block).
+  anchor-height: 1.0
+  max-length: 12
+  max-per-post: 4
+  # Segment length (blocks, one bulb each) and sag (blocks of dip per block of length, capped).
+  spacing: 1.0
+  sag-per-block: 0.06
+  max-sag: 1.0
+  # The fallback wire between bulbs (block display); "" for none.
+  wire-block: black_concrete
+  wire-thickness: 0.025
+  # Every Nth bulb puts a LIGHT block of this level in its air block.
+  light-every: 3
+  light-level: 12
+  # Bulbs are drawn only while a player is this close.
+  view-range: 64
+  select-seconds: 30
+  place-sound: block.chain.place
+  break-sound: block.chain.break
+
+hushwing:
+  enabled: true
+  mob: ArcanaHushwing
+  radius: 8
+  # The Hushwing's own flapping doesn't set sensors off either.
+  silence-self: true
+
+underwater-lights:
+  # Oraxen 1.220.1 only puts its light blocks into air, so furniture lights under water give no light, and breaking
+  # one leaves an air pocket where a light was. Feather puts a waterlogged light into the water instead and puts the
+  # water back after a break.
+  enabled: true

@@ -1,0 +1,36 @@
+# Feather nametags: the name above each player's head. /feather reload applies changes.
+#
+# The vanilla nametag can only show the real username in one color. Feather hides it and floats its own text
+# above each player instead, so nicknames show with their gradients, plus rank, health and more.
+# Placeholders: the same as tab.yml (<name> is the nickname, <prefix>/<suffix> from LuckPerms, <health>,
+# <hearts>, <afk>, <ping> ...). <shimmer:#a:#b>text</shimmer> animates.
+
+# One entry per line, top to bottom.
+lines:
+  - '<prefix><name><suffix><afk>'
+  - '<#ff6b81>❤</#ff6b81> <text><health>'
+
+# passenger: the tag rides on the player and moves perfectly with them (default).
+#   Feather's own teleports handle it, but Paper blocks teleports to ANOTHER WORLD made by other plugins while
+#   a player carries a passenger. If another plugin's world-to-world teleports stop working, use follow.
+# follow: the tag is moved to the player every tick. Works with every plugin; lags slightly when running fast.
+mode: passenger
+
+# Blocks above the top of the head.
+height: 0.3
+scale: 1.0
+# Background as #AARRGGBB (AA = opacity). Vanilla's is #40000000; #00000000 = none.
+background: '#40000000'
+text-shadow: false
+# Readable through walls, like vanilla. Sneaking players' tags never show through walls.
+see-through-walls: true
+# Sneaking fades the tag, like vanilla.
+sneak-dims: true
+# Hide the tag while the player has Invisibility.
+hide-when-invisible: true
+# How far away tags render (1.0 = 64 blocks).
+view-range: 0.5
+# Wrap width in pixels.
+line-width: 200
+# How often the text refreshes (ticks). Health changes refresh at once.
+update-ticks: 10

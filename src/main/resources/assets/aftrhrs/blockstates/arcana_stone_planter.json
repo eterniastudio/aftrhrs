@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/stonework/stone_planter"},"facing=east":{"model":"aftrhrs:arcana/stonework/stone_planter","y":90},"facing=south":{"model":"aftrhrs:arcana/stonework/stone_planter","y":180},"facing=west":{"model":"aftrhrs:arcana/stonework/stone_planter","y":270}}}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "S",
+  "K",
+  "K"
+ ],
+ "key": {
+  "K": "minecraft:iron_ingot",
+  "S": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bollard_iron",
+  "count": 2
+ }
+}

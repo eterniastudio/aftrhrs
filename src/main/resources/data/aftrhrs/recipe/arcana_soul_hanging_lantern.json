@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "N",
+  "C",
+  "L"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "C": "minecraft:iron_chain",
+  "L": "minecraft:soul_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_soul_hanging_lantern"
+ }
+}

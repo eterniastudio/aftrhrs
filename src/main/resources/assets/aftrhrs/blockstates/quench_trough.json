@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "aftrhrs:block/smithing/quench_trough"
+  },
+  "facing=east": {
+   "model": "aftrhrs:block/smithing/quench_trough",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "aftrhrs:block/smithing/quench_trough",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "aftrhrs:block/smithing/quench_trough",
+   "y": 270
+  }
+ }
+}

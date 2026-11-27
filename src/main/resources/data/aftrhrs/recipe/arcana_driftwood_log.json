@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "DD",
+  "DD"
+ ],
+ "key": {
+  "D": "aftrhrs:arcana_driftwood"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_driftwood_log"
+ }
+}

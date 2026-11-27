@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_fir_tree",
+  "aftrhrs:arcana_tree_lights",
+  "aftrhrs:arcana_tree_star",
+  "aftrhrs:arcana_red_bauble",
+  "aftrhrs:arcana_red_bauble",
+  "aftrhrs:arcana_gold_bauble",
+  "aftrhrs:arcana_gold_bauble"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_christmas_tree"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "C C",
+  "III",
+  "N K"
+ ],
+ "key": {
+  "C": "minecraft:iron_chain",
+  "I": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget",
+  "K": "minecraft:copper_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pot_rack"
+ }
+}

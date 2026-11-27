@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:emerald",
+  "minecraft:emerald",
+  "minecraft:wheat",
+  "minecraft:carrot"
+ ],
+ "result": {
+  "id": "aftrhrs:keeper_grocer"
+ }
+}

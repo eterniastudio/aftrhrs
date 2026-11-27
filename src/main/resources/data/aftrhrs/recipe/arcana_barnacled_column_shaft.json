@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "A",
+  "A"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_barnacled_stone_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_barnacled_column_shaft",
+  "count": 3
+ }
+}

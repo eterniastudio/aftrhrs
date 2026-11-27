@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "N N",
+  "WWW",
+  "W W"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "W": "minecraft:pink_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pink_bathrobe"
+ }
+}

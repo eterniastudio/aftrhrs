@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "F"
+ ],
+ "key": {
+  "A": "minecraft:lantern",
+  "F": "minecraft:oak_fence"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_fence_lantern"
+ }
+}

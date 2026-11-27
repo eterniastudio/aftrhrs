@@ -1,0 +1,21 @@
+{
+ "anvil_cost": 4,
+ "description": {
+  "translate": "enchantment.aftrhrs.deflection"
+ },
+ "effects": {},
+ "max_cost": {
+  "base": 58,
+  "per_level_above_first": 12
+ },
+ "max_level": 3,
+ "min_cost": {
+  "base": 8,
+  "per_level_above_first": 12
+ },
+ "slots": [
+  "chest"
+ ],
+ "supported_items": "#minecraft:enchantable/chest_armor",
+ "weight": 2
+}

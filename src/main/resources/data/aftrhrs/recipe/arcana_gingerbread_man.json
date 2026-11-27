@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:wheat",
+  "minecraft:wheat",
+  "minecraft:sugar",
+  "minecraft:egg",
+  "minecraft:honey_bottle"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_gingerbread_man",
+  "count": 4
+ }
+}

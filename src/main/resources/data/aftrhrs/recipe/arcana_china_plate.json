@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BCB"
+ ],
+ "key": {
+  "B": "minecraft:bone_meal",
+  "C": "minecraft:clay_ball"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_china_plate",
+  "count": 2
+ }
+}

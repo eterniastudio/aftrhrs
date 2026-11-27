@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "B  ",
+  "BB "
+ ],
+ "key": {
+  "B": "minecraft:cut_red_sandstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_sandstone_arch_quarter",
+  "count": 2
+ }
+}

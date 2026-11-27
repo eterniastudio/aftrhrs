@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:polished_diorite_slab",
+  "A": "minecraft:diorite",
+  "B": "minecraft:polished_diorite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_diorite_plinth"
+ }
+}

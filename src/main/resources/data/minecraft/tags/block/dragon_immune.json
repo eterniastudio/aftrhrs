@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:feather_storage_terminal",
+  "aftrhrs:feather_crafting_terminal",
+  "aftrhrs:feather_inventory_connector"
+ ]
+}

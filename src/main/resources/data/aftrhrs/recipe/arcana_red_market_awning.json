@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CWC",
+  "S S"
+ ],
+ "key": {
+  "C": "minecraft:white_wool",
+  "S": "minecraft:stick",
+  "W": "minecraft:red_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_market_awning",
+  "count": 2
+ }
+}

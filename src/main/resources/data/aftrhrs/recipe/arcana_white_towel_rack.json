@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NIN",
+  " W "
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget",
+  "W": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_white_towel_rack"
+ }
+}

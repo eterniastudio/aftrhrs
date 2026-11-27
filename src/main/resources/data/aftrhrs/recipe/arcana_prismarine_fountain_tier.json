@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "TWT",
+  " M "
+ ],
+ "key": {
+  "M": "minecraft:prismarine_bricks",
+  "T": "minecraft:dark_prismarine_slab",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_fountain_tier"
+ }
+}

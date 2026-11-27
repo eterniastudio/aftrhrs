@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " W ",
+  "WTW",
+  " W "
+ ],
+ "key": {
+  "T": "minecraft:orange_terracotta",
+  "W": "minecraft:stripped_jungle_log"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_jungle_tiki_mask"
+ }
+}

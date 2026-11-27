@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "R R",
+  "R R",
+  "ZZZ"
+ ],
+ "key": {
+  "R": "minecraft:string",
+  "Z": "minecraft:oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_rope_swing"
+ }
+}

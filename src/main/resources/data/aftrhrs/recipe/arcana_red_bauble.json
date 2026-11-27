@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "N",
+  "G",
+  "D"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "G": "minecraft:glass",
+  "D": "minecraft:red_dye"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_bauble",
+  "count": 4
+ }
+}

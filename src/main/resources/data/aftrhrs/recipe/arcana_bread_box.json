@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZBZ",
+  "PCP"
+ ],
+ "key": {
+  "Z": "minecraft:spruce_slab",
+  "B": "minecraft:bread",
+  "P": "minecraft:spruce_planks",
+  "C": "minecraft:chest"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bread_box"
+ }
+}

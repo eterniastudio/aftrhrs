@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CI",
+  " L"
+ ],
+ "key": {
+  "C": "minecraft:exposed_cut_copper",
+  "I": "minecraft:copper_ingot",
+  "L": "minecraft:exposed_copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_exposed_copper_wall_light"
+ }
+}

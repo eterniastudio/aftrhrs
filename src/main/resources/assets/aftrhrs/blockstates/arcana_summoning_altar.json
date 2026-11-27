@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/bosses/summoning_altar"},"facing=east":{"model":"aftrhrs:arcana/bosses/summoning_altar","y":90},"facing=south":{"model":"aftrhrs:arcana/bosses/summoning_altar","y":180},"facing=west":{"model":"aftrhrs:arcana/bosses/summoning_altar","y":270}}}

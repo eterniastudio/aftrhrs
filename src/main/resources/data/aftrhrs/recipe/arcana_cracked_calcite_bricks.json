@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "cookingtime": 200,
+ "experience": 0.1,
+ "ingredient": "aftrhrs:arcana_calcite_bricks",
+ "result": {
+  "id": "aftrhrs:arcana_cracked_calcite_bricks"
+ }
+}

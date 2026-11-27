@@ -1,0 +1,20 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/spout_iron", "spout_floor": "aftrhrs:block/smithing/spout_floor", "spout_hole": "aftrhrs:block/smithing/spout_hole", "spout_iron": "aftrhrs:block/smithing/spout_iron", "spout_lining": "aftrhrs:block/smithing/spout_lining", "spout_nozzle": "aftrhrs:block/smithing/spout_nozzle"},
+ "elements": [
+  {"name": "channel_floor", "from": [5, 6, 8], "to": [11, 7, 16], "faces": {"north": {"uv": [5, 9, 11, 10], "texture": "#spout_iron"}, "east": {"uv": [0, 9, 8, 10], "texture": "#spout_iron"}, "south": {"uv": [5, 9, 11, 10], "texture": "#spout_iron", "cullface": "south"}, "west": {"uv": [8, 9, 16, 10], "texture": "#spout_iron"}, "up": {"uv": [5, 8, 11, 16], "texture": "#spout_floor"}, "down": {"uv": [5, 0, 11, 8], "texture": "#spout_iron"}}},
+  {"name": "channel_wall_w", "from": [5, 7, 8], "to": [6, 10, 16], "faces": {"north": {"uv": [10, 6, 11, 9], "texture": "#spout_iron"}, "east": {"uv": [0, 6, 8, 9], "texture": "#spout_lining"}, "south": {"uv": [5, 6, 6, 9], "texture": "#spout_iron", "cullface": "south"}, "west": {"uv": [8, 6, 16, 9], "texture": "#spout_iron"}, "up": {"uv": [5, 8, 6, 16], "texture": "#spout_iron"}}},
+  {"name": "channel_wall_e", "from": [10, 7, 8], "to": [11, 10, 16], "faces": {"north": {"uv": [5, 6, 6, 9], "texture": "#spout_iron"}, "east": {"uv": [0, 6, 8, 9], "texture": "#spout_iron"}, "south": {"uv": [10, 6, 11, 9], "texture": "#spout_iron", "cullface": "south"}, "west": {"uv": [8, 6, 16, 9], "texture": "#spout_lining"}, "up": {"uv": [10, 8, 11, 16], "texture": "#spout_iron"}}},
+  {"name": "nozzle", "from": [6.5, 4, 4], "to": [9.5, 8, 8], "faces": {"north": {"uv": [6.5, 8, 9.5, 12], "texture": "#spout_nozzle"}, "east": {"uv": [8, 8, 12, 12], "texture": "#spout_nozzle"}, "south": {"uv": [6.5, 8, 9.5, 12], "texture": "#spout_nozzle"}, "west": {"uv": [4, 8, 8, 12], "texture": "#spout_nozzle"}, "up": {"uv": [6.5, 4, 9.5, 8], "texture": "#spout_iron"}, "down": {"uv": [6.5, 8, 9.5, 12], "texture": "#spout_hole"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

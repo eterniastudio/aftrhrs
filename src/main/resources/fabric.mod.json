@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "aftrhrs",
+  "version": "${version}",
+  "name": "Aftr Hrs",
+  "description": "The Aftr Hrs server as one mod: Feather's systems, the Arcana creatures (GeckoLib), furniture and items, and the Companion client.",
+  "authors": ["Aftr Hrs"],
+  "contributors": ["Paul Fulham (pau101): Fairy Lights, MIT, see licenses/FairyLights-LICENSE.md"],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.axther.aftrhrs.AftrHrs"],
+    "client": ["net.axther.aftrhrs.client.AftrHrsClient"],
+    "jei_mod_plugin": ["net.axther.aftrhrs.client.compat.jei.JeiCompat"]
+  },
+  "mixins": ["aftrhrs.mixins.json", "aftrhrs.entity.mixins.json", {"config": "aftrhrs.client.mixins.json", "environment": "client"}],
+  "accessWidener": "aftrhrs.classtweaker",
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*",
+    "geckolib": ">=5.5.7"
+  },
+  "suggests": { "jei": "*", "luckperms": "*" }
+}

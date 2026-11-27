@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " T ",
+  " Z "
+ ],
+ "key": {
+  "T": "minecraft:stripped_dark_oak_log",
+  "Z": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_patio_table"
+ }
+}

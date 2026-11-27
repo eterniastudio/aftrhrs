@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "FSS",
+  "F C",
+  "F A"
+ ],
+ "key": {
+  "A": "minecraft:lantern",
+  "C": "minecraft:iron_chain",
+  "F": "minecraft:oak_fence",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_lamp_post"
+ }
+}

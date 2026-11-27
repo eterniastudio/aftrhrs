@@ -1,0 +1,477 @@
+{
+ "id": "lurefin",
+ "mm_id": "ArcanaLurefin",
+ "kind": "hostile",
+ "name": "Lurefin",
+ "color": "8",
+ "health": 24,
+ "damage": 5,
+ "speed": 0.55,
+ "follow_range": 32,
+ "hostile": true,
+ "untameable": true,
+ "fights": true,
+ "flyer": false,
+ "egg_only": false,
+ "no_fall": false,
+ "no_nap": false,
+ "damage_mods": {
+  "DROWNING": 0.0
+ },
+ "note": "Deep-sea anglerfish. Lures swimmers in with its glowing bulb at night. Drops the Abyssal Lure. Cannot be tamed.",
+ "ability_desc": "Hostile (cannot be tamed). Hunts players in deep oceans at night. Every 3 s it dangles its glowing lure (ability clip) and gently draws players within 14 blocks who are in the water towards its jaws, then bites (5 damage). Drops an Abyssal Lure (Oraxen arcana_abyssal_lure, 25%, crafts the Abyssal Rod), glow ink sacs and XP.",
+ "plush": "arcana_plush_lurefin",
+ "hitbox": [
+  0.75,
+  0.75
+ ],
+ "eye": 0.44,
+ "tame": {
+  "item": "minecraft:air",
+  "chance": 0
+ },
+ "heal": {
+  "item": "minecraft:air",
+  "amount": 0
+ },
+ "sounds": {
+  "ambient": {
+   "id": "entity.guardian.ambient",
+   "pitch": 0.6,
+   "volume": 0.7
+  },
+  "hurt": {
+   "id": "entity.guardian.hurt",
+   "pitch": 0.7,
+   "volume": 1.0
+  },
+  "death": {
+   "id": "entity.guardian.death",
+   "pitch": 0.6,
+   "volume": 1.0
+  },
+  "attack": {
+   "id": "entity.fox.bite",
+   "pitch": 0.6,
+   "volume": 1.0
+  },
+  "every": 100,
+  "chance": 0.5
+ },
+ "anims": {
+  "ability": "ability",
+  "look_around": "look_around",
+  "hurt": "hurt",
+  "spawn": "spawn",
+  "run": "run",
+  "death": "death",
+  "attack": "attack"
+ },
+ "moods": {
+  "idle": [
+   [
+    "idle_swim",
+    "in_water"
+   ]
+  ],
+  "walk": [
+   [
+    "run",
+    "owner_sprinting"
+   ],
+   [
+    "run",
+    "in_combat"
+   ],
+   [
+    "swim",
+    "in_water"
+   ]
+  ]
+ },
+ "pools": {
+  "idle": [
+   "look_around"
+  ],
+  "idle_alert": [
+   "look_around"
+  ]
+ },
+ "flourish_sounds": {},
+ "aquatic": {
+  "follow": false,
+  "hover": false,
+  "speed": 0.3
+ },
+ "abilities": [
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaLurefin_Lure"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 60,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaLurefin_Lure",
+   "line": "- skill{s=ArcanaLurefin_Lure} @self ~onTimer:60"
+  },
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "glow",
+    "amount": 2,
+    "hS": 0.15,
+    "vS": 0.15,
+    "y": 1.0
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 10,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- particles{p=glow;amount=2;hS=0.15;vS=0.15;y=1.0} @self ~onTimer:10"
+  }
+ ],
+ "drops": [
+  {
+   "custom": "arcana_abyssal_lure",
+   "min": 1,
+   "max": 1,
+   "chance": 0.25
+  },
+  {
+   "item": "minecraft:glow_ink_sac",
+   "min": 1,
+   "max": 2,
+   "chance": 0.5
+  },
+  {
+   "exp": 8,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:deep_ocean",
+    "minecraft:deep_cold_ocean",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:deep_frozen_ocean"
+   ],
+   "rarity": "uncommon",
+   "position": "SEA",
+   "conditions": [
+    "night true"
+   ]
+  }
+ ],
+ "model": "lurefin",
+ "clips": {
+  "idle": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.8,
+   "loop": "loop"
+  },
+  "swim": {
+   "length": 0.8,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.5,
+   "loop": "loop"
+  },
+  "idle_swim": {
+   "length": 8,
+   "loop": "loop"
+  },
+  "idle_flop": {
+   "length": 1.6,
+   "loop": "loop"
+  },
+  "attack": {
+   "length": 0.5,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.35,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.6,
+   "loop": "hold"
+  },
+  "spawn": {
+   "length": 1,
+   "loop": "once"
+  },
+  "ability": {
+   "length": 2,
+   "loop": "once"
+  },
+  "look_around": {
+   "length": 2,
+   "loop": "once"
+  },
+  "stalk": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "threat": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "lure_dangle": {
+   "length": 3,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.75,
+  0.938
+ ],
+ "shadow": 0.375,
+ "name_tag_y": 1.25,
+ "render_box": [
+  0.656,
+  1.062
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "lure_bulb"
+ ],
+ "glow_out": [
+  "lure_bulb"
+ ],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.8,
+    "gait": "walk",
+    "drv": "hbt"
+   },
+   "swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.8,
+    "gait": "swim",
+    "drv": "hbt"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.5,
+    "gait": "run",
+    "drv": "hbt"
+   },
+   "idle_swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 8.0,
+    "gait": "idle",
+    "drv": "hbt"
+   },
+   "idle_flop": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "t"
+   },
+   "attack": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "hbt"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.35,
+    "drv": "hb"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.6,
+    "eyes": true,
+    "drv": "t"
+   },
+   "spawn": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.0,
+    "from": "standing",
+    "drv": "t"
+   },
+   "ability": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbt"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "ht"
+   },
+   "stalk": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbt",
+    "gait": "swim"
+   },
+   "threat": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.2,
+    "drv": "h"
+   },
+   "lure_dangle": {
+    "p": "swimming",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "swim": "swim",
+   "swim_idle": "idle_swim",
+   "death": "death",
+   "hurt": "hurt",
+   "stalk": "stalk",
+   "threat": "threat"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "look_around",
+     "w": 1,
+     "cd": 14
+    },
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 8,
+     "max": 20
+    },
+    {
+     "clip": "lure_dangle",
+     "w": 2,
+     "cd": 14
+    },
+    {
+     "clip": "ability",
+     "w": 1,
+     "cd": 20
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "threat",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": []
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail"
+   ],
+   "bank": 1.4,
+   "bank_max": 18
+  },
+  "authored": [
+   "idle_swim",
+   "lure_dangle",
+   "stalk",
+   "swim",
+   "threat"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "lure_bulb"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 8
+   },
+   "ambient_angry": {
+    "jitter": 0.06,
+    "dist": 20
+   },
+   "hurt": {
+    "jitter": 0.07,
+    "dist": 20
+   },
+   "death": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 4
+   },
+   "attack": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 0
+   }
+  },
+  "every": 200,
+  "dist": 20
+ }
+}

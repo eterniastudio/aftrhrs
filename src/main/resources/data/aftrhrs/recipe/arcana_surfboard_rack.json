@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ABC",
+  "S S",
+  "SSS"
+ ],
+ "key": {
+  "A": "minecraft:red_concrete",
+  "B": "minecraft:yellow_concrete",
+  "C": "minecraft:light_blue_concrete",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_surfboard_rack"
+ }
+}

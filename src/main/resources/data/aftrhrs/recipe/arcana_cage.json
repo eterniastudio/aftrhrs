@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  "B B",
+  "BBB"
+ ],
+ "key": {
+  "N": "minecraft:gold_nugget",
+  "B": "minecraft:iron_bars"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cage"
+ }
+}

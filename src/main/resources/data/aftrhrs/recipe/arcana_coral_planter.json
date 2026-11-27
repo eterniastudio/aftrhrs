@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "T F",
+  "BSB",
+  "BBB"
+ ],
+ "key": {
+  "B": "minecraft:prismarine_bricks",
+  "F": "minecraft:fire_coral",
+  "S": "minecraft:sand",
+  "T": "minecraft:tube_coral"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_coral_planter"
+ }
+}

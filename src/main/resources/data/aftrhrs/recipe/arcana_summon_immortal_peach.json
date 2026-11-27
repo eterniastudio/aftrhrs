@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " S ",
+  "ATA",
+  "GGG"
+ ],
+ "key": {
+  "S": "minecraft:cherry_sapling",
+  "A": "minecraft:golden_apple",
+  "T": "minecraft:totem_of_undying",
+  "G": "minecraft:gold_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_summon_immortal_peach"
+ }
+}

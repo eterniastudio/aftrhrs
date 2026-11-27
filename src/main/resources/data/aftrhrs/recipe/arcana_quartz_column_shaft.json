@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "W",
+  "W"
+ ],
+ "key": {
+  "W": "minecraft:quartz_pillar"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_column_shaft",
+  "count": 3
+ }
+}

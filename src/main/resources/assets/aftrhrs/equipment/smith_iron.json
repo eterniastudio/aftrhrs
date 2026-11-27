@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "aftrhrs:smith_iron"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "aftrhrs:smith_iron"
+   }
+  ]
+ }
+}

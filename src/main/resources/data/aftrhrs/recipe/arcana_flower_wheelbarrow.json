@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ADC",
+  "PIP",
+  " L "
+ ],
+ "key": {
+  "A": "minecraft:poppy",
+  "C": "minecraft:dandelion",
+  "D": "minecraft:dirt",
+  "I": "minecraft:iron_ingot",
+  "L": "minecraft:spruce_log",
+  "P": "minecraft:spruce_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_flower_wheelbarrow"
+ }
+}

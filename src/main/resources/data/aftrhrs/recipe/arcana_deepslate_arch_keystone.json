@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZAZ"
+ ],
+ "key": {
+  "A": "minecraft:deepslate_tiles",
+  "Z": "minecraft:polished_deepslate_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_deepslate_arch_keystone",
+  "count": 2
+ }
+}

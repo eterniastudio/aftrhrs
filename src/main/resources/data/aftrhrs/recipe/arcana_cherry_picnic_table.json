@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PPP",
+  "S S"
+ ],
+ "key": {
+  "P": "minecraft:cherry_planks",
+  "S": "minecraft:stick",
+  "Z": "minecraft:cherry_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cherry_picnic_table"
+ }
+}

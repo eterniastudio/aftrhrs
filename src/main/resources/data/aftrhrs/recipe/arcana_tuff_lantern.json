@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "ZTZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:polished_tuff_slab",
+  "T": "minecraft:torch",
+  "W": "minecraft:polished_tuff_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuff_lantern"
+ }
+}

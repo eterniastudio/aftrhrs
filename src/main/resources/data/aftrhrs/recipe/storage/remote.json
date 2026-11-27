@@ -1,0 +1,30 @@
+{
+ "fabric:load_conditions": [
+  {
+   "condition": "aftrhrs:feather_config",
+   "keys": [
+    "modules.storage",
+    "storage.recipes"
+   ]
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "feather_storage",
+ "pattern": [
+  "IGI",
+  "RTR",
+  "IEI"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "G": "minecraft:glass_pane",
+  "R": "minecraft:redstone",
+  "T": "aftrhrs:feather_crafting_terminal",
+  "E": "minecraft:ender_pearl"
+ },
+ "result": {
+  "id": "aftrhrs:feather_terminal_remote",
+  "count": 1
+ }
+}

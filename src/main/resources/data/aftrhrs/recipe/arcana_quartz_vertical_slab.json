@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "Z",
+  "Z"
+ ],
+ "key": {
+  "Z": "minecraft:quartz_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_vertical_slab",
+  "count": 3
+ }
+}

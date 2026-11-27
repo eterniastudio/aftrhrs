@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "R R",
+  "R R",
+  "ZZZ"
+ ],
+ "key": {
+  "R": "minecraft:string",
+  "Z": "minecraft:birch_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_birch_rope_swing"
+ }
+}

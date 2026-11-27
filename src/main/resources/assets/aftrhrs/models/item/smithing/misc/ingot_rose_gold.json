@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/misc/ingot_rose_gold"
+ }
+}

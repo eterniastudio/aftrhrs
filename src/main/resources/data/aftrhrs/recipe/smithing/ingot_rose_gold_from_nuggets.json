@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold",
+  "aftrhrs:nugget_rose_gold"
+ ],
+ "result": {
+  "id": "aftrhrs:ingot_rose_gold",
+  "count": 1
+ }
+}

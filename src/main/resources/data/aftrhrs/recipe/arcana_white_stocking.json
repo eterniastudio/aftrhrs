@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "U ",
+  "C ",
+  "CC"
+ ],
+ "key": {
+  "U": "minecraft:red_wool",
+  "C": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_white_stocking"
+ }
+}

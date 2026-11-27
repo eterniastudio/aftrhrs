@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CI",
+  " L"
+ ],
+ "key": {
+  "C": "minecraft:oxidized_cut_copper",
+  "I": "minecraft:copper_ingot",
+  "L": "minecraft:oxidized_copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oxidized_copper_wall_light"
+ }
+}

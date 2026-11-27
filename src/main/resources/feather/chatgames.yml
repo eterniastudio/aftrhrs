@@ -1,0 +1,278 @@
+# Feather chat games (modules.chatgames): what the games ask. Timing, rewards and which games run: config.yml chatgames.
+# Docs: docs/chat-games.md. /chatgames reload (or /feather reload) re-reads this file.
+#
+# Answers are forgiving: case, accents, punctuation and extra spaces don't matter, a leading "the"/"a"/"an" is ignored,
+# spaces inside an answer are optional ("shiftf" = "shift f") and numbers can be written 1,000 or 1000.
+# Fast Type is the exception: the phrase has to be typed exactly.
+
+# Trivia: q is the question (MiniMessage, palette tags work), a the accepted answers; the first one is shown as the
+# answer. Keep every answer correct for this server: the Aftr Hrs ones come from guide.yml, pets.yml, altars.yml,
+# tools.yml, bank.yml and the Oraxen items. Change them here when that content changes.
+trivia:
+  # --- tame items (guide.yml)
+  - q: "Which item tames a <accent>Mossbun</accent>?"
+    a: [Moss Block, moss]
+  - q: "Which item tames an <accent>Emberkit</accent>?"
+    a: [Blaze Powder]
+  - q: "Which item tames a <accent>Cairnling</accent>?"
+    a: [Lapis Lazuli, lapis]
+  - q: "Which item tames a <accent>Glimmermoth</accent>?"
+    a: [Glow Berries, glow berry, glowberries]
+  - q: "Which item tames a <accent>Runeback Tortoise</accent>?"
+    a: [Seagrass, sea grass]
+  - q: "Which item tames a <accent>Skyfin Ray</accent>?"
+    a: [Phantom Membrane, membrane]
+  - q: "Which item tames a <accent>Burrowpip</accent>?"
+    a: [Brown Mushroom]
+  - q: "Which item tames a <accent>Honeycub</accent>?"
+    a: [Honey Bottle, honey, bottle of honey]
+  - q: "Which item tames a <accent>Wickling</accent>?"
+    a: [Glowstone Dust, glowstone]
+  - q: "Which item tames a <accent>Cloudlamb</accent>?"
+    a: [Wheat]
+  - q: "Which item tames a <accent>Magpip</accent>?"
+    a: [Gold Nugget, gold nuggets, nugget]
+  - q: "Which item tames a <accent>Husky</accent>?"
+    a: [Rabbit, raw rabbit]
+  - q: "Which item tames a <accent>Golden Retriever</accent>?"
+    a: [Chicken, raw chicken]
+  - q: "Which item tames a <accent>Saint Bernard</accent>?"
+    a: [Cooked Mutton]
+  - q: "Which item tames a <accent>Beagle</accent>?"
+    a: [Bone]
+  - q: "Which item tames a <accent>Corgi</accent>?"
+    a: [Cooked Beef, steak]
+  - q: "Which item tames a <accent>Dachshund</accent>?"
+    a: [Cooked Porkchop, cooked pork chop, cooked pork]
+  - q: "Which item tames a <accent>Black Cat</accent>?"
+    a: [Tropical Fish]
+  - q: "Which item tames a <accent>Dunebun</accent>?"
+    a: [Golden Carrot, gold carrot]
+  - q: "Which item tames a <accent>Snowmuff</accent>?"
+    a: [Pumpkin Pie]
+  - q: "Which item tames a <accent>Cinderwing Phoenix</accent>?"
+    a: [Blaze Rod]
+  - q: "Which item tames a <accent>Tempest Roc</accent>?"
+    a: [Lightning Rod]
+  - q: "Which item tames a <accent>Cinder Imp</accent>?"
+    a: [Magma Cream]
+  - q: "Which item tames a <accent>Rime Wraith</accent>?"
+    a: [Packed Ice]
+  - q: "Which item tames a <accent>Volt Wisp</accent>?"
+    a: [Copper Ingot, copper]
+  - q: "Which item tames a <accent>Geode Crawler</accent>?"
+    a: [Amethyst Cluster]
+  # --- creature jobs (guide.yml)
+  - q: "Which companion is <accent>the gardener</accent> that bonemeals crops around you?"
+    a: [Mossbun]
+  - q: "Which little <accent>fetcher</accent> brings dropped items back to you?"
+    a: [Magpip]
+  - q: "Which companion is <accent>the lantern</accent> that keeps monsters from spawning near it?"
+    a: [Wickling]
+  - q: "Which dog brings your <accent>arrows and tridents</accent> back?"
+    a: [Golden Retriever, retriever]
+  - q: "Which cat leaves you a <accent>gift in the morning</accent>?"
+    a: [Black Cat]
+  - q: "Which cat makes <accent>creepers keep their distance</accent>?"
+    a: [Tabby Cat, tabby]
+  - q: "Which mount <accent>freezes water</accent> as it walks?"
+    a: [Snowmuff]
+  - q: "Which cat is the night warden that <accent>repels phantoms</accent>?"
+    a: [Maine Coon]
+  - q: "Which dog <accent>herds farm animals</accent> to you when you sneak?"
+    a: [Corgi]
+  - q: "Which chonky cat <accent>scoops fish</accent> out of the water for you?"
+    a: [Kevin]
+  - q: "Which fluffy black Maine Coon <accent>sleeps on your bed</accent> so you wake up well rested?"
+    a: [Kitty]
+  - q: "Which tuxedo cat <accent>digs up lucky finds</accent> and bats them over to you?"
+    a: [Clover]
+  - q: "Which chunky little frog in an <accent>orange scout sash</accent> gives you Jump Boost?"
+    a: [Frog Guy, FrogGuy]
+  - q: "Which grumpy grey tabby in a <accent>little Christmas hat</accent> glares monsters into weakness?"
+    a: [Luna But The Second One, Luna 2, Luna II]
+  - q: "Which wall-eyed orange tabby <accent>purrs you back to health</accent>?"
+    a: [Olive]
+  - q: "Which very fat black cat with a <accent>swinging belly pouch</accent> attacks your ankles?"
+    a: [Ozzy]
+  - q: "Which pup <accent>puts you out</accent> when you're on fire?"
+    a: [Puddlepup]
+  - q: "Which companion <accent>feeds you honey</accent> when you're hungry?"
+    a: [Honeycub]
+  - q: "Which companion <accent>digs up</accent> flint, nuggets and the odd gem?"
+    a: [Burrowpip]
+  - q: "Which hopping mount for two has <accent>no fall damage</accent>?"
+    a: [Dunebun]
+  - q: "Which pet has the rare colors <accent>Lemon</accent> and <accent>Chocolate</accent>?"
+    a: [Beagle]
+  # --- pets (pets.yml)
+  - q: "How many pets can you have out at once by default <muted>(mounts count)</muted>?"
+    a: ['6', six]
+  - q: "What is the <accent>highest bond level</accent> a pet can reach?"
+    a: ['5', five]
+  - q: "Your pet died. Which item of its revives it?"
+    a: [Plushie, plush, its plushie, plushies]
+  - q: "At which bond level does a pet unlock <accent>Second Wind</accent> (a free revive)?"
+    a: ['4', four]
+  - q: "How many pets fit in <accent>the stable</accent> by default?"
+    a: ['9', nine]
+  - q: "Which title does a pet get at <accent>bond level 5</accent>?"
+    a: [Devoted]
+  - q: "Which bond level do both parents need, at least, to <accent>breed</accent>?"
+    a: ['3', three]
+  - q: "Which item, renamed at an anvil, gives your pet its <accent>name</accent>?"
+    a: [Name Tag, nametag]
+  # --- bosses, offerings and relics (altars.yml, tools.yml, the Oraxen items)
+  - q: "Which boss drops the relic <accent>Frostfang</accent>?"
+    a: [Glacial Wyrm, wyrm]
+  - q: "Which boss drops the relic <accent>Runebreaker</accent>?"
+    a: [Runebound Colossus, colossus]
+  - q: "Which boss drops the <accent>Cinderplume</accent>?"
+    a: [Cinderwing Phoenix, phoenix, cinderwing]
+  - q: "Which boss drops the <accent>Galeheart</accent>?"
+    a: [Tempest Roc, roc]
+  - q: "What is the name of <accent>Sun Wukong</accent>'s relic staff?"
+    a: [Ruyi Jingu Bang, ruyi jingubang, ruyi]
+  - q: "Which vanilla boss can drop the relic <accent>Witherbane</accent>?"
+    a: [Wither]
+  - q: "Which vanilla boss can drop the relic <accent>Dragonfire</accent>?"
+    a: [Ender Dragon, dragon]
+  - q: "Which vanilla boss can drop the relic <accent>Tidecaller</accent>?"
+    a: [Elder Guardian]
+  - q: "Which offering calls <accent>Sun Wukong</accent> to an altar?"
+    a: [Peach of Immortality, immortal peach, peach]
+  - q: "Which offering calls the <accent>Glacial Wyrm</accent>?"
+    a: [Rime Heart]
+  - q: "Which offering calls the <accent>Tempest Roc</accent>?"
+    a: [Tempest Totem]
+  - q: "Which offering calls the <accent>Cinderwing Phoenix</accent>?"
+    a: [Cinder Offering]
+  - q: "Which offering calls the <accent>Runebound Colossus</accent>?"
+    a: [Runic Keystone]
+  - q: "What do you right-click with an offering to <accent>summon a boss</accent>?"
+    a: [Summoning Altar, altar]
+  - q: "The Runebound Colossus only answers deep underground, below which <accent>Y level</accent>?"
+    a: ['0', zero, y 0, y0]
+  - q: "Which relic <accent>rebirths you in fire</accent> when a hit would kill you?"
+    a: [Cinderplume]
+  - q: "Which relic gives a right-click <accent>gust leap</accent> and storm dives?"
+    a: [Galeheart]
+  # --- tools (tools.yml)
+  - q: "Which Arcana tool <accent>fells a whole tree</accent> at once?"
+    a: [Lumber Axe]
+  - q: "Which Arcana tool harvests and <accent>replants</accent> the ripe crops around you?"
+    a: [Scythe, harvest scythe]
+  - q: "Which charm <accent>pulls nearby drops</accent> to you?"
+    a: [Magnet Charm, magnet]
+  - q: "Which Arcana pickaxe-style tool mines a <accent>3x3</accent> area?"
+    a: [Hammer]
+  - q: "Which Arcana item calls every pet you own in your world?"
+    a: [Pet Whistle, whistle]
+  # --- the server
+  - q: "What is the server's currency called?"
+    a: [Goob Coins, goob coin, goobs, goob]
+  - q: "Which keys open the main menu?"
+    a: [Shift + F, shift f, sneak f, sneak + f]
+  - q: "How many Goob Coins does the bank give you for <accent>1 diamond</accent>?"
+    a: ['10', ten]
+  # --- Minecraft
+  - q: "How many obsidian blocks does the smallest Nether portal need <muted>(no corners)</muted>?"
+    a: ['10', ten]
+  - q: "How many Netherite Scraps go into one Netherite Ingot?"
+    a: ['4', four]
+  - q: "How many Eyes of Ender fill an End portal?"
+    a: ['12', twelve]
+  - q: "How many items fit in one stack of <accent>Ender Pearls</accent>?"
+    a: ['16', sixteen]
+  - q: "How many slots does the hotbar have?"
+    a: ['9', nine]
+  - q: "Which helmet gives you Water Breathing?"
+    a: [Turtle Shell, turtle helmet]
+  - q: "Which ore, found only in the Nether, is smelted into Netherite Scrap?"
+    a: [Ancient Debris]
+  - q: "Which boss drops a Nether Star?"
+    a: [Wither]
+  - q: "Which mob drops the Totem of Undying?"
+    a: [Evoker]
+  - q: "Which tall mob gets angry when you look at it?"
+    a: [Enderman, endermen]
+  - q: "Which blind mob lives in the Deep Dark?"
+    a: [Warden]
+  - q: "In which biome do Mooshrooms live?"
+    a: [Mushroom Fields, mushroom island, mushroom]
+  - q: "What turns a creeper into a <accent>charged</accent> creeper?"
+    a: [Lightning, lightning bolt, lightning strike]
+  - q: "What do villagers use as money?"
+    a: [Emeralds, emerald]
+  - q: "Which metal do Piglins love?"
+    a: [Gold]
+  - q: "Which tool takes wool from a sheep without hurting it?"
+    a: [Shears]
+  - q: "Which mob drops Phantom Membrane?"
+    a: [Phantom]
+  - q: "Which mob drops Blaze Rods?"
+    a: [Blaze]
+  - q: "Which wood has pink leaves?"
+    a: [Cherry]
+  - q: "Which food do you use to breed cows?"
+    a: [Wheat]
+  - q: "Which sticky block do spiders leave behind?"
+    a: [Cobweb, cobwebs, web]
+  - q: "Where do you find Elytra?"
+    a: [End Ship, end city, end city ship, end ships]
+  - q: "What do you light a Nether portal with?"
+    a: [Flint and Steel, fire charge]
+  - q: "Which golem protects villages?"
+    a: [Iron Golem]
+  - q: "How many hearts does a player have at full health?"
+    a: ['10', ten]
+
+# Words for Unscramble and Fill the Gaps, by category (the category is shown as a hint: chatgames.category.<name>
+# in messages.yml). Two-word entries are scrambled word by word.
+words:
+  creature: [Mossbun, Emberkit, Cairnling, Glimmermoth, Burrowpip, Honeycub, Puddlepup, Wickling, Cloudlamb, Magpip,
+             Husky, Beagle, Corgi, Dachshund, Dunebun, Snowmuff, Tortoise, Owlet, Maine Coon, Saint Bernard, Tabby Cat]
+  relic: [Frostfang, Runebreaker, Cinderplume, Galeheart, Tidecaller, Witherbane, Dragonfire]
+  item: [Diamond, Emerald, Netherite, Obsidian, Redstone, Lantern, Beacon, Elytra, Trident, Amethyst, Plushie, Spyglass,
+         Lodestone, Composter, Honeycomb, Goob Coin]
+  biome: [Badlands, Savanna, Meadow, Jungle, Taiga, Desert, Cherry Grove, Deep Dark, Ice Spikes, Lush Caves, Snowy Plains,
+          Flower Forest, Mangrove Swamp]
+
+# Fast Type: the first to type one of these exactly wins. Plain words only (no quotes or symbols) so everyone can
+# type them. Each letter is sent as its own piece, so chat copy tools don't hand it over in one go.
+phrases:
+  - goob coins make the world go round
+  - never dig straight down
+  - the wickling keeps the dark away
+  - my corgi herds better than me
+  - shift f opens the menu
+  - pet your pets every day
+  - the tabby cat scares creepers
+  - honeycub snacks are the best snacks
+  - plushies bring your pets back
+  - keep calm and tame a cloudlamb
+  - who left the glimmermoth on
+  - the magpip found my diamonds
+  - see you aftr hrs
+  - three cheers for the puddlepup
+  - the dunebun hops over everything
+  - feed the snowmuff some pumpkin pie
+  - wukong dropped a peach
+  - the mossbun ate my carrots
+  - one more cookie for the corgi
+  - the bank vault is not a piggy bank
+
+# Guess the Creature: clues are built from guide.yml (each creature's job and where it lives, with its name hidden).
+# Extra accepted answers per creature (its name in guide.yml is always accepted).
+creature-aliases:
+  ArcanaCinderwingMount: [Cinderwing, Phoenix]
+  ArcanaTempestRocMount: [Roc]
+  ArcanaSaintBernard: [St Bernard]
+  ArcanaGoldenRetriever: [Retriever]
+  ArcanaRunebackTortoise: [Runeback, Tortoise]
+  ArcanaSnowpeltOwlet: [Owlet, Snowpelt]
+  ArcanaSkyfinRay: [Skyfin]
+  ArcanaTabbyCat: [Tabby]
+  ArcanaCalicoKitten: [Calico]
+# Creatures left out of Guess the Creature (MythicMobs ids).
+creature-skip: []

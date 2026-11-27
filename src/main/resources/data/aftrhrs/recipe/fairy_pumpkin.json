@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  " J "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "J": "minecraft:jack_o_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_pumpkin",
+  "count": 4
+ }
+}

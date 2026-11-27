@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " T ",
+  " Z "
+ ],
+ "key": {
+  "T": "minecraft:stripped_birch_log",
+  "Z": "minecraft:birch_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_birch_patio_table"
+ }
+}

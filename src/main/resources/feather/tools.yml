@@ -1,0 +1,340 @@
+# Feather / Arcana tools: behavior for the Arcana Oraxen items. Every item is matched by its Oraxen item id.
+# Messages are MiniMessage. Sounds are vanilla sound keys (e.g. block.note_block.chime).
+# /feather reload (permission feather.admin) re-reads this file.
+
+# Hammers (pickaxe-mineable) and excavators (shovel-mineable): mine 3x3 on the face you hit. Sneak = one block.
+# Extra blocks must be properly harvestable by the tool, have no tile entity (chests, spawners, signs...),
+# and be at most (center hardness * max-hardness-factor + max-hardness-slack) hard, so stone can't cut obsidian.
+area-mining:
+  enabled: true
+  tools:
+    - arcana_copper_hammer
+    - arcana_iron_hammer
+    - arcana_golden_hammer
+    - arcana_diamond_hammer
+    - arcana_netherite_hammer
+    - arcana_copper_excavator
+    - arcana_iron_excavator
+    - arcana_golden_excavator
+    - arcana_diamond_excavator
+    - arcana_netherite_excavator
+  max-hardness-factor: 1.5
+  max-hardness-slack: 0.5
+  # Materials the 3x3 never touches (the block you aim at still breaks normally).
+  never-break:
+    - BUDDING_AMETHYST
+    - REINFORCED_DEEPSLATE
+
+# Lumber axes: chopping a log of a natural tree fells every connected log of the same type. Sneak = one log.
+# A "natural tree" needs at least min-natural-leaves non-player-placed leaves touching its logs, so log
+# builds are safe.
+tree-felling:
+  enabled: true
+  tools:
+    - arcana_copper_lumber_axe
+    - arcana_iron_lumber_axe
+    - arcana_golden_lumber_axe
+    - arcana_diamond_lumber_axe
+    - arcana_netherite_lumber_axe
+  max-logs: 256
+  max-horizontal-radius: 10
+  min-natural-leaves: 3
+  # Logs are broken over several ticks so huge trees don't stall the server.
+  logs-per-tick: 32
+  # Blocks that also count as "leaves" (for crimson / warped fungi).
+  extra-natural-foliage:
+    - NETHER_WART_BLOCK
+    - WARPED_WART_BLOCK
+
+# Harvest scythes: right-click or break a ripe crop to harvest + replant every ripe crop around it.
+harvest:
+  enabled: true
+  tools:
+    - arcana_copper_scythe
+    - arcana_iron_scythe
+    - arcana_golden_scythe
+    - arcana_diamond_scythe
+    - arcana_netherite_scythe
+  radius: 1          # 1 = 3x3
+  replant: true      # uses one seed from the crop's own drops
+  include-cocoa: true
+  sound: block.crop.break
+
+# Magnet charm: right-click toggles it. While an active charm is anywhere in your inventory, nearby drops fly to you.
+magnet:
+  enabled: true
+  item: arcana_magnet_charm
+  active-model: oraxen:arcana_magnet_charm_on
+  radius: 7.0
+  interval-ticks: 4
+  pull-speed: 0.45
+  ignore-own-drops-seconds: 3
+  toggle-sound: block.note_block.chime
+  message-on: "<#e05a4f>Magnet charm</#e05a4f> <good>on"
+  message-off: "<#e05a4f>Magnet charm</#e05a4f> <muted>off"
+
+# Builder's wand: right-click a block face to extend the same-block area (size x size on that face) by one layer,
+# using blocks from your inventory (free in creative). 1 durability per block.
+builders-wand:
+  enabled: true
+  items:
+    - arcana_builders_wand
+  size: 5
+  sound: block.amethyst_block.place
+  message-no-blocks: "<bad>You have no <block> left."
+  never-copy:
+    - TNT
+    - SPAWNER
+    - BUDDING_AMETHYST
+
+# Hats: right-click (main hand) puts ONE hat on your head; the old helmet goes back to your inventory.
+hats:
+  enabled: true
+  id-prefix: arcana_hat_
+  sound: item.armor.equip_leather
+
+# Backpacks (the three Arcana backpacks): wear one on your back. Put it on with Sneak + right-click, by moving it
+# into the back slot of the inventory screen (above the offhand), or with the Equip / open backpack key (V by
+# default; each player can rebind it, and config/aftrhrs/backpack.json on the client sets the default). The key
+# opens the worn backpack; Sneak + the key takes it off. Worn backpacks show on the back for everyone.
+backpacks:
+  # false: no back slot, nobody can put a backpack on; ones already worn go back into the inventory (or drop at
+  # the feet when it is full). Sneak + right-click opens the backpack again, as before.
+  wear: true
+  # A worn backpack while an elytra is in the chest slot: hide (the folded wings lie where the backpack goes) or
+  # show (drawn anyway; it overlaps the wings). It is always hidden while gliding.
+  elytra: hide
+  # Also show a backpack carried anywhere in the inventory on the back when none is worn (Oraxen's old
+  # backpack_cosmetic). Off: only a worn backpack shows, so what you see on someone's back is what they wear.
+  inventory-cosmetic: false
+
+# Pet whistle: right-click to signal every Arcana pet you own in your world (MythicMobs signal).
+pet-whistle:
+  enabled: true
+  item: arcana_pet_whistle
+  cooldown-seconds: 5
+  signal: ARCANAWHISTLE
+  mob-type-prefix: Arcana
+  sound: item.goat_horn.sound.0
+  message-called: "<prefix><good>You whistle.</good> <text><count></text> <muted>pet(s) heard you."
+  message-none: "<prefix><muted>No pet heard the whistle. Pets told to stay elsewhere keep waiting."
+  message-cooldown: "<muted>Catch your breath (<seconds>s)."
+
+# Furniture swaps: right-click a placed Oraxen furniture with a matching item to turn it into another furniture item
+# in the same spot and facing (a switched-on lamp stays on). The old piece is removed without drops and the new one
+# placed without using an item, so nothing is duplicated. Only where the player may build and break (game mode,
+# spawn protection, protection plugins via Oraxen). The first matching rule wins.
+#   items:  Material names, #tags (#axes, #shovels ...) or oraxen:<id>
+#   use:    consume (amount items, then give `return` if set) | damage (amount durability) | none. Creative: free.
+#   sound / volume / pitch, particle (Bukkit Particle name, no-data ones) / particle-count
+#   pairs:  "from -> to"; every <var> is expanded over the values listed under vars.
+furniture-swap:
+  enabled: true
+  rules:
+    - name: copper-wax
+      items: [HONEYCOMB]
+      use: consume
+      sound: item.honeycomb.wax_on
+      particle: WAX_ON
+      vars:
+        stage: [copper, exposed_copper, weathered_copper, oxidized_copper]
+        piece: [street_lamp, wall_light, pipe, pipe_corner, grand_lamp_post]
+      pairs:
+        - "arcana_<stage>_<piece> -> arcana_waxed_<stage>_<piece>"
+    - name: copper-wax-off
+      items: ["#axes"]
+      use: damage
+      sound: item.axe.wax_off
+      particle: WAX_OFF
+      vars:
+        stage: [copper, exposed_copper, weathered_copper, oxidized_copper]
+        piece: [street_lamp, wall_light, pipe, pipe_corner, grand_lamp_post]
+      pairs:
+        - "arcana_waxed_<stage>_<piece> -> arcana_<stage>_<piece>"
+    - name: copper-scrape
+      items: ["#axes"]
+      use: damage
+      sound: item.axe.scrape
+      particle: SCRAPE
+      vars:
+        piece: [street_lamp, wall_light, pipe, pipe_corner, grand_lamp_post]
+      pairs:
+        - "arcana_exposed_copper_<piece> -> arcana_copper_<piece>"
+        - "arcana_weathered_copper_<piece> -> arcana_exposed_copper_<piece>"
+        - "arcana_oxidized_copper_<piece> -> arcana_weathered_copper_<piece>"
+    - name: hearth-light
+      items: [FLINT_AND_STEEL]
+      use: damage
+      sound: item.flintandsteel.use
+      particle: FLAME
+      vars:
+        stone: [stone, cobblestone, granite, diorite, andesite, deepslate, tuff, blackstone, sandstone, red_sandstone, quartz, prismarine]
+      pairs:
+        - "arcana_<stone>_hearth -> arcana_<stone>_hearth_lit"
+    - name: hearth-light-charge
+      items: [FIRE_CHARGE]
+      use: consume
+      sound: item.firecharge.use
+      particle: FLAME
+      vars:
+        stone: [stone, cobblestone, granite, diorite, andesite, deepslate, tuff, blackstone, sandstone, red_sandstone, quartz, prismarine]
+      pairs:
+        - "arcana_<stone>_hearth -> arcana_<stone>_hearth_lit"
+    - name: hearth-douse
+      items: ["#shovels"]
+      use: damage
+      sound: block.fire.extinguish
+      volume: 0.6
+      particle: LARGE_SMOKE
+      vars:
+        stone: [stone, cobblestone, granite, diorite, andesite, deepslate, tuff, blackstone, sandstone, red_sandstone, quartz, prismarine]
+      pairs:
+        - "arcana_<stone>_hearth_lit -> arcana_<stone>_hearth"
+    - name: hearth-douse-water
+      items: [WATER_BUCKET]
+      use: consume
+      return: BUCKET
+      sound: block.fire.extinguish
+      particle: CLOUD
+      vars:
+        stone: [stone, cobblestone, granite, diorite, andesite, deepslate, tuff, blackstone, sandstone, red_sandstone, quartz, prismarine]
+      pairs:
+        - "arcana_<stone>_hearth_lit -> arcana_<stone>_hearth"
+
+# Furniture aging (copper weathering): every check-interval-seconds each loaded piece listed under pairs (in a world
+# with players) turns into its "to" item with chance interval / (mean-minutes-per-stage * 60), so a piece takes
+# mean-minutes-per-stage real minutes per stage on average (30 min = 1.5 Minecraft days). Waxed pieces are not listed.
+furniture-aging:
+  enabled: true
+  check-interval-seconds: 60
+  mean-minutes-per-stage: 30
+  vars:
+    piece: [street_lamp, wall_light, pipe, pipe_corner, grand_lamp_post]
+  pairs:
+    - "arcana_copper_<piece> -> arcana_exposed_copper_<piece>"
+    - "arcana_exposed_copper_<piece> -> arcana_weathered_copper_<piece>"
+    - "arcana_weathered_copper_<piece> -> arcana_oxidized_copper_<piece>"
+
+# Planter harvest: right-click a fully grown planter (Oraxen furniture with growth stages) to drop its crop and
+# replant it at the first stage. Drops: "MATERIAL min..max [chance]". Breaking a ripe planter still drops the planter
+# plus its crop (Oraxen stage drop); breaking an unripe one drops only the planter.
+planter-harvest:
+  enabled: true
+  sound: block.crop.break
+  planters:
+    arcana_wheat_planter: ["WHEAT 1..3", "WHEAT_SEEDS 1..2"]
+    arcana_carrot_planter: ["CARROT 2..4"]
+    arcana_potato_planter: ["POTATO 2..4", "POISONOUS_POTATO 1 0.02"]
+    arcana_beetroot_planter: ["BEETROOT 1..2", "BEETROOT_SEEDS 1..2"]
+
+# Mob drops. source: a vanilla entity type (ZOMBIE, ...) or mythic:<InternalName> for MythicMobs mobs.
+# Only player kills count, never mobs from spawners or trial spawners.
+# chance is 0..1; looting multiplies it by (1 + level * looting-bonus-per-level), capped at 1.
+# broadcast: announce the drop in chat. give-to-killer: put it in the killer's inventory instead of dropping it
+# (used for boss relics so they can't fall into the void or an End portal). looting: false disables the bonus
+# (set on the boss drops - legendary hats and relics - so their signed-off rates are fixed).
+# Slimes / magma cubes split from a blocked-spawn-reason parent (spawner slime farms) are blocked too.
+drops:
+  enabled: true
+  blocked-spawn-reasons:
+    - SPAWNER
+    - TRIAL_SPAWNER
+  looting-bonus-per-level: 0.33
+  # When false, MythicMobs mobs only use mythic: entries (an Arcana mob built on a zombie doesn't drop straw hats).
+  mythic-mobs-use-vanilla-entries: false
+  broadcast-message: "<prefix><text><player></text> <muted>found</muted> <item> <muted>from</muted> <mob><muted>!"
+  killer-message: "<prefix><muted>Something dropped:</muted> <item>"
+  # Per entry, credit: killer (default, the last hit) | top-damage (the player who dealt the most damage) |
+  # participants (everyone who dealt at least this share of the damage rolls separately). item may be
+  # minecraft:<material> for vanilla items. give-to-killer: true puts it in the receiver's inventory (can't burn).
+  participant-min-share: 0.05
+  table:
+    # --- hats: common (0.01)
+    - {source: ZOMBIE, item: arcana_hat_straw_hat, chance: 0.01, broadcast: false}
+    - {source: SKELETON, item: arcana_hat_pirate_tricorn, chance: 0.01, broadcast: false}
+    - {source: CREEPER, item: arcana_hat_party_hat, chance: 0.01, broadcast: false}
+    - {source: SPIDER, item: arcana_hat_top_hat, chance: 0.01, broadcast: false}
+    - {source: CAVE_SPIDER, item: arcana_hat_miners_helmet, chance: 0.01, broadcast: false}
+    - {source: DROWNED, item: arcana_hat_diving_helmet, chance: 0.01, broadcast: false}
+    - {source: HUSK, item: arcana_hat_pharaoh_headdress, chance: 0.01, broadcast: false}
+    - {source: STRAY, item: arcana_hat_ushanka, chance: 0.01, broadcast: false}
+    - {source: SLIME, item: arcana_hat_slime_buddy, chance: 0.01, broadcast: false}
+    - {source: PHANTOM, item: arcana_hat_propeller_beanie, chance: 0.01, broadcast: false}
+    # --- hats: uncommon (0.005)
+    - {source: WITCH, item: arcana_hat_wizard_hat, chance: 0.005, broadcast: false}
+    - {source: PILLAGER, item: arcana_hat_cowboy_hat, chance: 0.005, broadcast: false}
+    - {source: VINDICATOR, item: arcana_hat_great_helm, chance: 0.005, broadcast: false}
+    - {source: EVOKER, item: arcana_hat_plague_doctor_mask, chance: 0.005, broadcast: false}
+    - {source: VEX, item: arcana_hat_jester_cap, chance: 0.005, broadcast: false}
+    - {source: BLAZE, item: arcana_hat_devil_horns, chance: 0.005, broadcast: false}
+    - {source: MAGMA_CUBE, item: arcana_hat_fez, chance: 0.005, broadcast: false}
+    - {source: HOGLIN, item: arcana_hat_viking_helm, chance: 0.005, broadcast: false}
+    - {source: ENDERMAN, item: arcana_hat_scholar_cap, chance: 0.005, broadcast: false}
+    - {source: BOGGED, item: arcana_hat_mossy_bucket_hat, chance: 0.005, broadcast: false}
+    # --- hats: rare (0.002)
+    - {source: WITHER_SKELETON, item: arcana_hat_samurai_kabuto, chance: 0.002, broadcast: true}
+    - {source: PIGLIN_BRUTE, item: arcana_hat_gilded_crown, chance: 0.002, broadcast: true}
+    - {source: GHAST, item: arcana_hat_ghast_hood, chance: 0.002, broadcast: true}
+    - {source: GUARDIAN, item: arcana_hat_fishbowl, chance: 0.002, broadcast: true}
+    - {source: SHULKER, item: arcana_hat_shulker_cap, chance: 0.002, broadcast: true}
+    - {source: BREEZE, item: arcana_hat_aviator_goggles, chance: 0.002, broadcast: true}
+    # --- hats: legendary (0.25)
+    - {source: WARDEN, item: arcana_hat_sculk_antlers, chance: 0.25, broadcast: true, looting: false}
+    - {source: WITHER, item: arcana_hat_wither_crown, chance: 0.25, broadcast: true, looting: false}
+    - {source: ENDER_DRAGON, item: arcana_hat_dragon_skull, chance: 0.25, broadcast: true, looting: false}
+    - {source: ELDER_GUARDIAN, item: arcana_hat_coral_tiara, chance: 0.25, broadcast: true, looting: false}
+    # --- boss relics
+    - {source: "mythic:ArcanaGlacialWyrm", item: arcana_relic_frostfang, chance: 0.33, broadcast: true, give-to-killer: true, looting: false, credit: top-damage}
+    - {source: "mythic:ArcanaRuneboundColossus", item: arcana_relic_runebreaker, chance: 0.33, broadcast: true, give-to-killer: true, looting: false, credit: top-damage}
+    - {source: "mythic:ArcanaWukong", item: arcana_relic_ruyi_jingu_bang, chance: 1.0, broadcast: true, give-to-killer: true, looting: false, credit: top-damage}
+    - {source: "mythic:ArcanaWukong", item: "minecraft:enchanted_golden_apple", chance: 0.5, broadcast: false, give-to-killer: true, looting: false, credit: top-damage}
+    - {source: "mythic:ArcanaCinderwingPhoenix", item: arcana_relic_cinderplume, chance: 0.33, broadcast: true, give-to-killer: true, looting: false, credit: top-damage}
+    - {source: "mythic:ArcanaTempestRoc", item: arcana_relic_galeheart, chance: 0.33, broadcast: true, give-to-killer: true, looting: false, credit: top-damage}
+    # --- Arcana boss trophies (wall/floor furniture, Oraxen items/arcana_bosses.yml): one for everyone who fought
+    - {source: "mythic:ArcanaCinderwingPhoenix", item: arcana_trophy_phoenix_plume, chance: 1.0, broadcast: false, give-to-killer: true, looting: false, credit: participants}
+    - {source: "mythic:ArcanaTempestRoc", item: arcana_trophy_roc_talon, chance: 1.0, broadcast: false, give-to-killer: true, looting: false, credit: participants}
+    - {source: "mythic:ArcanaGlacialWyrm", item: arcana_trophy_wyrm_horns, chance: 1.0, broadcast: false, give-to-killer: true, looting: false, credit: participants}
+    - {source: "mythic:ArcanaRuneboundColossus", item: arcana_trophy_colossus_core, chance: 1.0, broadcast: false, give-to-killer: true, looting: false, credit: participants}
+    - {source: "mythic:ArcanaWukong", item: arcana_trophy_wukong_circlet, chance: 1.0, broadcast: false, give-to-killer: true, looting: false, credit: participants}
+    - {source: "WITHER", item: arcana_relic_witherbane, chance: 0.25, broadcast: true, give-to-killer: true, looting: false}
+    - {source: "ENDER_DRAGON", item: arcana_relic_dragonfire, chance: 0.5, broadcast: true, give-to-killer: true, looting: false}
+    - {source: "ELDER_GUARDIAN", item: arcana_relic_tidecaller, chance: 0.33, broadcast: true, give-to-killer: true, looting: false}
+
+# Relic abilities Feather adds (the other relics' abilities are Oraxen mechanics in Oraxen/items/arcana_relics.yml).
+# Messages use Feather's palette tags (<accent> <sky> <text> <muted> <dim> <good> <bad> <warn>) and <prefix>.
+relics:
+  # Cinderplume (Cinderwing Phoenix): held in either hand, a hit that would kill you rebirths you in fire instead:
+  # rebirth-health health (8 = 4 hearts), fire resistance, Regeneration II, and a flame burst that damages, burns and
+  # throws back the enemies around you (never players or tamed pets). Once per cooldown-seconds; the cooldown is kept
+  # on the player across relogs and restarts. /kill, the void and the world border can't be survived. A totem of
+  # undying in hand goes first.
+  cinderplume:
+    enabled: true
+    item: arcana_relic_cinderplume
+    cooldown-seconds: 600
+    rebirth-health: 8
+    fire-resistance-seconds: 10
+    regeneration-seconds: 5
+    burst-radius: 5
+    burst-damage: 6
+    burst-fire-seconds: 4
+    message-reborn: "<prefix><warn>✹ The Cinderplume flares and you rise from the ashes!</warn> <dim>(ready again in <minutes> min)"
+    message-ready: "<prefix><warn>✹</warn> <muted>Your Cinderplume glows again: rebirth is ready."
+    message-cooldown: "<bad>The Cinderplume is still smoldering (<seconds>s)"
+  # Galeheart (Tempest Roc): right-click for a gust leap (leap-up / leap-forward velocity) with no fall damage for that
+  # leap; leap-cooldown-seconds between leaps. A critical hit while diving from at least dive-min-fall blocks is a
+  # storm dive: +dive-bonus-damage, a thunderclap (visual lightning) that deals dive-splash-damage to enemies within
+  # dive-radius and knocks them away, and no fall damage. dive-cooldown-seconds between dives.
+  galeheart:
+    enabled: true
+    item: arcana_relic_galeheart
+    leap-cooldown-seconds: 12
+    leap-up: 1.15
+    leap-forward: 1.1
+    dive-cooldown-seconds: 8
+    dive-min-fall: 2.5
+    dive-bonus-damage: 6
+    dive-radius: 3.5
+    dive-splash-damage: 4
+    message-cooldown: "<muted>The winds gather again... <text><seconds>s"
+    message-dive: "<sky>⚡ Storm dive!"

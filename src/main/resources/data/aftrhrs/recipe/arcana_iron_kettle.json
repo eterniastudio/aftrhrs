@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  "I I",
+  "III"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_iron_kettle"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_bamboo_block",
+  "P": "minecraft:bamboo_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_wardrobe"
+ }
+}

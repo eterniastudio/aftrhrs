@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " AB",
+  " GA",
+  "S  "
+ ],
+ "key": {
+  "A": "minecraft:amethyst_shard",
+  "G": "minecraft:gold_ingot",
+  "B": "minecraft:bricks",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_builders_wand"
+ }
+}

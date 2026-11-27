@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:cherry_planks",
+  "Z": "minecraft:cherry_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cherry_nightstand"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CCC",
+  "XXX",
+  "P P"
+ ],
+ "key": {
+  "C": "minecraft:purple_carpet",
+  "X": "#minecraft:wooden_slabs",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_long_table"
+ }
+}

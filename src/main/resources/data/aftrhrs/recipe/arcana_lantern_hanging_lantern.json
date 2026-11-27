@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "N",
+  "C",
+  "L"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "C": "minecraft:iron_chain",
+  "L": "minecraft:lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_lantern_hanging_lantern"
+ }
+}

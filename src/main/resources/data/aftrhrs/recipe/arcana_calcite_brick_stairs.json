@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A  ",
+  "AA ",
+  "AAA"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_calcite_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_calcite_brick_stairs",
+  "count": 4
+ }
+}

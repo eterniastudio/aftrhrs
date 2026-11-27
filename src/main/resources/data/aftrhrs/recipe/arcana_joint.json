@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_crop_weed",
+  "aftrhrs:arcana_rolling_paper"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_joint"
+ }
+}

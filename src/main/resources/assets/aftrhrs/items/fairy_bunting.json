@@ -1,0 +1,23 @@
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "aftrhrs:fairylights/item/fairy_bunting",
+  "tints": [
+   {
+    "type": "minecraft:custom_model_data",
+    "index": 0,
+    "default": -2608593
+   },
+   {
+    "type": "minecraft:custom_model_data",
+    "index": 1,
+    "default": -856348
+   },
+   {
+    "type": "minecraft:custom_model_data",
+    "index": 2,
+    "default": -13656502
+   }
+  ]
+ }
+}

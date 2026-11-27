@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_copper_wall_light",
+  "minecraft:honeycomb"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_waxed_copper_wall_light"
+ }
+}

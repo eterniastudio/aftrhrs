@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "ICI",
+  "N N"
+ ],
+ "key": {
+  "C": "minecraft:campfire",
+  "I": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bbq_grill"
+ }
+}

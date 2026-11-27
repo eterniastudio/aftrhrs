@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KKK",
+  " I ",
+  "NIN"
+ ],
+ "key": {
+  "K": "minecraft:candle",
+  "I": "minecraft:gold_ingot",
+  "N": "minecraft:gold_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gold_candelabra_tall"
+ }
+}

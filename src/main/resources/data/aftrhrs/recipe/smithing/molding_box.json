@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "PSP",
+  "PPP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:molding_box",
+  "count": 1
+ }
+}

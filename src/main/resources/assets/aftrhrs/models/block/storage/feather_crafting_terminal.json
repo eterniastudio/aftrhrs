@@ -1,0 +1,10 @@
+{
+ "parent": "minecraft:block/orientable_with_bottom",
+ "textures": {
+  "front": "aftrhrs:block/storage/crafting_front",
+  "side": "minecraft:block/chiseled_tuff_bricks",
+  "top": "minecraft:block/chiseled_tuff_bricks_top",
+  "bottom": "minecraft:block/chiseled_tuff_bricks_top",
+  "particle": "minecraft:block/chiseled_tuff_bricks"
+ }
+}

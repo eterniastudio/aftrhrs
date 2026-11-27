@@ -1,0 +1,1123 @@
+{
+ "model": {
+  "type": "minecraft:condition",
+  "property": "minecraft:using_item",
+  "on_false": {
+   "type": "minecraft:composite",
+   "models": [
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_0",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/wood"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/bone"
+       }
+      },
+      {
+       "when": "bamboo",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/bamboo"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/copper"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/netherite"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/limb/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_1",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/wood"
+       }
+      },
+      {
+       "when": "stone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/stone"
+       }
+      },
+      {
+       "when": "flint",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/flint"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/bone"
+       }
+      },
+      {
+       "when": "bamboo",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/bamboo"
+       }
+      },
+      {
+       "when": "leather",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/leather"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/copper"
+       }
+      },
+      {
+       "when": "deer_hide",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/deer_hide"
+       }
+      },
+      {
+       "when": "tufthorn_hide",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/tufthorn_hide"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+       }
+      },
+      {
+       "when": "gold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/gold"
+       }
+      },
+      {
+       "when": "obsidian",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/obsidian"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/steel"
+       }
+      },
+      {
+       "when": "rose_gold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/rose_gold"
+       }
+      },
+      {
+       "when": "chime_bronze",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/chime_bronze"
+       }
+      },
+      {
+       "when": "tidebronze",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/tidebronze"
+       }
+      },
+      {
+       "when": "rimesteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/rimesteel"
+       }
+      },
+      {
+       "when": "emberforged_steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/emberforged_steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/netherite"
+       }
+      },
+      {
+       "when": "echo_steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/echo_steel"
+       }
+      },
+      {
+       "when": "blazebone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/blazebone"
+       }
+      },
+      {
+       "when": "voidgold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/voidgold"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/grip/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_2",
+     "cases": [
+      {
+       "when": "silk",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/shortbow/string/silk"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/shortbow/string/silk"
+     }
+    }
+   ]
+  },
+  "on_true": {
+   "type": "minecraft:range_dispatch",
+   "property": "minecraft:use_duration",
+   "scale": 0.05,
+   "entries": [
+    {
+     "threshold": 0.65,
+     "model": {
+      "type": "minecraft:composite",
+      "models": [
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_0",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/wood"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/bone"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/bamboo"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/copper"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/steel"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/pearlsteel"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/netherite"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/starforged"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_1",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/wood"
+          }
+         },
+         {
+          "when": "stone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/stone"
+          }
+         },
+         {
+          "when": "flint",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/flint"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/bone"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/bamboo"
+          }
+         },
+         {
+          "when": "leather",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/leather"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/copper"
+          }
+         },
+         {
+          "when": "deer_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/deer_hide"
+          }
+         },
+         {
+          "when": "tufthorn_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/tufthorn_hide"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+          }
+         },
+         {
+          "when": "gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/gold"
+          }
+         },
+         {
+          "when": "obsidian",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/obsidian"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/steel"
+          }
+         },
+         {
+          "when": "rose_gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/rose_gold"
+          }
+         },
+         {
+          "when": "chime_bronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/chime_bronze"
+          }
+         },
+         {
+          "when": "tidebronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/tidebronze"
+          }
+         },
+         {
+          "when": "rimesteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/rimesteel"
+          }
+         },
+         {
+          "when": "emberforged_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/emberforged_steel"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/pearlsteel"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/netherite"
+          }
+         },
+         {
+          "when": "echo_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/echo_steel"
+          }
+         },
+         {
+          "when": "blazebone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/blazebone"
+          }
+         },
+         {
+          "when": "voidgold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/voidgold"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/starforged"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_2",
+        "cases": [
+         {
+          "when": "silk",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/string/silk_pulling_1"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/string/silk_pulling_1"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "threshold": 0.9,
+     "model": {
+      "type": "minecraft:composite",
+      "models": [
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_0",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/wood_pulling_2"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/bone_pulling_2"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/bamboo_pulling_2"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/copper_pulling_2"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron_pulling_2"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/steel_pulling_2"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/pearlsteel_pulling_2"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/netherite_pulling_2"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/limb/starforged_pulling_2"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron_pulling_2"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_1",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/wood"
+          }
+         },
+         {
+          "when": "stone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/stone"
+          }
+         },
+         {
+          "when": "flint",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/flint"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/bone"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/bamboo"
+          }
+         },
+         {
+          "when": "leather",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/leather"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/copper"
+          }
+         },
+         {
+          "when": "deer_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/deer_hide"
+          }
+         },
+         {
+          "when": "tufthorn_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/tufthorn_hide"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+          }
+         },
+         {
+          "when": "gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/gold"
+          }
+         },
+         {
+          "when": "obsidian",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/obsidian"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/steel"
+          }
+         },
+         {
+          "when": "rose_gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/rose_gold"
+          }
+         },
+         {
+          "when": "chime_bronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/chime_bronze"
+          }
+         },
+         {
+          "when": "tidebronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/tidebronze"
+          }
+         },
+         {
+          "when": "rimesteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/rimesteel"
+          }
+         },
+         {
+          "when": "emberforged_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/emberforged_steel"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/pearlsteel"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/netherite"
+          }
+         },
+         {
+          "when": "echo_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/echo_steel"
+          }
+         },
+         {
+          "when": "blazebone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/blazebone"
+          }
+         },
+         {
+          "when": "voidgold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/voidgold"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/grip/starforged"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_2",
+        "cases": [
+         {
+          "when": "silk",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/shortbow/string/silk_pulling_2"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/string/silk_pulling_2"
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "fallback": {
+    "type": "minecraft:composite",
+    "models": [
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_0",
+      "cases": [
+       {
+        "when": "wood",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/wood"
+        }
+       },
+       {
+        "when": "bone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/bone"
+        }
+       },
+       {
+        "when": "bamboo",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/bamboo"
+        }
+       },
+       {
+        "when": "copper",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/copper"
+        }
+       },
+       {
+        "when": "iron",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron"
+        }
+       },
+       {
+        "when": "steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/steel"
+        }
+       },
+       {
+        "when": "pearlsteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/pearlsteel"
+        }
+       },
+       {
+        "when": "netherite",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/netherite"
+        }
+       },
+       {
+        "when": "starforged",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/limb/starforged"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/shortbow/limb/iron"
+      }
+     },
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_1",
+      "cases": [
+       {
+        "when": "wood",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/wood"
+        }
+       },
+       {
+        "when": "stone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/stone"
+        }
+       },
+       {
+        "when": "flint",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/flint"
+        }
+       },
+       {
+        "when": "bone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/bone"
+        }
+       },
+       {
+        "when": "bamboo",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/bamboo"
+        }
+       },
+       {
+        "when": "leather",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/leather"
+        }
+       },
+       {
+        "when": "copper",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/copper"
+        }
+       },
+       {
+        "when": "deer_hide",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/deer_hide"
+        }
+       },
+       {
+        "when": "tufthorn_hide",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/tufthorn_hide"
+        }
+       },
+       {
+        "when": "iron",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+        }
+       },
+       {
+        "when": "gold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/gold"
+        }
+       },
+       {
+        "when": "obsidian",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/obsidian"
+        }
+       },
+       {
+        "when": "steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/steel"
+        }
+       },
+       {
+        "when": "rose_gold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/rose_gold"
+        }
+       },
+       {
+        "when": "chime_bronze",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/chime_bronze"
+        }
+       },
+       {
+        "when": "tidebronze",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/tidebronze"
+        }
+       },
+       {
+        "when": "rimesteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/rimesteel"
+        }
+       },
+       {
+        "when": "emberforged_steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/emberforged_steel"
+        }
+       },
+       {
+        "when": "pearlsteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/pearlsteel"
+        }
+       },
+       {
+        "when": "netherite",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/netherite"
+        }
+       },
+       {
+        "when": "echo_steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/echo_steel"
+        }
+       },
+       {
+        "when": "blazebone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/blazebone"
+        }
+       },
+       {
+        "when": "voidgold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/voidgold"
+        }
+       },
+       {
+        "when": "starforged",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/grip/starforged"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/shortbow/grip/iron"
+      }
+     },
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_2",
+      "cases": [
+       {
+        "when": "silk",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/shortbow/string/silk_pulling_0"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/shortbow/string/silk_pulling_0"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

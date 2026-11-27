@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " A ",
+  "ATA",
+  " D "
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_sea_glass_shard_aqua",
+  "D": "aftrhrs:arcana_driftwood",
+  "T": "minecraft:torch"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sea_glass_lamp_aqua"
+ }
+}

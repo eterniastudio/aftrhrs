@@ -1,0 +1,913 @@
+{
+ "id": "bristleboar_young",
+ "mm_id": "ArcanaBristleboarYoung",
+ "kind": "livestock",
+ "name": "Young Bristleboar",
+ "color": "f",
+ "health": 10,
+ "damage": 3,
+ "speed": 0.25,
+ "follow_range": 16,
+ "despawn": "persistent",
+ "damage_mods": {},
+ "note": "Bristleboar piglet. Hurting it brings every adult within 12 blocks charging. Grows up after 20 minutes.",
+ "base": "PIG",
+ "sounds": {
+  "ambient": {
+   "id": "entity.pig.ambient",
+   "pitch": 1.2000000000000002,
+   "volume": 0.9
+  },
+  "ambient2": {
+   "id": "entity.hoglin.ambient",
+   "pitch": 2.0,
+   "volume": 0.35
+  },
+  "hurt": {
+   "id": "entity.pig.hurt",
+   "pitch": 1.2000000000000002,
+   "volume": 1.0
+  },
+  "death": {
+   "id": "entity.pig.death",
+   "pitch": 1.2000000000000002,
+   "volume": 1.0
+  },
+  "attack": {
+   "id": "entity.hoglin.attack",
+   "pitch": 2.0,
+   "volume": 0.8
+  },
+  "step": {
+   "id": "entity.pig.step",
+   "pitch": 1.2800000000000002,
+   "volume": 0.15
+  },
+  "every": 160,
+  "chance": 0.35,
+  "every2": 400,
+  "chance2": 0.3,
+  "step_every": 10
+ },
+ "life": {
+  "every": 100,
+  "chance": 0.4,
+  "day": {
+   "graze": 2,
+   "root": 2,
+   "lie": 1,
+   "look": 1
+  },
+  "night": {
+   "lie_long": 5,
+   "graze": 1
+  },
+  "graze_block": "GRASS_BLOCK",
+  "graze_sound": [
+   "block.grass.hit",
+   0.9,
+   0.2
+  ],
+  "extra": {
+   "root": [
+    "particles{p=block;m=ROOTED_DIRT;amount=4;hS=0.2;vS=0.1;y=0.1} @Forward{f=0.6}"
+   ]
+  }
+ },
+ "gaits": [],
+ "panic_run": true,
+ "ai": {
+  "goals": [
+   "clear",
+   "float",
+   "panic",
+   "gotoparent{fr=6;mr=3;s=1.1}",
+   "randomstroll",
+   "lookatplayers",
+   "randomlookaround"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "young_of": "ArcanaBristleboar",
+ "line": false,
+ "lines": [
+  {
+   "mechanic": "rally",
+   "args": {
+    "types": "ArcanaBristleboar",
+    "radius": 12
+   },
+   "target": "trigger",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [
+    "~!mythicmobtype{t=ArcanaBristleboar,ArcanaBristleboarYoung}"
+   ],
+   "chance": 1.0,
+   "line": "- rally{types=ArcanaBristleboar;radius=12} @trigger ?~!mythicmobtype{t=ArcanaBristleboar,ArcanaBristleboarYoung} ~onDamaged"
+  }
+ ],
+ "drops": [],
+ "spawns": [],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "death": "death",
+  "hurt": "hurt",
+  "graze": "graze",
+  "lie": "lie",
+  "harvest": "harvest"
+ },
+ "model": "bristleboar",
+ "clips": {
+  "idle": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.7,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.42,
+   "loop": "loop"
+  },
+  "charge": {
+   "length": 0.36,
+   "loop": "loop"
+  },
+  "graze": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "lie": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "harvest": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "root": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.3,
+   "loop": "hold"
+  },
+  "look_around": {
+   "length": 3.6,
+   "loop": "once"
+  },
+  "head_shake": {
+   "length": 1.5,
+   "loop": "once"
+  },
+  "chew_cud": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "rest_stand": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "groom": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "rub": {
+   "length": 3.4,
+   "loop": "once"
+  },
+  "stamp": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "tail_swish": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "ear_flick": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "herd_glance": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "hop": {
+   "length": 1,
+   "loop": "once"
+  },
+  "frolic": {
+   "length": 1.9,
+   "loop": "once"
+  },
+  "prance": {
+   "length": 2,
+   "loop": "once"
+  },
+  "body_shake": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "snuffle": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "grunt": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "graze_tear": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "graze_step": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "graze_chew": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "graze_look": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "lie_down": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "stand_up": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "lie_chew": {
+   "length": 5,
+   "loop": "loop"
+  },
+  "lie_look": {
+   "length": 7,
+   "loop": "loop"
+  },
+  "sleep": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "bristle": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "wallow": {
+   "length": 5,
+   "loop": "loop"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  }
+ },
+ "scale": 0.55,
+ "model_hitbox": [
+  0.495,
+  0.495
+ ],
+ "shadow": 0.206,
+ "name_tag_y": 0.756,
+ "render_box": [
+  0.584,
+  0.576
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.7,
+    "gait": "walk",
+    "drv": "hbte"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.42,
+    "gait": "run",
+    "drv": "hbte"
+   },
+   "charge": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.36,
+    "gait": "run",
+    "drv": "hbte"
+   },
+   "graze": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbte"
+   },
+   "lie": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "harvest": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbte"
+   },
+   "root": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbte"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.3,
+    "eyes": true,
+    "drv": "hbte"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.6,
+    "drv": "hbte"
+   },
+   "head_shake": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.5,
+    "drv": "hbte"
+   },
+   "chew_cud": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "rest_stand": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbte"
+   },
+   "groom": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbte"
+   },
+   "rub": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.4,
+    "drv": "hbte"
+   },
+   "stamp": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbte"
+   },
+   "tail_swish": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "t"
+   },
+   "ear_flick": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.9,
+    "drv": "e"
+   },
+   "herd_glance": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbte"
+   },
+   "hop": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.0,
+    "drv": "hbte"
+   },
+   "frolic": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.9,
+    "drv": "hbte"
+   },
+   "prance": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbte"
+   },
+   "body_shake": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbte"
+   },
+   "snuffle": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbte"
+   },
+   "grunt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.2,
+    "drv": "h"
+   },
+   "graze_tear": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbte"
+   },
+   "graze_step": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbte"
+   },
+   "graze_chew": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "graze_look": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbte"
+   },
+   "lie_down": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.4,
+    "from": "standing",
+    "drv": "hbte"
+   },
+   "stand_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "from": "lying",
+    "drv": "hbte"
+   },
+   "lie_chew": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 5.0,
+    "drv": "hbte"
+   },
+   "lie_look": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 7.0,
+    "drv": "hbte"
+   },
+   "sleep": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "eyes": true,
+    "drv": "hbte"
+   },
+   "bristle": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hbte"
+   },
+   "wallow": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 5.0,
+    "drv": "hbte"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "hte"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "sleep": "lie",
+   "lie": "lie",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {
+   "standing>lying": "lie_down",
+   "lying>standing": "stand_up"
+  },
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 5,
+     "max": 12
+    },
+    {
+     "clip": "look_around",
+     "w": 2,
+     "cd": 14
+    },
+    {
+     "clip": "snuffle",
+     "w": 4,
+     "cd": 10
+    },
+    {
+     "clip": "grunt",
+     "w": 2,
+     "cd": 10
+    },
+    {
+     "clip": "head_shake",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "body_shake",
+     "w": 1,
+     "cd": 30,
+     "boost": {
+      "rain": 4
+     }
+    },
+    {
+     "clip": "chew_cud",
+     "w": 1.5,
+     "min": 5,
+     "max": 10,
+     "when": "!young"
+    },
+    {
+     "clip": "rest_stand",
+     "w": 1,
+     "min": 6,
+     "max": 14,
+     "when": "!young",
+     "boost": {
+      "night": 2.5
+     }
+    },
+    {
+     "clip": "groom",
+     "w": 1,
+     "cd": 25
+    },
+    {
+     "clip": "rub",
+     "w": 5,
+     "cd": 25,
+     "when": "rub_near"
+    },
+    {
+     "clip": "stamp",
+     "w": 0.8,
+     "cd": 25
+    },
+    {
+     "clip": "tail_swish",
+     "w": 2,
+     "cd": 6
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1,
+     "cd": 8
+    },
+    {
+     "clip": "herd_glance",
+     "w": 2,
+     "cd": 15,
+     "when": "herd_near:12"
+    },
+    {
+     "clip": "hop",
+     "w": 3,
+     "cd": 5,
+     "when": "young"
+    },
+    {
+     "clip": "frolic",
+     "w": 2.5,
+     "cd": 9,
+     "when": "young,!night"
+    },
+    {
+     "clip": "prance",
+     "w": 3,
+     "cd": 12,
+     "when": "young,adult_near:8"
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "tail_swish",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "grunt",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [
+    {
+     "clip": "@sleep",
+     "w": 1,
+     "min": 30,
+     "max": 90
+    },
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 10,
+     "max": 30
+    },
+    {
+     "clip": "lie_chew",
+     "w": 2,
+     "min": 8,
+     "max": 18
+    },
+    {
+     "clip": "lie_look",
+     "w": 2,
+     "min": 6,
+     "max": 14
+    },
+    {
+     "clip": "wallow",
+     "w": 1,
+     "min": 8,
+     "max": 20,
+     "boost": {
+      "rain": 6
+     }
+    },
+    {
+     "clip": "sleep",
+     "w": 0.5,
+     "min": 20,
+     "max": 60,
+     "boost": {
+      "night": 10
+     }
+    },
+    {
+     "clip": "tail_swish",
+     "w": 1,
+     "cd": 10
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1,
+     "cd": 8
+    }
+   ],
+   "graze": [
+    {
+     "clip": "@mood",
+     "w": 5,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "graze_tear",
+     "w": 2.5,
+     "cd": 5
+    },
+    {
+     "clip": "graze_step",
+     "w": 2,
+     "cd": 6
+    },
+    {
+     "clip": "graze_chew",
+     "w": 1.5,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "graze_look",
+     "w": 1.5,
+     "cd": 10
+    },
+    {
+     "clip": "tail_swish",
+     "w": 2,
+     "cd": 5
+    }
+   ],
+   "notice": [
+    {
+     "clip": "bristle",
+     "w": 3,
+     "when": "!young"
+    },
+    {
+     "clip": "herd_glance",
+     "w": 2,
+     "when": "young"
+    },
+    {
+     "clip": "grunt",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail",
+    "tail_tuft"
+   ],
+   "ears": [
+    "left_ear",
+    "right_ear"
+   ],
+   "breath": 0.016,
+   "tail_sway": 6
+  },
+  "authored": [
+   "body_shake",
+   "bristle",
+   "chew_cud",
+   "ear_flick",
+   "frolic",
+   "graze_chew",
+   "graze_look",
+   "graze_step",
+   "graze_tear",
+   "groom",
+   "grunt",
+   "head_shake",
+   "herd_glance",
+   "hop",
+   "hurt",
+   "lie_chew",
+   "lie_down",
+   "lie_look",
+   "look_around",
+   "prance",
+   "rest_stand",
+   "rub",
+   "sleep",
+   "snuffle",
+   "stamp",
+   "stand_up",
+   "tail_swish",
+   "wallow"
+  ]
+ },
+ "glowmask": false,
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.08
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "step": {
+    "jitter": 0.08
+   },
+   "eat": {
+    "jitter": 0.06
+   },
+   "snore": {
+    "jitter": 0.05
+   },
+   "attack": {
+    "jitter": 0.06
+   },
+   "ambient_angry": {
+    "jitter": 0.06
+   }
+  },
+  "every": 320,
+  "snore_every": 120
+ }
+}

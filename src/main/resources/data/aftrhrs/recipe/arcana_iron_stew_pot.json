@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "I I",
+  "ISI",
+  "III"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "S": "minecraft:rabbit_stew"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_iron_stew_pot"
+ }
+}

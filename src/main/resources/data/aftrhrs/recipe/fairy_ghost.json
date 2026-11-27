@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "WLW",
+  " W "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "L": "minecraft:glowstone_dust",
+  "W": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_ghost",
+  "count": 4
+ }
+}

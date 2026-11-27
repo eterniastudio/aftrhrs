@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "QIQ",
+  " Q ",
+  " Q "
+ ],
+ "key": {
+  "I": "minecraft:gold_ingot",
+  "Q": "minecraft:calcite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_calcite_pedestal_sink"
+ }
+}

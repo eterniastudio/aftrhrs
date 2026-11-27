@@ -1,0 +1,137 @@
+{
+ "id": "duskflies",
+ "mm_id": "ArcanaDuskflies",
+ "kind": "particles",
+ "name": "Duskflies",
+ "color": "f",
+ "health": 1,
+ "damage": 0,
+ "speed": 0.12,
+ "follow_range": 16,
+ "despawn": "true",
+ "damage_mods": {},
+ "note": "Drifting swarm of fireflies at night, about 3 blocks across; particles only, no model. Gone at sunrise. Feather: bottle them for a firefly jar.",
+ "base": "BEE",
+ "sounds": {
+  "ambient": {
+   "id": "block.firefly_bush.idle",
+   "pitch": 1.0,
+   "volume": 0.35
+  },
+  "every": 120,
+  "chance": 0.4
+ },
+ "ai": {
+  "goals": [
+   "clear",
+   "randomfly"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "options": {
+  "Invisible": "true",
+  "Invincible": "true"
+ },
+ "lines": [
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "firefly",
+    "amount": 4,
+    "hS": 1.5,
+    "vS": 0.7,
+    "y": 0.5
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 8,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- particles{p=firefly;amount=4;hS=1.5;vS=0.7;y=0.5} @self ~onTimer:8"
+  },
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "glow",
+    "amount": 1,
+    "hS": 1.2,
+    "vS": 0.6,
+    "y": 0.5
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 20,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- particles{p=glow;amount=1;hS=1.2;vS=0.6;y=0.5} @self ~onTimer:20"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaDuskflies_Sunrise"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 100,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaDuskflies_Sunrise",
+   "line": "- skill{s=ArcanaDuskflies_Sunrise} @self ~onTimer:100"
+  }
+ ],
+ "drops": [],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp",
+    "minecraft:meadow",
+    "minecraft:river",
+    "minecraft:flower_forest",
+    "terralith:orchid_swamp",
+    "terralith:highlands",
+    "terralith:temperate_highlands",
+    "terralith:blooming_plateau",
+    "terralith:lush_valley",
+    "terralith:alpine_highlands",
+    "terralith:lavender_valley",
+    "terralith:warm_river",
+    "terralith:lavender_forest",
+    "terralith:blooming_valley",
+    "terralith:moonlight_grove",
+    "terralith:moonlight_valley"
+   ],
+   "rarity": "common",
+   "position": "LAND",
+   "conditions": [
+    "outside true",
+    "worldtime{t=13000to22500} true"
+   ],
+   "cap": 2,
+   "cap_radius": 32
+  }
+ ],
+ "anims": {},
+ "clips": {},
+ "shadow": 0,
+ "scale": 1.0,
+ "glow_bones": [],
+ "glow_out": [],
+ "hitbox": [
+  0.6,
+  0.6
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.1,
+    "dist": 10
+   }
+  },
+  "every": 160,
+  "dist": 10
+ }
+}

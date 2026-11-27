@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "ZTZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:prismarine_brick_slab",
+  "T": "minecraft:torch",
+  "W": "minecraft:prismarine_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_lantern"
+ }
+}

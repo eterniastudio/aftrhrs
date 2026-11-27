@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "WWW",
+  "B B"
+ ],
+ "key": {
+  "B": "minecraft:bamboo_block",
+  "W": "minecraft:wheat",
+  "Z": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_tiki_bar",
+  "count": 2
+ }
+}

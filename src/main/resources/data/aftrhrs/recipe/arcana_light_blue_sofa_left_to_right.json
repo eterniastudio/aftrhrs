@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_light_blue_sofa_left"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_light_blue_sofa_right"
+ }
+}

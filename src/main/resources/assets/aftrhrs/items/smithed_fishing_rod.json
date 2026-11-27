@@ -1,0 +1,351 @@
+{
+ "model": {
+  "type": "minecraft:condition",
+  "property": "minecraft:fishing_rod/cast",
+  "on_false": {
+   "type": "minecraft:composite",
+   "models": [
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_0",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/wood"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/bone"
+       }
+      },
+      {
+       "when": "bamboo",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/bamboo"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/copper"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/iron"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/netherite"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/iron"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_1",
+     "cases": [
+      {
+       "when": "silk",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/string/silk"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/fishing_rod/string/silk"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_2",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/wood"
+       }
+      },
+      {
+       "when": "stone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/stone"
+       }
+      },
+      {
+       "when": "flint",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/flint"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/bone"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/copper"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/iron"
+       }
+      },
+      {
+       "when": "gold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/gold"
+       }
+      },
+      {
+       "when": "obsidian",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/obsidian"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/steel"
+       }
+      },
+      {
+       "when": "rose_gold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/rose_gold"
+       }
+      },
+      {
+       "when": "chime_bronze",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/chime_bronze"
+       }
+      },
+      {
+       "when": "tidebronze",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/tidebronze"
+       }
+      },
+      {
+       "when": "rimesteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/rimesteel"
+       }
+      },
+      {
+       "when": "emberforged_steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/emberforged_steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/netherite"
+       }
+      },
+      {
+       "when": "echo_steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/echo_steel"
+       }
+      },
+      {
+       "when": "blazebone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/blazebone"
+       }
+      },
+      {
+       "when": "voidgold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/voidgold"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/fishing_rod/hook/iron"
+     }
+    }
+   ]
+  },
+  "on_true": {
+   "type": "minecraft:composite",
+   "models": [
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_0",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/wood"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/bone"
+       }
+      },
+      {
+       "when": "bamboo",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/bamboo"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/copper"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/iron"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/netherite"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/fishing_rod/limb/iron"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_1",
+     "cases": [
+      {
+       "when": "silk",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/fishing_rod/string/silk_cast"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/fishing_rod/string/silk_cast"
+     }
+    }
+   ]
+  }
+ }
+}

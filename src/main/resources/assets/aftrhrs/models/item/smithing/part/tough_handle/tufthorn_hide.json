@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/part/tough_handle/tufthorn_hide"
+ }
+}

@@ -1,0 +1,21 @@
+package net.axther.aftrhrs.mixin;
+
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.axther.aftrhrs.core.event.FeatherEvents;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.block.entity.trialspawner.TrialSpawner;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+
+/** {@link FeatherEvents#SPAWNER_SPAWN}: a trial spawner adding a mob. */
+@Mixin(TrialSpawner.class)
+abstract class TrialSpawnerSpawnMixin {
+    @WrapOperation(method = "spawnMob", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/server/level/ServerLevel;tryAddFreshEntityWithPassengers(Lnet/minecraft/world/entity/Entity;)Z"))
+    private boolean aftrhrs$spawn(ServerLevel level, Entity entity, Operation<Boolean> original) {
+        FeatherEvents.SPAWNER_SPAWN.invoker().spawning(level, entity, true);
+        return original.call(level, entity);
+    }
+}

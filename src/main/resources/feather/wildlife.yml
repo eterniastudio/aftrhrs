@@ -1,0 +1,431 @@
+# Feather wildlife: the Arcana wild livestock, wildlife and undead (the Wildlife & Undead update, docs/wildlife.md).
+# Needs MythicMobs (the mobs are the pack's ArcanaTufthorn, ArcanaSquallgull, ArcanaMirewalker ...). Products, stations
+# and tools are Oraxen items looked up by id when used: a missing one is logged once and skipped, so this loads fine
+# before the update's items are installed. An item can also be a vanilla material (milk_bucket, gold_nugget).
+# Item lists take vanilla ids, Oraxen ids and * globs (arcana_*_seeds); an Oraxen item only matches by its id.
+# Every number here is live after /feather reload. Times say their unit; chances are 0..1.
+
+# Worlds where wildlife runs. Empty = every world.
+worlds: []
+
+tick:
+  # How often the timers run (egg laying, truffle rooting, fleece regrowth, silk, glow mucus, troughs, antlers).
+  harvest-seconds: 10
+  # Bestiary sightings: each player against the loaded wild mobs (a map lookup, no world search).
+  sight-seconds: 2
+  # Squallgull thefts and hotspot splashes.
+  gull-seconds: 2
+  # How often a Squallgull that follows someone is steered (ticks).
+  follow-ticks: 10
+
+# The livestock and wildlife. young: the pack's baby mob (breeding spawns it). breed-food: what makes two adults breed.
+# The harvests each one has (leave a section out to turn that harvest off):
+#   milk:   {cooldown-minutes}                                  bucket -> milk bucket
+#   brush:  {item, min, max, cooldown-minutes}                  a brush (wears it by 1)
+#   shear:  {item, min, max, regrow-minutes, regrow-on}         shears; the fleece regrows only while it stands on regrow-on
+#   lay:    {item, min, max, min-minutes, max-minutes, nest-radius}   into a nesting box within nest-radius, else on the ground
+#   root:   {item, min, max, chance, cooldown-minutes, retry-seconds, leashed, blocks}   truffle rooting
+#   fed:    {food, minutes}                                     fed state (silk, mucus); feeding troughs keep it going
+#   silk:   {item, radius, every-minutes, max}                  while fed: 1 silk into a silk frame within radius
+#   drip:   {item, every-minutes}                               while fed: drops the item
+#   bucket: {item, place-water}                                 water bucket -> the creature in a bucket, placed back like an axolotl
+#   antlers: {item, regrow-hours, chance, player-within}       sheds once a day (chance per timer run, a player within N blocks)
+#   bottle: {item, min, max, cooldown-minutes}                 a glass bottle -> the item (the Voidpuff's breath)
+species:
+  ArcanaTufthorn:
+    name: Tufthorn
+    young: ArcanaTufthornYoung
+    breed-food: [wheat]
+    milk: {cooldown-minutes: 5}
+    brush: {item: arcana_tuft_wool, min: 1, max: 2, cooldown-minutes: 10}
+  ArcanaPondwaddle:
+    name: Pondwaddle
+    young: ArcanaPondwaddleYoung
+    breed-food: [wheat_seeds, beetroot_seeds, melon_seeds, pumpkin_seeds, torchflower_seeds, pitcher_pod, "arcana_*_seeds"]
+    brush: {item: arcana_down_feather, min: 1, max: 1, cooldown-minutes: 8}
+    lay: {item: arcana_duck_egg, min: 1, max: 1, min-minutes: 6, max-minutes: 10, nest-radius: 4}
+  ArcanaBristleboar:
+    name: Bristleboar
+    young: ArcanaBristleboarYoung
+    breed-food: [carrot, potato, beetroot]
+    root: {item: arcana_truffle, min: 1, max: 1, chance: 0.35, cooldown-minutes: 8, retry-seconds: 60, leashed: true,
+           blocks: [podzol, coarse_dirt, rooted_dirt, mycelium]}
+  ArcanaWartgrazer:
+    name: Wartgrazer
+    young: ArcanaWartgrazerYoung
+    breed-food: [warped_fungus]
+    shear: {item: arcana_warped_fleece, min: 1, max: 2, regrow-minutes: 10, regrow-on: [warped_nylium]}
+  ArcanaLoomworm:
+    name: Loomworm
+    young: ArcanaLoomwormYoung
+    breed-food: [jungle_leaves, oak_leaves]
+    fed: {food: [jungle_leaves, oak_leaves], minutes: 20}
+    silk: {item: arcana_silk, radius: 3, every-minutes: 6, max: 8}
+  ArcanaLanternsnail:
+    name: Lanternsnail
+    young: ArcanaLanternsnailYoung
+    breed-food: [glow_berries]
+    fed: {food: [glow_berries], minutes: 30}
+    drip: {item: arcana_glow_mucus, min: 1, max: 1, every-minutes: 5}
+    bucket: {item: arcana_lanternsnail_bucket, place-water: true}
+  ArcanaVelvetstag:
+    name: Velvetstag
+    antlers: {item: arcana_velvet_antler, min: 1, max: 1, regrow-hours: 24, chance: 0.02, player-within: 32}
+  ArcanaVoidpuff:
+    name: Voidpuff
+    bottle: {item: dragon_breath, min: 1, max: 1, cooldown-minutes: 15}
+  ArcanaShroomwallow:
+    name: Shroomwallow
+    young: ArcanaShroomwallowYoung
+    breed-food: [crimson_fungus]
+    brush: {item: shroomlight, min: 1, max: 1, cooldown-minutes: 15}
+  # Creatures 2 (ocean): the sea cow's kelp garden (shear; regrows anywhere) and barnacled flippers (brush)
+  ArcanaKelpback:
+    name: Kelpback
+    shear: {item: kelp, min: 2, max: 4, regrow-minutes: 8, regrow-on: []}
+    brush: {item: sea_pickle, min: 1, max: 1, cooldown-minutes: 12}
+  # a brush startles the octopus into squirting an ink sac for you
+  ArcanaInkcurl:
+    name: Inkcurl
+    brush: {item: ink_sac, min: 1, max: 2, cooldown-minutes: 6}
+
+# The undead biome variants and the vanilla mob whose "kill" quests they count for. Mobs whose base already is that
+# vanilla mob (a ZOMBIE-based Mirewalker) are counted by the quests module itself; this only adds the base mob for a
+# variant built on a non-hostile base. Every one of them also counts for the undead_cull quest/goal type.
+undead:
+  ArcanaMirewalker: zombie
+  ArcanaRimeshambler: zombie
+  ArcanaVinebound: zombie
+  ArcanaDustdigger: zombie
+  ArcanaBilgebones: skeleton
+  ArcanaHollowPilgrim: skeleton
+  ArcanaGloomweaver: spider
+  ArcanaSandshroud: husk
+  ArcanaReedwader: drowned
+
+# Names for creatures that aren't under species (bestiary, messages).
+names:
+  ArcanaSquallgull: Squallgull
+  ArcanaDuskflies: Duskflies
+  ArcanaMirewalker: Mirewalker
+  ArcanaRimeshambler: Rimeshambler
+  ArcanaVinebound: Vinebound
+  ArcanaDustdigger: Dustdigger
+  ArcanaBilgebones: Bilgebones
+  ArcanaHollowPilgrim: Hollow Pilgrim
+  ArcanaGloomweaver: Gloomweaver
+  ArcanaSandshroud: Sandshroud
+  ArcanaReedwader: Reedwader
+
+breeding:
+  enabled: true
+  # Two adults fed within this many blocks of each other breed.
+  partner-radius: 8
+  # How long a fed adult waits for a partner.
+  love-seconds: 30
+  # Hearts before the young appears.
+  delay-seconds: 3
+  # Each parent rests this long afterwards.
+  cooldown-minutes: 5
+  # No breeding while this many of the species (adults and young) live in the chunk and its 8 neighbors.
+  cap: 16
+
+# caster.kept = 1 (and no despawning on Feather's side) once a player leashes, name-tags or breeds one.
+# The pack's despawn skill skips mobs with caster.kept = 1.
+kept:
+  variable: kept
+  on-leash: true
+  on-name: true
+  on-breed: true
+
+# Oraxen furniture stations. Their state lives in the furniture's PDC; breaking one drops what it held.
+stations:
+  churn: {id: arcana_butter_churn, seconds: 5, output: arcana_butter}
+  cheese-press: {id: arcana_cheese_press, milk: 3, minutes: 10, output: arcana_cheese_wheel, wedge: arcana_cheese_wedge, wedges: 4}
+  # credits: whose bestiary "harvested" collecting counts for.
+  silk-frame: {id: arcana_silk_frame, credits: ArcanaLoomworm}
+  nesting-box: {id: arcana_nesting_box, max: 16, credits: ArcanaPondwaddle}
+  # Holds up to max of one food (any species' breed or fed food). Fed livestock within radius whose fed state runs out
+  # eat one; each mob looks for a trough at most every check-seconds.
+  feeding-trough: {id: arcana_feeding_trough, max: 64, radius: 6, check-seconds: 30}
+  # A small floating counter over the silk frame, nesting box and trough (not saved; rebuilt when the chunk loads).
+  labels: true
+  label-height: 1.25
+
+squallgull:
+  id: ArcanaSquallgull
+  steal:
+    radius: 3
+    cooldown-seconds: 60
+    # Raw fish it snatches from a hotbar.
+    fish: [cod, salmon, tropical_fish, pufferfish, "arcana_fish_*"]
+  follow:
+    # Fed one of these, it follows the feeder for minutes.
+    food: [cod, salmon, tropical_fish, "arcana_fish_*"]
+    minutes: 5
+    height: 4
+    circle-radius: 3
+    teleport-distance: 24
+    speed: 0.6
+  dive:
+    every-seconds: 60
+    min-distance: 6
+    max-distance: 14
+    # Only dives while the feeder is in a boat.
+    needs-boat: true
+    # The LOCATION caster variable the pack's ArcanaWild_Dive flies at (set just before the cast).
+    target-variable: dive_target
+
+# A dive marks open water as a fishing hotspot. The fishing module reads WildlifeHotspots.isHotspot(location),
+# biteSpeedMultiplier() and rareWeightMultiplier().
+hotspots:
+  seconds: 60
+  radius: 4
+  bite-speed-multiplier: 1.25
+  rare-weight-multiplier: 1.3
+  particles: true
+
+# Right-click with this many soggy map scraps in hand: they become a buried-treasure explorer map (overworld).
+map-scraps:
+  item: arcana_soggy_map_scrap
+  needed: 4
+  search-radius-chunks: 50
+  unexplored-only: true
+  # Optional item name of the map (MiniMessage); empty keeps the vanilla "Map".
+  map-name: '<white>Buried Treasure Map'
+
+# Prospector's Pan: right-click standing in water in one of these biomes (empty = any water). One roll down the list
+# (chances add up; whatever is left over finds nothing). Wears the pan by 1.
+pan:
+  item: arcana_prospectors_pan
+  cooldown-seconds: 2
+  biomes: [river, frozen_river]
+  loot:
+    - {item: gold_nugget, chance: 0.10}
+    - {item: iron_nugget, chance: 0.05}
+    - {item: raw_copper, chance: 0.03}
+    - {item: emerald, chance: 0.005}
+    - {item: gravel, chance: 0.15}
+
+# Duskflies: a glass bottle aimed at the swarm (reach blocks, swarm-radius around it) or clicked on it.
+duskflies:
+  id: ArcanaDuskflies
+  item: arcana_firefly_jar
+  reach: 4.5
+  swarm-radius: 2
+
+# Buffs of the wildlife meals, on top of their food. effects: "<effect> <seconds> [level]". saturation/food: added at
+# once. The meal's feather:<quality-key> (normal/fine/prize, written by the farming cooking dialog) stretches every
+# duration. While the farming module is on, its cooking.meals (farming.yml) own these meals' buffs and this list is
+# skipped for them, so a meal is never buffed twice; keep both in step.
+meals:
+  quality-key: meal_quality
+  quality: {normal: 1.0, fine: 1.5, prize: 2.0}
+  items:
+    arcana_truffle_risotto: {effects: ["health_boost 300 1"]}
+    arcana_duck_and_rice: {effects: ["slow_falling 120 1"]}
+    arcana_venison_stew: {effects: ["jump_boost 180 1"]}
+    arcana_warped_stew: {effects: ["night_vision 180 1"]}
+    arcana_cheese_board: {effects: ["resistance 120 1"]}
+
+bestiary:
+  enabled: true
+  sight-radius: 12
+  line-of-sight: true
+  seen-notice: true
+  # Pages by biome family. A page is complete when every creature on it is seen, and harvested or slain; that pays its
+  # reward (Goob Coins into the bank balance) once.
+  pages:
+    woods:
+      name: Woods & Taiga
+      reward: 40
+      mobs: [ArcanaTufthorn, ArcanaBristleboar, ArcanaVelvetstag]
+    wetlands:
+      name: Rivers & Swamps
+      reward: 40
+      mobs: [ArcanaPondwaddle, ArcanaDuskflies, ArcanaMirewalker]
+    jungle:
+      name: Jungles & Caves
+      reward: 40
+      mobs: [ArcanaLoomworm, ArcanaLanternsnail, ArcanaVinebound]
+    coast:
+      name: Coasts & Snow
+      reward: 40
+      mobs: [ArcanaSquallgull, ArcanaBilgebones, ArcanaRimeshambler]
+    badlands:
+      name: Badlands & Nether
+      reward: 50
+      mobs: [ArcanaDustdigger, ArcanaWartgrazer, ArcanaHollowPilgrim, ArcanaShroomwallow]
+    end:
+      name: The End
+      reward: 40
+      mobs: [ArcanaVoidpuff]
+    ocean:
+      name: Open Ocean
+      reward: 40
+      mobs: [ArcanaKelpback, ArcanaInkcurl]
+    restless:
+      name: Deserts, Rivers & Dark Woods
+      reward: 40
+      mobs: [ArcanaGloomweaver, ArcanaSandshroud, ArcanaReedwader]
+  mobs:
+    ArcanaTufthorn: {habitat: 'Taiga, windswept hills, snowy slopes', note: 'Milk with a bucket, brush for tuft wool.'}
+    ArcanaBristleboar: {habitat: 'Dark and old-growth forests', note: 'Leash it over podzol to root up truffles.'}
+    ArcanaVelvetstag: {habitat: 'Birch and flower forests, at dawn and dusk', note: 'Sneak to get close. Sheds its antlers once a day.'}
+    ArcanaPondwaddle: {habitat: 'Rivers and swamps', note: 'Lays duck eggs; a nesting box collects them.'}
+    ArcanaDuskflies: {habitat: 'Swamps, meadows and rivers at night', note: 'Catch them in a glass bottle.'}
+    ArcanaMirewalker: {habitat: 'Swamps', note: 'Its mud slows you down.'}
+    ArcanaLoomworm: {habitat: 'Jungles', note: 'Fed leaves, it spins silk into a silk frame.'}
+    ArcanaLanternsnail: {habitat: 'Lush caves and mangroves', note: 'Fed glow berries, it leaves glow mucus.'}
+    ArcanaVinebound: {habitat: 'Jungles', note: 'Sleeps as a leafy mound until you come close.'}
+    ArcanaSquallgull: {habitat: 'Beaches and stony shores', note: 'Steals raw fish. Feed it one and it shows you where they bite.'}
+    ArcanaBilgebones: {habitat: 'Beaches', note: 'Sometimes carries a soggy map scrap.'}
+    ArcanaRimeshambler: {habitat: 'Snowy and frozen biomes', note: 'Its touch freezes.'}
+    ArcanaDustdigger: {habitat: 'Badlands', note: 'Its lamp glows at night.'}
+    ArcanaWartgrazer: {habitat: 'Warped forests', note: 'Shear it; the fleece regrows on warped nylium.'}
+    ArcanaHollowPilgrim: {habitat: 'Soul sand valleys', note: 'Peaceful unless you strike first.'}
+    ArcanaVoidpuff: {habitat: 'The End''s outer islands', note: 'Bottle its breath with a glass bottle.'}
+    ArcanaShroomwallow: {habitat: 'Crimson forests', note: 'Brush the shroomlight off its back.'}
+    ArcanaKelpback: {habitat: 'Warm, lukewarm and temperate oceans', note: 'Shear its kelp garden; brush its flippers for sea pickles.'}
+    ArcanaInkcurl: {habitat: 'Every ocean, on the sea floor', note: 'Shy. Brush it and it squirts an ink sac for you.'}
+    ArcanaGloomweaver: {habitat: 'Dark forests, pale gardens and old-growth taigas', note: 'Calm in the light. Shears snip its silk bundle.'}
+    ArcanaSandshroud: {habitat: 'Deserts', note: 'Never burns in the sun. Its touch leaves you hungry.'}
+    ArcanaReedwader: {habitat: 'Rivers', note: 'Swims after you in the water. Carries worm bait.'}
+
+# The new-moon night: the pack doubles the undead; Feather announces it at dusk and shows a boss bar until ends-at.
+restless-moon:
+  enabled: true
+  world: world
+  phase: 4
+  dusk-from: 12000
+  # The broadcast goes out once per night, if the night is noticed before this time (a restart late at night stays quiet).
+  announce-until: 13500
+  ends-at: 23000
+  bossbar: {enabled: true, color: PURPLE}
+
+sounds:
+  error: 'minecraft:block.note_block.bass 0.6 0.8'
+  milk: 'minecraft:entity.cow.milk 1 1'
+  brush: 'minecraft:item.brush.brushing.generic 1 1'
+  shear: 'minecraft:entity.sheep.shear 1 1'
+  bucket: 'minecraft:item.bucket.fill_axolotl 1 1'
+  feed: 'minecraft:entity.generic.eat 0.8 1.2'
+  born: 'minecraft:entity.player.levelup 0.6 1.6'
+  lay: 'minecraft:entity.chicken.egg 0.8 1'
+  root: 'minecraft:block.rooted_dirt.break 1 0.8'
+  antlers: 'minecraft:block.wood.break 0.8 1.4'
+  station: 'minecraft:entity.item.pickup 0.6 1'
+  churn: 'minecraft:block.barrel.open 0.6 1.4'
+  pour: 'minecraft:item.bucket.empty 0.8 1'
+  cut: 'minecraft:entity.sheep.shear 0.8 1.4'
+  trough: 'minecraft:block.composter.fill 0.8 1'
+  gull-steal: 'minecraft:entity.parrot.ambient 1 0.6'
+  gull-fed: 'minecraft:entity.parrot.eat 1 1'
+  gull-dive: 'minecraft:entity.generic.splash 1 1.2'
+  map: 'minecraft:ui.cartography_table.take_result 1 1'
+  pan: 'minecraft:entity.fishing_bobber.splash 0.8 1.4'
+  bottle: 'minecraft:item.bottle.fill 1 1.2'
+  bestiary-seen: 'minecraft:item.book.page_turn 0.8 1.2'
+  bestiary-page: 'minecraft:ui.toast.challenge_complete 0.7 1'
+  moon: 'minecraft:entity.zombie.ambient 0.6 0.5'
+
+messages:
+  claimed: '<bad>Someone else''s land.'
+  harvest:
+    wait: '<muted>The</muted> <text><name></text> <muted>needs</muted> <text><time></text> <muted>more.'
+    milked: '<good>✔</good> <muted>You milk the</muted> <text><name></text><muted>.'
+    brushed: '<good>✔</good> <muted>You brush the</muted> <text><name></text><muted>.'
+    sheared: '<good>✔</good> <muted>You shear the</muted> <text><name></text><muted>. It regrows on warped nylium.'
+    shorn: '<muted>The</muted> <text><name></text> <muted>has no fleece to shear yet.'
+    bucketed: '<good>✔</good> <muted>The</muted> <text><name></text> <muted>slides into your bucket.'
+    bottled: '<good>✔</good> <muted>You bottle the</muted> <text><name></text><muted>''s breath.'
+    fed: '<good>✔</good> <muted>The</muted> <text><name></text> <muted>is fed for</muted> <text><time></text><muted>.'
+    rooted: '<good>✔</good> <muted>Your</muted> <text><name></text> <muted>roots up a truffle!'
+    missing-item: '<bad>That item isn''t installed on this server yet.'
+  breeding:
+    fed: '<accent>❤</accent> <muted>The</muted> <text><name></text> <muted>is in the mood. Feed another one close by.'
+    in-love: '<accent>❤</accent> <muted>The</muted> <text><name></text> <muted>is already in the mood.'
+    starting: '<accent>❤</accent> <muted>The</muted> <text><name>s</text> <muted>are breeding...'
+    born: '<good>❤</good> <muted>A young</muted> <text><name></text> <muted>was born!'
+    resting: '<muted>The</muted> <text><name></text> <muted>needs to rest</muted> <text><time></text> <muted>before breeding again.'
+    crowded: '<bad>Too crowded:</bad> <muted>there are already</muted> <text><cap></text> <text><name>s</text> <muted>around here.'
+    failed: '<muted>The</muted> <text><name>s</text> <muted>wandered apart.'
+    spawn-failed: '<bad>The young</bad> <text><name></text> <bad>couldn''t be spawned (its mob is missing).'
+  station:
+    churn-idle: '<muted>Bring a</muted> <text>milk bucket</text> <muted>to churn butter.'
+    churn-start: '<muted>Churning... butter in</muted> <text><time></text><muted>.'
+    churning: '<muted>Still churning:</muted> <text><time></text><muted>.'
+    churn-collected: '<good>✔</good> <muted>You take</muted> <text><count> butter</text><muted>.'
+    press-idle: '<muted>Cheese press:</muted> <text><milk>/<need></text> <muted>milk buckets.'
+    press-start: '<muted>Pressing... a cheese wheel in</muted> <text><time></text><muted>.'
+    pressing: '<muted>Still pressing:</muted> <text><time></text><muted>.'
+    press-collected: '<good>✔</good> <muted>You take a</muted> <text>cheese wheel</text><muted>.'
+    press-cut: '<good>✔</good> <muted>You cut the wheel into</muted> <text><count> wedges</text><muted>.'
+    frame-empty: '<muted>No silk on the frame yet. A fed Loomworm nearby spins it.'
+    frame-collected: '<good>✔</good> <muted>You take</muted> <text><count> silk</text><muted>.'
+    nest-empty: '<muted>The nesting box is empty.'
+    nest-collected: '<good>✔</good> <muted>You take</muted> <text><count> eggs</text><muted>.'
+    trough-empty: '<muted>The trough is empty. Put breed food in it.'
+    trough-holds: '<muted>Trough:</muted> <text><count>/<max> <item></text><muted>. An empty hand takes it back out.'
+    trough-emptied: '<good>✔</good> <muted>You take</muted> <text><count></text> <muted>back out.'
+    trough-full: '<muted>The trough is full (<max>).'
+    trough-other: '<muted>The trough already holds</muted> <text><item></text><muted>.'
+    trough-not-food: '<muted>None of the livestock eats that.'
+    label-frame: '<white>⌇ <count></white>'
+    label-nest: '<white>◒ <count></white>'
+    label-trough: '<white><item> ×<count></white>'
+    # The look-at card under the crosshair (plain text there).
+    inspect-butter-ready: 'Butter ready (<count>)'
+    inspect-churning: 'Churning'
+    inspect-wheel-ready: 'Cheese wheel ready'
+    inspect-pressing: 'Pressing'
+    inspect-time-left: 'Ready in'
+    inspect-milk: 'Milk buckets'
+    inspect-silk: 'Silk'
+    inspect-eggs: 'Eggs'
+  gull:
+    stolen: '<warn>A Squallgull snatched your</warn> <text><item></text><warn>! Hit it to get it back.'
+    fed: '<good>✔</good> <muted>The Squallgull follows you for</muted> <text><time></text><muted>. Take a boat out!'
+    dive: '<accent>~</accent> <muted>Your Squallgull dives: fish are biting there!'
+  maps:
+    need: '<muted>Four soggy scraps make a map. You have</muted> <text><count>/<need></text><muted>.'
+    wrong-world: '<muted>The scraps only make sense in the Overworld.'
+    none: '<muted>The scraps don''t lead anywhere near here. Try somewhere else.'
+    made: '<prefix><good>✔</good> <muted>The scraps fit together into a</muted> <text>buried treasure map</text><muted>!'
+  pan:
+    not-river: '<muted>Stand in river water to pan.'
+    nothing: '<muted>Just sand and pebbles.'
+    found: '<good>✔</good> <muted>You pan out</muted> <text><item></text><muted>!'
+  duskflies:
+    bottled: '<good>✔</good> <muted>You catch the Duskflies in a jar.'
+  snail:
+    blocked: '<muted>There''s no room there.'
+  meal:
+    buff: '<good>✔</good> <muted>That hit the spot.'
+  bestiary:
+    title: '<warn>❦</warn> <text>Bestiary <dim>· <seen>/<total>'
+    body:
+      - '<muted>Seen</muted> <text><seen>/<total></text>  <dim>·</dim>  <muted>Done</muted> <good><done>/<total></good>  <dim>·</dim>  <muted>Pages</muted> <text><pages>/<pages-total>'
+      - '<dim>Spot a wild creature to add it. Harvest or slay it to fill in its line. A finished page pays Goob Coins.'
+    page-button: '<text><page></text> <dim><done>/<total>'
+    page-button-done: '<good><page> ✔'
+    page-title: '<warn>❦</warn> <text><page> <dim>· <done>/<total>'
+    page-reward: '<muted>Finish the page (every creature seen, and harvested or slain) for</muted> <coin><coins> ⛃</coin><muted>.'
+    page-no-reward: '<muted>Finish the page: every creature seen, and harvested or slain.'
+    page-paid: '<good>✔ Page complete</good> <dim>· <coins> ⛃ paid'
+    entry-unknown: '<dim>??? · not seen yet</dim><newline><dim>Lives in</dim> <text><habitat>'
+    entry-seen: '<text><b><name></b></text> <warn>· seen</warn><newline><dim>Harvested</dim> <text><harvested></text>  <dim>Slain</dim> <text><slain></text><newline><muted><note>'
+    entry-done: '<good><b><name></b> ✔</good><newline><dim>Harvested</dim> <text><harvested></text>  <dim>Slain</dim> <text><slain></text><newline><muted><note>'
+    tip-unknown: '<dim>???'
+    tip-seen: '<text><name></text> <warn>seen'
+    tip-done: '<good><name> ✔'
+    seen-new: '<warn>❦</warn> <muted>New in your bestiary:</muted> <text><name></text> <dim>(<seen>/<total> seen)'
+    page-complete: '<prefix><good>❦ Bestiary page complete:</good> <text><page></text> <dim>·</dim> <coin>+<coins> ⛃</coin> <muted>into your bank.'
+    page-complete-free: '<prefix><good>❦ Bestiary page complete:</good> <text><page></text><muted>!'
+    bank-closed: '<prefix><muted>Your</muted> <text><page></text> <muted>page is done, but the bank can''t pay right now. It pays the next time you add to your bestiary.'
+  moon:
+    broadcast: '<prefix><#9B7BFF>☾ The Restless Moon rises.</#9B7BFF> <muted>The dead walk in greater numbers tonight. Stay near the light.'
+    bossbar: '<#9B7BFF>☾ Restless Moon</#9B7BFF>'
+  admin:
+    help: '<muted>/wildlife info | due | tick | fedexpire | shed | dive | hotspot | moon [on|off|reset] | record <player> <mob> <seen|harvested|slain> | book [player] | reset <player>'
+    no-permission: '<bad>You can''t use that.'

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Z ",
+  "ZTZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:smooth_stone_slab",
+  "T": "minecraft:torch",
+  "W": "minecraft:stone_brick_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_lantern"
+ }
+}

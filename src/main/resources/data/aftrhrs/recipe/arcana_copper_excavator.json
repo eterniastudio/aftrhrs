@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "B",
+  "B"
+ ],
+ "key": {
+  "A": "minecraft:copper_block",
+  "B": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_copper_excavator"
+ }
+}

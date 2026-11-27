@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A  ",
+  "AA ",
+  "AAA"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_polished_snow"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_polished_snow_stairs",
+  "count": 4
+ }
+}

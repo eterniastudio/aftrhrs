@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "LPL",
+  "P P",
+  "LPL"
+ ],
+ "key": {
+  "L": "minecraft:stripped_pale_oak_log",
+  "P": "minecraft:pale_oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pale_oak_crate"
+ }
+}

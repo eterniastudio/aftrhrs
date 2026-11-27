@@ -1,0 +1,138 @@
+# Feather gadgets: Supplementaries-style behavior for Arcana curio furniture and blocks.
+# Everything is keyed by Oraxen item id. Needs Oraxen; turn the whole thing off with modules.gadgets in config.yml.
+# Interactions respect land claims: pouring / drinking / eating is CONTAINER trust, the rest is BUILD trust.
+# Staff (feather.gadgets.admin): /gadgets shows the gadgets near you and their state, /gadgets reload.
+
+# Bamboo spikes: living things inside the block (not items) are slowed and hurt every interval.
+spikes:
+  ids: [arcana_bamboo_spikes]
+  interval-ticks: 20
+  damage: 2.0
+  # Height of the hurting box above the block floor (blocks).
+  height: 0.625
+  slowness-amplifier: 2
+  hurt-players: true
+  damage-type: cactus
+  # Right-click the spikes with a LINGERING potion to coat them.
+  infusion:
+    enabled: true
+    # 0: the coating never runs out, and (with only-negative) only harmful potions are taken.
+    # A number (e.g. 16): any potion is taken, and one charge is spent each time the spikes give the effects to
+    # something that doesn't already have them. only-negative is ignored in that mode.
+    charges: 0
+    only-negative: true
+    # How long the effects last on whatever walks over the spikes.
+    effect-ticks: 100
+    # Chance per interval that coated spikes puff potion-colored particles.
+    particle-chance: 0.25
+    sound: item.bottle.empty
+
+# Feather block (an Oraxen full custom block): no fall damage, a soft sinking landing, feather puffs.
+feather-block:
+  ids: [arcana_feather_block]
+  # A falling player is braked within this many blocks above the feather block ...
+  brake-height: 3.0
+  # ... to at most this fall speed (blocks per tick; vanilla slow falling is about 0.1).
+  max-fall-speed: 0.18
+  step-particle-chance: 0.08
+  land-sound: block.wool.fall
+
+# Sacks keep their contents through Oraxen's own furniture storage (storage: { type: SHULKER }).
+sack:
+  # Sack furniture ids (a broken sack drops exactly one sack, the one holding the contents).
+  ids: [arcana_sack]
+  overencumbered:
+    enabled: true
+    # Oraxen ids (or minecraft:<item>) that count as heavy.
+    heavy-items: [arcana_sack]
+    # Carrying more than this many makes you overencumbered (Slowness) until you drop some.
+    max-carried: 2
+    slowness-amplifier: 1
+    check-ticks: 40
+
+# Goblets hold one serving. Fill with a water bottle / bucket, lava bucket, milk bucket, honey bottle, any potion or a
+# mushroom / beetroot / rabbit / suspicious stew; right-click with an empty hand to drink it (milk clears effects,
+# honey cures poison and feeds, potions give their effects, stews feed); an empty bottle / bucket / bowl takes it back.
+goblets:
+  ids: [arcana_iron_goblet, arcana_gold_goblet, arcana_copper_goblet]
+  capacity: 1
+  bucket-units: 1
+  fluids: [water, lava, milk, honey, potion, stew]
+  # <fluid> is replaced by the fluid's overlay name (below, default: the fluid itself).
+  overlay: arcana_curio_fx_goblet_<fluid>
+  overlay-names:
+    stew: mushroom_stew
+
+# Jars hold up to `capacity` bottles of one drink (a bucket counts as bucket-units), up to `capacity` cookie-like
+# items (right-click to put one in, sneak to put in the stack; empty hand eats one, or takes it out when you're full),
+# or one small mob (see cages, with the jar's own mob list). A broken jar keeps what's inside.
+jars:
+  ids: [arcana_jar]
+  capacity: 12
+  bucket-units: 4
+  fluids: [water, lava, milk, honey, potion]
+  # <level> is 1..4 (how full it is).
+  overlay: arcana_curio_fx_jar_<fluid>_<level>
+  cookie-overlay: arcana_curio_fx_jar_cookies_<level>
+  # minecraft:<item> or Oraxen ids.
+  cookies: [minecraft:cookie]
+  mobs: [bee, silverfish, endermite, tadpole, cod, salmon, tropical_fish, pufferfish, slime, magma_cube, allay]
+
+# Cages: right-click or hit a small mob with an empty cage item to catch it. Right-click a block with the full cage to
+# let it out; sneak + right-click to place the cage with the mob inside; empty hand on a placed full cage lets it out.
+cages:
+  ids: [arcana_cage]
+  mobs: [chicken, rabbit, parrot, bee, frog, tadpole, axolotl, cod, salmon, tropical_fish, pufferfish, silverfish,
+         endermite, bat, allay, slime, magma_cube]
+  # Also any baby animal.
+  baby-animals: false
+  max-slime-size: 1
+  # MythicMobs mobs (Arcana pets and creatures) can't be caught unless their MythicMobs type is listed here.
+  exclude-mythic-mobs: true
+  mythic-allowed: []
+  # Tamed mobs (parrots) can only be caught by their owner.
+  exclude-others-pets: true
+  # A caged chicken lays an egg about this often.
+  chicken-egg-minutes: 7.5
+
+# Ropes: use a rope item under a ceiling or on a fence / wall / chain to hang a rope (the top piece is the knot);
+# right-click a rope with another rope to make it longer at the bottom. Inside a rope you climb while moving or
+# jumping, hold on while sneaking and slide down slowly otherwise, with no fall damage. Sneak + right-click a rope
+# with an empty hand pulls it up by one (and lifts a plain block or the mobs right under it). Breaking a rope, or the
+# block it hangs from, drops the ropes below.
+ropes:
+  rope: arcana_rope
+  knot: arcana_rope_knot
+  # Items that place ropes.
+  items: [arcana_rope]
+  max-length: 64
+  # Blocks a rope can hang under when clicked on any side (any solid block works from below).
+  supports: ["#minecraft:fences", "#minecraft:walls", "#minecraft:fence_gates", "#minecraft:chains", minecraft:chain,
+             minecraft:iron_bars, "#minecraft:leaves", "#minecraft:slabs", "#minecraft:trapdoors"]
+  climb-speed: 0.2
+  slide-speed: 0.12
+  climb-sound: block.ladder.step
+  slide-sound: block.wool.step
+  pull-blocks: true
+  pull-mobs: true
+
+# Action-bar messages (MiniMessage with Feather's palette tags).
+messages:
+  claimed: "<bad>Someone else's land."
+  spikes-no-effect: "<muted>That potion has no effect to give."
+  spikes-only-harmful: "<bad>The spikes only take harmful potions."
+  spikes-infused: "<good>The spikes drip with the potion."
+  overencumbered: "<warn>Overencumbered! You carry too many sacks."
+  unencumbered: "<good>You can move freely again."
+  vessel-other: "<bad>There's something else in it."
+  vessel-full: "<muted>It's full."
+  vessel-wrong-container: "<muted>That won't hold it."
+  vessel-not-enough: "<muted>There isn't enough left for that."
+  jar-took: "<muted>You take one out."
+  drink-lava: "<warn>You think better of drinking lava."
+  drink-water: "<sky>Refreshing."
+  cage-too-big: "<muted>That won't fit in there."
+  cage-release-failed: "<bad>It won't come out here."
+  rope-where: "<muted>Ropes hang from a ceiling, or under a fence or wall."
+  rope-blocked: "<muted>There's no room for the rope there."
+  rope-too-long: "<muted>The rope can't get any longer."

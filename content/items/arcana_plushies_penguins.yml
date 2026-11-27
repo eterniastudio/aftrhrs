@@ -1,0 +1,80 @@
+# Winter penguins: plushies (built by arcana_items/plushies/work_v2, specs emperor_penguin.py / rockhopper_penguin.py,
+# build.py --no-pack; model + texture copied into mod/content/pack). Read by tools/gen_content.py (--content).
+arcana_plush_emperor_penguin:
+  itemname: "<white>Emperor Penguin Plush"
+  material: PAPER
+  lore:
+  - "<gray>A soft keepsake of your tamed emperor penguin."
+  - "<gray>Place it on the floor to show it off."
+  components:
+    max_stack_size: 16
+  pack:
+    generate_model: false
+    model: arcana/plushies/arcana_plush_emperor_penguin
+  mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      hitboxes:
+      - 0,0,0 0.4,0.5
+      rotatable: true
+      restricted_rotation: NONE
+      limited_placing:
+        floor: true
+        wall: false
+        roof: false
+      properties:
+        display_transform: NONE
+        scale:
+          x: 0.4
+          y: 0.4
+          z: 0.4
+        translation:
+          x: 0.0
+          y: -0.25
+          z: 0.0
+        shadow_radius: 0.25
+        shadow_strength: 0.6
+      drop:
+        silktouch: false
+        loots:
+        - oraxen_item: arcana_plush_emperor_penguin
+          probability: 1.0
+arcana_plush_rockhopper_penguin:
+  itemname: "<yellow>Rockhopper Penguin Plush"
+  material: PAPER
+  lore:
+  - "<gray>A soft keepsake of your tamed rockhopper penguin."
+  - "<gray>Place it on the floor to show it off."
+  components:
+    max_stack_size: 16
+  pack:
+    generate_model: false
+    model: arcana/plushies/arcana_plush_rockhopper_penguin
+  mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      hitboxes:
+      - 0,0,0 0.4,0.5
+      rotatable: true
+      restricted_rotation: NONE
+      limited_placing:
+        floor: true
+        wall: false
+        roof: false
+      properties:
+        display_transform: NONE
+        scale:
+          x: 0.4
+          y: 0.4
+          z: 0.4
+        translation:
+          x: 0.0
+          y: -0.25
+          z: 0.0
+        shadow_radius: 0.25
+        shadow_strength: 0.6
+      drop:
+        silktouch: false
+        loots:
+        - oraxen_item: arcana_plush_rockhopper_penguin
+          probability: 1.0

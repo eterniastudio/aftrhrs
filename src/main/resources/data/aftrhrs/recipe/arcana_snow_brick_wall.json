@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AAA",
+  "AAA"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_snow_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_snow_brick_wall",
+  "count": 6
+ }
+}

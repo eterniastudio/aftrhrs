@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Y ",
+  "YPY",
+  "P P"
+ ],
+ "key": {
+  "P": "minecraft:oak_planks",
+  "Y": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oak_doghouse"
+ }
+}

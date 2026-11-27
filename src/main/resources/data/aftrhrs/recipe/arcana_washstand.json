@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " BF",
+  "ZZZ",
+  "P P"
+ ],
+ "key": {
+  "B": "minecraft:bowl",
+  "F": "minecraft:flower_pot",
+  "P": "minecraft:spruce_planks",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_washstand"
+ }
+}

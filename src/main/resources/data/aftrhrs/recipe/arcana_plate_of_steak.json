@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_china_plate",
+  "minecraft:cooked_beef"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_plate_of_steak"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "L L",
+  "CCC",
+  " B "
+ ],
+ "key": {
+  "B": "minecraft:iron_block",
+  "C": "minecraft:iron_ingot",
+  "L": "minecraft:lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_iron_grand_lamp_post"
+ }
+}

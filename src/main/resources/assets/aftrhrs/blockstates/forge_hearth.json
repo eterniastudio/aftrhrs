@@ -1,0 +1,49 @@
+{
+ "variants": {
+  "coal=empty,facing=north": {
+   "model": "aftrhrs:block/smithing/forge_hearth"
+  },
+  "coal=cold,facing=north": {
+   "model": "aftrhrs:block/smithing/forge_hearth_cold"
+  },
+  "coal=lit,facing=north": {
+   "model": "aftrhrs:block/smithing/forge_hearth_lit"
+  },
+  "coal=empty,facing=east": {
+   "model": "aftrhrs:block/smithing/forge_hearth",
+   "y": 90
+  },
+  "coal=cold,facing=east": {
+   "model": "aftrhrs:block/smithing/forge_hearth_cold",
+   "y": 90
+  },
+  "coal=lit,facing=east": {
+   "model": "aftrhrs:block/smithing/forge_hearth_lit",
+   "y": 90
+  },
+  "coal=empty,facing=south": {
+   "model": "aftrhrs:block/smithing/forge_hearth",
+   "y": 180
+  },
+  "coal=cold,facing=south": {
+   "model": "aftrhrs:block/smithing/forge_hearth_cold",
+   "y": 180
+  },
+  "coal=lit,facing=south": {
+   "model": "aftrhrs:block/smithing/forge_hearth_lit",
+   "y": 180
+  },
+  "coal=empty,facing=west": {
+   "model": "aftrhrs:block/smithing/forge_hearth",
+   "y": 270
+  },
+  "coal=cold,facing=west": {
+   "model": "aftrhrs:block/smithing/forge_hearth_cold",
+   "y": 270
+  },
+  "coal=lit,facing=west": {
+   "model": "aftrhrs:block/smithing/forge_hearth_lit",
+   "y": 270
+  }
+ }
+}

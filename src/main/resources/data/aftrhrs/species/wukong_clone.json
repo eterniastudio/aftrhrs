@@ -1,0 +1,1284 @@
+{
+ "id": "wukong_clone",
+ "mm_id": "ArcanaWukongClone",
+ "kind": "boss",
+ "name": "Hair Clone",
+ "color": "e",
+ "health": 70,
+ "damage": 7,
+ "armor": 4,
+ "speed": 0.36,
+ "follow_range": 40,
+ "knockback_resistance": 0.6,
+ "base": "HUSK",
+ "damage_mods": {
+  "FIRE": 0.0,
+  "FIRE_TICK": 0.0,
+  "FALL": 0.0
+ },
+ "drops": [
+  {
+   "exp": 10,
+   "chance": 1.0
+  }
+ ],
+ "flyer": false,
+ "abilities": [
+  {
+   "mechanic": "partvis",
+   "args": {
+    "mid": "arcana_wukong",
+    "p": "cloud",
+    "v": false
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- partvis{mid=arcana_wukong;p=cloud;v=false} @self ~onSpawn"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWukong_Glow"
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWukong_Glow",
+   "line": "- skill{s=ArcanaWukong_Glow} @self ~onSpawn"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWukong_Glow"
+   },
+   "target": "self",
+   "trigger": "onload",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWukong_Glow",
+   "line": "- skill{s=ArcanaWukong_Glow} @self ~onLoad"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWukong_GlowOut"
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWukong_GlowOut",
+   "line": "- skill{s=ArcanaWukong_GlowOut} @self ~onDeath"
+  },
+  {
+   "mechanic": "tint",
+   "args": {
+    "mid": "arcana_wukong",
+    "c": "FFE6A8"
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- tint{mid=arcana_wukong;c=FFE6A8} @self ~onSpawn"
+  },
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "poof",
+    "amount": 30,
+    "hS": 0.6,
+    "vS": 1,
+    "speed": 0.05,
+    "y": 1
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- particles{p=poof;amount=30;hS=0.6;vS=1;speed=0.05;y=1} @self ~onSpawn"
+  },
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "wax_off",
+    "amount": 20,
+    "hS": 0.6,
+    "vS": 1,
+    "speed": 0.4,
+    "y": 1
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- particles{p=wax_off;amount=20;hS=0.6;vS=1;speed=0.4;y=1} @self ~onSpawn"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.fox.screech",
+    "v": 1,
+    "p": 1.3
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.fox.screech;v=1;p=1.3} @self ~onSpawn"
+  },
+  {
+   "mechanic": "state",
+   "args": {
+    "s": "taunt",
+    "li": 2,
+    "lo": 4
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- state{s=taunt;li=2;lo=4} @self ~onSpawn"
+  },
+  {
+   "mechanic": "remove",
+   "args": {
+    "delay": 600
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- remove{delay=600} @self ~onSpawn"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWukongClone_Strike",
+    "sync": true
+   },
+   "target": "target",
+   "trigger": "onattack",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWukongClone_Strike",
+   "line": "- skill{s=ArcanaWukongClone_Strike;sync=true} @target ~onAttack"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWukongClone_Stomp"
+   },
+   "target": "target",
+   "trigger": "ontimer",
+   "every": 100,
+   "conditions": [],
+   "chance": 0.5,
+   "skill": "ArcanaWukongClone_Stomp",
+   "line": "- skill{s=ArcanaWukongClone_Stomp} @target ~onTimer:100 0.5"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaWukongClone_Poof"
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaWukongClone_Poof",
+   "line": "- skill{s=ArcanaWukongClone_Poof} @self ~onDeath"
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "death": "death",
+  "hurt": "hurt",
+  "attack": "attack",
+  "spawn": "taunt",
+  "idle_rage": "idle_rage",
+  "walk_rage": "walk_rage"
+ },
+ "tint": 16770728,
+ "faction": "wukong",
+ "model": "wukong",
+ "clips": {
+  "idle": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "idle_rage": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 1,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.6,
+   "loop": "loop"
+  },
+  "walk_rage": {
+   "length": 0.7,
+   "loop": "loop"
+  },
+  "spawn": {
+   "length": 3.2,
+   "loop": "once"
+  },
+  "death": {
+   "length": 3.6,
+   "loop": "hold"
+  },
+  "hurt": {
+   "length": 0.35,
+   "loop": "once"
+  },
+  "attack": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "attack2": {
+   "length": 1,
+   "loop": "once"
+  },
+  "attack3": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "combo": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "staff_spin": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "ground_slam": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "stomp": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "leap": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "extend": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "pillar": {
+   "length": 3.6,
+   "loop": "once"
+  },
+  "clone": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "somersault": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "fire_eyes": {
+   "length": 2,
+   "loop": "once"
+  },
+  "roar": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "taunt": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "parry": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "idle_peer": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "idle_twirl": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "idle_scratch": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "idle_bounce": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "stance": {
+   "length": 2.4,
+   "loop": "loop"
+  },
+  "idle_havoc": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "hurt_heavy": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "dizzy": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "idle_final": {
+   "length": 1.6,
+   "loop": "loop"
+  },
+  "ascend": {
+   "length": 3,
+   "loop": "once"
+  },
+  "havoc": {
+   "length": 3.2,
+   "loop": "once"
+  },
+  "peach_eat": {
+   "length": 1.6,
+   "loop": "loop"
+  },
+  "peach_choke": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "transform": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "reveal": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "cloud_ride": {
+   "length": 1.6,
+   "loop": "loop"
+  },
+  "cloud_strike": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "cloud_dive": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "giant_grow": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "giant_slam": {
+   "length": 2,
+   "loop": "once"
+  },
+  "giant_sweep": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "staff_throw": {
+   "length": 1,
+   "loop": "once"
+  },
+  "staff_catch": {
+   "length": 0.7,
+   "loop": "once"
+  },
+  "vault": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "eye_sweep": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "furnace": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "palm_look": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "sealed": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "break_free": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "laugh": {
+   "length": 2,
+   "loop": "once"
+  },
+  "idle_shoulder": {
+   "length": 6,
+   "loop": "loop"
+  }
+ },
+ "scale": 0.78,
+ "model_hitbox": [
+  1.073,
+  2.243
+ ],
+ "shadow": 0.536,
+ "name_tag_y": 3.022,
+ "render_box": [
+  1.219,
+  3.656
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "eyes",
+  "staff_top",
+  "staff_bot",
+  "cloud"
+ ],
+ "glow_out": [],
+ "spawns": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "idle_rage": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "hbt"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.0,
+    "gait": "walk",
+    "drv": "hbt"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.6,
+    "gait": "run",
+    "drv": "hbt"
+   },
+   "walk_rage": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.7,
+    "gait": "run",
+    "drv": "hbt"
+   },
+   "spawn": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.2,
+    "from": "standing",
+    "drv": "hbt"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 3.6,
+    "drv": "hb"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.35,
+    "drv": "hb"
+   },
+   "attack": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.8,
+    "drv": "hbt"
+   },
+   "attack2": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.0,
+    "drv": "hbt"
+   },
+   "attack3": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.8,
+    "drv": "t"
+   },
+   "combo": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.2,
+    "drv": "hbt"
+   },
+   "staff_spin": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.4,
+    "drv": "bt"
+   },
+   "ground_slam": {
+    "p": "lying",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.8,
+    "drv": "hbt"
+   },
+   "stomp": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hbt"
+   },
+   "leap": {
+    "p": "airborne",
+    "move": true,
+    "loop": "once",
+    "layer": "additive",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "extend": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.2,
+    "drv": "hbt"
+   },
+   "pillar": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.6,
+    "drv": "hbt"
+   },
+   "clone": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.2,
+    "drv": "hbt"
+   },
+   "somersault": {
+    "p": "belly",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.8,
+    "drv": "bt"
+   },
+   "fire_eyes": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.0,
+    "drv": "ht"
+   },
+   "roar": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.4,
+    "drv": "hb"
+   },
+   "taunt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.2,
+    "drv": "hbt"
+   },
+   "parry": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.9,
+    "drv": "t"
+   },
+   "idle_peer": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbt"
+   },
+   "idle_twirl": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbt"
+   },
+   "idle_scratch": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbt"
+   },
+   "idle_bounce": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "stance": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "idle_havoc": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "hbt"
+   },
+   "hurt_heavy": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.8,
+    "drv": "hbt"
+   },
+   "dizzy": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "hbt"
+   },
+   "idle_final": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "ascend": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "havoc": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.2,
+    "drv": "hbt"
+   },
+   "peach_eat": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "peach_choke": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.2,
+    "drv": "hbt"
+   },
+   "transform": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hbt"
+   },
+   "reveal": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.8,
+    "drv": "hbt"
+   },
+   "cloud_ride": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "cloud_strike": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.8,
+    "drv": "hbt"
+   },
+   "cloud_dive": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hbt"
+   },
+   "giant_grow": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.8,
+    "drv": "hbt"
+   },
+   "giant_slam": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.0,
+    "drv": "hbt"
+   },
+   "giant_sweep": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.2,
+    "drv": "hbt"
+   },
+   "staff_throw": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.0,
+    "drv": "hbt"
+   },
+   "staff_catch": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.7,
+    "drv": "hbt"
+   },
+   "vault": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "eye_sweep": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.4,
+    "drv": "hbt"
+   },
+   "furnace": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "palm_look": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "sealed": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbt"
+   },
+   "break_free": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "hbt"
+   },
+   "laugh": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.0,
+    "drv": "hbt"
+   },
+   "idle_shoulder": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbt"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "death": "death",
+   "hurt": "hurt",
+   "stance1": "stance",
+   "stance2": "idle_rage",
+   "stance3": "idle_havoc",
+   "walk2": "walk_rage",
+   "walk3": "walk_rage",
+   "hurt_heavy": "hurt_heavy",
+   "stance4": "idle_final",
+   "walk4": "walk_rage"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "spawn",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "staff_spin",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "ground_slam",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "extend",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "pillar",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "clone",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "somersault",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "fire_eyes",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "taunt",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "hurt_heavy",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "ascend",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "havoc",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "peach_choke",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "transform",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "reveal",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "cloud_strike",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "cloud_dive",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "giant_grow",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "giant_slam",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "giant_sweep",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "staff_throw",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "staff_catch",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "vault",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "eye_sweep",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "palm_look",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "break_free",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "laugh",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "boss_calm": [
+    {
+     "clip": "idle",
+     "w": 3,
+     "min": 6,
+     "max": 12
+    },
+    {
+     "clip": "idle_peer",
+     "w": 2,
+     "min": 6,
+     "max": 6,
+     "cd": 10
+    },
+    {
+     "clip": "idle_twirl",
+     "w": 2,
+     "min": 6,
+     "max": 6,
+     "cd": 12
+    },
+    {
+     "clip": "idle_scratch",
+     "w": 1,
+     "min": 6,
+     "max": 6,
+     "cd": 20
+    },
+    {
+     "clip": "idle_bounce",
+     "w": 2,
+     "min": 3,
+     "max": 9
+    },
+    {
+     "clip": "idle_shoulder",
+     "w": 2,
+     "min": 6,
+     "max": 6,
+     "cd": 12
+    }
+   ],
+   "boss_combat": [
+    {
+     "clip": "stance",
+     "w": 5,
+     "min": 3,
+     "max": 9,
+     "when": "p1"
+    },
+    {
+     "clip": "idle_bounce",
+     "w": 1,
+     "min": 3,
+     "max": 6,
+     "when": "p1"
+    },
+    {
+     "clip": "idle_twirl",
+     "w": 1,
+     "min": 6,
+     "max": 6,
+     "cd": 15,
+     "when": "p1,far"
+    },
+    {
+     "clip": "idle_rage",
+     "w": 5,
+     "min": 3,
+     "max": 9,
+     "when": "p2"
+    },
+    {
+     "clip": "idle_havoc",
+     "w": 5,
+     "min": 3,
+     "max": 9,
+     "when": "p3"
+    },
+    {
+     "clip": "idle_final",
+     "w": 5,
+     "min": 3,
+     "max": 9,
+     "when": "p4"
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail1",
+    "tail2",
+    "tail3"
+   ]
+  },
+  "authored": [
+   "ascend",
+   "attack",
+   "attack2",
+   "attack3",
+   "break_free",
+   "cloud_dive",
+   "cloud_ride",
+   "cloud_strike",
+   "combo",
+   "death",
+   "dizzy",
+   "extend",
+   "eye_sweep",
+   "furnace",
+   "giant_grow",
+   "giant_slam",
+   "giant_sweep",
+   "ground_slam",
+   "havoc",
+   "hurt_heavy",
+   "idle_bounce",
+   "idle_final",
+   "idle_havoc",
+   "idle_peer",
+   "idle_scratch",
+   "idle_shoulder",
+   "idle_twirl",
+   "laugh",
+   "leap",
+   "palm_look",
+   "parry",
+   "peach_choke",
+   "peach_eat",
+   "reveal",
+   "sealed",
+   "somersault",
+   "staff_catch",
+   "staff_spin",
+   "staff_throw",
+   "stance",
+   "transform",
+   "vault"
+  ],
+  "unblinked": [
+   "idle",
+   "idle_bounce",
+   "idle_peer",
+   "idle_scratch",
+   "idle_twirl",
+   "taunt"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "chest",
+  "h_head",
+  "eyes",
+  "staff_top",
+  "staff_bot",
+  "cloud"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ambient_angry": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "hurt": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "death": {
+    "jitter": 0.05,
+    "dist": 40,
+    "layer": 2
+   },
+   "step": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ability": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ability_whoosh": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ability_kiai": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ability_grunt": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ability_thud": {
+    "jitter": 0.05,
+    "dist": 40
+   },
+   "ability_stone": {
+    "jitter": 0.05,
+    "dist": 40
+   }
+  },
+  "every": 260,
+  "dist": 40
+ }
+}

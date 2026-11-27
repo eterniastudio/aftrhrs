@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "B"
+ ],
+ "key": {
+  "W": "minecraft:prismarine_wall",
+  "B": "minecraft:prismarine_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_column_base",
+  "count": 2
+ }
+}

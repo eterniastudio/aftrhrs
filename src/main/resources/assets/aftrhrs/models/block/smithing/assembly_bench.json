@@ -1,0 +1,26 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/assembly_top", "assembly_edge": "aftrhrs:block/smithing/assembly_edge", "assembly_leg": "aftrhrs:block/smithing/assembly_leg", "assembly_shelf": "aftrhrs:block/smithing/assembly_shelf", "assembly_top": "aftrhrs:block/smithing/assembly_top", "assembly_under": "aftrhrs:block/smithing/assembly_under"},
+ "elements": [
+  {"name": "top", "from": [0, 12, 0], "to": [16, 15, 16], "faces": {"north": {"uv": [0, 1, 16, 4], "texture": "#assembly_edge", "cullface": "north"}, "east": {"uv": [0, 1, 16, 4], "texture": "#assembly_edge", "cullface": "east"}, "south": {"uv": [0, 1, 16, 4], "texture": "#assembly_edge", "cullface": "south"}, "west": {"uv": [0, 1, 16, 4], "texture": "#assembly_edge", "cullface": "west"}, "up": {"uv": [0, 0, 16, 16], "texture": "#assembly_top"}, "down": {"uv": [0, 0, 16, 16], "texture": "#assembly_under"}}},
+  {"name": "leg", "from": [1, 0, 1], "to": [4, 12, 4], "faces": {"north": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "east": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "south": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "west": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "down": {"uv": [1, 12, 4, 15], "texture": "#assembly_leg", "cullface": "down"}}},
+  {"name": "leg", "from": [12, 0, 1], "to": [15, 12, 4], "faces": {"north": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "east": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "south": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "west": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "down": {"uv": [12, 12, 15, 15], "texture": "#assembly_leg", "cullface": "down"}}},
+  {"name": "leg", "from": [1, 0, 12], "to": [4, 12, 15], "faces": {"north": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "east": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "south": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "west": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "down": {"uv": [1, 1, 4, 4], "texture": "#assembly_leg", "cullface": "down"}}},
+  {"name": "leg", "from": [12, 0, 12], "to": [15, 12, 15], "faces": {"north": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "east": {"uv": [1, 4, 4, 16], "texture": "#assembly_leg"}, "south": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "west": {"uv": [12, 4, 15, 16], "texture": "#assembly_leg"}, "down": {"uv": [12, 1, 15, 4], "texture": "#assembly_leg", "cullface": "down"}}},
+  {"name": "shelf", "from": [2, 3, 2], "to": [14, 4, 14], "faces": {"north": {"uv": [2, 12, 14, 13], "texture": "#assembly_edge"}, "east": {"uv": [2, 12, 14, 13], "texture": "#assembly_edge"}, "south": {"uv": [2, 12, 14, 13], "texture": "#assembly_edge"}, "west": {"uv": [2, 12, 14, 13], "texture": "#assembly_edge"}, "up": {"uv": [2, 2, 14, 14], "texture": "#assembly_shelf"}, "down": {"uv": [2, 2, 14, 14], "texture": "#assembly_under"}}},
+  {"name": "apron", "from": [4, 10, 2], "to": [12, 12, 3], "faces": {"north": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}, "east": {"uv": [13, 4, 14, 6], "texture": "#assembly_leg"}, "south": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}, "west": {"uv": [2, 4, 3, 6], "texture": "#assembly_leg"}}},
+  {"name": "apron", "from": [4, 10, 13], "to": [12, 12, 14], "faces": {"north": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}, "east": {"uv": [2, 4, 3, 6], "texture": "#assembly_leg"}, "south": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}, "west": {"uv": [13, 4, 14, 6], "texture": "#assembly_leg"}}},
+  {"name": "apron", "from": [2, 10, 4], "to": [3, 12, 12], "faces": {"east": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}, "west": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}}},
+  {"name": "apron", "from": [13, 10, 4], "to": [14, 12, 12], "faces": {"east": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}, "west": {"uv": [4, 4, 12, 6], "texture": "#assembly_leg"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

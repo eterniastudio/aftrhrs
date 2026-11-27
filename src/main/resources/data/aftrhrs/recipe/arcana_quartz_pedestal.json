@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " B ",
+  "ZZZ"
+ ],
+ "key": {
+  "Z": "minecraft:quartz_slab",
+  "B": "minecraft:quartz_pillar"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_pedestal"
+ }
+}

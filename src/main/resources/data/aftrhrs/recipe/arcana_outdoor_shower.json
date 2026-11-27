@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CCC",
+  "C  ",
+  "ZZZ"
+ ],
+ "key": {
+  "C": "minecraft:copper_ingot",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_outdoor_shower"
+ }
+}

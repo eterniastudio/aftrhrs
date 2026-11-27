@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " X ",
+  "TDT",
+  " T "
+ ],
+ "key": {
+  "X": "minecraft:flowering_azalea",
+  "T": "minecraft:terracotta",
+  "D": "minecraft:moss_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_potted_azalea"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_gold_candelabra_tall"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:all_of",
+    "terms": [
+     {
+      "type": "minecraft:match_block",
+      "blocks": "aftrhrs:arcana_gold_candelabra_tall",
+      "state": {
+       "part": "0"
+      }
+     },
+     {
+      "type": "minecraft:survives_explosion"
+     }
+    ]
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/arcana_gold_candelabra_tall"
+}

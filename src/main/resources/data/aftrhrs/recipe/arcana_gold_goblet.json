@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "I I",
+  " I ",
+  " N "
+ ],
+ "key": {
+  "I": "minecraft:gold_ingot",
+  "N": "minecraft:gold_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gold_goblet"
+ }
+}

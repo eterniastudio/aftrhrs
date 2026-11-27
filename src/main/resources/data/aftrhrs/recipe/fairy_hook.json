@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  "G",
+  "C"
+ ],
+ "key": {
+  "G": "minecraft:gold_nugget",
+  "C": "minecraft:copper_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_hook",
+  "count": 4
+ }
+}

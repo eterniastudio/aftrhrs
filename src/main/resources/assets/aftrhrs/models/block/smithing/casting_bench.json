@@ -1,0 +1,21 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/casting_side", "casting_front": "aftrhrs:block/smithing/casting_front", "casting_leg": "aftrhrs:block/smithing/casting_leg", "casting_side": "aftrhrs:block/smithing/casting_side", "casting_top": "aftrhrs:block/smithing/casting_top", "casting_under": "aftrhrs:block/smithing/casting_under"},
+ "elements": [
+  {"name": "top", "from": [0, 6, 0], "to": [16, 8, 16], "faces": {"north": {"uv": [0, 8, 16, 10], "texture": "#casting_front", "cullface": "north"}, "east": {"uv": [0, 8, 16, 10], "texture": "#casting_side", "cullface": "east"}, "south": {"uv": [0, 8, 16, 10], "texture": "#casting_side", "cullface": "south"}, "west": {"uv": [0, 8, 16, 10], "texture": "#casting_side", "cullface": "west"}, "up": {"uv": [0, 0, 16, 16], "texture": "#casting_top"}, "down": {"uv": [0, 0, 16, 16], "texture": "#casting_under"}}},
+  {"name": "leg", "from": [1, 0, 1], "to": [4, 6, 4], "faces": {"north": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "east": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "south": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "west": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "down": {"uv": [1, 12, 4, 15], "texture": "#casting_under", "cullface": "down"}}},
+  {"name": "leg", "from": [12, 0, 1], "to": [15, 6, 4], "faces": {"north": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "east": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "south": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "west": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "down": {"uv": [12, 12, 15, 15], "texture": "#casting_under", "cullface": "down"}}},
+  {"name": "leg", "from": [1, 0, 12], "to": [4, 6, 15], "faces": {"north": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "east": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "south": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "west": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "down": {"uv": [1, 1, 4, 4], "texture": "#casting_under", "cullface": "down"}}},
+  {"name": "leg", "from": [12, 0, 12], "to": [15, 6, 15], "faces": {"north": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "east": {"uv": [1, 10, 4, 16], "texture": "#casting_leg"}, "south": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "west": {"uv": [12, 10, 15, 16], "texture": "#casting_leg"}, "down": {"uv": [12, 1, 15, 4], "texture": "#casting_under", "cullface": "down"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

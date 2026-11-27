@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " L ",
+  " I ",
+  " C "
+ ],
+ "key": {
+  "L": "minecraft:copper_bulb",
+  "I": "minecraft:copper_ingot",
+  "C": "minecraft:cut_copper"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_copper_street_lamp"
+ }
+}

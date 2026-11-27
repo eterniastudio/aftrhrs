@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "L L",
+  "CCC",
+  " B "
+ ],
+ "key": {
+  "B": "minecraft:copper_block",
+  "C": "minecraft:cut_copper",
+  "L": "minecraft:copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_copper_grand_lamp_post"
+ }
+}

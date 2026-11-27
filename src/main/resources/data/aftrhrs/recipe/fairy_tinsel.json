@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  "P-P"
+ ],
+ "key": {
+  "P": "minecraft:paper",
+  "-": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_tinsel",
+  "count": 1
+ }
+}

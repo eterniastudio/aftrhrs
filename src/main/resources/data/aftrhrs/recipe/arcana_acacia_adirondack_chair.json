@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P  ",
+  "ZZZ",
+  "P P"
+ ],
+ "key": {
+  "P": "minecraft:acacia_planks",
+  "Z": "minecraft:acacia_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_adirondack_chair"
+ }
+}

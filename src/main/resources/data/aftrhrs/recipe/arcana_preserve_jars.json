@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GGG",
+  "RBH"
+ ],
+ "key": {
+  "G": "minecraft:glass",
+  "R": "minecraft:sweet_berries",
+  "B": "minecraft:glow_berries",
+  "H": "minecraft:honey_bottle"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_preserve_jars"
+ }
+}

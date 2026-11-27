@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/coastal/ship_wheel"},"facing=east":{"model":"aftrhrs:arcana/coastal/ship_wheel","y":90},"facing=south":{"model":"aftrhrs:arcana/coastal/ship_wheel","y":180},"facing=west":{"model":"aftrhrs:arcana/coastal/ship_wheel","y":270}}}

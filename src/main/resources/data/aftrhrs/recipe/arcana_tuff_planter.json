@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " F ",
+  "BDB"
+ ],
+ "key": {
+  "F": "minecraft:poppy",
+  "B": "minecraft:polished_tuff",
+  "D": "minecraft:dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuff_planter"
+ }
+}

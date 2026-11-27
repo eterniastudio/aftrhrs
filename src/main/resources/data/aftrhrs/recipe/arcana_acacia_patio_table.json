@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " T ",
+  " Z "
+ ],
+ "key": {
+  "T": "minecraft:stripped_acacia_log",
+  "Z": "minecraft:acacia_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_patio_table"
+ }
+}

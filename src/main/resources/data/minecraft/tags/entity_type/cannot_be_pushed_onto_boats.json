@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:emperor_penguin",
+  "aftrhrs:emperor_penguin_chick",
+  "aftrhrs:rockhopper_penguin",
+  "aftrhrs:rockhopper_penguin_chick"
+ ]
+}

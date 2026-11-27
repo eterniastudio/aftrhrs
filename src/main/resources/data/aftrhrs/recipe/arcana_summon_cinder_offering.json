@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " F ",
+  "RTR",
+  "KMK"
+ ],
+ "key": {
+  "F": "minecraft:fire_charge",
+  "R": "minecraft:blaze_rod",
+  "T": "minecraft:ghast_tear",
+  "K": "minecraft:gilded_blackstone",
+  "M": "minecraft:magma_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_summon_cinder_offering"
+ }
+}

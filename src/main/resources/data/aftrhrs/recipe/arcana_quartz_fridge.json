@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "QPQ",
+  "QCQ",
+  "QQQ"
+ ],
+ "key": {
+  "Q": "minecraft:quartz_block",
+  "P": "minecraft:packed_ice",
+  "C": "minecraft:chest"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_fridge"
+ }
+}

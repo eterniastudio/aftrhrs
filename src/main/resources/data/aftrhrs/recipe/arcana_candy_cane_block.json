@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CC",
+  "CC"
+ ],
+ "key": {
+  "C": "aftrhrs:arcana_candy_cane"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_candy_cane_block"
+ }
+}

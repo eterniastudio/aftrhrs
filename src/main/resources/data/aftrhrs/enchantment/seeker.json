@@ -1,0 +1,22 @@
+{
+ "anvil_cost": 8,
+ "description": {
+  "translate": "enchantment.aftrhrs.seeker"
+ },
+ "effects": {},
+ "exclusive_set": "#aftrhrs:exclusive_set/archery",
+ "max_cost": {
+  "base": 75,
+  "per_level_above_first": 0
+ },
+ "max_level": 1,
+ "min_cost": {
+  "base": 25,
+  "per_level_above_first": 0
+ },
+ "slots": [
+  "mainhand"
+ ],
+ "supported_items": "#aftrhrs:enchantable/archery",
+ "weight": 1
+}

@@ -1,0 +1,761 @@
+# Feather pets: /pets (alias /pet) lists your Arcana creatures; pet cap, bond levels, revive with plushies,
+# and pets that follow you across worlds. /feather reload re-reads this file.
+# Pets are stored in plugins/Feather/data/pets.yml.
+
+cap:
+  # Living pets per player (pets that died don't count). Permission feather.pets.cap.<n> raises/lowers it
+  # (the highest one wins); feather.pets.cap.unlimited removes it.
+  default: 6
+  # Mounts take a slot too.
+  count-mounts: true
+  # Seconds between "you have too many pets" notices while someone keeps trying to tame.
+  notice-cooldown-seconds: 10
+
+# Pets that were tamed before this module existed (MythicMobs mobs listed under species with an owner) are added
+# to their owner's roster when they load. Pets over the cap stay; their owner just can't tame more.
+adopt-existing: true
+
+follow:
+  # After a teleport or world change, following pets (not ones told to stay) come along after this delay.
+  delay-ticks: 20
+  # A same-world teleport further than this also brings them along.
+  far-distance: 48
+  # Crossing worlds: "respawn" (the pet is spawned fresh next to you with its name, bond, health and owner,
+  # and the old entity removed) or "teleport" (Paper moves the entity itself; falls back to respawn if that fails).
+  cross-world: respawn
+  # How long to wait for an unloaded pet's chunk to load its entities before giving up.
+  load-timeout-ticks: 100
+
+bond:
+  # Bond XP needed for levels 0..5. The level is put on the pet as the MythicMobs variable caster.arcana_bond.
+  levels: [0, 100, 300, 600, 1000, 1500]
+  xp:
+    # Every minute a following pet spends within near-radius of its owner.
+    near-owner-per-minute: 3
+    near-radius: 16
+    # Feeding the pet its food (its heal item below), at most once per cooldown.
+    feed: 10
+    feed-cooldown-seconds: 60
+    # The owner kills a mob while a following pet is within the radius.
+    owner-kill: 2
+    owner-kill-radius: 16
+    owner-kill-cooldown-seconds: 3
+    owner-kill-hostile-only: true
+    # Upper limit for one featherpet{a=xp;amount=N} call from a MythicMobs skill.
+    mechanic-max: 25
+  level-up:
+    title: true
+    particles: true
+
+revive:
+  # Hold a dead pet's plushie and right-click the air to revive it (also from the /pets menu).
+  right-click-air: true
+  # Sneak + right-click a block with the plushie also revives (a plain right-click still places it).
+  sneak-right-click-block: true
+
+# Bond perks: what Feather itself adds as the bond grows (the pack's ability scaling comes on top).
+# level: the bond level that unlocks the perk (1-5), 0 turns it off. Perks show in each pet's /pets page.
+perks:
+  # Right-click your own pet with an empty hand to pet it (any bond level): a little bond XP, once per cooldown.
+  petting:
+    xp: 3
+    cooldown-seconds: 300
+    # true: only while sneaking. Sneak + right-click is the pack's stay/follow toggle, so the default is false.
+    sneak: false
+  # Hearts when petted, and a name color of your choice (the "Name Color" button in the pet's page).
+  affection:
+    level: 1
+    colors:
+      Rose: '#ff9ecb'
+      Peach: '#ffb98a'
+      Butter: '#ffe38a'
+      Mint: '#9ef0c0'
+      Sky: '#8fd3ff'
+      Lilac: '#c3a6ff'
+      Snow: '#f4f4ff'
+      Cocoa: '#c89b7b'
+  # No fall damage. A following pet that is stuck (hasn't moved for 10 s) farther than stuck-distance from you,
+  # or beyond follow.far-distance, is brought next to you (only while you stand on the ground).
+  sure-footed:
+    level: 2
+    stuck-distance: 20
+  # The pet heals pet-heal HP every 5 s within radius of you. If you drop below owner-below (a fraction of your
+  # max health) with it near, you get Regeneration I for owner-regen-seconds, at most once per owner-cooldown-seconds.
+  comfort:
+    level: 3
+    radius: 12
+    pet-heal: 1.0
+    owner-below: 0.3
+    owner-regen-seconds: 5
+    owner-cooldown-seconds: 300
+  # One free revive from the /pets menu (no plushie) every <hours> per pet. A plushie in hand still uses the plushie.
+  second-wind:
+    level: 4
+    hours: 24
+  # A gentle aura around the pet (a particle name, or none), a title after its name, and a celebration in chat.
+  devoted:
+    level: 5
+    title: Devoted
+    aura: END_ROD
+    # Also tell everyone online when a pet becomes devoted.
+    broadcast: false
+
+# The stable: park pets out of the world. Parked pets keep their name, bond and health, don't count toward the
+# cap and can't die. Permission feather.pets.stable.<n> sets a player's stable size (the highest wins);
+# feather.pets.stable.unlimited removes the limit.
+stable:
+  capacity: 9
+
+# The creature codex (/codex, also /tamingguide and /pets codex): every creature the mod has, undiscovered, seen or
+# (for the species below) tamed. Its text is guide.yml (taming) and codex.yml (everything else).
+codex:
+  enabled: true
+  # Being within this many blocks of a creature counts as seeing it (checked every scan-seconds).
+  seen-radius: 12
+  scan-seconds: 2
+  # Action bar note the first time you see a species.
+  seen-notice: true
+  # Rewards for the number of species tamed ("all" = every species that can be tamed). Each one is given once.
+  # message: replaces messages.codex.milestone (MiniMessage; <count>, <tamed>, <total>, <player>).
+  # commands: console commands, <player> is the player's name (e.g. 'give <player> minecraft:name_tag 1').
+  # firework: a harmless firework burst over the player.
+  milestones:
+    5: {firework: true}
+    10: {firework: true}
+    20: {firework: true}
+    all: {firework: true}
+  # Rewards for the number of rare looks found (color variants plus shinies, over all species), each once.
+  # Same keys as milestones (message: replaces messages.codex.variant-milestone; <count>, <found>, <player>).
+  variant-milestones:
+    3: {firework: true}
+    10: {firework: true}
+    25: {firework: true}
+
+# Rare looks, rolled when a creature is tamed or born. A color variant tints the creature's ModelEngine model at
+# runtime (the model and textures are never changed; the tint multiplies the texture, so light colors look best).
+# Without ModelEngine the variant still shows in /pets, the stable and the codex. A shiny sparkles now and then and
+# has a ✦ before its name; it stacks with a color variant. Both stay with the pet for life (death and revive, the
+# stable, renames, restarts).
+variants:
+  enabled: true
+  # Chance that a tame or birth gets one of its species' color variants (weights pick which). 0.05 = 1 in 20.
+  color-chance: 0.05
+  # Separate chance of a shiny. 0.00667 = about 1 in 150.
+  shiny-chance: 0.00667
+  shiny:
+    symbol: '✦'
+    # A simple Bukkit particle (no extra data) every every-seconds around a loaded shiny pet, or none.
+    particle: FIREWORK
+    every-seconds: 3
+    count: 2
+  # species.<MythicMobs id>.<key>: {name, tint: '#rrggbb', weight (default 1)}.
+  species:
+    ArcanaBeagle: {lemon: {name: Lemon, tint: '#FFE9AE'}, chocolate: {name: Chocolate, tint: '#C09274'}}
+    ArcanaBlackCat: {smoke: {name: Smoke, tint: '#D0D0DC'}, midnight: {name: Midnight, tint: '#AEBBF2'}, plum: {name: Plum, tint: '#D8B0E6'}}
+    ArcanaBurrowpip: {sandy: {name: Sandy, tint: '#FFE4B4'}, clay: {name: Clay, tint: '#E8AE96'}}
+    ArcanaCairnling: {mossy: {name: Mossy, tint: '#BEE2AE'}, basalt: {name: Basalt, tint: '#A2A2AE'}, rose-quartz: {name: Rose Quartz, tint: '#FFCCDA'}}
+    ArcanaCalicoKitten: {cream: {name: Cream, tint: '#FFF0CA'}, blue-calico: {name: Blue Calico, tint: '#CAD6F0'}}
+    ArcanaCloudlamb: {sunset: {name: Sunset, tint: '#FFCDB6'}, storm: {name: Storm, tint: '#BEC6D4'}, lavender: {name: Lavender, tint: '#E2D4FF'}}
+    ArcanaCorgi: {sable: {name: Sable, tint: '#D9AC80'}, blue-merle: {name: Blue Merle, tint: '#C4CFE2'}}
+    ArcanaDachshund: {dapple: {name: Dapple, tint: '#DACCBE'}, chocolate: {name: Chocolate, tint: '#B68E76'}}
+    ArcanaEmberkit: {ash: {name: Ash, tint: '#CEC6C6'}, soulfire: {name: Soulfire, tint: '#AEE8FF'}}
+    ArcanaSoulmander: {ember: {name: Ember, tint: '#FFD2B4'}, bone: {name: Bone, tint: '#ECE6DA'}}
+    ArcanaFumetail: {crimson: {name: Crimson, tint: '#FFC8C8'}, ash: {name: Ash, tint: '#D8D8D8'}}
+    ArcanaGlimmermoth: {luna: {name: Luna, tint: '#CCFFDA'}, rosy: {name: Rosy, tint: '#FFCCE8'}, dusk: {name: Dusk, tint: '#C6B8FF'}}
+    ArcanaGoldenRetriever: {cream: {name: Cream, tint: '#FFF4DA'}, red: {name: Red, tint: '#F0B496'}}
+    ArcanaHoneycub: {clover: {name: Clover, tint: '#FFF0B6'}, buckwheat: {name: Buckwheat, tint: '#D8AC80'}}
+    ArcanaHusky: {agouti: {name: Agouti, tint: '#DACCB6'}, red: {name: Red, tint: '#F0C4A6'}}
+    ArcanaHuskyCopper: {verdigris: {name: Verdigris, tint: '#BCE8D4'}, bronze: {name: Bronze, tint: '#DAAC86'}}
+    ArcanaKevin: {ginger: {name: Ginger, tint: '#FFCC96'}, grey: {name: Gray, tint: '#CCCCD4'}}
+    ArcanaLuna: {starlight: {name: Starlight, tint: '#E2EAFF'}, twilight: {name: Twilight, tint: '#D4C6FF'}}
+    ArcanaMagpip: {azure: {name: Azure, tint: '#BCDAFF'}, jade: {name: Jade, tint: '#BCF0D4'}}
+    # Feather 1.4 (creatures-land)
+    ArcanaCanopip: {golden: {name: Golden, tint: '#FFD99A'}, ashen: {name: Ashen, tint: '#D0CCCC'}}
+    ArcanaSporeling: {brown-cap: {name: Brown Cap, tint: '#D8B49A'}, glowcap: {name: Glowcap, tint: '#C6F0FF'}}
+    ArcanaBarkling: {birch: {name: Birch, tint: '#F4F0E2'}, autumn: {name: Autumn, tint: '#FFC896'}}
+    ArcanaHushwing: {moonlit: {name: Moonlit, tint: '#DAE2FF'}, ember: {name: Ember, tint: '#FFC6B0'}}
+    # Feather 1.4 (creatures-sea)
+    ArcanaShellpip: {pearl: {name: Pearl, tint: '#F4EEF4'}, kelp: {name: Kelp, tint: '#C6E2B6'}}
+    ArcanaRipplekit: {sable: {name: Sable, tint: '#B8A496'}, frost: {name: Frost, tint: '#E2ECF4'}}
+    ArcanaBubblefin: {sunset: {name: Sunset, tint: '#FFC8A6'}, lagoon: {name: Lagoon, tint: '#B6E8F0'}}
+    ArcanaDriftglow: {rose: {name: Rose, tint: '#FFC6DA'}, abyss: {name: Abyss, tint: '#AEB8E2'}}
+    # Creatures 2 (ocean)
+    ArcanaFloepup: {whitecoat: {name: Whitecoat, tint: '#F2F2EE'}, dusk: {name: Dusk, tint: '#C8BCB0'}}
+    ArcanaTidemane: {foam: {name: Foam, tint: '#E8F4F4'}, deep: {name: Deep, tint: '#9EB4D4'}}
+    ArcanaMaineCoon: {silver: {name: Silver, tint: '#DADEEA'}, red: {name: Red, tint: '#F0BC9E'}}
+    ArcanaMossbun: {autumn: {name: Autumn, tint: '#FFB878'}, frost: {name: Frost, tint: '#DAEDFF'}, blossom: {name: Blossom, tint: '#FFD4E2'}}
+    ArcanaPuddlepup: {tidepool: {name: Tidepool, tint: '#BCF0E2'}, muddy: {name: Muddy, tint: '#DAC4A6'}}
+    ArcanaRunebackTortoise: {desert: {name: Desert, tint: '#F0DAAE'}, coral: {name: Coral, tint: '#FFC6B6'}}
+    ArcanaSaintBernard: {mahogany: {name: Mahogany, tint: '#DAA48E'}, snow: {name: Snow, tint: '#F4F4FF'}}
+    ArcanaSkyfinRay: {sunset: {name: Sunset, tint: '#FFCCAE'}, abyss: {name: Abyss, tint: '#AEBEEA'}}
+    ArcanaSnowpeltOwlet: {barn: {name: Barn, tint: '#F0D4A6'}, snowy-grey: {name: Snowy Gray, tint: '#D4D8E2'}}
+    ArcanaTabbyCat: {silver: {name: Silver, tint: '#DADEEA'}, ginger: {name: Ginger, tint: '#FFCC96'}}
+    ArcanaWickling: {soul: {name: Soul, tint: '#BCF0FF'}, rose: {name: Rose, tint: '#FFCCD4'}}
+    ArcanaCinderImp: {soot: {name: Soot, tint: '#AEA6A6'}, blue-flame: {name: Blue Flame, tint: '#AED4FF'}}
+    ArcanaGeodeCrawler: {emerald: {name: Emerald, tint: '#B6F0C6'}, citrine: {name: Citrine, tint: '#FFEAA6'}}
+    ArcanaRimeWraith: {glacier: {name: Glacier, tint: '#B6E2FF'}, aurora: {name: Aurora, tint: '#CCFFE2'}}
+    ArcanaVoltWisp: {violet: {name: Violet, tint: '#DABCFF'}, teal: {name: Teal, tint: '#B6FFF0'}}
+    ArcanaCinderwingMount: {ember: {name: Ember, tint: '#FFBC96'}, soul: {name: Soul, tint: '#B6E2FF'}}
+    ArcanaDunebun: {snowshoe: {name: Snowshoe, tint: '#F4F4FF'}, cocoa: {name: Cocoa, tint: '#D4AC8E'}}
+    ArcanaSnowmuff: {arctic: {name: Arctic, tint: '#E2F0FF'}, caramel: {name: Caramel, tint: '#F0D4AE'}}
+    ArcanaTempestRocMount: {storm: {name: Storm, tint: '#BEC6D4'}, gold: {name: Gold, tint: '#FFE2A6'}}
+    ArcanaChorusling: {frost: {name: Frost, tint: '#D8E8FF'}, ember: {name: Ember, tint: '#FFD0B8'}}
+    ArcanaShulkling: {pearl: {name: Pearl, tint: '#E8E2F2'}, hallow: {name: Hallow, tint: '#FFD6EC'}}
+    # Pockie (pocket shark)
+    ArcanaPockie: {lantern: {name: Lantern, tint: '#C8F0D8'}, dusky: {name: Dusky, tint: '#C4BCD6'}}
+
+# Breeding: two of your own pets of the same species, both at bond min-bond or more, both set to Stay within
+# distance blocks of each other. Feed each its tame item (the codex's / guide.yml's, or breeding.items.<species>) within
+# feed-window-seconds; after delay-seconds of hearts a baby is born, tamed to you with a fresh bond. At your pet cap
+# the baby goes to the stable if it has room; if both are full, breeding is refused before any item is used.
+breeding:
+  enabled: true
+  min-bond: 3
+  distance: 4
+  feed-window-seconds: 60
+  delay-seconds: 3
+  # Each parent then rests this long before it can breed again.
+  cooldown-hours: 24
+  # Chance the baby takes a parent's color variant (when a parent has one); otherwise a normal roll.
+  inherit-chance: 0.5
+  # Shiny odds are multiplied by this when a parent is shiny.
+  shiny-multiplier: 2
+  # Species that never breed (one-of-a-kind pets), and whole kinds (pet, mount, hostile).
+  exclude: [ArcanaLuna, ArcanaKevin, ArcanaKitty, ArcanaClover, ArcanaLunaTwo, ArcanaOlive, ArcanaOzzy, ArcanaFrogGuy, ArcanaEmperorPenguin, ArcanaRockhopperPenguin, ArcanaEmperorPenguinChick, ArcanaRockhopperPenguinChick]
+  exclude-kinds: [mount, hostile]
+  # Optional: a different breeding item per species, e.g. ArcanaCorgi: COOKIE. Default: the tame item.
+  items: {}
+
+# "Work Here" (pet menu): the pet stays at that spot and works within radius blocks. While its chunk is loaded the
+# pack's job runs as usual; Feather does the rest: time its chunk was unloaded (you offline or far away) is caught
+# up when it loads again, and jobs the pack only does near you (live: owner-away) or not while staying
+# (live: always) are also done by Feather while it's loaded and you're not around. Never force-loads chunks.
+work:
+  enabled: true
+  radius: 8
+  # Blocks up and down from the spot that count.
+  vertical: 2
+  # At most this much work time is saved up (and caught up) at once.
+  max-hours: 24
+  # Catch-up work gets at most this much of each server tick.
+  tick-budget-ms: 2
+  # How often working pets that are loaded are checked.
+  live-check-seconds: 60
+  # After a chunk loads, wait this long (so the area around it has loaded too) before catching up.
+  load-delay-ticks: 40
+  # Each bond level makes a round this much faster (0.1 = 10% per level).
+  bond-speedup: 0.1
+  # You have to be this close to the pet to tell it to work.
+  order-range: 24
+  # live: owner-away counts the owner as away beyond this many blocks (a job can set its own owner-range).
+  owner-range: 16
+  # jobs.<species>: type crops | bloom | items; every-seconds: one round; live: always | owner-away | never.
+  #   crops: each round bone-meals per-round crops (wheat, carrots, potatoes, beetroot, stems, berries, cocoa) that
+  #          can still grow. Saplings are left alone.
+  #   bloom: bone meal on up to max-per-run grass blocks per catch-up (flowers).
+  #   items: one loot roll per round ("MATERIAL min-max weight") into the nearest chest or barrel in range; without
+  #          one the job waits (the time is kept, up to max-hours). eats: chance a round's catch is eaten.
+  #   needs: water (3+ water blocks next to the spot) or ground (natural ground under it).
+  #   farmhand: each round harvests and replants per-round ripe crops (vanilla and Feather farming's) and puts the
+  #          harvest into a chest or barrel within farming.yml farmhand.container-radius of the spot (else it waits).
+  #   guard: nothing for Feather to do (the MythicMobs pack guards the spot); listed so Work Here keeps the spot.
+  jobs:
+    ArcanaMossbun:
+      type: crops
+      every-seconds: 120
+      per-round: 4
+      live: always
+      description: grows the crops around it
+    ArcanaGlimmermoth:
+      type: bloom
+      every-seconds: 600
+      max-per-run: 6
+      live: always
+      description: spreads flowers on the grass around it
+    ArcanaBurrowpip:
+      type: items
+      every-seconds: 600
+      live: owner-away
+      owner-range: 10
+      needs: ground
+      description: digs up finds into a chest or barrel
+      loot: [FLINT 1-2 20, COAL 1-2 18, CLAY_BALL 1-3 16, IRON_NUGGET 1-3 14, COPPER_INGOT 1 12, GOLD_NUGGET 1-2 10,
+             LAPIS_LAZULI 1-2 4, AMETHYST_SHARD 1 3.5, EMERALD 1 2, DIAMOND 1 0.5]
+    ArcanaKevin:
+      type: items
+      every-seconds: 300
+      live: never
+      needs: water
+      eats: 0.25
+      description: fishes into a chest or barrel (and eats a few)
+      loot: [COD 1 55, SALMON 1 30, TROPICAL_FISH 1 10, PUFFERFISH 1 5]
+    ArcanaBlackCat:
+      type: items
+      every-seconds: 1200
+      live: owner-away
+      owner-range: 8
+      description: leaves its morning gifts in a chest or barrel
+      loot: [STRING 1-2 32, FEATHER 1-2 28, RABBIT_HIDE 1 22, RABBIT_FOOT 1 12, PHANTOM_MEMBRANE 1 6]
+    ArcanaCloudlamb:
+      type: items
+      every-seconds: 600
+      live: owner-away
+      owner-range: 16
+      description: sheds wool and string into a chest or barrel
+      loot: [WHITE_WOOL 1 1, STRING 2 1]
+    # Feather 1.4 farming (farming.yml)
+    ArcanaCanopip:
+      type: farmhand
+      every-seconds: 120
+      per-round: 4
+      live: always
+      description: harvests and replants ripe crops into a chest or barrel close by
+    ArcanaBarkling:
+      type: guard
+      live: never
+      description: guards this spot at night
+
+rename:
+  max-length: 24
+  # Allowed characters (regular expression, plain text only).
+  pattern: '^[\p{L}\p{N} _''.-]+$'
+
+# "<sound key> [volume] [pitch]" or "none".
+sounds:
+  error: block.note_block.bass 0.6 0.6
+  level-up: ui.toast.challenge_complete 0.7 1.3
+  fallen: block.bell.resonate 0.8 0.6
+  revive: item.totem.use 0.6 1.4
+  summon: entity.enderman.teleport 0.5 1.4
+  devoted: ui.toast.challenge_complete 0.8 1.6
+  stable-in: block.barrel.close 0.6 1.2
+  stable-out: block.barrel.open 0.6 1.2
+  codex-seen: item.book.page_turn 0.7 1.2
+  codex-milestone: entity.player.levelup 0.7 1.4
+  variant: block.amethyst_block.chime 0.8 1.3
+  shiny: entity.player.levelup 0.8 1.8
+  breed-feed: entity.generic.eat 0.6 1.3
+  born: entity.chicken.egg 0.8 1.2
+  work: block.composter.fill_success 0.7 1.2
+
+# Tameable MythicMobs creatures. kind: pet | mount | hostile. plush: the Oraxen plushie that revives it.
+# heal: its food (feeding it gives bond XP). Generated from MythicMobs/packs/Arcana/tools/gen_mm.py data.
+species:
+  ArcanaBeagle: {name: Beagle, kind: pet, plush: arcana_plush_beagle, heal: COOKED_RABBIT}
+  ArcanaBlackCat: {name: Black Cat, kind: pet, plush: arcana_plush_black_cat, heal: COOKED_COD}
+  ArcanaBurrowpip: {name: Burrowpip, kind: pet, plush: arcana_plush_burrowpip, heal: BEETROOT}
+  ArcanaCairnling: {name: Cairnling, kind: pet, plush: arcana_plush_cairnling, heal: AMETHYST_SHARD}
+  ArcanaCalicoKitten: {name: Calico Kitten, kind: pet, plush: arcana_plush_calico_kitten, heal: COOKED_COD}
+  ArcanaCloudlamb: {name: Cloudlamb, kind: pet, plush: arcana_plush_cloudlamb, heal: WHEAT}
+  ArcanaCorgi: {name: Corgi, kind: pet, plush: arcana_plush_corgi, heal: COOKIE}
+  ArcanaDachshund: {name: Dachshund, kind: pet, plush: arcana_plush_dachshund, heal: COOKED_CHICKEN}
+  ArcanaEmberkit: {name: Emberkit, kind: pet, plush: arcana_plush_emberkit, heal: SWEET_BERRIES}
+  ArcanaSoulmander: {name: Soulmander, kind: pet, plush: arcana_plush_soulmander, heal: BONE}
+  ArcanaFumetail: {name: Fumetail, kind: pet, plush: arcana_plush_fumetail, heal: WARPED_ROOTS}
+  ArcanaGlimmermoth: {name: Glimmermoth, kind: pet, plush: arcana_plush_glimmermoth, heal: GLOW_BERRIES}
+  ArcanaGoldenRetriever: {name: Golden Retriever, kind: pet, plush: arcana_plush_golden_retriever, heal: COOKED_CHICKEN}
+  ArcanaHoneycub: {name: Honeycub, kind: pet, plush: arcana_plush_honeycub, heal: SWEET_BERRIES}
+  ArcanaHusky: {name: Husky, kind: pet, plush: arcana_plush_husky, heal: COOKED_SALMON}
+  ArcanaHuskyCopper: {name: Copper Husky, kind: pet, plush: arcana_plush_husky_copper, heal: COOKED_SALMON}
+  ArcanaLuna: {name: Luna, kind: pet, plush: arcana_plush_luna, heal: COOKED_COD}
+  ArcanaKevin: {name: Kevin, kind: pet, plush: arcana_plush_kevin, heal: COOKED_COD}
+  ArcanaKitty: {name: Kitty, kind: pet, plush: arcana_plush_kitty, heal: COOKED_SALMON}
+  ArcanaClover: {name: Clover, kind: pet, plush: arcana_plush_clover, heal: COOKED_COD}
+  ArcanaLunaTwo: {name: Luna But The Second One, kind: pet, plush: arcana_plush_luna_two, heal: COOKED_COD}
+  ArcanaOlive: {name: Olive, kind: pet, plush: arcana_plush_olive, heal: COOKED_SALMON}
+  ArcanaOzzy: {name: Ozzy, kind: pet, plush: arcana_plush_ozzy, heal: COOKED_COD}
+  ArcanaFrogGuy: {name: Frog Guy, kind: pet, plush: arcana_plush_frog_guy, heal: SWEET_BERRIES}
+  ArcanaMagpip: {name: Magpip, kind: pet, plush: arcana_plush_magpip, heal: WHEAT_SEEDS}
+  ArcanaMaineCoon: {name: Maine Coon, kind: pet, plush: arcana_plush_maine_coon, heal: COOKED_SALMON}
+  ArcanaMossbun: {name: Mossbun, kind: pet, plush: arcana_plush_mossbun, heal: CARROT}
+  ArcanaPuddlepup: {name: Puddlepup, kind: pet, plush: arcana_plush_puddlepup, heal: COOKED_SALMON}
+  ArcanaRunebackTortoise: {name: Runeback Tortoise, kind: pet, plush: arcana_plush_runeback_tortoise, heal: DRIED_KELP}
+  ArcanaSaintBernard: {name: Saint Bernard, kind: pet, plush: arcana_plush_saint_bernard, heal: COOKED_BEEF}
+  ArcanaSkyfinRay: {name: Skyfin Ray, kind: pet, plush: arcana_plush_skyfin_ray, heal: TROPICAL_FISH}
+  ArcanaSnowpeltOwlet: {name: Snowpelt Owlet, kind: pet, plush: arcana_plush_snowpelt_owlet, heal: COOKED_COD}
+  ArcanaTabbyCat: {name: Tabby Cat, kind: pet, plush: arcana_plush_tabby_cat, heal: COOKED_SALMON}
+  ArcanaWickling: {name: Wickling, kind: pet, plush: arcana_plush_wickling, heal: HONEYCOMB}
+  # Feather 1.4 (creatures-land)
+  ArcanaCanopip: {name: Canopip, kind: pet, plush: arcana_plush_canopip, heal: APPLE}
+  ArcanaSporeling: {name: Sporeling, kind: pet, plush: arcana_plush_sporeling, heal: RED_MUSHROOM}
+  ArcanaBarkling: {name: Barkling, kind: pet, plush: arcana_plush_barkling, heal: BONE_MEAL}
+  ArcanaHushwing: {name: Hushwing, kind: pet, plush: arcana_plush_hushwing, heal: GLOW_LICHEN}
+  ArcanaShellpip: {name: Shellpip, kind: pet, plush: arcana_plush_shellpip, heal: DRIED_KELP}
+  ArcanaRipplekit: {name: Ripplekit, kind: pet, plush: arcana_plush_ripplekit, heal: COOKED_COD}
+  ArcanaBubblefin: {name: Bubblefin, kind: pet, plush: arcana_plush_bubblefin, heal: SEAGRASS}
+  ArcanaDriftglow: {name: Driftglow, kind: pet, plush: arcana_plush_driftglow, heal: GLOW_INK_SAC}
+  # Creatures 2 (ocean); no plushie item yet (the plush lookup is null-safe)
+  ArcanaFloepup: {name: Floepup, kind: pet, plush: arcana_plush_floepup, heal: SALMON}
+  ArcanaTidemane: {name: Tidemane, kind: mount, plush: arcana_plush_tidemane, heal: KELP}
+  ArcanaCinderImp: {name: Cinder Imp, kind: hostile, plush: arcana_plush_cinder_imp, heal: BLAZE_POWDER}
+  ArcanaGeodeCrawler: {name: Geode Crawler, kind: hostile, plush: arcana_plush_geode_crawler, heal: AMETHYST_SHARD}
+  ArcanaRimeWraith: {name: Rime Wraith, kind: hostile, plush: arcana_plush_rime_wraith, heal: SNOWBALL}
+  ArcanaVoltWisp: {name: Volt Wisp, kind: hostile, plush: arcana_plush_volt_wisp, heal: REDSTONE}
+  ArcanaCinderwingMount: {name: Cinderwing Phoenix, kind: mount, plush: arcana_plush_cinderwing_phoenix, heal: GOLDEN_CARROT}
+  ArcanaDunebun: {name: Dunebun, kind: mount, plush: arcana_plush_dunebun, heal: CARROT}
+  ArcanaSnowmuff: {name: Snowmuff, kind: mount, plush: arcana_plush_snowmuff, heal: HAY_BLOCK}
+  ArcanaTempestRocMount: {name: Tempest Roc, kind: mount, plush: arcana_plush_tempest_roc, heal: GOLDEN_CARROT}
+  ArcanaChorusling: {name: Chorusling, kind: pet, plush: arcana_plush_chorusling, heal: POPPED_CHORUS_FRUIT}
+  ArcanaShulkling: {name: Shulkling, kind: pet, plush: arcana_plush_shulkling, heal: CHORUS_FRUIT}
+  ArcanaPockie: {name: Pockie, kind: pet, plush: arcana_plush_pockie, heal: DRIED_KELP}
+  # Penguins: raised from chicks (a chick's record becomes the adult's when it grows up); the chicks share the plushie
+  ArcanaEmperorPenguin: {name: Emperor Penguin, kind: pet, plush: arcana_plush_emperor_penguin, heal: COD}
+  ArcanaRockhopperPenguin: {name: Rockhopper Penguin, kind: pet, plush: arcana_plush_rockhopper_penguin, heal: COD}
+  ArcanaEmperorPenguinChick: {name: Emperor Penguin Chick, kind: pet, plush: arcana_plush_emperor_penguin, heal: COD}
+  ArcanaRockhopperPenguinChick: {name: Rockhopper Penguin Chick, kind: pet, plush: arcana_plush_rockhopper_penguin, heal: COD}
+
+# MiniMessage, with Feather's palette tags (<accent>, <text>, <muted>, <dim>, <good>, <bad>, <warn>, <sky>) and <prefix>.
+# Every pet message can use <pet> (its name), <species>, <level> and <xp>. "" silences a message.
+messages:
+  world-names:
+    overworld: the Overworld
+    nether: the Nether
+    end: the End
+  tamed: '<prefix><good><pet></good> <muted>joined your pets</muted> <dim>(<count>/<cap>) · Shift + right-click: stay/follow · /pets'
+  # the same, when it is the first of its kind in the player's codex (<tamed>/<tameable>: the codex count)
+  tamed-first-kind: '<prefix><good><pet></good> <muted>joined your pets</muted> <dim>(<count>/<cap>)</dim> <accent>✎</accent> <muted>new in your codex</muted> <good><tamed>/<tameable></good> <dim>· Shift + right-click: stay/follow · /pets'
+  data-error: '<prefix><bad>Pets are unavailable right now.</bad> <muted>Please let a staff member know.'
+  guard:
+    protected: '<muted><pet> belongs to <text><owner></text>. You can''t hurt it.'
+  cap:
+    reached: '<prefix><bad>You have too many pets (<cap>).</bad> <muted>Release one with</muted> <text>/pets</text> <muted>to make room.'
+    # the action bar for further tries while the chat notice above is on its cooldown ("" turns it off)
+    reached-bar: '<bad>Pet limit reached</bad> <muted>(<cap>) · /pets to release one'
+  bond:
+    level-up: '<prefix><accent><pet></accent> <muted>trusts you more: bond level</muted> <accent><level></accent><muted>!'
+    level-up-title: '<gradient:#c3a6ff:#8fd3ff>Bond Level <level></gradient>'
+    level-up-subtitle: '<text><pet> <muted>feels closer to you'
+  fallen:
+    - '<prefix><bad><pet> died</bad> <muted>at</muted> <text><x>, <y>, <z></text> <muted>in <world>.'
+    - '<dim>   Hold its <plush> and right-click the air to bring it back, or use /pets.'
+  revive:
+    done: '<prefix><good><pet> is back by your side!'
+    not-fallen: '<prefix><muted><pet> is alive and well.'
+    at-cap: '<prefix><bad>You have too many pets (<cap>) to bring <pet> back.</bad> <muted>Release one first.'
+    need-plushie: '<prefix><muted>You need a <text><species></text> plushie to bring <pet> back.'
+    unavailable: '<prefix><bad><pet> can''t be brought back right now.'
+    failed: '<prefix><bad>Something went wrong bringing <pet> back. Your plushie was returned.'
+  follow:
+    caught-up: '<muted><text><count></text> pet(s) caught up with you.'
+  summon:
+    arrived: '<good><pet></good> <muted>came running.'
+    near: '<muted><pet> is right here.'
+    ridden: '<prefix><muted>Someone else is riding <pet>.'
+    failed: '<prefix><bad><pet> couldn''t reach you.</bad> <muted>Try again in a moment.'
+    none: '<prefix><muted>No following pets to call. Pets told to stay keep waiting.'
+    busy: '<muted><pet> is already on its way.'
+  stay:
+    not-loaded: '<prefix><muted><pet> is too far away to hear you. Summon it first.'
+  rename:
+    title: '<accent>Rename <pet>'
+    body: '<muted>Pick a new name (up to <max> letters). Leave it empty to use the species name.'
+    input: '<muted>Name'
+    save: '<good>Save'
+    reset: '<muted>Use the species name'
+    invalid: '<bad>Letters, numbers, spaces and _ . '' - only, up to <max> characters.'
+    tag-invalid: '<prefix><bad>That name can''t be used.</bad> <muted>Letters, numbers, spaces and _ . '' - only. <pet> keeps its name.'
+    done: '<prefix><muted>Your pet is now called</muted> <text><pet></text><muted>.'
+  release:
+    title: '<bad>Release <pet>?'
+    body: '<text><pet></text> <muted>will go back to the wild. Anyone can tame it again, and its bond is lost. This can''t be undone.'
+    body-fallen: '<muted>Forget</muted> <text><pet></text><muted>? You won''t be able to revive it. This can''t be undone.'
+    body-stabled: '<text><pet></text> <muted>will leave your stable and go back to the wild. Its bond is lost. This can''t be undone.'
+    busy: '<prefix><muted><pet> is busy right now. Try again in a moment.'
+    confirm: '<bad>Release'
+    cancel: '<muted>Keep it'
+    done: '<prefix><muted>Goodbye, <pet>.'
+  gui:
+    title: '<dark_gray>Pets · <count>/<cap>'
+    empty: '<muted>No pets yet'
+    empty-lore:
+      - '<dim>Tame an Arcana creature with its favorite'
+      - '<dim>treat. The creature codex (/codex) knows which.'
+    info: '<accent>Your pets'
+    info-lore:
+      - '<muted>Living pets:</muted> <text><count>/<cap>'
+      - '<dim>Pets that died don''t take a slot.'
+      - ''
+      - '<dim>Bond grows when your pet follows you,'
+      - '<dim>when you feed it and when you fight together.'
+    summon-all: '<sky>Call Everyone'
+    summon-all-lore: '<muted>Every pet that isn''t told to stay comes to you.'
+    pet-name: '<text><pet>'
+    pet-name-fallen: '<dim>✝ <pet>'
+    pet-species: '<muted><species>'
+    pet-bond: '<muted>Bond</muted> <accent>Lv <level></accent> <bar> <progress>'
+    bond-progress: '<dim><xp>/<next>'
+    bond-max: '<accent>max'
+    pet-health: '<muted>Health</muted> <bad>❤</bad> <text><health>/<max>'
+    pet-following: '<good>● Following'
+    pet-staying: '<warn>● Staying'
+    pet-working: '<sky>● Working</sky> <muted>at <x>, <y>, <z> in <world></muted><waiting>'
+    pet-variant: '<muted>Look</muted> <look>'
+    pet-where: '<muted>Where</muted> <where>'
+    where-near: '<text><distance> blocks away'
+    where-world: '<text>in <world>'
+    where-far: '<text>in <world> <dim>(far away)'
+    pet-actions:
+      - ''
+      - '<sky>Left-click</sky> <muted>· actions'
+      - '<accent>Right-click</accent> <muted>· call it to you'
+    pet-fallen:
+      - '<bad>✝ Died</bad> <muted>at <x>, <y>, <z> in <world>'
+    pet-actions-fallen:
+      - ''
+      - '<sky>Left-click</sky> <muted>· actions'
+      - '<good>Right-click</good> <muted>· revive with your <species> plushie'
+    pet-actions-fallen-no-plush:
+      - ''
+      - '<sky>Left-click</sky> <muted>· actions'
+      - '<dim>A <species> plushie brings it back.'
+    pet-actions-fallen-free:
+      - ''
+      - '<sky>Left-click</sky> <muted>· actions'
+      - '<good>Right-click</good> <muted>· free revive (Second Wind)'
+    pet-perks: '<muted>Perks</muted> <text><count></text> <dim>· next:</dim> <perk> <dim>(Lv <perk-level>)'
+    pet-perks-all: '<muted>Perks</muted> <accent>all <count> unlocked'
+    stable: '<warn>⌂</warn> <text>Stable'
+    stable-lore:
+      - '<muted>Parked pets:</muted> <text><count>/<capacity>'
+      - '<dim>Parked pets don''t take a slot and'
+      - '<dim>can''t get hurt.'
+  dialog:
+    title: '<accent><pet>'
+    body:
+      - '<muted><species> ·</muted> <accent>bond level <level></accent> <bar> <progress>'
+      - '<state> <muted>·</muted> <where>'
+    body-fallen:
+      - '<muted><species> ·</muted> <accent>bond level <level></accent> <bar> <progress>'
+      - '<bad>Died</bad> <muted>at <x>, <y>, <z> in <world>.'
+    state-following: '<good>Following'
+    state-staying: '<warn>Staying'
+    state-working: '<sky>Working</sky> <muted>at <x>, <y>, <z></muted><waiting>'
+    variant: '<muted>Look:</muted> <look>'
+    work: '<sky>⚒</sky> <text>Work Here'
+    work-tooltip: '<muted>Stays here and works within <radius> blocks, even while you''re away.</muted><newline><job>'
+    summon: '<sky>➶</sky> <text>Call To Me'
+    summon-tooltip: '<muted>Brings it to you, even from another world'
+    stay: '<warn>■</warn> <text>Stay'
+    follow: '<good>▶</good> <text>Follow'
+    stay-tooltip: '<muted>Same as Shift + right-click on it'
+    revive: '<good>✚</good> <text>Revive'
+    revive-tooltip: '<muted>Uses one <species> plushie'
+    revive-tooltip-missing: '<bad>You need a <species> plushie'
+    rename: '<warn>✎</warn> <text>Rename'
+    rename-tooltip: '<muted>Give it a name'
+    release: '<bad>✕</bad> <text>Release'
+    release-tooltip: '<muted>Let it go (frees a slot)'
+    revive-tooltip-free: '<good>Free revive (Second Wind), no plushie needed'
+    stable-in: '<warn>⌂</warn> <text>Send to Stable'
+    stable-in-tooltip: '<muted>Parks it safely and frees a slot (<count>/<capacity> in the stable)'
+    stable-out: '<good>⌂</good> <text>Bring Out'
+    stable-out-tooltip: '<muted>Brings it next to you (needs a free slot)'
+    body-stabled:
+      - '<muted><species> ·</muted> <accent>bond level <level></accent> <bar> <progress>'
+      - '<warn>In the stable.</warn> <muted>Safe and sound.'
+    color: '<accent>✿</accent> <text>Name Color'
+    color-tooltip: '<muted>Pick the color of its name'
+    codex: '<accent>✎</accent> <text>View in Codex'
+    codex-tooltip: '<muted>The <species> page of the creature codex (/codex)'
+  color:
+    title: '<accent>Name color for <pet>'
+    body: '<muted>Pick a color for <pet>''s name.'
+    none: '<muted>No color'
+    done: '<prefix><muted>Say hi to</muted> <pet><muted>!'
+  perks:
+    line-unlocked: '<good>●</good> <text><perk></text> <dim>Lv <perk-level> ·</dim> <muted><description>'
+    line-locked: '<dim>○ Lv <perk-level> <perk></dim>'
+    next: '<muted>Next:</muted> <text><perk></text> <muted>at bond level <perk-level></muted> <dim>(<xp> XP to go)'
+    all-unlocked: '<accent>Every perk unlocked.'
+    unlocked: '<prefix><accent><pet></accent> <muted>unlocked a perk:</muted> <text><perk></text> <dim>· <description>'
+    petted: '<text><pet></text> <muted>loves the attention</muted> <bad>❤'
+    petted-xp: '<text><pet></text> <muted>loves the attention</muted> <bad>❤</bad> <dim>+<amount> bond'
+    affection:
+      name: Affection
+      description: hearts when petted, pick a name color
+    sure-footed:
+      name: Sure-footed
+      description: no fall damage, catches up when stuck
+    comfort:
+      name: Comfort
+      description: heals near you, comforts you when you're hurt
+      owner: '<text><pet></text> <muted>comforts you</muted> <bad>❤'
+    second-wind:
+      name: Second Wind
+      description: one free revive a day
+      used: '<prefix><good><pet> is back by your side!</good> <muted>(free revive, Second Wind)'
+    devoted:
+      name: Devoted
+      description: an aura and a title
+      suffix: ' <dim>·</dim> <gradient:#c3a6ff:#8fd3ff><title></gradient>'
+      celebration:
+        - '<prefix><gradient:#c3a6ff:#8fd3ff>✦ <pet> is now <title>! ✦</gradient>'
+        - '<muted>   Bond level 5: every perk is yours. Thank you for taking such good care of it.'
+      broadcast: '<prefix><text><player></text><muted>''s</muted> <pet> <muted>is now</muted> <gradient:#c3a6ff:#8fd3ff><title></gradient><muted>!'
+  stable:
+    title: '<warn>⌂</warn> <text>Stable <dim>· <count>/<capacity>'
+    body:
+      - '<muted>Parked pets are safe here and don''t take a pet slot.'
+      - '<muted>Click one to bring it out, rename it or release it. Bringing one out needs a free slot (</muted><text><active>/<cap></text><muted>).'
+    body-empty:
+      - '<muted>Nobody in the stable yet.'
+      - '<muted>Open a pet in</muted> <text>/pets</text> <muted>and press</muted> <text>Send to Stable</text> <muted>to park it here.'
+    entry: '<text><pet> <dim>· Lv <level>'
+    entry-tooltip: '<muted><species> · bond level <level></muted><newline><good>Click for options'
+    in: '<prefix><text><pet></text> <muted>is resting in the stable (<count>/<capacity>).'
+    out: '<prefix><good><pet></good> <muted>left the stable and is by your side.'
+    in-stable: '<prefix><muted><pet> is in the stable. Bring it out from</muted> <text>/pets stable</text><muted>.'
+    already: '<prefix><muted><pet> is already in the stable.'
+    fallen: '<prefix><bad><pet> has died.</bad> <muted>Revive it before sending it to the stable.'
+    full: '<prefix><bad>Your stable is full (<capacity>).</bad> <muted>Bring a pet out first.'
+    busy: '<prefix><muted><pet> is on its way to you. Try again in a moment.'
+    breeding: '<prefix><muted><pet> has a baby on the way. Try again in a moment.'
+    too-fast: '<prefix><muted>Give <pet> a moment to settle in.'
+    ridden: '<prefix><muted>Someone is riding <pet>. Try again once they get off.'
+    dismount: '<prefix><muted>Get off <pet> first.'
+    at-cap: '<prefix><bad>You have too many pets out (<cap>).</bad> <muted>Send one to the stable or release one first.'
+    unavailable: '<prefix><bad><pet> can''t come out right now.'
+    failed: '<prefix><bad>Something went wrong bringing <pet> out. It is still in the stable.'
+    not-yours: '<prefix><bad>That isn''t your pet.'
+    not-stabled: '<prefix><muted><pet> isn''t in the stable.'
+  codex:
+    # <seen>/<total>: creatures found of every creature in the codex. <tamed>/<tameable>: tamed of those that can be tamed.
+    title: '<accent>✎</accent> <text>Creature Codex <dim>· <seen>/<total>'
+    disabled: '<prefix><muted>The creature codex is turned off on this server.'
+    bestiary-tab: '<warn>❦</warn> <text>Bestiary Pages'
+    bestiary-tab-tooltip: '<muted>Wild creatures seen, harvested and slain,</muted><newline><muted>with coin rewards for every finished page.'
+    body:
+      - '<muted>Seen</muted> <text><seen>/<total></text>  <dim>·</dim>  <muted>Tamed</muted> <good><tamed>/<tameable></good>'
+      - '<dim>Get close to a creature to add it. Tame it to fill in its page.'
+    next-milestone: '<muted>Next reward at</muted> <text><count></text> <muted>tamed (<left> to go).'
+    search-label: '<muted>Search by name, place or job'
+    search: '<sky>⌕</sky> <text>Search'
+    search-tooltip: '<muted>Type in the box above, then press this'
+    search-title: '<sky>⌕</sky> <text>"<query>" <dim>· <count>'
+    search-none: '<muted>Nothing in the codex matches "<query>".'
+    category-button: '<icon><text><name></text> <dim><seen>/<count>'
+    category-tooltip: '<muted><blurb>'
+    category-title: '<icon><text><b><name></b> <dim>· <seen>/<count>'
+    realm-button: '<sky>◆</sky> <text><name></text> <dim><seen>/<count>'
+    realm-tooltip: '<muted>Every creature of <name>'
+    how-to: '<good>?</good> <text>How Taming Works'
+    how-to-tooltip: '<muted>Tame items, hearts, stay and follow'
+    pet-care: '<accent>❤</accent> <text>Pet Care'
+    pet-care-tooltip: '<muted>Bond levels, /pets and plushie revives'
+    previous: '<muted>◀</muted> <text>Previous'
+    next: '<text>Next</text> <muted>▶'
+    entry-tamed: '<color><name></color> <good>✔'
+    entry-seen: '<text><name>'
+    entry-unknown: '<dim>???'
+    tooltip-tamed: '<muted><kind> ·</muted> <good>tamed</good><newline><muted><job>'
+    tooltip-seen: '<muted><kind> · seen, not tamed yet</muted><newline><muted>Tame it with</muted> <text><tame>'
+    tooltip-wild-seen: '<muted><kind> ·</muted> <text><danger></text><newline><muted><habitat>'
+    tooltip-unknown: '<dim>Not discovered yet.</dim><newline><muted>Lives in:</muted> <text><habitat>'
+    page-title: '<color><b><name></b></color> <dim>· <kind>'
+    page-title-unknown: '<dim><b>???</b>'
+    page-tamed:
+      - '<muted><kind> ·</muted> <good>✔ Tamed'
+      - ''
+      - '<dim>Job</dim>  <text><job>'
+      - '<dim>Lives in</dim>  <text><habitat>'
+      - '<dim>Tame with</dim>  <text><tame></text> <dim>· <odds>'
+      - '<dim>Favorite food</dim>  <text><heal>'
+      - '<accent>✦ Bond:</accent> <muted><bond>'
+    page-seen:
+      - '<muted><kind> ·</muted> <warn>Seen, not tamed yet'
+      - ''
+      - '<dim>Job</dim>  <text><job>'
+      - '<dim>Lives in</dim>  <text><habitat>'
+      - '<dim>Tame with</dim>  <text><tame></text> <dim>· <odds>'
+      - '<dim>Favorite food</dim>  <text>???'
+      - '<accent>✦ Bond:</accent> <muted><bond>'
+    page-unknown:
+      - '<dim>You haven''t met this creature yet.'
+      - ''
+      - '<dim>Lives in</dim>  <text><habitat>'
+    # Creatures that can't be tamed (wildlife, monsters, bosses).
+    page-wild:
+      - '<muted><kind> ·</muted> <text><danger>'
+      - ''
+      - '<text><about>'
+      - '<dim>Lives in</dim>  <text><habitat>'
+      - '<dim>What it does</dim>  <text><behavior>'
+    page-wild-unknown:
+      - '<dim>You haven''t met this creature yet.'
+      - ''
+      - '<dim>Lives in</dim>  <text><habitat>'
+    page-stats: '<dim>Health</dim> <text><health></text>  <dim>Attack</dim> <text><attack></text>  <dim>Armor</dim> <text><armor></text>  <dim>XP</dim> <text><xp>'
+    page-drops: '<dim>Drops</dim>  <text><list>'
+    page-summon: '<dim>Summon</dim>  <text><item></text> <muted>on a Summoning Altar in</muted> <text><where>'
+    page-phases-title: '<accent>✦ The fight'
+    page-phase: '<dim>•</dim> <muted><line>'
+    page-forms: '<dim>Also seen as</dim>  <text><list>'
+    page-bestiary: '<warn>❦</warn> <dim>Bestiary</dim>  <muted>harvested</muted> <text><harvested></text> <dim>·</dim> <muted>slain</muted> <text><slain></text> <dim>· <page>'
+    seen-new: '<accent>✎</accent> <muted>New in your codex:</muted> <text><name></text> <dim>(<seen>/<total> seen)'
+    # a pet that grew up into a new kind, or a bred baby (a tame says it in tamed-first-kind)
+    tamed-new: '<prefix><accent>✎</accent> <text><name></text> <muted>tamed for the first time. Codex:</muted> <good><tamed>/<tameable></good><muted>.'
+    milestone: '<prefix><gradient:#c3a6ff:#8fd3ff>✦ Codex milestone: <count> creatures tamed! ✦</gradient>'
+    milestone-all: '<prefix><gradient:#c3a6ff:#8fd3ff>✦ Codex complete: you have tamed every creature! ✦</gradient>'
+    variant-new: '<prefix><accent>✎</accent> <muted>New look in your codex:</muted> <text><variant> <name></text> <dim>(variants <found>/<of>)'
+    variant-milestone: '<prefix><gradient:#c3a6ff:#8fd3ff>✦ Codex milestone: <count> rare looks found! ✦</gradient>'
+    variants-summary: '<muted>Rare looks</muted> <text><found>/<total></text>  <dim>·</dim>  <muted>Shinies</muted> <text><symbol> <shinies>'
+    tooltip-variants: '<muted>Variants <text><found>/<total></text></muted> <shiny>'
+    page-variants:
+      - ''
+      - '<dim>Variants</dim>  <text><found>/<total></text>  <list>'
+      - '<dim>Shiny</dim>  <shiny>'
+    variant-found: '<variant>'
+    variant-unknown: '<dim>???'
+    variant-separator: '<dim> · '
+    variant-none: '<dim>none'
+    shiny-found: '<#ffe38a><symbol> found'
+    shiny-unknown: '<dim>???'
+  variants:
+    shiny-label: '<#ffe38a><symbol> Shiny'
+    shiny-word: Shiny
+    found-color: '<prefix><muted>A rare look:</muted> <pet> <muted>is</muted> <variant><muted>!'
+    found-shiny:
+      - '<prefix><gradient:#ffe38a:#ffb98a><symbol> A shiny! <symbol></gradient>'
+      - '<muted>   <pet> sparkles. Only about one in 150 looks like this.'
+  breeding:
+    excluded: '<prefix><muted><species> can''t have babies.'
+    need-stay: '<prefix><muted>Tell both pets to</muted> <text>Stay</text> <muted>close together, then feed each a</muted> <text><item></text> <muted>to breed them.'
+    need-bond: '<prefix><muted><pet> needs bond level</muted> <text><bond></text> <muted>to breed.'
+    resting: '<prefix><muted><pet> is resting. It can breed again in</muted> <text><time></text><muted>.'
+    no-room: '<prefix><bad>No room for a baby:</bad> <muted>your pets (<count>/<cap>) and your stable (<stabled>/<capacity>) are full.'
+    fed: '<bad>❤</bad> <text><pet></text> <muted>is in the mood. Feed another staying <species> next to it.'
+    starting: '<bad>❤</bad> <text><pet></text> <muted>and</muted> <text><partner></text> <muted>are getting close...'
+    failed: '<prefix><muted>The pets moved apart. Try again with both staying close together.'
+    spawn-failed: '<prefix><bad>Something went wrong.</bad> <muted>No baby this time; the parents can try again.'
+    refunded: '<prefix><muted>You got your <text><count>x <item></text> back.'
+    born: '<prefix><good>A baby <species> was born!</good> <muted>It''s yours (<count>/<cap>). Bond starts fresh.'
+    born-stable: '<prefix><good>A baby <species> was born!</good> <muted>You''re at your pet cap, so it''s waiting in the stable (<stabled>/<capacity>).'
+    line-ready: '<bad>❤</bad> <muted>Can breed: two staying <species> close together, a</muted> <text><item></text> <muted>each.'
+    line-resting: '<dim>❤ Resting after a baby (<time> left).'
+    line-bond: '<dim>❤ Breeds at bond level <bond>.'
+  work:
+    disabled: '<prefix><muted>Pets can''t work here right now.'
+    too-far: '<prefix><muted>Stand near <pet> to tell it where to work.'
+    started: '<prefix><good><pet></good> <muted>works here now (within <radius> blocks of</muted> <text><x>, <y>, <z></text><muted>). <job>'
+    caught-up: '<prefix><text><pet></text> <muted>worked while you were away:</muted> <result><muted>.'
+    result-crops: '<good><count></good> <muted>crop growth(s)'
+    result-bloom: '<good><count></good> <muted>flower patch(es)'
+    result-items: '<good><count></good> <muted>item(s) in the chest'
+    result-harvest: '<good><count></good> <muted>crop(s) harvested into the chest'
+    offline-job: '<muted>While you''re away it</muted> <text><job></text><muted>.'
+    no-offline-job: '<dim>Its job only works while you''re around, so it just keeps watch while you''re away.'
+    waiting:
+      no-container: ' <warn>(waiting: no chest or barrel nearby)'
+      container-full: ' <warn>(waiting: the chest is full)'
+      needs-water: ' <warn>(waiting: needs water next to it)'
+      needs-ground: ' <warn>(waiting: needs natural ground)'
+  admin:
+    usage: '<prefix><muted>Usage:</muted> <text>/pets admin setbond <player> <level> [pet name]</text><muted>,</muted> <text>codexreset <player></text><muted>,</muted> <text>nextvariant <player> <variant|none> [shiny]</text><muted>,</muted> <text>setvariant <player> <variant|none> <shiny|plain> [pet]</text><muted>,</muted> <text>breedreset <player></text><muted>,</muted> <text>worktime <player> <minutes></text> <muted>or</muted> <text>workinfo <player>'
+    setbond: '<prefix><muted>Set the bond of</muted> <text><count></text> <muted>pet(s) of <player> to level</muted> <accent><level></accent><muted>.'
+    codexreset: '<prefix><muted>Cleared the codex of</muted> <text><player></text><muted>.'
+    nextvariant: '<prefix><muted>The next tame or birth of</muted> <text><player></text> <muted>rolls</muted> <text><variant></text><muted>, <shiny>.'
+    setvariant: '<prefix><muted>Set the look of</muted> <text><count></text> <muted>pet(s) of <player>.'
+    breedreset: '<prefix><muted>Breeding cooldowns of</muted> <text><player></text> <muted>reset.'
+    worktime: '<prefix><muted>Added</muted> <text><minutes></text> <muted>minutes of work to</muted> <text><count></text> <muted>working pet(s) of <player>:</muted> <text><pets>'
+    workinfo: '<prefix><text><player></text> <muted>has</muted> <text><count></text> <muted>working pet(s).'
+    data-error: '<prefix><bad>data/pets.yml could not be read.</bad> <muted>Pets are off until it is fixed and the server restarts. See the console.'

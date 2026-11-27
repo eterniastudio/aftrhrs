@@ -1,0 +1,1123 @@
+{
+ "model": {
+  "type": "minecraft:condition",
+  "property": "minecraft:using_item",
+  "on_false": {
+   "type": "minecraft:composite",
+   "models": [
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_0",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/wood"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/bone"
+       }
+      },
+      {
+       "when": "bamboo",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/bamboo"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/copper"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/iron"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/netherite"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/limb/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/longbow/limb/iron"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_1",
+     "cases": [
+      {
+       "when": "wood",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/wood"
+       }
+      },
+      {
+       "when": "stone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/stone"
+       }
+      },
+      {
+       "when": "flint",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/flint"
+       }
+      },
+      {
+       "when": "bone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/bone"
+       }
+      },
+      {
+       "when": "bamboo",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/bamboo"
+       }
+      },
+      {
+       "when": "leather",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/leather"
+       }
+      },
+      {
+       "when": "copper",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/copper"
+       }
+      },
+      {
+       "when": "deer_hide",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/deer_hide"
+       }
+      },
+      {
+       "when": "tufthorn_hide",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/tufthorn_hide"
+       }
+      },
+      {
+       "when": "iron",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+       }
+      },
+      {
+       "when": "gold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/gold"
+       }
+      },
+      {
+       "when": "obsidian",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/obsidian"
+       }
+      },
+      {
+       "when": "steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/steel"
+       }
+      },
+      {
+       "when": "rose_gold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/rose_gold"
+       }
+      },
+      {
+       "when": "chime_bronze",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/chime_bronze"
+       }
+      },
+      {
+       "when": "tidebronze",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/tidebronze"
+       }
+      },
+      {
+       "when": "rimesteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/rimesteel"
+       }
+      },
+      {
+       "when": "emberforged_steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/emberforged_steel"
+       }
+      },
+      {
+       "when": "pearlsteel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/pearlsteel"
+       }
+      },
+      {
+       "when": "netherite",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/netherite"
+       }
+      },
+      {
+       "when": "echo_steel",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/echo_steel"
+       }
+      },
+      {
+       "when": "blazebone",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/blazebone"
+       }
+      },
+      {
+       "when": "voidgold",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/voidgold"
+       }
+      },
+      {
+       "when": "starforged",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/grip/starforged"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+     }
+    },
+    {
+     "type": "minecraft:select",
+     "property": "minecraft:component",
+     "component": "aftrhrs:smith_look_2",
+     "cases": [
+      {
+       "when": "silk",
+       "model": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/longbow/string/silk"
+       }
+      }
+     ],
+     "fallback": {
+      "type": "minecraft:model",
+      "model": "aftrhrs:item/smithing/tool/longbow/string/silk"
+     }
+    }
+   ]
+  },
+  "on_true": {
+   "type": "minecraft:range_dispatch",
+   "property": "minecraft:use_duration",
+   "scale": 0.05,
+   "entries": [
+    {
+     "threshold": 0.65,
+     "model": {
+      "type": "minecraft:composite",
+      "models": [
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_0",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/wood"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/bone"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/bamboo"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/copper"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/iron"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/steel"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/pearlsteel"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/netherite"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/starforged"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/iron"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_1",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/wood"
+          }
+         },
+         {
+          "when": "stone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/stone"
+          }
+         },
+         {
+          "when": "flint",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/flint"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/bone"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/bamboo"
+          }
+         },
+         {
+          "when": "leather",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/leather"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/copper"
+          }
+         },
+         {
+          "when": "deer_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/deer_hide"
+          }
+         },
+         {
+          "when": "tufthorn_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/tufthorn_hide"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+          }
+         },
+         {
+          "when": "gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/gold"
+          }
+         },
+         {
+          "when": "obsidian",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/obsidian"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/steel"
+          }
+         },
+         {
+          "when": "rose_gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/rose_gold"
+          }
+         },
+         {
+          "when": "chime_bronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/chime_bronze"
+          }
+         },
+         {
+          "when": "tidebronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/tidebronze"
+          }
+         },
+         {
+          "when": "rimesteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/rimesteel"
+          }
+         },
+         {
+          "when": "emberforged_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/emberforged_steel"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/pearlsteel"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/netherite"
+          }
+         },
+         {
+          "when": "echo_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/echo_steel"
+          }
+         },
+         {
+          "when": "blazebone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/blazebone"
+          }
+         },
+         {
+          "when": "voidgold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/voidgold"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/starforged"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_2",
+        "cases": [
+         {
+          "when": "silk",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_1"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_1"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "threshold": 0.9,
+     "model": {
+      "type": "minecraft:composite",
+      "models": [
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_0",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/wood_pulling_2"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/bone_pulling_2"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/bamboo_pulling_2"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/copper_pulling_2"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/iron_pulling_2"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/steel_pulling_2"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/pearlsteel_pulling_2"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/netherite_pulling_2"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/limb/starforged_pulling_2"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/iron_pulling_2"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_1",
+        "cases": [
+         {
+          "when": "wood",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/wood"
+          }
+         },
+         {
+          "when": "stone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/stone"
+          }
+         },
+         {
+          "when": "flint",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/flint"
+          }
+         },
+         {
+          "when": "bone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/bone"
+          }
+         },
+         {
+          "when": "bamboo",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/bamboo"
+          }
+         },
+         {
+          "when": "leather",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/leather"
+          }
+         },
+         {
+          "when": "copper",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/copper"
+          }
+         },
+         {
+          "when": "deer_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/deer_hide"
+          }
+         },
+         {
+          "when": "tufthorn_hide",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/tufthorn_hide"
+          }
+         },
+         {
+          "when": "iron",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+          }
+         },
+         {
+          "when": "gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/gold"
+          }
+         },
+         {
+          "when": "obsidian",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/obsidian"
+          }
+         },
+         {
+          "when": "steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/steel"
+          }
+         },
+         {
+          "when": "rose_gold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/rose_gold"
+          }
+         },
+         {
+          "when": "chime_bronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/chime_bronze"
+          }
+         },
+         {
+          "when": "tidebronze",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/tidebronze"
+          }
+         },
+         {
+          "when": "rimesteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/rimesteel"
+          }
+         },
+         {
+          "when": "emberforged_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/emberforged_steel"
+          }
+         },
+         {
+          "when": "pearlsteel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/pearlsteel"
+          }
+         },
+         {
+          "when": "netherite",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/netherite"
+          }
+         },
+         {
+          "when": "echo_steel",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/echo_steel"
+          }
+         },
+         {
+          "when": "blazebone",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/blazebone"
+          }
+         },
+         {
+          "when": "voidgold",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/voidgold"
+          }
+         },
+         {
+          "when": "starforged",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/grip/starforged"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+        }
+       },
+       {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "aftrhrs:smith_look_2",
+        "cases": [
+         {
+          "when": "silk",
+          "model": {
+           "type": "minecraft:model",
+           "model": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_2"
+          }
+         }
+        ],
+        "fallback": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_2"
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "fallback": {
+    "type": "minecraft:composite",
+    "models": [
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_0",
+      "cases": [
+       {
+        "when": "wood",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/wood"
+        }
+       },
+       {
+        "when": "bone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/bone"
+        }
+       },
+       {
+        "when": "bamboo",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/bamboo"
+        }
+       },
+       {
+        "when": "copper",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/copper"
+        }
+       },
+       {
+        "when": "iron",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/iron"
+        }
+       },
+       {
+        "when": "steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/steel"
+        }
+       },
+       {
+        "when": "pearlsteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/pearlsteel"
+        }
+       },
+       {
+        "when": "netherite",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/netherite"
+        }
+       },
+       {
+        "when": "starforged",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/limb/starforged"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/longbow/limb/iron"
+      }
+     },
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_1",
+      "cases": [
+       {
+        "when": "wood",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/wood"
+        }
+       },
+       {
+        "when": "stone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/stone"
+        }
+       },
+       {
+        "when": "flint",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/flint"
+        }
+       },
+       {
+        "when": "bone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/bone"
+        }
+       },
+       {
+        "when": "bamboo",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/bamboo"
+        }
+       },
+       {
+        "when": "leather",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/leather"
+        }
+       },
+       {
+        "when": "copper",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/copper"
+        }
+       },
+       {
+        "when": "deer_hide",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/deer_hide"
+        }
+       },
+       {
+        "when": "tufthorn_hide",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/tufthorn_hide"
+        }
+       },
+       {
+        "when": "iron",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+        }
+       },
+       {
+        "when": "gold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/gold"
+        }
+       },
+       {
+        "when": "obsidian",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/obsidian"
+        }
+       },
+       {
+        "when": "steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/steel"
+        }
+       },
+       {
+        "when": "rose_gold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/rose_gold"
+        }
+       },
+       {
+        "when": "chime_bronze",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/chime_bronze"
+        }
+       },
+       {
+        "when": "tidebronze",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/tidebronze"
+        }
+       },
+       {
+        "when": "rimesteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/rimesteel"
+        }
+       },
+       {
+        "when": "emberforged_steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/emberforged_steel"
+        }
+       },
+       {
+        "when": "pearlsteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/pearlsteel"
+        }
+       },
+       {
+        "when": "netherite",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/netherite"
+        }
+       },
+       {
+        "when": "echo_steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/echo_steel"
+        }
+       },
+       {
+        "when": "blazebone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/blazebone"
+        }
+       },
+       {
+        "when": "voidgold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/voidgold"
+        }
+       },
+       {
+        "when": "starforged",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/grip/starforged"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/longbow/grip/iron"
+      }
+     },
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_2",
+      "cases": [
+       {
+        "when": "silk",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_0"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_0"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

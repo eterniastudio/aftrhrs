@@ -1,0 +1,258 @@
+# Feather creature codex: the words for /codex (aliases /tamingguide, /taming, /arcanaguide, /pets codex).
+# The list of creatures is NOT kept here: every creature the mod registers (data/aftrhrs/species) is in the codex
+# automatically, with its stats, drops and spawns read from the species data. This file only adds text:
+#   - categories (the codex tabs) and realms (the Overworld / Ocean / Nether / End filter),
+#   - per-creature text for creatures that guide.yml (the taming guide) doesn't describe: wildlife, monsters, bosses.
+# Tameable creatures get their taming text (tame item, odds, heal, job, bond) from guide.yml.
+# Keys under "creatures" are MythicMobs ids (ArcanaLurefin). MiniMessage palette tags work. /feather reload re-reads it.
+
+# The tabs, in this order. A creature goes to the first category that claims it:
+#   1. creatures.<id>.category below,
+#   2. guide-group: the taming guide group (guide.yml menu.groups) it is listed in,
+#   3. kinds: its species kind (pet, mount, hostile = tameable wild one, untameable = hostile that can't be tamed,
+#      wildlife, livestock, particles, undead, boss, police).
+# item: the tab's icon in the mod's codex screen. icon: the guide glyph on the dialog button (vanilla clients).
+categories:
+  companions:
+    name: "Companions"
+    blurb: "Small helpers that follow you everywhere."
+    guide-group: companions
+    kinds: [pet]
+    item: aftrhrs:arcana_plush_mossbun
+    icon: guide_icon_mossbun
+  dogs-cats:
+    name: "Dogs & Cats"
+    blurb: "Every dog and cat wears a rune tag and has a job."
+    guide-group: dogs-cats
+    item: aftrhrs:arcana_plush_golden_retriever
+    icon: guide_icon_golden_retriever
+  mounts:
+    name: "Mounts"
+    blurb: "Ride them, two at a time. Flyers go up with Space, down with Shift."
+    guide-group: mounts
+    kinds: [mount]
+    item: minecraft:saddle
+    icon: guide_icon_dunebun
+  wild-ones:
+    name: "Wild Ones"
+    blurb: "They attack you in the wild. Tamed, they guard you instead."
+    guide-group: wild
+    kinds: [hostile]
+    item: minecraft:blaze_powder
+    icon: guide_icon_cinder_imp
+  wildlife:
+    name: "Wildlife"
+    blurb: "Wild animals and livestock: herd them, breed them, brush, shear and milk them. They can't be tamed."
+    kinds: [wildlife, livestock, particles]
+    item: minecraft:wheat
+  monsters:
+    name: "Monsters"
+    blurb: "Undead of the biomes, deep-sea hunters and the law. Fight them, don't feed them."
+    kinds: [undead, untameable, police]
+    item: minecraft:rotten_flesh
+  bosses:
+    name: "Bosses"
+    blurb: "Called at a Summoning Altar with their offering. Bring friends."
+    kinds: [boss]
+    item: aftrhrs:arcana_summoning_altar
+
+# The realm filter. A creature's realms come from its spawn rules (dimension; aquatic creatures are "ocean"),
+# undead from the biomes they haunt, bosses from their altar rules; creatures.<id>.realms overrides that.
+realms:
+  overworld: "Overworld"
+  ocean: "Ocean"
+  nether: "Nether"
+  end: "The End"
+
+# Labels for the facts the codex shows (both the mod's screen and the dialogs).
+labels:
+  danger:
+    harmless: "Harmless"
+    neutral: "Neutral: fights back"
+    hostile: "Hostile"
+    boss: "Boss"
+    tameable: "Hostile until tamed"
+
+# Per-creature text. about: what it is. habitat: where it lives. behavior: what it does / what you can do with it.
+# danger: harmless, neutral, hostile or boss (see labels.danger; anything else is shown as written).
+# Bosses: phases (a few lines on the fight). form-of: this entity is shown on another creature's page (young are
+# folded into their parent automatically through the species data's young_of).
+creatures:
+  # ---------------------------------------------------------------- wildlife and livestock
+  ArcanaBristleboar:
+    about: "Bristly forest boar. Neutral, and adults charge whoever hurts a piglet."
+    habitat: "Dark forests and old-growth taiga"
+    behavior: "Leashed, it roots up truffles. Drops porkchops and bristles. Breeds on its food; piglets grow up in 20 minutes."
+    danger: neutral
+  ArcanaLanternsnail:
+    about: "Glowing cave snail that leaves a faint glow trail behind it."
+    habitat: "Lush caves, fungal caves and mangrove swamps"
+    behavior: "Scoop it up in a bucket. Feed it glow berries and it gives glow mucus."
+    danger: harmless
+  ArcanaLoomworm:
+    about: "Jungle silkworm, always hungry for leaves."
+    habitat: "Jungles and bamboo jungles"
+    behavior: "Fed leaves next to a Silk Frame, it spins silk into the frame."
+    danger: harmless
+  ArcanaPondwaddle:
+    about: "Pond duck of rivers and swamps. Ducklings walk in a line behind an adult."
+    habitat: "Rivers, swamps and beaches"
+    behavior: "Lays duck eggs in a Nesting Box. Brush it for down feathers."
+    danger: harmless
+  ArcanaShroomwallow:
+    about: "Crimson-forest capybara with a shroomlight growing from the nylium on its back."
+    habitat: "Crimson forests (Nether)"
+    behavior: "Brush it for shroomlight. Pups follow the nearest adult."
+    danger: harmless
+  ArcanaTufthorn:
+    about: "Shaggy horned highland cow."
+    habitat: "Taiga, groves and windswept hills"
+    behavior: "Milk it with a bucket, brush it for tuft wool. Calves grow up in 20 minutes."
+    danger: harmless
+  ArcanaWartgrazer:
+    about: "Warped-forest sheep with a fleece of nether wart."
+    habitat: "Warped forests (Nether)"
+    behavior: "Shear it for warped fleece; the fleece regrows on warped nylium."
+    danger: harmless
+  ArcanaDuskflies:
+    about: "A drifting swarm of fireflies, about three blocks across. Gone at sunrise."
+    habitat: "Flower forests, meadows, rivers and swamps, at night"
+    behavior: "Aim a glass bottle at the swarm to catch a Firefly Jar."
+    danger: harmless
+  ArcanaInkcurl:
+    about: "Shy reef octopus that hoards lost trinkets."
+    habitat: "Every ocean"
+    behavior: "Startled, it squirts ink and jets off. Brush it and it squirts an ink sac for you."
+    danger: harmless
+  ArcanaKelpback:
+    about: "Gentle sea cow with a kelp garden growing on its back."
+    habitat: "Warm and temperate seagrass meadows"
+    behavior: "Shear the garden for kelp (it regrows), brush the barnacles off for a sea pickle."
+    danger: harmless
+  ArcanaSquallgull:
+    about: "Cheeky shore gull that flies in flocks of two to four."
+    habitat: "Beaches, stony shores and cliffs, by day"
+    behavior: "Steals raw fish from your hotbar. Feed it fish and it follows your boat and dives on fishing hotspots."
+    danger: harmless
+  ArcanaVelvetstag:
+    about: "Shy forest stag, out at dawn and dusk."
+    habitat: "Birch forests, forests and cherry groves"
+    behavior: "Flees sprinting players: sneak to get close. Sheds its velvet antler once a day."
+    danger: harmless
+  ArcanaVoidpuff:
+    about: "Balloon puffer drifting between the outer End islands."
+    habitat: "The outer End islands"
+    behavior: "Bottle its breath for Dragon's Breath. Puffs up and rises when it is hurt."
+    danger: harmless
+
+  # ---------------------------------------------------------------- monsters
+  ArcanaLurefin:
+    about: "Deep-sea anglerfish that lures swimmers in with its glowing bulb."
+    habitat: "Deep oceans, at night"
+    behavior: "Bites swimmers. Drops the Abyssal Lure now and then. It cannot be tamed."
+    danger: hostile
+  ArcanaBilgebones:
+    about: "Seaweed-draped skeleton of a drowned sailor. Shoots a bow like any skeleton."
+    habitat: "Beaches, stony shores and sea cliffs, at night"
+    behavior: "Takes the place of some skeletons on the shore. Sometimes drops a soggy map scrap: four make a treasure map."
+    danger: hostile
+  ArcanaDustdigger:
+    about: "Badlands prospector zombie with a glowing head lamp and a pick."
+    habitat: "Badlands and mesas, at night"
+    behavior: "Takes the place of some zombies. Drops gold nuggets, now and then a Prospector's Pan."
+    danger: hostile
+  ArcanaGloomweaver:
+    about: "Dark-forest spider with a red mushroom grown on its back and a silk bundle."
+    habitat: "Dark forests, the pale garden and old-growth taiga"
+    behavior: "Climbs walls and stays calm in the light, like any spider. Shears snip its silk while it is calm."
+    danger: neutral
+  ArcanaHollowPilgrim:
+    about: "Hooded skeleton pilgrim with a soul lantern."
+    habitat: "Soul sand valleys (Nether)"
+    behavior: "Walks the valleys in peace and only fights back. Drops the Pilgrim's Wick."
+    danger: neutral
+  ArcanaMirewalker:
+    about: "Swamp zombie caked in dripping mud."
+    habitat: "Swamps and mangrove swamps, at night"
+    behavior: "Its hits slow you down. Drops peat."
+    danger: hostile
+  ArcanaReedwader:
+    about: "River drowned: an old angler in a reed hat with a bobber on the brim."
+    habitat: "Rivers"
+    behavior: "Swims after prey and hunts the banks at night; burns by day. Drops worm bait and the odd river perch."
+    danger: hostile
+  ArcanaRimeshambler:
+    about: "Frost-rimed zombie of the snowfields that never burns in the sun."
+    habitat: "Snowy plains, slopes, groves and frozen peaks, at night"
+    behavior: "Its hits freeze you. Drops permafrost shards."
+    danger: hostile
+  ArcanaSandshroud:
+    about: "Desert husk in a sun-faded indigo head-wrap: a lost caravan drifter."
+    habitat: "Deserts and canyons, at night"
+    behavior: "Never burns in the sun; its touch brings on hunger. Very rarely drops a sandstone urn."
+    danger: hostile
+  ArcanaVinebound:
+    about: "Jungle zombie overgrown with vines."
+    habitat: "Jungles and bamboo jungles, at night"
+    behavior: "Waits as a silent leafy mound until you come within four blocks, then rises."
+    danger: hostile
+  ArcanaPolice:
+    about: "Aftr Hrs police officer."
+    habitat: "Never in the wild: they answer a bank robbery"
+    behavior: "Arrives when someone robs the bank, chases the robbers and shouts at them. Not a creature to fight for fun."
+    danger: hostile
+    realms: [overworld]
+
+  # ---------------------------------------------------------------- bosses
+  ArcanaCinderwingPhoenix:
+    about: "A firebird of the scorched lands, called down by the Cinder Offering."
+    behavior: "Beaten, its last ember takes wing as a Cinderwing Phoenix you can tame with Blaze Rods."
+    danger: boss
+    phases:
+      - "Flies the whole fight. Talon rakes up close, volleys of fireballs from range."
+      - "Solar Dive: it dives on its target and bursts into flame. Cinder Cyclone: a ring of fire around it."
+      - "Pyre Brand: a pillar of fire under its target. Keep moving."
+      - "Rebirth: once, below half health, it curls into its ashes and rises again, healed."
+  ArcanaTempestRoc:
+    about: "A storm bird of the high peaks, called by the Tempest Totem."
+    behavior: "Beaten, a young roc circles the storm's end: tame it with Lightning Rods."
+    danger: boss
+    phases:
+      - "Flies the whole fight. Gale Buffet and Tempest Spiral blow you away; Charge bowls you over."
+      - "Thunder Dive and Chain Squall: lightning on its target, then on up to three players."
+      - "Eye of the Storm: it pulls everyone in, then the storm wall bursts outward."
+      - "Stormcall: it calls Volt Wisps to its side."
+  ArcanaGlacialWyrm:
+    about: "An ice wyrm of the frozen lands, woken by the Rime Heart."
+    danger: boss
+    phases:
+      - "Frost Fang bites slow you. Glacial Breath freezes everyone in front of it."
+      - "Tail Sweep throws you back; Rime Spikes skewer its target; Burrow Strike sends ice spikes along the ground."
+      - "Shatter Roar freezes everyone close."
+      - "Below half health, Absolute Winter: a frost wave freezes the whole arena."
+  ArcanaRuneboundColossus:
+    about: "A rune-carved stone giant of the deep earth, woken by the Runic Keystone."
+    danger: boss
+    phases:
+      - "Stonebreaker combos up close. Seismic Slam launches everyone near it."
+      - "Boulder Hurl from range; Faultline Sweep rips a line of earth spikes toward its target."
+      - "Pillar Eruption: stone bursts up under every nearby player after a rumble. Step off the cracks."
+      - "Runic Ward: it crosses its arms and takes far less damage for a while."
+  ArcanaWukong:
+    about: "Sun Wukong, the Monkey King, called by a Peach of Immortality. The hardest fight on the server."
+    behavior: "Four phases, from staff play to Buddha's Palm. Each change is an invulnerable set piece."
+    danger: boss
+    phases:
+      - "1 Handsome Monkey King (100-66%): staff combos, leaps, Ruyi Extend, Somersault Cloud, Fiery Golden Eyes, Hair Clones."
+      - "2 Great Sage Equal to Heaven (66-33%): Eye Sweep (jump it), Fissure, Staff Spin, giant staffs, 72 Transformations (hit the right shrine), Cloud Barrage."
+      - "3 Havoc in Heaven (33-12%): Peach Feast (hurt him while he eats or he heals), Faxiang Tiandi giant slams, the Eight Trigrams Furnace, a ring of Hair Army clones."
+      - "4 Buddha's Palm (below 12%): claim all five golden pillars in time and the mountain falls on him: he takes double damage while sealed."
+  ArcanaEmperorPenguinChick:
+    form-of: ArcanaEmperorPenguin
+    about: "A round ball of grey down with a black-and-white face mask. Win one over with a raw fish and keep feeding it: it grows up into your own emperor."
+  ArcanaRockhopperPenguinChick:
+    form-of: ArcanaRockhopperPenguin
+    about: "A fuzzy dark chick with a white tummy and the start of a crest. Win one over with a raw fish and keep feeding it: it grows up into your own rockhopper."
+  ArcanaWukongClone:
+    form-of: ArcanaWukong
+    about: "A Hair Clone: Wukong plucks a hair and it becomes a fighting copy of him. Gone after 30 seconds or one beating."

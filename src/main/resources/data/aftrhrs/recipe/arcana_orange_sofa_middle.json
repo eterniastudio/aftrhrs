@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "WWW",
+  "S S"
+ ],
+ "key": {
+  "W": "minecraft:orange_wool",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_orange_sofa_middle"
+ }
+}

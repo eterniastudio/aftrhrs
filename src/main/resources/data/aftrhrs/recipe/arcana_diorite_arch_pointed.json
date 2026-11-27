@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " B ",
+  "B  ",
+  "B  "
+ ],
+ "key": {
+  "B": "minecraft:polished_diorite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_diorite_arch_pointed",
+  "count": 2
+ }
+}

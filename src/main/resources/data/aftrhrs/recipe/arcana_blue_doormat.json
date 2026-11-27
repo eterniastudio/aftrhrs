@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "WHW"
+ ],
+ "key": {
+  "W": "minecraft:blue_wool",
+  "H": "minecraft:hay_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blue_doormat"
+ }
+}

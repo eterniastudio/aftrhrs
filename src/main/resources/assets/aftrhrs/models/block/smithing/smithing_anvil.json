@@ -1,0 +1,21 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/anvil_side", "anvil_base_top": "aftrhrs:block/smithing/anvil_base_top", "anvil_side": "aftrhrs:block/smithing/anvil_side", "anvil_top": "aftrhrs:block/smithing/anvil_top", "anvil_under": "aftrhrs:block/smithing/anvil_under"},
+ "elements": [
+  {"name": "foot", "from": [2, 0, 3], "to": [14, 3, 13], "faces": {"north": {"uv": [2, 13, 14, 16], "texture": "#anvil_side"}, "east": {"uv": [3, 13, 13, 16], "texture": "#anvil_side"}, "south": {"uv": [2, 13, 14, 16], "texture": "#anvil_side"}, "west": {"uv": [3, 13, 13, 16], "texture": "#anvil_side"}, "up": {"uv": [2, 3, 14, 13], "texture": "#anvil_base_top"}, "down": {"uv": [2, 3, 14, 13], "texture": "#anvil_under", "cullface": "down"}}},
+  {"name": "waist", "from": [5, 3, 5], "to": [11, 8, 11], "faces": {"north": {"uv": [5, 8, 11, 13], "texture": "#anvil_side"}, "east": {"uv": [5, 8, 11, 13], "texture": "#anvil_side"}, "south": {"uv": [5, 8, 11, 13], "texture": "#anvil_side"}, "west": {"uv": [5, 8, 11, 13], "texture": "#anvil_side"}}},
+  {"name": "face", "from": [2, 8, 4], "to": [14, 12, 12], "faces": {"north": {"uv": [2, 4, 14, 8], "texture": "#anvil_side"}, "east": {"uv": [4, 4, 12, 8], "texture": "#anvil_side"}, "south": {"uv": [2, 4, 14, 8], "texture": "#anvil_side"}, "west": {"uv": [4, 4, 12, 8], "texture": "#anvil_side"}, "up": {"uv": [2, 4, 14, 12], "texture": "#anvil_top"}, "down": {"uv": [2, 4, 14, 12], "texture": "#anvil_under"}}},
+  {"name": "horn", "from": [1, 9, 6], "to": [2, 11, 10], "faces": {"north": {"uv": [14, 5, 15, 7], "texture": "#anvil_side"}, "south": {"uv": [1, 5, 2, 7], "texture": "#anvil_side"}, "west": {"uv": [6, 5, 10, 7], "texture": "#anvil_side"}, "up": {"uv": [1, 6, 2, 10], "texture": "#anvil_top"}, "down": {"uv": [1, 6, 2, 10], "texture": "#anvil_under"}}},
+  {"name": "horn_tip", "from": [0, 9.5, 7], "to": [1, 10.5, 9], "faces": {"north": {"uv": [15, 5.5, 16, 6.5], "texture": "#anvil_side"}, "south": {"uv": [0, 5.5, 1, 6.5], "texture": "#anvil_side"}, "west": {"uv": [7, 5.5, 9, 6.5], "texture": "#anvil_side", "cullface": "west"}, "up": {"uv": [0, 7, 1, 9], "texture": "#anvil_top"}, "down": {"uv": [0, 7, 1, 9], "texture": "#anvil_under"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PWP",
+  "BDB",
+  "PBP"
+ ],
+ "key": {
+  "P": "minecraft:packed_ice",
+  "W": "minecraft:powder_snow_bucket",
+  "B": "minecraft:blue_ice",
+  "D": "minecraft:diamond"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_summon_rime_heart"
+ }
+}

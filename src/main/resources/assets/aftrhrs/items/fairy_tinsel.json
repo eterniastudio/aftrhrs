@@ -1,0 +1,12 @@
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "aftrhrs:fairylights/item/fairy_tinsel",
+  "tints": [
+   {
+    "type": "minecraft:dye",
+    "default": -2235414
+   }
+  ]
+ }
+}

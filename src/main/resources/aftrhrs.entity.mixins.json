@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "package": "net.axther.aftrhrs.entity.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": ["BoatPenguinMixin", "MobCapMixin", "PlayerRidingMixin", "RiderPunchMixin"],
+  "injectors": { "defaultRequire": 1 },
+  "minVersion": "0.8"
+}

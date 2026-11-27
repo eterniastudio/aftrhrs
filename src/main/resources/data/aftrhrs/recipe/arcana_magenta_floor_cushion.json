@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "C",
+  "W"
+ ],
+ "key": {
+  "C": "minecraft:magenta_carpet",
+  "W": "minecraft:magenta_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_magenta_floor_cushion"
+ }
+}

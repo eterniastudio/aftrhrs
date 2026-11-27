@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "P S",
+  "P S"
+ ],
+ "key": {
+  "P": "minecraft:crimson_planks",
+  "S": "minecraft:stick",
+  "Z": "minecraft:crimson_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_crimson_desk"
+ }
+}

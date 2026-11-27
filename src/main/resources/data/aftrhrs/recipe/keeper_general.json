@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:emerald",
+  "minecraft:emerald",
+  "minecraft:book",
+  "minecraft:paper"
+ ],
+ "result": {
+  "id": "aftrhrs:keeper_general"
+ }
+}

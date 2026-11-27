@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "IDI",
+  "ICI",
+  "III"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "D": "minecraft:iron_door",
+  "C": "minecraft:chest"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_personal_locker"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:ingot_voidgold"
+ ],
+ "result": {
+  "id": "aftrhrs:nugget_voidgold",
+  "count": 9
+ }
+}

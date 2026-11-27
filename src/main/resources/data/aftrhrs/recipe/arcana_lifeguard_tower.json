@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "RWR",
+  "PZP",
+  "L L"
+ ],
+ "key": {
+  "L": "minecraft:ladder",
+  "P": "minecraft:birch_planks",
+  "R": "minecraft:red_wool",
+  "W": "minecraft:white_wool",
+  "Z": "minecraft:birch_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_lifeguard_tower"
+ }
+}

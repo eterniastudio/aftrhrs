@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/bathroom/bathroom_scale"},"facing=east":{"model":"aftrhrs:arcana/bathroom/bathroom_scale","y":90},"facing=south":{"model":"aftrhrs:arcana/bathroom/bathroom_scale","y":180},"facing=west":{"model":"aftrhrs:arcana/bathroom/bathroom_scale","y":270}}}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NPN"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "P": "minecraft:paper"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_toilet_paper_holder"
+ }
+}

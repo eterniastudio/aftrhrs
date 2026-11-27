@@ -1,0 +1,54 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_blackstone_hearth"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:all_of",
+    "terms": [
+     {
+      "type": "minecraft:match_block",
+      "blocks": "aftrhrs:arcana_blackstone_hearth",
+      "state": {
+       "lit": "false"
+      }
+     },
+     {
+      "type": "minecraft:survives_explosion"
+     }
+    ]
+   }
+  },
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aftrhrs:arcana_blackstone_hearth_lit"
+    }
+   ],
+   "condition": {
+    "type": "minecraft:all_of",
+    "terms": [
+     {
+      "type": "minecraft:match_block",
+      "blocks": "aftrhrs:arcana_blackstone_hearth",
+      "state": {
+       "lit": "true"
+      }
+     },
+     {
+      "type": "minecraft:survives_explosion"
+     }
+    ]
+   }
+  }
+ ],
+ "random_sequence": "aftrhrs:blocks/arcana_blackstone_hearth"
+}

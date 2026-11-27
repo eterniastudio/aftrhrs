@@ -1,0 +1,774 @@
+{
+ "id": "runebound_colossus",
+ "mm_id": "ArcanaRuneboundColossus",
+ "kind": "boss",
+ "name": "Runebound Colossus",
+ "color": "2",
+ "health": 240,
+ "damage": 8,
+ "armor": 12,
+ "speed": 0.22,
+ "follow_range": 40,
+ "knockback_resistance": 1,
+ "base": "IRON_GOLEM",
+ "damage_mods": {
+  "FALL": 0.0,
+  "PROJECTILE": 0.5
+ },
+ "drops": [
+  {
+   "item": "minecraft:emerald",
+   "min": 6,
+   "max": 12,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:amethyst_shard",
+   "min": 8,
+   "max": 16,
+   "chance": 1.0
+  },
+  {
+   "exp": 250,
+   "chance": 1.0
+  }
+ ],
+ "flyer": false,
+ "abilities": [
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.iron_golem.repair",
+    "v": 2,
+    "p": 0.5
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 140,
+   "conditions": [],
+   "chance": 0.4,
+   "line": "- sound{s=entity.iron_golem.repair;v=2;p=0.5} @self ~onTimer:140 0.4"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.iron_golem.hurt",
+    "v": 2,
+    "p": 0.5
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.iron_golem.hurt;v=2;p=0.5} @self ~onDamaged"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.iron_golem.death",
+    "v": 3,
+    "p": 0.5
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.iron_golem.death;v=3;p=0.5} @self ~onDeath"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "block.deepslate.break",
+    "v": 2,
+    "p": 0.6
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=block.deepslate.break;v=2;p=0.6} @self ~onDeath"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaColossus_Glow"
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaColossus_Glow",
+   "line": "- skill{s=ArcanaColossus_Glow} @self ~onSpawn"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaColossus_Glow"
+   },
+   "target": "self",
+   "trigger": "onload",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaColossus_Glow",
+   "line": "- skill{s=ArcanaColossus_Glow} @self ~onLoad"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaColossus_GlowOut"
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaColossus_GlowOut",
+   "line": "- skill{s=ArcanaColossus_GlowOut} @self ~onDeath"
+  },
+  {
+   "mechanic": "state",
+   "args": {
+    "s": "awaken",
+    "lo": 6
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- state{s=awaken;lo=6} @self ~onSpawn"
+  },
+  {
+   "mechanic": "state",
+   "args": {
+    "s": "stonebreaker_combo",
+    "li": 2,
+    "lo": 4
+   },
+   "target": "self",
+   "trigger": "onattack",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- state{s=stonebreaker_combo;li=2;lo=4} @self ~onAttack"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaColossus_SeismicSlam"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 200,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaColossus_SeismicSlam",
+   "line": "- skill{s=ArcanaColossus_SeismicSlam} @self ~onTimer:200"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaColossus_BoulderHurl"
+   },
+   "target": "target",
+   "trigger": "ontimer",
+   "every": 160,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaColossus_BoulderHurl",
+   "line": "- skill{s=ArcanaColossus_BoulderHurl} @target ~onTimer:160"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaColossus_RunicWard"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 400,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaColossus_RunicWard",
+   "line": "- skill{s=ArcanaColossus_RunicWard} @self ~onTimer:400"
+  }
+ ],
+ "boss_bar": {
+  "title": "Runebound Colossus",
+  "color": "GREEN",
+  "style": "SEGMENTED_10",
+  "range": 64
+ },
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "death": "death",
+  "hurt": "hurt",
+  "awaken": "awaken",
+  "walk_rage": "walk_rage",
+  "spawn": "awaken",
+  "attack": "stonebreaker_combo"
+ },
+ "model": "runebound_colossus",
+ "clips": {
+  "idle": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "awaken": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "death": {
+   "length": 2.5,
+   "loop": "hold"
+  },
+  "stonebreaker_combo": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "seismic_slam": {
+   "length": 2.15,
+   "loop": "once"
+  },
+  "boulder_hurl": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "faultline_sweep": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "runic_ward": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "pillar_eruption": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "worldbreaker": {
+   "length": 3.75,
+   "loop": "once"
+  },
+  "idle_runes": {
+   "length": 8,
+   "loop": "loop"
+  },
+  "idle_scan": {
+   "length": 8,
+   "loop": "loop"
+  },
+  "idle_shift": {
+   "length": 8,
+   "loop": "loop"
+  },
+  "idle_flex": {
+   "length": 8,
+   "loop": "loop"
+  },
+  "stance": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "stance2": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "walk_rage": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "taunt": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "phase2": {
+   "length": 3.2,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  },
+  "hurt_heavy": {
+   "length": 0.95,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  1.8,
+  3.4
+ ],
+ "shadow": 0.9,
+ "name_tag_y": 3.65,
+ "render_box": [
+  1.55,
+  3.375
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "chest_core",
+  "eye"
+ ],
+ "glow_out": [
+  "chest_core",
+  "eye"
+ ],
+ "spawns": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "h"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "gait": "walk",
+    "drv": "h"
+   },
+   "awaken": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.6,
+    "eyes": true,
+    "drv": "h"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 2.5,
+    "eyes": true,
+    "drv": "h"
+   },
+   "stonebreaker_combo": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "h",
+    "hit": 0.8
+   },
+   "seismic_slam": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.15,
+    "drv": "h"
+   },
+   "boulder_hurl": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "h"
+   },
+   "faultline_sweep": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "h"
+   },
+   "runic_ward": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "h"
+   },
+   "pillar_eruption": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.6,
+    "drv": "h"
+   },
+   "worldbreaker": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.75,
+    "drv": "h"
+   },
+   "idle_runes": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 8.0,
+    "drv": "h"
+   },
+   "idle_scan": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 8.0,
+    "drv": "h"
+   },
+   "idle_shift": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 8.0,
+    "drv": "h"
+   },
+   "idle_flex": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 8.0,
+    "drv": "h"
+   },
+   "stance": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "h"
+   },
+   "stance2": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "h"
+   },
+   "walk_rage": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "gait": "walk",
+    "drv": "h"
+   },
+   "taunt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.6,
+    "drv": "h"
+   },
+   "phase2": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.2,
+    "drv": "h"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "h"
+   },
+   "hurt_heavy": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.95,
+    "drv": "h"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "death": "death",
+   "hurt": "hurt",
+   "stance1": "stance",
+   "stance2": "stance2",
+   "walk2": "walk_rage",
+   "phase2": "phase2",
+   "hurt_heavy": "hurt_heavy"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "stonebreaker_combo",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "seismic_slam",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "boulder_hurl",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "faultline_sweep",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "runic_ward",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "pillar_eruption",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "worldbreaker",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "taunt",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "phase2",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "hurt_heavy",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "boss_calm": [
+    {
+     "clip": "idle",
+     "w": 3,
+     "min": 8,
+     "max": 16
+    },
+    {
+     "clip": "idle_runes",
+     "w": 3,
+     "min": 8,
+     "max": 16
+    },
+    {
+     "clip": "idle_scan",
+     "w": 2,
+     "min": 8,
+     "max": 8
+    },
+    {
+     "clip": "idle_shift",
+     "w": 2,
+     "min": 8,
+     "max": 8,
+     "cd": 20
+    },
+    {
+     "clip": "idle_flex",
+     "w": 1,
+     "min": 8,
+     "max": 8,
+     "cd": 30
+    }
+   ],
+   "boss_combat": [
+    {
+     "clip": "stance",
+     "w": 5,
+     "min": 6,
+     "max": 12,
+     "when": "p1"
+    },
+    {
+     "clip": "stance2",
+     "w": 5,
+     "min": 6,
+     "max": 12,
+     "when": "p2+"
+    },
+    {
+     "clip": "idle_runes",
+     "w": 1,
+     "min": 4,
+     "max": 8,
+     "when": "p1"
+    },
+    {
+     "clip": "taunt",
+     "w": 1,
+     "cd": 25,
+     "when": "far"
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "breath": 0.006,
+   "look_yaw": 40,
+   "look_pitch": 20
+  },
+  "authored": [
+   "awaken",
+   "boulder_hurl",
+   "death",
+   "faultline_sweep",
+   "hurt",
+   "hurt_heavy",
+   "idle_flex",
+   "idle_runes",
+   "idle_scan",
+   "idle_shift",
+   "phase2",
+   "pillar_eruption",
+   "runic_ward",
+   "seismic_slam",
+   "stance",
+   "stance2",
+   "stonebreaker_combo",
+   "taunt",
+   "walk_rage",
+   "worldbreaker"
+  ],
+  "unblinked": [
+   "phase2"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "chest_core",
+  "eye"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 6
+   },
+   "ambient_angry": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 4
+   },
+   "hurt": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 0
+   },
+   "death": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 6
+   },
+   "step": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 0
+   },
+   "ability": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 4
+   },
+   "ability_grind": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 3
+   },
+   "ability_hum": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 4
+   },
+   "ability_heave": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 2
+   },
+   "ability_whoosh": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 1
+   },
+   "ability_slam": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 1
+   },
+   "ability_stomp": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 1
+   },
+   "ability_roar": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 3
+   },
+   "ability_crash": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 3
+   },
+   "ability_throw": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 2
+   },
+   "ability_ward": {
+    "jitter": 0.05,
+    "dist": 48,
+    "layer": 3
+   }
+  },
+  "every": 160,
+  "dist": 48
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "  S",
+  " S ",
+  "S  "
+ ],
+ "key": {
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:stirring_rod",
+  "count": 1
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GG",
+  "GG"
+ ],
+ "key": {
+  "G": "aftrhrs:arcana_gingerbread_man"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gingerbread_block"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:chiseled_quartz_block",
+  "W": "minecraft:quartz_pillar"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_column_capital",
+  "count": 2
+ }
+}

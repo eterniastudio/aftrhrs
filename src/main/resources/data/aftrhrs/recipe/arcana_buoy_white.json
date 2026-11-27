@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " B ",
+  "XYX",
+  "XXX"
+ ],
+ "key": {
+  "B": "minecraft:iron_bars",
+  "X": "minecraft:white_concrete",
+  "Y": "minecraft:red_concrete"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_buoy_white"
+ }
+}

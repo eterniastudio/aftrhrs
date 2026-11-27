@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " T ",
+  "I I",
+  "III"
+ ],
+ "key": {
+  "T": "minecraft:iron_trapdoor",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_trash_can"
+ }
+}

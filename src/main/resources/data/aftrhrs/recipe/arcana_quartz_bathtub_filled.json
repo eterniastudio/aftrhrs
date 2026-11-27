@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_quartz_bathtub",
+  "minecraft:water_bucket"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_quartz_bathtub_filled"
+ }
+}

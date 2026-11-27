@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " X ",
+  "TDT",
+  " T "
+ ],
+ "key": {
+  "X": "minecraft:big_dripleaf",
+  "T": "minecraft:terracotta",
+  "D": "minecraft:rooted_dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_potted_monstera"
+ }
+}

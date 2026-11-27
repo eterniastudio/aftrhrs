@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "SSS",
+  "P P",
+  "P P"
+ ],
+ "key": {
+  "S": "#minecraft:wooden_slabs",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "aftrhrs:assembly_bench",
+  "count": 1
+ }
+}

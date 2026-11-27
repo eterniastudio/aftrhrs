@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SIS",
+  "P P",
+  "PPP"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "P": "#minecraft:planks",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cheese_press"
+ }
+}

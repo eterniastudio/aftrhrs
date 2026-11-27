@@ -1,0 +1,6 @@
+{
+  "providers": [
+    {"type": "bitmap", "file": "aftrhrs:font/feather_stall_gui.png", "ascent": 33, "height": 188, "chars": ["\ue000"]},
+    {"type": "space", "advances": {"\ue001": -8, "\ue002": -169}}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  " L ",
+  " P "
+ ],
+ "key": {
+  "N": "minecraft:gold_nugget",
+  "L": "minecraft:spruce_leaves",
+  "P": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tabletop_tree"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A  ",
+  "AA ",
+  "AAA"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_blue_ice_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blue_ice_brick_stairs",
+  "count": 4
+ }
+}

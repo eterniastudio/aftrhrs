@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "K",
+  "K",
+  "K"
+ ],
+ "key": {
+  "K": "minecraft:lime_carpet"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_lime_towel_stack"
+ }
+}

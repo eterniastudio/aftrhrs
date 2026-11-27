@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PSP",
+  "PDP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "S": "minecraft:beetroot_seeds",
+  "D": "minecraft:dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_beetroot_planter"
+ }
+}

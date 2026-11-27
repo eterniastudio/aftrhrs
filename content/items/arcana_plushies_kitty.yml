@@ -1,0 +1,41 @@
+# Kitty's plushie (built by arcana_items/plushies/work_v2, spec kitty.py, build.py kitty --no-pack; model + texture
+# copied into mod/content/pack). Read by tools/gen_content.py (--content).
+arcana_plush_kitty:
+  itemname: "<dark_green>Kitty Plush"
+  material: PAPER
+  lore:
+  - "<gray>A soft (and very fluffy) keepsake of Kitty."
+  - "<gray>Place it on the floor to show it off."
+  components:
+    max_stack_size: 16
+  pack:
+    generate_model: false
+    model: arcana/plushies/arcana_plush_kitty
+  mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      hitboxes:
+      - 0,0,0 0.4,0.5
+      rotatable: true
+      restricted_rotation: NONE
+      limited_placing:
+        floor: true
+        wall: false
+        roof: false
+      properties:
+        display_transform: NONE
+        scale:
+          x: 0.3077
+          y: 0.3077
+          z: 0.3077
+        translation:
+          x: 0.0
+          y: -0.25
+          z: 0.0
+        shadow_radius: 0.25
+        shadow_strength: 0.6
+      drop:
+        silktouch: false
+        loots:
+        - oraxen_item: arcana_plush_kitty
+          probability: 1.0

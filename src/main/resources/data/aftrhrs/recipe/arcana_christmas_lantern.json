@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:lantern",
+  "minecraft:red_dye",
+  "minecraft:spruce_leaves"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_christmas_lantern"
+ }
+}

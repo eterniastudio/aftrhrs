@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KTK",
+  " I "
+ ],
+ "key": {
+  "K": "minecraft:white_candle",
+  "T": "minecraft:soul_torch",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_soul_candle_holder"
+ }
+}

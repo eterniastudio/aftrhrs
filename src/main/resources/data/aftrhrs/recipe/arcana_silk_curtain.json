@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SSS",
+  "K K",
+  "K K"
+ ],
+ "key": {
+  "K": "aftrhrs:arcana_silk",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_silk_curtain"
+ }
+}

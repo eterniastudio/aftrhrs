@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " C ",
+  "KTK",
+  "III"
+ ],
+ "key": {
+  "C": "minecraft:iron_chain",
+  "K": "minecraft:candle",
+  "T": "minecraft:torch",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_lantern_chandelier"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:smooth_stone_slab",
+  "A": "minecraft:stone_bricks",
+  "B": "minecraft:smooth_stone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_plinth"
+ }
+}

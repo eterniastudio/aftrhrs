@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "HH"
+ ],
+ "key": {
+  "H": "minecraft:hay_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_doormat",
+  "count": 2
+ }
+}

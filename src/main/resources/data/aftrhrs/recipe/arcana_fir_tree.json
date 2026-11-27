@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " L ",
+  "LLL",
+  " S "
+ ],
+ "key": {
+  "L": "minecraft:spruce_leaves",
+  "S": "minecraft:spruce_log"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_fir_tree"
+ }
+}

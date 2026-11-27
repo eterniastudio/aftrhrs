@@ -1,0 +1,447 @@
+{
+ "id": "gloomweaver",
+ "mm_id": "ArcanaGloomweaver",
+ "kind": "undead",
+ "name": "Gloomweaver",
+ "color": "f",
+ "health": 16,
+ "damage": 2,
+ "speed": 0.3,
+ "follow_range": 16,
+ "despawn": "true",
+ "damage_mods": {},
+ "note": "Dark-forest spider with a red mushroom grown on its back and a silk bundle. Vanilla spider: climbs walls, neutral in the light. Shears snip its silk while it is calm.",
+ "base": "SPIDER",
+ "sounds": {
+  "ambient": {
+   "id": "entity.spider.ambient",
+   "pitch": 0.8,
+   "volume": 0.85
+  },
+  "hurt": {
+   "id": "entity.spider.hurt",
+   "pitch": 0.85,
+   "volume": 0.85
+  },
+  "death": {
+   "id": "entity.spider.death",
+   "pitch": 0.85,
+   "volume": 0.85
+  },
+  "step": {
+   "id": "entity.spider.step",
+   "pitch": 0.15,
+   "volume": 1.0
+  },
+  "every": 160,
+  "chance": 0.35,
+  "step_every": 8
+ },
+ "life": {
+  "every": 120,
+  "chance": 0.25,
+  "day": {
+   "spin": 1
+  },
+  "extra": {
+   "spin": [
+    "particles{p=white_ash;amount=6;hS=0.3;vS=0.2;y=0.9} @self"
+   ]
+  }
+ },
+ "replace": {
+  "vanilla": "minecraft:spider",
+  "share": 0.35,
+  "moon_share": 0.7,
+  "biomes": [
+   "minecraft:dark_forest",
+   "minecraft:pale_garden",
+   "minecraft:old_growth_pine_taiga",
+   "terralith:shield",
+   "minecraft:old_growth_spruce_taiga"
+  ]
+ },
+ "attack_clip": "attack",
+ "ai_toggle": false,
+ "options": {
+  "PreventRandomEquipment": "true",
+  "PreventSunburn": "true"
+ },
+ "snip": {
+  "item": "arcana_silk",
+  "min": 1,
+  "max": 2,
+  "extra": "minecraft:string",
+  "bone": "silk",
+  "regrow_minutes": 10
+ },
+ "arthropod": true,
+ "lines": [
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "mycelium",
+    "amount": 1,
+    "hS": 0.3,
+    "vS": 0.1,
+    "y": 1.0
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 40,
+   "conditions": [],
+   "chance": 0.5,
+   "line": "- particles{p=mycelium;amount=1;hS=0.3;vS=0.1;y=1.0} @self ~onTimer:40 0.5"
+  }
+ ],
+ "drops": [
+  {
+   "item": "minecraft:string",
+   "min": 0,
+   "max": 2,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:spider_eye",
+   "min": 1,
+   "max": 1,
+   "chance": 0.33
+  },
+  {
+   "item": "minecraft:red_mushroom",
+   "min": 1,
+   "max": 1,
+   "chance": 0.25
+  },
+  {
+   "custom": "arcana_silk",
+   "min": 1,
+   "max": 1,
+   "chance": 0.15
+  },
+  {
+   "exp": 5,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "death": "death",
+  "hurt": "hurt",
+  "attack": "attack"
+ },
+ "model": "gloomweaver",
+ "clips": {
+  "idle": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.7,
+   "loop": "loop"
+  },
+  "attack": {
+   "length": 0.6,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.2,
+   "loop": "hold"
+  },
+  "run": {
+   "length": 0.45,
+   "loop": "loop"
+  },
+  "skitter": {
+   "length": 1.4,
+   "loop": "loop"
+  },
+  "groom": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "tap": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "rear": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "crouch": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "spin": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "snipped": {
+   "length": 0.7,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  1.4,
+  0.9
+ ],
+ "shadow": 0.7,
+ "name_tag_y": 1.375,
+ "render_box": [
+  1.471,
+  1.156
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "eyes"
+ ],
+ "glow_out": [
+  "eyes"
+ ],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hb"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.7,
+    "gait": "walk",
+    "drv": "hb"
+   },
+   "attack": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.6,
+    "drv": "hb"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.2,
+    "eyes": true,
+    "drv": "hb"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.45,
+    "gait": "run",
+    "drv": "hb"
+   },
+   "skitter": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.4,
+    "drv": "b",
+    "gait": "walk"
+   },
+   "groom": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hb"
+   },
+   "tap": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.2,
+    "drv": "hb"
+   },
+   "rear": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "hb"
+   },
+   "crouch": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hb"
+   },
+   "spin": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hb"
+   },
+   "snipped": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.7
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "h"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 4,
+     "max": 10
+    },
+    {
+     "clip": "crouch",
+     "w": 2.5,
+     "min": 6,
+     "max": 14
+    },
+    {
+     "clip": "groom",
+     "w": 2,
+     "cd": 10
+    },
+    {
+     "clip": "tap",
+     "w": 2,
+     "cd": 10,
+     "boost": {
+      "night": 2
+     }
+    },
+    {
+     "clip": "spin",
+     "w": 0.8,
+     "cd": 30
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "snipped",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "walk": [
+    {
+     "clip": "@mood",
+     "w": 2,
+     "min": 6,
+     "max": 16
+    },
+    {
+     "clip": "skitter",
+     "w": 1.5,
+     "min": 5,
+     "max": 12
+    }
+   ],
+   "notice": [
+    {
+     "clip": "rear",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body"
+  },
+  "authored": [
+   "crouch",
+   "groom",
+   "hurt",
+   "rear",
+   "run",
+   "skitter",
+   "snipped",
+   "spin",
+   "tap"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "eyes"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 6
+   },
+   "ambient_angry": {
+    "jitter": 0.06,
+    "dist": 20
+   },
+   "hurt": {
+    "jitter": 0.07,
+    "dist": 20
+   },
+   "death": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 4
+   },
+   "step": {
+    "jitter": 0.08,
+    "dist": 20
+   },
+   "attack": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 1
+   },
+   "ability": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 4
+   }
+  },
+  "every": 220,
+  "dist": 20
+ }
+}

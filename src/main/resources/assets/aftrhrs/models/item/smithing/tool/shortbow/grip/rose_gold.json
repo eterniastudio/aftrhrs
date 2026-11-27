@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/bow",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/tool/shortbow/grip/rose_gold"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "BIB",
+  "BCB",
+  "BBB"
+ ],
+ "key": {
+  "B": "aftrhrs:fire_brick",
+  "I": "minecraft:iron_bars",
+  "C": "aftrhrs:crucible"
+ },
+ "result": {
+  "id": "aftrhrs:great_crucible_drain",
+  "count": 1
+ }
+}

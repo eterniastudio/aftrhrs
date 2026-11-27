@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SRS",
+  "R R",
+  "SPS"
+ ],
+ "key": {
+  "P": "minecraft:spruce_slab",
+  "R": "minecraft:string",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_crab_pot"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "IB",
+  " I"
+ ],
+ "key": {
+  "I": "minecraft:copper_ingot",
+  "B": "minecraft:oxidized_copper"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_oxidized_copper_pipe_corner",
+  "count": 2
+ }
+}

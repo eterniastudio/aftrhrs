@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_spruce_log",
+  "P": "minecraft:spruce_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_spruce_wardrobe"
+ }
+}

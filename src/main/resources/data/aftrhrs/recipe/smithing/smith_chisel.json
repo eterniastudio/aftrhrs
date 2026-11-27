@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "I",
+  "S"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:smith_chisel",
+  "count": 1
+ }
+}

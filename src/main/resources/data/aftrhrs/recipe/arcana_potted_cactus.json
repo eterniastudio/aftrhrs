@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " X ",
+  "TDT",
+  " T "
+ ],
+ "key": {
+  "X": "minecraft:cactus",
+  "T": "minecraft:terracotta",
+  "D": "minecraft:sand"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_potted_cactus"
+ }
+}

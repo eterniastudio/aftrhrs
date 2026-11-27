@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " A ",
+  "AGA",
+  " A "
+ ],
+ "key": {
+  "A": "minecraft:end_stone",
+  "G": "minecraft:end_rod"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_end_stone_lantern_block"
+ }
+}

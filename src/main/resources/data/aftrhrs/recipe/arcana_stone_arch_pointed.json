@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " B ",
+  "B  ",
+  "B  "
+ ],
+ "key": {
+  "B": "minecraft:smooth_stone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_arch_pointed",
+  "count": 2
+ }
+}

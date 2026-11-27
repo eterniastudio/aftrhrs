@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " W ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:polished_andesite_slab",
+  "W": "minecraft:andesite_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_andesite_table"
+ }
+}

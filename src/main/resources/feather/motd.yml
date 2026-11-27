@@ -1,0 +1,60 @@
+# Feather server-list entry (what players see in their multiplayer list). /feather reload applies changes.
+# Each server has its own copy of this file, so every server on a network can show its own MOTD.
+#
+# MiniMessage with palette tags and the server placeholders: <server> (server-name in config.yml), <online>,
+# <max>, <tps>, <clock>, <date>. <shimmer:#a:#b>text</shimmer> picks a new gradient phase on every refresh.
+# Lines are about 45 characters wide in the client.
+
+# Each entry is one MOTD of up to two lines. One is picked per refresh.
+motds:
+  - - '<gradient:#c3a6ff:#8fd3ff><b>✦ <server> ✦</b></gradient> <dim>·</dim> <muted>a cozy little SMP'
+    - '<text>Tame cute critters and build together'
+  - - '<gradient:#c3a6ff:#8fd3ff><b>✦ <server> ✦</b></gradient> <dim>·</dim> <muted>the night is young'
+    - '<text>Pets, plushies and boss altars await'
+  - - '<shimmer:#ffd38a:#ff8fa3:#c3a6ff><b>✦ <server> ✦</b></shimmer> <dim>·</dim> <muted><online> online'
+    - '<text>Come say hi!'
+
+# random or in-order
+order: random
+
+# Lines shown when hovering the player count. <players> adds the online players (up to 12, vanished hidden).
+# Empty list = vanilla behavior (a sample of player names).
+hover:
+  - '<gradient:#c3a6ff:#8fd3ff><b><server></b></gradient>'
+  - '<muted><online>/<max> online'
+  - ''
+  - '<players>'
+hover-player: '<muted>· </muted><name>'
+
+# Max players shown in the list (-1 = the server's real value).
+max-players: -1
+# Show max players as online + 1 ("8/9"), so the server never looks full.
+one-more-slot: false
+# Show "???" instead of the player count.
+hide-player-count: false
+# Text that replaces the version name in the list (only visible to clients on the wrong version). Empty = default.
+version-label: ''
+
+# Server icons: put 64x64 PNG files in plugins/Feather/icons/. Several icons take turns.
+# random or in-order
+icon-order: random
+
+# Maintenance mode (/maintenance on|off, kept across restarts). Only ops, allowed-players and players with
+# feather.maintenance.bypass can join; everyone else sees the kick message.
+maintenance:
+  motd:
+    - '<gradient:#c3a6ff:#8fd3ff><b>✦ <server> ✦</b></gradient> <dim>·</dim> <warn>under maintenance'
+    - '<muted>We''re tidying up. Back soon!'
+  hover:
+    - '<warn>Maintenance'
+    - '<muted>Check back in a little while.'
+  # Shown in red where the ping bars are.
+  version-label: '<bad>Maintenance'
+  kick-message:
+    - '<gradient:#c3a6ff:#8fd3ff><b>✦ <server> ✦</b></gradient>'
+    - ''
+    - '<warn>We''re under maintenance right now.'
+    - '<muted>Please check back soon!'
+  # Kick players without bypass when maintenance turns on.
+  kick-online: true
+  allowed-players: []

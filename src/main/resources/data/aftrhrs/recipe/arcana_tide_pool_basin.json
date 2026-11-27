@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "R R",
+  "RWR",
+  "RRR"
+ ],
+ "key": {
+  "R": "minecraft:mossy_cobblestone",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tide_pool_basin"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " W ",
+  "RRR",
+  "WWW"
+ ],
+ "key": {
+  "W": "minecraft:white_wool",
+  "R": "minecraft:red_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_hat_santa_hat"
+ }
+}

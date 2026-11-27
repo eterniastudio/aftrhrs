@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " A ",
+  "AGA",
+  " A "
+ ],
+ "key": {
+  "A": "minecraft:polished_deepslate",
+  "G": "minecraft:glowstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_deepslate_lantern_block"
+ }
+}

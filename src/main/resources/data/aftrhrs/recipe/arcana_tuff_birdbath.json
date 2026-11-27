@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:polished_tuff_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:polished_tuff_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tuff_birdbath"
+ }
+}

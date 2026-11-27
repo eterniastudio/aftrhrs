@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  "NGN",
+  " N "
+ ],
+ "key": {
+  "G": "minecraft:glass_pane",
+  "N": "minecraft:gold_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_round_mirror"
+ }
+}

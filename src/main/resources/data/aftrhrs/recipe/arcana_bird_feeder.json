@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " R ",
+  "ZEZ"
+ ],
+ "key": {
+  "E": "minecraft:wheat_seeds",
+  "R": "minecraft:string",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bird_feeder"
+ }
+}

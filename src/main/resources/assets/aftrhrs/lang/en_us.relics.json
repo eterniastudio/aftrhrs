@@ -1,0 +1,10 @@
+{
+  "entity.aftrhrs.thrown_relic_trident": "Tidecaller",
+  "key.aftrhrs.backpack": "Equip / open backpack",
+  "aftrhrs.backpack.equipped": "Backpack on your back. %s opens it, Sneak + %s takes it off.",
+  "aftrhrs.backpack.unequipped": "Backpack off your back.",
+  "aftrhrs.backpack.none": "You have no backpack to put on.",
+  "aftrhrs.backpack.no_room": "No room in your inventory to take the backpack off.",
+  "aftrhrs.backpack.disabled": "Wearing backpacks is turned off on this server.",
+  "aftrhrs.backpack.returned": "Wearing backpacks was turned off, so your backpack went back into your inventory."
+}

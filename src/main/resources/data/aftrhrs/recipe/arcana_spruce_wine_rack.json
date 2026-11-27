@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PBP",
+  "PBP",
+  "PBP"
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "B": "minecraft:glass_bottle"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_spruce_wine_rack"
+ }
+}

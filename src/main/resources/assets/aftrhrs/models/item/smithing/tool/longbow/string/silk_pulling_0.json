@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/bow",
+ "textures": {
+  "layer0": "aftrhrs:item/smithing/tool/longbow/string/silk_pulling_0"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "Z",
+  "Z"
+ ],
+ "key": {
+  "Z": "minecraft:prismarine_brick_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_vertical_slab",
+  "count": 3
+ }
+}

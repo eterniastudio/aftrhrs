@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "F F",
+  "BXB"
+ ],
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "F": "minecraft:spruce_fence",
+  "B": "minecraft:polished_granite",
+  "X": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_granite_wishing_well"
+ }
+}

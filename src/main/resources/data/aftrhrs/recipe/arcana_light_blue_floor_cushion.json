@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "C",
+  "W"
+ ],
+ "key": {
+  "C": "minecraft:light_blue_carpet",
+  "W": "minecraft:light_blue_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_light_blue_floor_cushion"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SPS",
+  "ZZZ"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "P": "aftrhrs:arcana_china_plate",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_plate_rack"
+ }
+}

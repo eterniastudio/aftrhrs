@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " W ",
+  "WTW",
+  " W "
+ ],
+ "key": {
+  "T": "minecraft:yellow_terracotta",
+  "W": "minecraft:stripped_acacia_log"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_tiki_mask"
+ }
+}

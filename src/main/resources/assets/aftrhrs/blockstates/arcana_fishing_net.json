@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/coastal/fishing_net"},"facing=east":{"model":"aftrhrs:arcana/coastal/fishing_net","y":90},"facing=south":{"model":"aftrhrs:arcana/coastal/fishing_net","y":180},"facing=west":{"model":"aftrhrs:arcana/coastal/fishing_net","y":270}}}

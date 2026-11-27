@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W  ",
+  "WWW",
+  "S S"
+ ],
+ "key": {
+  "W": "minecraft:black_wool",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_black_sofa_left"
+ }
+}

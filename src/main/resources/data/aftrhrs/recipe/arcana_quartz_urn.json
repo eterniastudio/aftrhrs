@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z Z",
+  "B B",
+  " B "
+ ],
+ "key": {
+  "Z": "minecraft:quartz_slab",
+  "B": "minecraft:quartz_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_urn"
+ }
+}

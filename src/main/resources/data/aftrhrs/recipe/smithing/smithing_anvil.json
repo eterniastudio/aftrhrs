@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "III",
+  " I ",
+  "SSS"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "S": "minecraft:smooth_stone_slab"
+ },
+ "result": {
+  "id": "aftrhrs:smithing_anvil",
+  "count": 1
+ }
+}

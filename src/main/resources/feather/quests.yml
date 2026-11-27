@@ -1,0 +1,204 @@
+# Feather quests (/quests) and the server goal (/goal), modules.quests. /feather reload re-reads this file.
+# Full documentation: docs/quests.md. The day starts at 00:00 in config.yml daily.reset-zone, the week on Monday.
+#
+# Quest types:
+#   tame     tame a creature (target: species, e.g. ArcanaCorgi)     codex   discover a new codex creature
+#   bond     pet bond levels gained (target: species)                 harvest ripe crops, any tool (target: wheat, carrots ...)
+#   scythe   ripe crops harvested with an Arcana scythe               mine    natural blocks mined (target: block id or #tag)
+#   hammer   blocks mined with an Arcana hammer or excavator          fell    logs chopped with an Arcana lumber axe
+#   boss     altar bosses defeated (target: boss type; party: N = only fights with at least N players)
+#   fish     fish caught (target: item or Oraxen id, #rare / #rare+)  kill    hostile mobs defeated (target: entity id or #tag)
+#   deposit  Goob Coins deposited at the bank (withdrawing takes it back)
+#   visit    friends visited by teleport request (each friend counts once per quest)
+#   walk     blocks walked                                            ride    blocks ridden on a mount (no boats or minecarts)
+#   undead_cull  Arcana undead laid to rest (target: MythicMobs id, e.g. ArcanaMirewalker; needs the wildlife module)
+#   chatgame chat games won (rewarded wins only; target: math, trivia, unscramble, fast-type, creature or gaps)
+# Targets: an id (diamond_ore), a glob (*_log), a block/item/entity tag (#logs, #skeletons), or several with commas.
+# Blocks anyone placed don't count for mining, each spot counts once a day, and nothing counts while a player is
+# AFK, in creative or hasn't typed the server code.
+#
+# Each quest:  type, target (optional), target-name (what the menu calls the target), amount, difficulty
+# (easy/medium/hard), weight (how often it's picked, default 1, 0 = never), rewards (coins, bond-xp; default: the
+# rewards section by difficulty), text (optional: replaces the task line; <amount> and <target> work).
+
+settings:
+  daily:
+    # One quest per entry, by difficulty, in this order.
+    slots: [easy, medium, hard]
+    # Free rerolls of an unfinished daily quest per day.
+    rerolls: 1
+  weekly:
+    slots: [easy, medium, hard]
+  # Blocks a player placed don't count for mining quests for this long (minutes).
+  placed-block-minutes: 360
+  # A crop spot counts again for harvest quests after this long (minutes), so a farm can be harvested as it regrows
+  # but bone meal on one spot doesn't farm a quest.
+  crop-spot-minutes: 20
+  # Mining quests skip blocks softer than this (grass, flowers and torches break instantly). Dirt is 0.5, stone 1.5.
+  mine-min-hardness: 0.3
+  # Count hostile mobs from spawners (mob farms).
+  count-spawner-mobs: false
+  # A player needs this share of a boss fight's damage for the boss to count (the top damager always counts).
+  boss-min-share: 0.03
+  # "<sound key> [volume] [pitch]" or none.
+  sounds:
+    complete: entity.player.levelup 0.5 1.6
+    claim: ui.toast.challenge_complete 0.6 1.3
+    reroll: block.amethyst_block.chime 1.0 1.3
+
+# Default rewards by difficulty. Coins go into the bank balance; bond XP goes to the pets following the player when
+# they claim. Weekly quests pay more.
+rewards:
+  daily:
+    easy: {coins: 10, bond-xp: 10}
+    medium: {coins: 20, bond-xp: 20}
+    hard: {coins: 35, bond-xp: 30}
+  weekly:
+    easy: {coins: 60, bond-xp: 50}
+    medium: {coins: 110, bond-xp: 90}
+    hard: {coins: 180, bond-xp: 140}
+
+server-goal:
+  enabled: true
+  # Every goal's amount is multiplied by this (more players: raise it).
+  multiplier: 1.0
+  # Players who added at least this share of the goal (percent) get the reward, unless a goal sets min-contribution.
+  min-contribution-percent: 1
+  # Top helpers shown in /goal.
+  top-shown: 5
+  # The reward for each helper when a goal doesn't set its own.
+  reward: {coins: 150, bond-xp: 60}
+  # Goal size follows the player count: amount x multiplier x clamp(players active in the last active-days days /
+  # reference, min, max), worked out when a goal starts. /goal rescale (staff) applies it again to the running goal.
+  scaling:
+    enabled: true
+    reference: 10
+    min: 0.15
+    max: 3
+    active-days: 7
+
+daily:
+  # ---- easy
+  dig-dirt: {type: mine, target: '#dirt,sand,red_sand,gravel', target-name: 'dirt, sand or gravel', amount: 96, difficulty: easy}
+  mine-stone: {type: mine, target: '#base_stone_overworld', target-name: stone, amount: 128, difficulty: easy}
+  chop-logs: {type: mine, target: '#logs', target-name: logs, amount: 32, difficulty: easy}
+  harvest-wheat: {type: harvest, target: wheat, target-name: wheat, amount: 48, difficulty: easy}
+  harvest-any: {type: harvest, amount: 64, difficulty: easy}
+  catch-fish: {type: fish, amount: 8, difficulty: easy}
+  hunt-mobs: {type: kill, amount: 15, difficulty: easy}
+  stroll: {type: walk, amount: 1500, difficulty: easy}
+  visit-friend: {type: visit, amount: 1, difficulty: easy}
+  tame-one: {type: tame, amount: 1, difficulty: easy}
+  codex-one: {type: codex, amount: 1, difficulty: easy}
+  piggy-bank: {type: deposit, amount: 50, difficulty: easy}
+  # ---- medium
+  mine-ores: {type: mine, target: '#coal_ores,#iron_ores,#copper_ores', target-name: 'coal, iron or copper ore', amount: 24, difficulty: medium}
+  mine-deepslate: {type: mine, target: 'deepslate,tuff', target-name: 'deepslate or tuff', amount: 160, difficulty: medium}
+  hammer-time: {type: hammer, amount: 256, difficulty: medium}
+  lumberjack: {type: fell, amount: 64, difficulty: medium}
+  scythe-sweep: {type: scythe, amount: 96, difficulty: medium}
+  root-veg: {type: harvest, target: 'carrots,potatoes,beetroots', target-name: 'carrots, potatoes or beetroots', amount: 96, difficulty: medium}
+  arcana-crops: {type: harvest, target: 'arcana_crop_*', target-name: 'Arcana crops', amount: 24, difficulty: medium}
+  zombie-patrol: {type: kill, target: 'zombie,husk,drowned,zombie_villager', target-name: zombies, amount: 12, difficulty: medium}
+  bone-collector: {type: kill, target: '#skeletons', target-name: skeletons, amount: 10, difficulty: medium}
+  fishing-trip: {type: fish, amount: 16, difficulty: medium}
+  shellfish-haul: {type: fish, target: 'arcana_shellfish_*', target-name: shellfish, amount: 5, difficulty: medium}
+  saddle-up: {type: ride, amount: 1000, difficulty: medium}
+  bond-one: {type: bond, amount: 1, difficulty: medium}
+  savings: {type: deposit, amount: 150, difficulty: medium}
+  chat-whiz: {type: chatgame, amount: 1, difficulty: medium}
+  # ---- hard
+  boss-any: {type: boss, amount: 1, difficulty: hard}
+  diamonds: {type: mine, target: '#diamond_ores', target-name: diamond ore, amount: 3, difficulty: hard}
+  quarry: {type: hammer, amount: 640, difficulty: hard}
+  clear-cut: {type: fell, amount: 192, difficulty: hard}
+  big-harvest: {type: scythe, amount: 256, difficulty: hard}
+  night-watch: {type: kill, amount: 40, difficulty: hard}
+  creeper-cleanup: {type: kill, target: creeper, target-name: creepers, amount: 8, difficulty: hard}
+  tame-two: {type: tame, amount: 2, difficulty: hard}
+  long-walk: {type: walk, amount: 5000, difficulty: hard}
+  long-ride: {type: ride, amount: 3000, difficulty: hard}
+  chat-ace: {type: chatgame, amount: 3, difficulty: hard}
+  rare-catch: {type: fish, target: '#rare+', target-name: rare fish, amount: 1, difficulty: hard}
+
+weekly:
+  # ---- easy
+  week-miner: {type: mine, amount: 1500, difficulty: easy}
+  week-farmer: {type: harvest, amount: 400, difficulty: easy}
+  week-angler: {type: fish, amount: 40, difficulty: easy}
+  week-wanderer: {type: walk, amount: 15000, difficulty: easy}
+  week-social: {type: visit, amount: 3, difficulty: easy}
+  # ---- medium
+  week-quarry: {type: hammer, amount: 2500, difficulty: medium}
+  week-lumber: {type: fell, amount: 500, difficulty: medium}
+  week-scythe: {type: scythe, amount: 800, difficulty: medium}
+  week-hunter: {type: kill, amount: 120, difficulty: medium}
+  week-tamer: {type: tame, amount: 3, difficulty: medium}
+  week-bonds: {type: bond, amount: 3, difficulty: medium}
+  week-explorer: {type: codex, amount: 3, difficulty: medium}
+  week-saver: {type: deposit, amount: 750, difficulty: medium}
+  week-rider: {type: ride, amount: 8000, difficulty: medium}
+  week-quizzer: {type: chatgame, amount: 6, difficulty: medium}
+  # ---- hard
+  week-bosses: {type: boss, amount: 3, difficulty: hard}
+  week-raid: {type: boss, amount: 2, party: 3, difficulty: hard}
+  week-wukong: {type: boss, target: ArcanaWukong, target-name: Sun Wukong, amount: 1, difficulty: hard, weight: 1, text: 'Defeat Sun Wukong at an altar'}
+  week-diamonds: {type: mine, target: '#diamond_ores', target-name: diamond ore, amount: 16, difficulty: hard}
+
+# Server goals: one runs each week, picked at random (by weight; the last three are skipped when possible).
+#   type / target / target-name / amount / text: like a quest (amount is multiplied by server-goal.multiplier)
+#   min-contribution: what a player must add to get the reward (default: min-contribution-percent of the goal)
+#   reward: {coins, bond-xp} for each helper, claimed in /goal (default: server-goal.reward)
+#   boosts: timed server-wide boosts when it's done. type quest-coins (quest coin rewards) or bond-xp (all pet bond
+#           XP), multiplier, hours. Shown in the menus and on join while active.
+#   commands: console commands run when it's done (<goal> = the goal id), e.g. to place a decoration at spawn.
+#   unlocks: an extra line under "What it unlocks" (MiniMessage), e.g. for what the commands do.
+goals:
+  bosses:
+    type: boss
+    amount: 25
+    reward: {coins: 200, bond-xp: 80}
+    boosts:
+      - {type: quest-coins, multiplier: 1.5, hours: 48}
+    commands: []
+  crops:
+    type: harvest
+    amount: 20000
+    boosts:
+      - {type: bond-xp, multiplier: 2.0, hours: 48}
+  tames:
+    type: tame
+    amount: 60
+    min-contribution: 1
+    boosts:
+      - {type: bond-xp, multiplier: 2.0, hours: 48}
+  blocks:
+    type: mine
+    amount: 150000
+    boosts:
+      - {type: quest-coins, multiplier: 1.5, hours: 48}
+  logs:
+    type: fell
+    amount: 20000
+    boosts:
+      - {type: quest-coins, multiplier: 1.5, hours: 24}
+  fish:
+    type: fish
+    amount: 2000
+    boosts:
+      - {type: bond-xp, multiplier: 1.5, hours: 48}
+  monsters:
+    type: kill
+    amount: 5000
+    boosts:
+      - {type: quest-coins, multiplier: 1.5, hours: 48}
+  travellers:
+    type: walk
+    amount: 400000
+    boosts:
+      - {type: bond-xp, multiplier: 1.5, hours: 48}
+  undead-cull:
+    type: undead_cull
+    amount: 600
+    boosts:
+      - {type: quest-coins, multiplier: 1.5, hours: 48}

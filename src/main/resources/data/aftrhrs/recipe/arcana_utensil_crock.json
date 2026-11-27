@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SWS",
+  " F "
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "W": "minecraft:wooden_shovel",
+  "F": "minecraft:flower_pot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_utensil_crock"
+ }
+}

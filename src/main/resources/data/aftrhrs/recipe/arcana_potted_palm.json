@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " L ",
+  " J ",
+  "T T"
+ ],
+ "key": {
+  "J": "minecraft:jungle_log",
+  "L": "minecraft:jungle_leaves",
+  "T": "minecraft:terracotta"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_potted_palm"
+ }
+}

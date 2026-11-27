@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NIN",
+  "I I",
+  "III"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_trash_bin"
+ }
+}

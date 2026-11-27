@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZAZ"
+ ],
+ "key": {
+  "A": "minecraft:chiseled_quartz_block",
+  "Z": "minecraft:quartz_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_arch_keystone",
+  "count": 2
+ }
+}

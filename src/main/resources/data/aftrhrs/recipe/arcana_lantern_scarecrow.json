@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " K ",
+  "SHS",
+  " S "
+ ],
+ "key": {
+  "H": "minecraft:hay_block",
+  "K": "minecraft:jack_o_lantern",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_lantern_scarecrow"
+ }
+}

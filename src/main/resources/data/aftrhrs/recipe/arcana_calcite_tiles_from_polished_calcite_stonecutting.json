@@ -1,0 +1,7 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "aftrhrs:arcana_polished_calcite",
+ "result": {
+  "id": "aftrhrs:arcana_calcite_tiles"
+ }
+}

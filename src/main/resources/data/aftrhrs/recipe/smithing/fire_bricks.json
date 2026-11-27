@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "BB",
+  "BB"
+ ],
+ "key": {
+  "B": "aftrhrs:fire_brick"
+ },
+ "result": {
+  "id": "aftrhrs:fire_bricks",
+  "count": 1
+ }
+}

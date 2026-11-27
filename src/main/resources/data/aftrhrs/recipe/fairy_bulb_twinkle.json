@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_transmute",
+ "category": "misc",
+ "group": "fairy_lights_twinkle",
+ "input": "aftrhrs:fairy_bulb",
+ "material": "minecraft:glowstone_dust",
+ "result": {
+  "id": "aftrhrs:fairy_bulb",
+  "components": {
+   "aftrhrs:twinkle": true
+  }
+ }
+}

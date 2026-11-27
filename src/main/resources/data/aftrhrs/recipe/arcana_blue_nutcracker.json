@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " B ",
+  "DPD",
+  " S "
+ ],
+ "key": {
+  "B": "minecraft:black_wool",
+  "D": "minecraft:blue_dye",
+  "P": "minecraft:spruce_planks",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blue_nutcracker"
+ }
+}

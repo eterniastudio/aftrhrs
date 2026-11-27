@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_gingerbread_block",
+  "aftrhrs:arcana_frosting_block"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_frosted_gingerbread",
+  "count": 2
+ }
+}

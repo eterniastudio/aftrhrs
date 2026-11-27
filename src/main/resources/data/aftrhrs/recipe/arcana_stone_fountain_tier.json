@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "TWT",
+  " M "
+ ],
+ "key": {
+  "M": "minecraft:stone_bricks",
+  "T": "minecraft:smooth_stone_slab",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_fountain_tier"
+ }
+}

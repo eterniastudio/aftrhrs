@@ -1,0 +1,30 @@
+{
+ "fabric:load_conditions": [
+  {
+   "condition": "aftrhrs:feather_config",
+   "keys": [
+    "modules.storage",
+    "storage.recipes"
+   ]
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "feather_storage",
+ "pattern": [
+  "PCP",
+  "HDH",
+  "PEP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "C": "minecraft:comparator",
+  "H": "minecraft:chest",
+  "D": "minecraft:diamond",
+  "E": "minecraft:ender_pearl"
+ },
+ "result": {
+  "id": "aftrhrs:feather_inventory_connector",
+  "count": 1
+ }
+}

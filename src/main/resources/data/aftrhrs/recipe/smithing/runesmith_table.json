@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "DLD",
+  " B ",
+  "BBB"
+ ],
+ "key": {
+  "D": "minecraft:polished_deepslate",
+  "L": "minecraft:lapis_block",
+  "B": "minecraft:deepslate_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:runesmith_table",
+  "count": 1
+ }
+}

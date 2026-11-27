@@ -1,0 +1,10 @@
+{
+ "entity.aftrhrs.keeper_general": "Shopkeeper",
+ "item.aftrhrs.keeper_general": "Shopkeeper",
+ "entity.aftrhrs.keeper_fishmonger": "Fishmonger",
+ "item.aftrhrs.keeper_fishmonger": "Fishmonger",
+ "entity.aftrhrs.keeper_grocer": "Grocer",
+ "item.aftrhrs.keeper_grocer": "Grocer",
+ "entity.aftrhrs.keeper_miner": "Miner",
+ "item.aftrhrs.keeper_miner": "Miner"
+}

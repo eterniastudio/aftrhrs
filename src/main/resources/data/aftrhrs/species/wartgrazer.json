@@ -1,0 +1,876 @@
+{
+ "id": "wartgrazer",
+ "mm_id": "ArcanaWartgrazer",
+ "kind": "livestock",
+ "name": "Wartgrazer",
+ "color": "f",
+ "health": 8,
+ "damage": 0,
+ "speed": 0.23,
+ "follow_range": 16,
+ "despawn": "persistent",
+ "damage_mods": {},
+ "note": "Warped-forest sheep with a fleece of nether wart. Feather: shear for warped fleece; it regrows on warped nylium.",
+ "base": "SHEEP",
+ "sounds": {
+  "ambient": {
+   "id": "entity.sheep.ambient",
+   "pitch": 0.8,
+   "volume": 0.8
+  },
+  "hurt": {
+   "id": "entity.sheep.hurt",
+   "pitch": 0.8,
+   "volume": 1.0
+  },
+  "death": {
+   "id": "entity.sheep.death",
+   "pitch": 0.8,
+   "volume": 1.0
+  },
+  "step": {
+   "id": "entity.sheep.step",
+   "pitch": 0.8,
+   "volume": 0.15
+  },
+  "every": 180,
+  "chance": 0.3,
+  "step_every": 12
+ },
+ "life": {
+  "every": 100,
+  "chance": 0.4,
+  "day": {
+   "graze": 4,
+   "graze_long": 2,
+   "lie": 1,
+   "look": 2
+  },
+  "graze_block": "WARPED_NYLIUM",
+  "graze_sound": [
+   "block.nylium.break",
+   1.0,
+   0.25
+  ]
+ },
+ "herd": {
+  "types": [
+   "ArcanaWartgrazer",
+   "ArcanaWartgrazerYoung"
+  ],
+  "members": [
+   [
+    "ArcanaWartgrazer",
+    1
+   ],
+   [
+    "ArcanaWartgrazer",
+    0.5
+   ],
+   [
+    "ArcanaWartgrazerYoung",
+    0.3
+   ]
+  ]
+ },
+ "harvest": [
+  "sound{s=entity.sheep.ambient;v=0.8;p=1.0} @self",
+  "particles{p=block;m=WARPED_WART_BLOCK;amount=10;hS=0.5;vS=0.4;y=0.9} @self"
+ ],
+ "panic_run": true,
+ "ai": {
+  "goals": [
+   "clear",
+   "float",
+   "panic",
+   "randomstroll",
+   "lookatplayers",
+   "randomlookaround"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "init": [
+  "setvariable{var=caster.shorn;type=INTEGER;value=0} ?!variableisset{var=caster.shorn}"
+ ],
+ "restore": [
+  "partvis{mid=%M%;p=fleece;v=false;c=true} @self ?variableEquals{var=caster.shorn;value=1}"
+ ],
+ "young_id": "ArcanaWartgrazerYoung",
+ "lines": [
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "warped_spore",
+    "amount": 3,
+    "hS": 0.4,
+    "vS": 0.3,
+    "y": 1.0
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 60,
+   "conditions": [
+    "!variableEquals{var=caster.shorn;value=1}"
+   ],
+   "chance": 0.5,
+   "line": "- particles{p=warped_spore;amount=3;hS=0.4;vS=0.3;y=1.0} @self ?!variableEquals{var=caster.shorn;value=1} ~onTimer:60 0.5"
+  }
+ ],
+ "drops": [
+  {
+   "custom": "arcana_raw_wartgrazer",
+   "min": 1,
+   "max": 2,
+   "chance": 1.0
+  },
+  {
+   "exp": 1,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:the_nether",
+   "biomes": [
+    "minecraft:warped_forest"
+   ],
+   "rarity": "uncommon",
+   "position": "LAND",
+   "conditions": [],
+   "cap": 2,
+   "cap_radius": 48,
+   "cap_types": [
+    "ArcanaWartgrazer",
+    "ArcanaWartgrazerYoung"
+   ]
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "death": "death",
+  "hurt": "hurt",
+  "graze": "graze",
+  "lie": "lie",
+  "harvest": "harvest"
+ },
+ "model": "wartgrazer",
+ "clips": {
+  "idle": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.9,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.5,
+   "loop": "loop"
+  },
+  "graze": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "lie": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "harvest": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.4,
+   "loop": "hold"
+  },
+  "look_around": {
+   "length": 3.6,
+   "loop": "once"
+  },
+  "head_shake": {
+   "length": 1.5,
+   "loop": "once"
+  },
+  "chew_cud": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "rest_stand": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "groom": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "rub": {
+   "length": 3.4,
+   "loop": "once"
+  },
+  "stamp": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "tail_swish": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "ear_flick": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "herd_glance": {
+   "length": 2.4,
+   "loop": "once"
+  },
+  "alert_up": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "hop": {
+   "length": 1,
+   "loop": "once"
+  },
+  "frolic": {
+   "length": 1.9,
+   "loop": "once"
+  },
+  "prance": {
+   "length": 2,
+   "loop": "once"
+  },
+  "fleece_shake": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "bleat": {
+   "length": 1.5,
+   "loop": "once"
+  },
+  "graze_tear": {
+   "length": 1.3,
+   "loop": "once"
+  },
+  "graze_step": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "graze_chew": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "graze_look": {
+   "length": 2.8,
+   "loop": "once"
+  },
+  "lie_down": {
+   "length": 1.7,
+   "loop": "once"
+  },
+  "stand_up": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "lie_chew": {
+   "length": 5,
+   "loop": "loop"
+  },
+  "lie_look": {
+   "length": 7,
+   "loop": "loop"
+  },
+  "sleep": {
+   "length": 6,
+   "loop": "loop"
+  },
+  "hurt": {
+   "length": 0.5,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.9,
+  1.3
+ ],
+ "shadow": 0.406,
+ "name_tag_y": 1.688,
+ "render_box": [
+  1.062,
+  1.359
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [
+  "fleece"
+ ],
+ "glow_out": [],
+ "young": "wartgrazer_young",
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.9,
+    "gait": "walk",
+    "drv": "hbte"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.5,
+    "gait": "run",
+    "drv": "hbte"
+   },
+   "graze": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbte"
+   },
+   "lie": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "harvest": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.4,
+    "drv": "hbte"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.4,
+    "eyes": true,
+    "drv": "hbte"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.6,
+    "drv": "hbte"
+   },
+   "head_shake": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.5,
+    "drv": "hbte"
+   },
+   "chew_cud": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "rest_stand": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "drv": "hbte"
+   },
+   "groom": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbte"
+   },
+   "rub": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.4,
+    "drv": "hbte"
+   },
+   "stamp": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbte"
+   },
+   "tail_swish": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "t"
+   },
+   "ear_flick": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.9,
+    "drv": "e"
+   },
+   "herd_glance": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.4,
+    "drv": "hbte"
+   },
+   "alert_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbte"
+   },
+   "hop": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.0,
+    "drv": "hbte"
+   },
+   "frolic": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.9,
+    "drv": "hbte"
+   },
+   "prance": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hbte"
+   },
+   "fleece_shake": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbte"
+   },
+   "bleat": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.5,
+    "drv": "h"
+   },
+   "graze_tear": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "drv": "hbte"
+   },
+   "graze_step": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hbte"
+   },
+   "graze_chew": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hbte"
+   },
+   "graze_look": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.8,
+    "drv": "hbte"
+   },
+   "lie_down": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.7,
+    "from": "standing",
+    "drv": "hbte"
+   },
+   "stand_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "from": "lying",
+    "drv": "hbte"
+   },
+   "lie_chew": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 5.0,
+    "drv": "hbte"
+   },
+   "lie_look": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 7.0,
+    "drv": "hbte"
+   },
+   "sleep": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 6.0,
+    "eyes": true,
+    "drv": "hbte"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.5,
+    "drv": "hte"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "sleep": "lie",
+   "lie": "lie",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {
+   "standing>lying": "lie_down",
+   "lying>standing": "stand_up"
+  },
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 5,
+     "max": 14
+    },
+    {
+     "clip": "look_around",
+     "w": 2,
+     "cd": 14
+    },
+    {
+     "clip": "bleat",
+     "w": 1.5,
+     "cd": 14,
+     "boost": {
+      "herd_near:16": 1.5
+     }
+    },
+    {
+     "clip": "head_shake",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "fleece_shake",
+     "w": 1,
+     "cd": 30,
+     "boost": {
+      "rain": 4
+     }
+    },
+    {
+     "clip": "chew_cud",
+     "w": 3,
+     "min": 6,
+     "max": 14,
+     "when": "!young"
+    },
+    {
+     "clip": "rest_stand",
+     "w": 1.5,
+     "min": 8,
+     "max": 18,
+     "when": "!young",
+     "boost": {
+      "night": 2.5
+     }
+    },
+    {
+     "clip": "groom",
+     "w": 1,
+     "cd": 25
+    },
+    {
+     "clip": "rub",
+     "w": 4,
+     "cd": 30,
+     "when": "rub_near"
+    },
+    {
+     "clip": "stamp",
+     "w": 0.5,
+     "cd": 30
+    },
+    {
+     "clip": "tail_swish",
+     "w": 1.5,
+     "cd": 8
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1.5,
+     "cd": 8
+    },
+    {
+     "clip": "herd_glance",
+     "w": 2,
+     "cd": 15,
+     "when": "herd_near:12"
+    },
+    {
+     "clip": "hop",
+     "w": 3,
+     "cd": 5,
+     "when": "young"
+    },
+    {
+     "clip": "frolic",
+     "w": 2,
+     "cd": 9,
+     "when": "young"
+    },
+    {
+     "clip": "prance",
+     "w": 3,
+     "cd": 12,
+     "when": "young,adult_near:8"
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "tail_swish",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "bleat",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [
+    {
+     "clip": "@sleep",
+     "w": 1,
+     "min": 30,
+     "max": 90
+    },
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 10,
+     "max": 30
+    },
+    {
+     "clip": "lie_chew",
+     "w": 3,
+     "min": 8,
+     "max": 20
+    },
+    {
+     "clip": "lie_look",
+     "w": 2,
+     "min": 6,
+     "max": 14
+    },
+    {
+     "clip": "sleep",
+     "w": 0.5,
+     "min": 20,
+     "max": 60,
+     "boost": {
+      "night": 10
+     }
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1,
+     "cd": 8
+    }
+   ],
+   "graze": [
+    {
+     "clip": "@mood",
+     "w": 5,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "graze_tear",
+     "w": 2,
+     "cd": 5
+    },
+    {
+     "clip": "graze_step",
+     "w": 2,
+     "cd": 6
+    },
+    {
+     "clip": "graze_chew",
+     "w": 1.5,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "graze_look",
+     "w": 1.5,
+     "cd": 10
+    },
+    {
+     "clip": "ear_flick",
+     "w": 1,
+     "cd": 6
+    }
+   ],
+   "notice": [
+    {
+     "clip": "alert_up",
+     "w": 3
+    },
+    {
+     "clip": "bleat",
+     "w": 1
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail"
+   ],
+   "ears": [
+    "left_ear",
+    "right_ear"
+   ],
+   "breath": 0.014,
+   "tail_sway": 7
+  },
+  "authored": [
+   "alert_up",
+   "bleat",
+   "chew_cud",
+   "ear_flick",
+   "fleece_shake",
+   "frolic",
+   "graze_chew",
+   "graze_look",
+   "graze_step",
+   "graze_tear",
+   "groom",
+   "head_shake",
+   "herd_glance",
+   "hop",
+   "hurt",
+   "lie_chew",
+   "lie_down",
+   "lie_look",
+   "look_around",
+   "prance",
+   "rest_stand",
+   "rub",
+   "sleep",
+   "stamp",
+   "stand_up",
+   "tail_swish"
+  ]
+ },
+ "glowmask": true,
+ "glow_render_bones": [
+  "fleece"
+ ],
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.08
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "step": {
+    "jitter": 0.08,
+    "layer": 0
+   },
+   "eat": {
+    "jitter": 0.06
+   },
+   "snore": {
+    "jitter": 0.05
+   }
+  },
+  "every": 320,
+  "snore_every": 140
+ }
+}

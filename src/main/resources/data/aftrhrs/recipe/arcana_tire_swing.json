@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " R ",
+  "K K",
+  " K "
+ ],
+ "key": {
+  "K": "minecraft:dried_kelp_block",
+  "R": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tire_swing"
+ }
+}

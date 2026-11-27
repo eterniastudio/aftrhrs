@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  "N-N"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "-": "minecraft:string"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_lights",
+  "count": 1
+ }
+}

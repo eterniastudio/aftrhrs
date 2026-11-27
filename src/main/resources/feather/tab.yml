@@ -1,0 +1,64 @@
+# Feather tab list. /feather reload applies changes.
+#
+# Every text is MiniMessage with the palette tags from messages.yml (<accent>, <muted>, ...) and these placeholders:
+#   Server:  <server> <online> <max> <tps> <mspt> <clock> <date>
+#   Player:  <name> (nickname) <username> <prefix> <suffix> <group> <world> <ping> <x> <y> <z> <level> <gamemode>
+#            <hp> <max-hp> <health> (in hearts, e.g. 9.5) <hearts> (a row of heart symbols) <playtime> <afk>
+#   Here:    <rotating> (the current rotating message)
+# <shimmer:#color1:#color2>text</shimmer> is a gradient that slowly moves (good for titles).
+# With PlaceholderAPI installed, %placeholders% work too.
+
+# How often the header, footer and names refresh (ticks; 20 = 1 second).
+update-ticks: 20
+
+header:
+  - ''
+  - '<shimmer:#c3a6ff:#8fd3ff:#c3a6ff><b>✦ <server> ✦</b></shimmer>'
+  - '<muted>welcome back, </muted><name><muted>!'
+  - ''
+
+footer:
+  - ''
+  - '<rotating>'
+  - ''
+  - '<dim><online> online · <ping>ms · <clock>'
+  - ''
+
+# Messages that take turns in <rotating>.
+rotating:
+  interval-seconds: 8
+  # in-order or random
+  order: in-order
+  messages:
+    - '<muted>Press</muted> <accent>Shift+F</accent> <muted>for the menu'
+    - '<muted>Every creature and how to tame it:</muted> <accent>/codex'
+    - '<muted>Lost? </muted><accent>/spawn</accent><muted> or </muted><accent>/home'
+    - '<muted>Visit a friend with</muted> <accent>/tpa <player>'
+    - '<muted>Find fresh land with</muted> <accent>/rtp'
+    - '<muted>Give yourself a sparkly flight trail with</muted> <accent>/trail'
+
+# Each player's name in the list. <bounty> shows an active bounty (config.yml bounty.tab-tag).
+list-name: '<prefix><name><suffix><afk><bounty>'
+
+health:
+  # Health next to every name in the list: hearts (the vanilla heart row), number, or off.
+  tab: hearts
+  # A "20 ❤" line under the vanilla nametag. Only used when Feather's custom nametags are off
+  # (they show health themselves, see nametags.yml).
+  below-name: true
+  below-name-label: '<#ff6b81>❤'
+
+# Order players by rank. Groups listed here come first, in this order; other LuckPerms groups follow by
+# weight (heaviest first). Needs LuckPerms; without it the list is alphabetical.
+sort:
+  enabled: true
+  groups:
+    - owner
+    - admin
+    - mod
+    - helper
+    - vip
+    - default
+
+# Players push each other around. Off = walk through each other.
+collisions: true

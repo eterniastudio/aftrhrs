@@ -1,0 +1,20 @@
+{
+ "ambientocclusion": false,
+ "gui_light": "side",
+ "textures": {"particle": "aftrhrs:block/smithing/rune_side", "rune_pillar": "aftrhrs:block/smithing/rune_pillar", "rune_pillar_glow": "aftrhrs:block/smithing/rune_pillar_glow", "rune_side": "aftrhrs:block/smithing/rune_side", "rune_top": "aftrhrs:block/smithing/rune_top", "rune_top_glow": "aftrhrs:block/smithing/rune_top_glow", "rune_under": "aftrhrs:block/smithing/rune_under"},
+ "elements": [
+  {"name": "pillar", "from": [3, 0, 3], "to": [13, 11, 13], "faces": {"north": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar"}, "east": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar"}, "south": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar"}, "west": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar"}, "down": {"uv": [3, 3, 13, 13], "texture": "#rune_under", "cullface": "down"}}},
+  {"name": "top", "from": [0, 11, 0], "to": [16, 14, 16], "faces": {"north": {"uv": [0, 2, 16, 5], "texture": "#rune_side", "cullface": "north"}, "east": {"uv": [0, 2, 16, 5], "texture": "#rune_side", "cullface": "east"}, "south": {"uv": [0, 2, 16, 5], "texture": "#rune_side", "cullface": "south"}, "west": {"uv": [0, 2, 16, 5], "texture": "#rune_side", "cullface": "west"}, "up": {"uv": [0, 0, 16, 16], "texture": "#rune_top"}, "down": {"uv": [0, 0, 16, 16], "texture": "#rune_under"}}},
+  {"name": "glow_top", "from": [0, 11, 0], "to": [16, 14, 16], "light_emission": 15, "faces": {"up": {"uv": [0, 0, 16, 16], "texture": "#rune_top_glow"}}},
+  {"name": "glow_pillar", "from": [3, 0, 3], "to": [13, 11, 13], "light_emission": 15, "faces": {"north": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar_glow"}, "east": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar_glow"}, "south": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar_glow"}, "west": {"uv": [3, 5, 13, 16], "texture": "#rune_pillar_glow"}}}
+ ],
+ "display": {
+  "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.625, 0.625, 0.625]},
+  "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.25, 0.25, 0.25]},
+  "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.5, 0.5, 0.5]},
+  "on_shelf": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+  "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+  "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+  "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]}
+ }
+}

@@ -1,0 +1,307 @@
+# Feather shop (modules.shop): the General Store (/shop), the fishmonger and grocer sell-back counters and the market
+# stalls (/stall). Docs: docs/shop.md. /feather reload re-reads this file. Every coin comes out of or goes into the
+# bank balance (bank.yml); data lives in data/shop.yml, every sale and stall move is logged in data/shop-log.txt.
+#
+# Items are Oraxen ids (looked up when used, so an item that doesn't exist yet is just not offered) or vanilla
+# items written as minecraft:<id>.
+
+# The General Store. Categories in this order; each item: id, price (coins for one bundle) and amount (items in
+# one bundle, default 1). featured: false keeps an item out of the weekly featured picks.
+store:
+  # Most bundles one purchase may buy.
+  max-bundles: 64
+  categories:
+    seeds:
+      icon: arcana_seeds_tomato
+      items:
+        - {id: arcana_seeds_rice, price: 4, amount: 1}
+        - {id: arcana_seeds_tomato, price: 4, amount: 1}
+        - {id: arcana_seeds_grape, price: 4, amount: 1}
+        - {id: arcana_seeds_pepper, price: 4, amount: 1}
+        - {id: arcana_seeds_blueberry, price: 4, amount: 1}
+        - {id: arcana_seeds_tea, price: 4, amount: 1}
+        - {id: arcana_seeds_corn, price: 4, amount: 1}
+        - {id: arcana_seeds_weed, price: 4, amount: 1}
+        - {id: arcana_seaweed_spores, price: 4, amount: 1}
+    bait-rods:
+      icon: arcana_driftwood_rod
+      items:
+        - {id: arcana_worm_bait, price: 5, amount: 8}
+        - {id: arcana_grub_bait, price: 8, amount: 8}
+        - {id: arcana_shrimp_bait, price: 10, amount: 8}
+        - {id: arcana_glow_bait, price: 14, amount: 8}
+        - {id: arcana_driftwood_rod, price: 40, amount: 1}
+        - {id: arcana_coral_rod, price: 120, amount: 1}
+    farming:
+      icon: arcana_watering_can_tool
+      items:
+        - {id: arcana_compost, price: 6, amount: 8}
+        - {id: arcana_watering_can_tool, price: 25, amount: 1}
+        - {id: arcana_rolling_paper, price: 3, amount: 8}
+    cosmetics:
+      icon: arcana_string_lights
+      items:
+        - {id: arcana_string_lights, price: 12, amount: 1}
+        - {id: arcana_beach_towel_red, price: 15, amount: 1}
+        - {id: arcana_beach_towel_yellow, price: 15, amount: 1}
+        - {id: arcana_beach_towel_blue, price: 15, amount: 1}
+        - {id: arcana_sandcastle, price: 20, amount: 1}
+        - {id: arcana_shell_wind_chime, price: 18, amount: 1}
+  # Each Monday (daily.reset-zone in config.yml) this many items are picked at random and sold at a discount.
+  featured:
+    count: 3
+    discount-percent: 25
+
+# Selling back at the counters: right-click an arcana_shop_counter_fishmonger (fish, shellfish),
+# arcana_shop_counter_grocer (crops, meals, grocer-goods) or arcana_shop_counter_miner (the mining list below), or
+# /shop sell within counter-distance blocks of one. arcana_shop_counter_general opens the General Store.
+# Counter keepers (the keeper_general / _fishmonger / _grocer / _miner items) are shopkeepers anyone can place where
+# they may build: right-clicking one does what its counter does (a sale needs you within counter-distance of it).
+# Sneak + right-click picks one up again (whoever placed it, or feather.shop.admin).
+sell:
+  counter-distance: 6
+  # Coins for one item, before the quality / rarity multiplier and the daily price drop.
+  fish:
+    common: 2
+    uncommon: 6
+    rare: 18
+    legendary: 80
+  shellfish: 3
+  crop: 1
+  meal: 6
+  crop-quality:
+    normal: 1.0
+    fine: 1.5
+    prize: 3.0
+  # A fish's rarity comes from its feather:fish_rarity tag; fish without one use this table (else common).
+  fish-rarity:
+    anchovy: common
+    bitterling: common
+    bluegill: common
+    butterfly_fish: common
+    crawfish: common
+    crucian_carp: common
+    dab: common
+    dace: common
+    freshwater_goby: common
+    frog: common
+    goldfish: common
+    guppy: common
+    horse_mackerel: common
+    killifish: common
+    loach: common
+    mackerel: common
+    minnow: common
+    mudskipper: common
+    neon_tetra: common
+    pale_chub: common
+    pond_smelt: common
+    river_perch: common
+    sea_bass: common
+    sea_bream: common
+    sea_butterfly: common
+    squid: common
+    tadpole: common
+    tilapia: common
+    angelfish: uncommon
+    barred_knifejaw: uncommon
+    betta: uncommon
+    black_bass: uncommon
+    blowfish: uncommon
+    carp: uncommon
+    cave_blindfish: uncommon
+    char: uncommon
+    cherry_salmon: uncommon
+    clownfish: uncommon
+    coral_snapper: uncommon
+    gar: uncommon
+    icefin: uncommon
+    jungle_piranha: uncommon
+    mahi_mahi: uncommon
+    mitten_crab: uncommon
+    moray_eel: uncommon
+    nibble_fish: uncommon
+    olive_flounder: uncommon
+    pike: uncommon
+    pop_eyed_goldfish: uncommon
+    puffer_fish: uncommon
+    rainbow_trout: uncommon
+    rainbowfish: uncommon
+    ranchu_goldfish: uncommon
+    ray: uncommon
+    ribbon_eel: uncommon
+    saddled_bichir: uncommon
+    salmon: uncommon
+    sea_horse: uncommon
+    soft_shelled_turtle: uncommon
+    suckerfish: uncommon
+    sunfish: uncommon
+    surgeonfish: uncommon
+    sweetfish: uncommon
+    whisker_catfish: uncommon
+    zebra_turkeyfish: uncommon
+    arowana: rare
+    barreleye: rare
+    blue_marlin: rare
+    crystal_crawdad: rare
+    dorado: rare
+    football_fish: rare
+    giant_snakehead: rare
+    giant_trevally: rare
+    glass_eel: rare
+    golden_carp: rare
+    golden_trout: rare
+    hammerhead_shark: rare
+    king_salmon: rare
+    koi: rare
+    lantern_squid: rare
+    moonkoi: rare
+    napoleonfish: rare
+    saw_shark: rare
+    snapping_turtle: rare
+    stormray: rare
+    stringfish: rare
+    sturgeon: rare
+    tuna: rare
+    abyssal_leviathan_eel: legendary
+    arapaima: legendary
+    aurora_pike: legendary
+    coelacanth: legendary
+    great_white_shark: legendary
+    oarfish: legendary
+    sunken_king_crab: legendary
+    tidecrown_koi: legendary
+    whale_shark: legendary
+  # A fixed price for one item of an Oraxen id, e.g. {arcana_fish_moonkoi: 25}: crop quality still multiplies it, a
+  # fish's rarity doesn't; the daily price drop still applies. Only for items a counter buys anyway (fish, shellfish, crops, meals).
+  # Weed sells for 3 a bud (Fine 4.5, Prize 9).
+  overrides: {arcana_crop_weed: 3}
+  # Other goods the grocer buys, coins for one item by Oraxen id (the daily price drop still applies). Defaults: the
+  # Wildlife & Undead products and meals.
+  grocer-goods:
+    arcana_tuft_wool: 2
+    arcana_down_feather: 2
+    arcana_raw_duck: 2
+    arcana_duck_egg: 2
+    arcana_glow_mucus: 2
+    arcana_warped_fleece: 3
+    arcana_silk: 3
+    arcana_raw_venison: 3
+    arcana_raw_wartgrazer: 3
+    arcana_roast_duck: 3
+    arcana_venison_steak: 4
+    arcana_butter: 3
+    arcana_bristles: 4
+    arcana_tufthorn_hide: 4
+    arcana_deer_hide: 4
+    arcana_cheese_wedge: 4
+    arcana_velvet_antler: 8
+    arcana_truffle: 8
+    arcana_cheese_wheel: 12
+    arcana_truffle_risotto: 6
+    arcana_duck_and_rice: 6
+    arcana_venison_stew: 6
+    arcana_warped_stew: 6
+    arcana_cheese_board: 6
+    arcana_jungle_idol: 25
+  # What the mining store buys, coins for one item by item id (vanilla ids without minecraft:, mod items by their
+  # aftrhrs id). The daily price drop applies here too, so ore farms can't flood it. Keep diamonds below the bank's
+  # buy-coins-per-diamond (bank.yml), or buying diamonds at the bank and selling them here makes coins.
+  mining:
+    coal: 0.5
+    raw_copper: 0.5
+    copper_ingot: 1
+    raw_iron: 1
+    iron_ingot: 1.5
+    iron_nugget: 0.15
+    raw_gold: 2
+    gold_ingot: 3
+    gold_nugget: 0.3
+    redstone: 0.25
+    lapis_lazuli: 0.5
+    quartz: 0.5
+    amethyst_shard: 0.5
+    flint: 0.25
+    glowstone_dust: 0.25
+    obsidian: 1
+    crying_obsidian: 2
+    emerald: 8
+    diamond: 8
+    ancient_debris: 40
+    netherite_scrap: 45
+    netherite_ingot: 200
+    coal_ore: 1
+    deepslate_coal_ore: 1
+    copper_ore: 1
+    deepslate_copper_ore: 1
+    iron_ore: 2
+    deepslate_iron_ore: 2
+    gold_ore: 4
+    deepslate_gold_ore: 4
+    nether_gold_ore: 2
+    redstone_ore: 1.5
+    deepslate_redstone_ore: 1.5
+    lapis_ore: 2.5
+    deepslate_lapis_ore: 2.5
+    nether_quartz_ore: 1.5
+    emerald_ore: 12
+    deepslate_emerald_ore: 12
+    diamond_ore: 10
+    deepslate_diamond_ore: 10
+    coal_block: 4.5
+    raw_copper_block: 4.5
+    copper_block: 9
+    raw_iron_block: 9
+    iron_block: 13.5
+    raw_gold_block: 18
+    gold_block: 27
+    redstone_block: 2.25
+    lapis_block: 4.5
+    quartz_block: 2
+    amethyst_block: 2
+    emerald_block: 72
+    diamond_block: 72
+    netherite_block: 1800
+  # Dynamic prices: every unit sold today (server-wide, per item) lowers that item's price by drop-per-unit-percent,
+  # down to floor-percent of the base. Prices recover fully at the daily reset (daily.reset-zone).
+  dynamic:
+    enabled: true
+    drop-per-unit-percent: 0.5
+    floor-percent: 40
+  # Buttons shown per kind of item in the sell screen (the rest are still sold by Sell All).
+  max-rows: 12
+
+# Market stalls: staff set one up with /stall create <name> while looking at an arcana_market_stall_* furniture.
+stalls:
+  # Weekly rent, taken from the bank balance (renting and every renewal).
+  rent: 50
+  # Weeks a renter may pay ahead.
+  max-weeks-ahead: 4
+  # Stalls one player may rent at once.
+  max-per-player: 1
+  max-listings: 18
+  # Highest price for one item on a stall.
+  max-price: 100000
+  # How close (blocks) a player must be to use a stall.
+  distance: 6
+  # Sales while the owner is offline are summed up in one letter at most this often.
+  offline-note-minutes: 10
+  # Who returned stock and sale letters come from.
+  mail-from: Market Stall
+  # Stall keepers: a villager at the stall that opens the buying screen (everyone else) and the selling screen (the
+  # renter). Renting gives a Stall Keeper item (/stall keeper hands out a new one; older ones stop working).
+  keeper:
+    # The placement item: a plain material (not a spawn egg) and the item model it shows (empty = the material's own).
+    item:
+      material: paper
+      model: minecraft:villager_spawn_egg
+    # How far (blocks) from the registered stall the keeper may stand.
+    distance: 4
+    # A new keeper's look; the renter can change it in the selling screen (cosmetic only).
+    # type: plains, desert, jungle, savanna, snow, swamp, taiga. profession: none, armorer, butcher, cartographer,
+    # cleric, farmer, fisherman, fletcher, leatherworker, librarian, mason, nitwit, shepherd, toolsmith, weaponsmith.
+    default-look:
+      type: plains
+      profession: none
+    # A purchase in the buying screen of this many coins or more asks to confirm first (0 = never).
+    confirm-above: 500

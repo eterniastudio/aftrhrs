@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_crimson_stem",
+  "P": "minecraft:crimson_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_crimson_wardrobe"
+ }
+}

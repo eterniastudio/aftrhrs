@@ -1,0 +1,497 @@
+{
+ "id": "inkcurl",
+ "mm_id": "ArcanaInkcurl",
+ "kind": "wildlife",
+ "name": "Inkcurl",
+ "color": "f",
+ "health": 8,
+ "damage": 0,
+ "speed": 0.2,
+ "follow_range": 16,
+ "despawn": "true",
+ "damage_mods": {},
+ "note": "Shy reef octopus of every ocean that hoards lost trinkets. Startled, it squirts ink and jets off. Feather: brush it and it squirts an ink sac for you.",
+ "base": "SQUID",
+ "sounds": {
+  "ambient": {
+   "id": "entity.squid.ambient",
+   "pitch": 1.3,
+   "volume": 0.35
+  },
+  "hurt": {
+   "id": "entity.squid.hurt",
+   "pitch": 1.3,
+   "volume": 0.9
+  },
+  "death": {
+   "id": "entity.squid.death",
+   "pitch": 1.3,
+   "volume": 1.0
+  },
+  "every": 220,
+  "chance": 0.3
+ },
+ "life": {
+  "every": 100,
+  "chance": 0.45,
+  "day": {
+   "graze": 3,
+   "graze_long": 1,
+   "lie": 1,
+   "look": 2,
+   "ring_fiddle": 1
+  },
+  "night": {
+   "graze": 3,
+   "look": 1,
+   "lie": 1
+  },
+  "graze_clip": "forage",
+  "graze_block": "SAND",
+  "graze_sound": [
+   "block.sand.hit",
+   1.4,
+   0.2
+  ],
+  "lie_clip": "curl",
+  "lie_ticks": 400,
+  "lie_long_ticks": 800
+ },
+ "harvest": [
+  "sound{s=entity.squid.squirt;v=0.8;p=1.4} @self",
+  "particles{p=squid_ink;amount=14;hS=0.4;vS=0.3;y=0.4} @self"
+ ],
+ "ai": {
+  "goals": [
+   "clear",
+   "panic",
+   "fleeConditional{d=8;s=1.6;ss=1.3;conditions=[  - entitytype{t=PLAYER} true  - sprinting true ]}",
+   "fleeConditional{d=14;s=1.7;ss=1.4;mc=[  - variableEquals{var=caster.spooked;value=1} true ];conditions=[  - entitytype{t=PLAYER} true ]}",
+   "randomswim",
+   "lookatplayers",
+   "randomlookaround"
+  ],
+  "targets": [
+   "clear"
+  ]
+ },
+ "base_idle": "idle",
+ "base_walk": "swim",
+ "aquatic": {
+  "swim": 0.5,
+  "water_only": true
+ },
+ "lines": [
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaInkcurl_Startle"
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaInkcurl_Startle",
+   "line": "- skill{s=ArcanaInkcurl_Startle} @self ~onDamaged"
+  }
+ ],
+ "drops": [
+  {
+   "item": "minecraft:ink_sac",
+   "min": 1,
+   "max": 2,
+   "chance": 1.0
+  },
+  {
+   "item": "minecraft:nautilus_shell",
+   "min": 1,
+   "max": 1,
+   "chance": 0.03
+  },
+  {
+   "exp": 1,
+   "chance": 1.0
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:ocean",
+    "minecraft:deep_ocean",
+    "minecraft:warm_ocean",
+    "minecraft:lukewarm_ocean",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:cold_ocean",
+    "minecraft:deep_cold_ocean",
+    "minecraft:frozen_ocean",
+    "minecraft:deep_frozen_ocean",
+    "terralith:deep_warm_ocean"
+   ],
+   "rarity": "uncommon",
+   "position": "SEA",
+   "conditions": [],
+   "cap": 2,
+   "cap_radius": 48,
+   "cap_types": [
+    "ArcanaInkcurl"
+   ]
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "death": "death",
+  "hurt": "hurt",
+  "harvest": "harvest",
+  "swim": "swim"
+ },
+ "model": "inkcurl",
+ "clips": {
+  "idle": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "swim": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "crawl": {
+   "length": 1.6,
+   "loop": "loop"
+  },
+  "forage": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "curl": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "lie_down": {
+   "length": 1,
+   "loop": "once"
+  },
+  "stand_up": {
+   "length": 0.9,
+   "loop": "once"
+  },
+  "harvest": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "ink_jet": {
+   "length": 1,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.4,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.8,
+   "loop": "hold"
+  },
+  "look_around": {
+   "length": 3,
+   "loop": "once"
+  },
+  "peek": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "ring_fiddle": {
+   "length": 3,
+   "loop": "once"
+  },
+  "arm_wave": {
+   "length": 2,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.6,
+  0.5
+ ],
+ "shadow": 0.45,
+ "name_tag_y": 0.938,
+ "render_box": [
+  0.625,
+  0.75
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hb"
+   },
+   "swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "gait": "swim",
+    "drv": "b"
+   },
+   "crawl": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hb",
+    "gait": "walk"
+   },
+   "forage": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "h"
+   },
+   "curl": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hb"
+   },
+   "lie_down": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.0,
+    "from": "sitting",
+    "drv": "hb"
+   },
+   "stand_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.9,
+    "from": "sitting",
+    "drv": "hb"
+   },
+   "harvest": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "hb"
+   },
+   "ink_jet": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.0,
+    "drv": "hb"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.4,
+    "drv": "h"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.8,
+    "eyes": true,
+    "drv": "b"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hb"
+   },
+   "peek": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.2,
+    "drv": "hb"
+   },
+   "ring_fiddle": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hb"
+   },
+   "arm_wave": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hb"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "swim",
+   "swim": "swim",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {
+   "sitting>lying": "lie_down",
+   "sitting>standing": "stand_up"
+  },
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 5,
+     "min": 5,
+     "max": 12
+    },
+    {
+     "clip": "look_around",
+     "w": 2,
+     "cd": 12
+    },
+    {
+     "clip": "arm_wave",
+     "w": 2,
+     "cd": 10
+    },
+    {
+     "clip": "ring_fiddle",
+     "w": 1.5,
+     "cd": 25
+    },
+    {
+     "clip": "peek",
+     "w": 1,
+     "cd": 20,
+     "boost": {
+      "player_near": 3
+     }
+    }
+   ],
+   "sitting": [],
+   "lying": [
+    {
+     "clip": "@mood",
+     "w": 3,
+     "min": 10,
+     "max": 25
+    }
+   ],
+   "forage": [
+    {
+     "clip": "@mood",
+     "w": 4,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "arm_wave",
+     "w": 1,
+     "cd": 10
+    }
+   ],
+   "notice": [
+    {
+     "clip": "peek",
+     "w": 3
+    },
+    {
+     "clip": "look_around",
+     "w": 1
+    }
+   ],
+   "walk": [
+    {
+     "clip": "@mood",
+     "w": 2,
+     "min": 4,
+     "max": 10
+    },
+    {
+     "clip": "crawl",
+     "w": 2,
+     "min": 4,
+     "max": 10
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail_sway": 0,
+   "breath": 0.0
+  },
+  "authored": [
+   "arm_wave",
+   "crawl",
+   "curl",
+   "death",
+   "forage",
+   "harvest",
+   "hurt",
+   "idle",
+   "ink_jet",
+   "lie_down",
+   "look_around",
+   "peek",
+   "ring_fiddle",
+   "stand_up",
+   "swim"
+  ]
+ },
+ "glowmask": false,
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.07,
+    "layer": 5
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "step": {
+    "jitter": 0.08
+   },
+   "eat": {
+    "jitter": 0.06
+   },
+   "ability": {
+    "jitter": 0.06,
+    "layer": 2
+   }
+  },
+  "every": 360
+ }
+}

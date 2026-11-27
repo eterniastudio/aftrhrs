@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " E ",
+  "IIS"
+ ],
+ "key": {
+  "E": "minecraft:egg",
+  "I": "minecraft:iron_ingot",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_frying_pan"
+ }
+}

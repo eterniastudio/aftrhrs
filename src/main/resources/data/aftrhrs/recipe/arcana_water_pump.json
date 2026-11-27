@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " IS",
+  " I ",
+  "KUK"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "K": "minecraft:stone_bricks",
+  "S": "minecraft:stick",
+  "U": "minecraft:bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_water_pump"
+ }
+}

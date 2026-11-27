@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " S ",
+  "L L",
+  "LWL"
+ ],
+ "key": {
+  "S": "minecraft:string",
+  "L": "minecraft:leather",
+  "W": "#minecraft:wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sack"
+ }
+}

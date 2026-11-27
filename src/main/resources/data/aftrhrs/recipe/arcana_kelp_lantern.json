@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " K ",
+  "KSK",
+  " K "
+ ],
+ "key": {
+  "K": "minecraft:dried_kelp",
+  "S": "minecraft:sea_pickle"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_kelp_lantern"
+ }
+}

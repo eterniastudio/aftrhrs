@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:birch_planks",
+  "Z": "minecraft:birch_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_birch_counter"
+ }
+}

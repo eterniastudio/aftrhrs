@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "A"
+ ],
+ "key": {
+  "A": "aftrhrs:arcana_ice_brick_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_chiseled_ice"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "R P",
+  "I I",
+  "III"
+ ],
+ "key": {
+  "R": "minecraft:redstone",
+  "P": "minecraft:lapis_lazuli",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_magnet_charm"
+ }
+}

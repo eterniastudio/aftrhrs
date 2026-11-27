@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SSS",
+  "W W",
+  "W W"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "W": "minecraft:red_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_curtains"
+ }
+}

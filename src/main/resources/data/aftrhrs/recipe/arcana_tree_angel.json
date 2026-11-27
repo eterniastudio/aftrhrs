@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  "FWF",
+  " W "
+ ],
+ "key": {
+  "N": "minecraft:gold_nugget",
+  "F": "minecraft:feather",
+  "W": "minecraft:white_wool"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tree_angel"
+ }
+}

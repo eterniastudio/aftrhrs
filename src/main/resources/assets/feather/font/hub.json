@@ -1,0 +1,144 @@
+{
+ "providers": [
+  {
+   "type": "space",
+   "advances": {
+    "\ue000": -1,
+    "\ue010": 1,
+    "\ue001": -2,
+    "\ue011": 2,
+    "\ue002": -4,
+    "\ue012": 4,
+    "\ue003": -8,
+    "\ue013": 8,
+    "\ue004": -16,
+    "\ue014": 16,
+    "\ue005": -32,
+    "\ue015": 32,
+    "\ue006": -64,
+    "\ue016": 64,
+    "\ue007": -128,
+    "\ue017": 128,
+    "\ue008": -256,
+    "\ue018": 256
+   }
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_1_l.png",
+   "ascent": 0,
+   "height": 36,
+   "chars": [
+    "\ue100"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_1_r.png",
+   "ascent": 0,
+   "height": 36,
+   "chars": [
+    "\ue101"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_2_l.png",
+   "ascent": 0,
+   "height": 58,
+   "chars": [
+    "\ue102"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_2_r.png",
+   "ascent": 0,
+   "height": 58,
+   "chars": [
+    "\ue103"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_3_l.png",
+   "ascent": 0,
+   "height": 80,
+   "chars": [
+    "\ue104"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_3_r.png",
+   "ascent": 0,
+   "height": 80,
+   "chars": [
+    "\ue105"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_4_l.png",
+   "ascent": 0,
+   "height": 102,
+   "chars": [
+    "\ue106"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_4_r.png",
+   "ascent": 0,
+   "height": 102,
+   "chars": [
+    "\ue107"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_5_l.png",
+   "ascent": 0,
+   "height": 124,
+   "chars": [
+    "\ue108"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_5_r.png",
+   "ascent": 0,
+   "height": 124,
+   "chars": [
+    "\ue109"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_6_l.png",
+   "ascent": 0,
+   "height": 146,
+   "chars": [
+    "\ue10a"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/panel_6_r.png",
+   "ascent": 0,
+   "height": 146,
+   "chars": [
+    "\ue10b"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "feather:hub/moon.png",
+   "ascent": 8,
+   "height": 9,
+   "chars": [
+    "\ue200\ue201\ue202\ue203\ue204\ue205\ue206\ue207"
+   ]
+  }
+ ]
+}

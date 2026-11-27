@@ -1,0 +1,462 @@
+{
+ "id": "police",
+ "mm_id": "ArcanaPolice",
+ "kind": "police",
+ "name": "Police Officer",
+ "color": "f",
+ "health": 30,
+ "damage": 5,
+ "armor": 4,
+ "speed": 0.345,
+ "follow_range": 48,
+ "knockback_resistance": 0.25,
+ "base": "ZOMBIE",
+ "damage_mods": {},
+ "drops": [],
+ "flyer": false,
+ "abilities": [
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaPolice_Spawn"
+   },
+   "target": "self",
+   "trigger": "onspawn",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaPolice_Spawn",
+   "line": "- skill{s=ArcanaPolice_Spawn} @self ~onSpawn"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaPolice_Watch"
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 20,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaPolice_Watch",
+   "line": "- skill{s=ArcanaPolice_Watch} @self ~onTimer:20"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaPolice_Shout"
+   },
+   "target": "target",
+   "trigger": "ontimer",
+   "every": 60,
+   "conditions": [],
+   "chance": 0.5,
+   "skill": "ArcanaPolice_Shout",
+   "line": "- skill{s=ArcanaPolice_Shout} @target ~onTimer:60 0.5"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaPolice_Swing"
+   },
+   "target": "self",
+   "trigger": "onattack",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "skill": "ArcanaPolice_Swing",
+   "line": "- skill{s=ArcanaPolice_Swing} @self ~onAttack"
+  },
+  {
+   "mechanic": "skill",
+   "args": {
+    "s": "ArcanaPolice_Shout"
+   },
+   "target": "target",
+   "trigger": "onattack",
+   "every": 0,
+   "conditions": [],
+   "chance": 0.3,
+   "skill": "ArcanaPolice_Shout",
+   "line": "- skill{s=ArcanaPolice_Shout} @target ~onAttack 0.3"
+  },
+  {
+   "mechanic": "state",
+   "args": {
+    "mid": "arcana_police",
+    "s": "hurt",
+    "li": 1,
+    "lo": 2
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- state{mid=arcana_police;s=hurt;li=1;lo=2} @self ~onDamaged"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.villager.hurt",
+    "v": 1.0,
+    "p": 0.85
+   },
+   "target": "self",
+   "trigger": "ondamaged",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.villager.hurt;v=1.0;p=0.85} @self ~onDamaged"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.villager.death",
+    "v": 1.0,
+    "p": 0.85
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- sound{s=entity.villager.death;v=1.0;p=0.85} @self ~onDeath"
+  },
+  {
+   "mechanic": "sound",
+   "args": {
+    "s": "entity.villager.ambient",
+    "v": 0.8,
+    "p": 0.85
+   },
+   "target": "self",
+   "trigger": "ontimer",
+   "every": 160,
+   "conditions": [],
+   "chance": 0.4,
+   "line": "- sound{s=entity.villager.ambient;v=0.8;p=0.85} @self ~onTimer:160 0.4"
+  }
+ ],
+ "anims": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "death": "death",
+  "hurt": "hurt",
+  "attack": "attack",
+  "alert": "alert"
+ },
+ "faction": "police",
+ "model": "police",
+ "clips": {
+  "idle": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 0.8,
+   "loop": "loop"
+  },
+  "attack": {
+   "length": 0.85,
+   "loop": "once"
+  },
+  "hurt": {
+   "length": 0.35,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.4,
+   "loop": "hold"
+  },
+  "alert": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "idle_scan": {
+   "length": 8,
+   "loop": "loop"
+  },
+  "idle_ready": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.5,
+   "loop": "loop"
+  },
+  "whistle": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "radio": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "point": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "shrug": {
+   "length": 1.8,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.7,
+  2.1
+ ],
+ "shadow": 0.312,
+ "name_tag_y": 2.5,
+ "render_box": [
+  0.531,
+  2.25
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "spawns": [],
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "hb"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.8,
+    "gait": "walk",
+    "drv": "hb"
+   },
+   "attack": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.85,
+    "drv": "hb",
+    "hit": 0.42
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.35,
+    "drv": "hb"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.4,
+    "eyes": true,
+    "drv": "h"
+   },
+   "alert": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.8,
+    "drv": "hb"
+   },
+   "idle_scan": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 8.0,
+    "drv": "hb"
+   },
+   "idle_ready": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hb"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.5,
+    "gait": "run",
+    "drv": "hb"
+   },
+   "whistle": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hb"
+   },
+   "radio": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 2.6,
+    "drv": "hb"
+   },
+   "point": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "hb"
+   },
+   "shrug": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.8,
+    "drv": "hb"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "death": "death",
+   "hurt": "hurt",
+   "stance": "idle_ready",
+   "chase": "run"
+  },
+  "transitions": {},
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "alert",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "whistle",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "radio",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "point",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "shrug",
+     "w": 1,
+     "cd": 18
+    }
+   ],
+   "lying": [],
+   "boss_calm": [
+    {
+     "clip": "idle",
+     "w": 2,
+     "min": 4,
+     "max": 8
+    },
+    {
+     "clip": "idle_scan",
+     "w": 3,
+     "min": 8,
+     "max": 8
+    },
+    {
+     "clip": "radio",
+     "w": 1,
+     "cd": 12
+    },
+    {
+     "clip": "whistle",
+     "w": 1,
+     "cd": 16
+    }
+   ],
+   "boss_combat": [
+    {
+     "clip": "idle_ready",
+     "w": 4,
+     "min": 3,
+     "max": 6
+    },
+    {
+     "clip": "point",
+     "w": 1,
+     "cd": 8,
+     "when": "far"
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "look_yaw": 60
+  },
+  "authored": [
+   "attack",
+   "idle_ready",
+   "idle_scan",
+   "point",
+   "radio",
+   "run",
+   "shrug",
+   "whistle"
+  ]
+ },
+ "glowmask": false,
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.05,
+    "dist": 20
+   },
+   "ambient_angry": {
+    "jitter": 0.05,
+    "dist": 20
+   },
+   "hurt": {
+    "jitter": 0.07,
+    "dist": 20
+   },
+   "death": {
+    "jitter": 0.06,
+    "dist": 20
+   },
+   "ability_radio": {
+    "jitter": 0.06,
+    "dist": 20,
+    "layer": 2
+   }
+  },
+  "every": 400,
+  "dist": 20
+ }
+}

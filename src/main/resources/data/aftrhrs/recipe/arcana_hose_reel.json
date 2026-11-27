@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " G ",
+  "IGI",
+  "S S"
+ ],
+ "key": {
+  "G": "minecraft:dried_kelp",
+  "I": "minecraft:iron_ingot",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_hose_reel"
+ }
+}

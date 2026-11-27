@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP",
+  "PEP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "E": "minecraft:carrot",
+  "P": "minecraft:spruce_planks",
+  "Z": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_shop_counter_grocer"
+ }
+}

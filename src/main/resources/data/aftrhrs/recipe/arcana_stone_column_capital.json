@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "A",
+  "W"
+ ],
+ "key": {
+  "A": "minecraft:stone_bricks",
+  "W": "minecraft:stone_brick_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_column_capital",
+  "count": 2
+ }
+}

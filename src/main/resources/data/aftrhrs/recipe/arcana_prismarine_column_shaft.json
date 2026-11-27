@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "W",
+  "W"
+ ],
+ "key": {
+  "W": "minecraft:prismarine_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_prismarine_column_shaft",
+  "count": 3
+ }
+}

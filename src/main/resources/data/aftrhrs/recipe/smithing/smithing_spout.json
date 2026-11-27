@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "I  ",
+  "BII"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "B": "aftrhrs:fire_brick"
+ },
+ "result": {
+  "id": "aftrhrs:smithing_spout",
+  "count": 1
+ }
+}

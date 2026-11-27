@@ -1,0 +1,170 @@
+# Feather bank: Goob Coins, the bank chest, interest and the bank robbery. Docs: docs/bank.md, docs/bank-robbery.md.
+# /feather reload re-reads this file. Balances live in data/bank.yml; every money change is logged in data/bank-log.txt.
+
+# The coin. Feather only counts items carrying the Oraxen id below (or Feather's own coin tag), never a name or
+# material, so a renamed gold nugget is worth nothing.
+coin:
+  oraxen-id: arcana_goob_coin
+  # Without Oraxen (or while the Oraxen item is missing) the bank hands out this item with Feather's coin tag.
+  fallback-material: gold_nugget
+  # item_model for the fallback coin, e.g. 'minecraft:gold_nugget'; '' keeps the material's own look.
+  fallback-model: ''
+
+exchange:
+  # Buy: 1 diamond -> this many coins.
+  buy-coins-per-diamond: 10
+  # Sell: this many coins -> 1 diamond. The difference to the buy rate goes into the vault reserve.
+  sell-coins-per-diamond: 12
+  # Largest single buy or sell, in diamonds (2304 = a full inventory).
+  max-diamonds-per-trade: 2304
+
+# Percent of each deposit / withdrawal kept by the bank (into the vault reserve). 0 = free.
+fees:
+  deposit-percent: 0
+  withdraw-percent: 0
+
+# Nobody's balance goes above this.
+max-balance: 1000000000
+# /bank opens the bank screen anywhere. false: only at a bank chest (within access-distance). Bank chests stay
+# either way: they are what robbers break into.
+anywhere: true
+# How close (blocks) a player must stay to the bank chest while using it (when anywhere is false).
+access-distance: 6
+# Entries kept in each player's History.
+history-size: 20
+# Players shown by /baltop.
+baltop-size: 10
+
+interest:
+  enabled: true
+  # Percent of the balance paid once a day (0.5 = 0.5%), rounded down.
+  rate-percent: 0.5
+  # Only this much of a balance earns interest.
+  cap: 10000
+  # Hour of the day (0-23) the interest is paid, in the time zone below ('' = the server's time zone).
+  hour: 0
+  timezone: ''
+  # After downtime, missed days are paid at most this many times.
+  catch-up-days: 7
+  # Only players seen within this many days earn interest.
+  active-days: 14
+
+pay:
+  # Smallest /pay.
+  min: 1
+  # /pay of this many coins or more asks to confirm first (0 = never).
+  confirm-above: 500
+  # Seconds between two payments, and at most this many payments a minute.
+  cooldown-seconds: 3
+  max-per-minute: 10
+
+# The vault reserve: the bank's own coins, filled by the exchange spread and fees plus a base that refills over time.
+# Robbers steal from it; player deposits are never stolen.
+vault:
+  # Reserve on the very first start.
+  start: 2000
+  # Coins added per hour while the reserve is below refill-up-to.
+  refill-per-hour: 100
+  refill-up-to: 2000
+
+robbery:
+  enabled: true
+  # Other players (that the robber can see) who must be online.
+  min-other-players: 2
+  # Wait after any robbery before the next can start (whole server), and per player after their own.
+  server-cooldown-minutes: 120
+  player-cooldown-hours: 24
+  # Cooldown after a failed robbery (death, timeout, walking off, quitting, too many failed locks).
+  failed-cooldown-hours: 48
+  # The whole robbery must be over within this time.
+  max-minutes: 10
+  # Ask "Rob the bank?" first.
+  confirm: true
+  # While cracking, the robber stays within this many blocks of the chest...
+  vault-radius: 6
+  # ...or the robbery fails after this many seconds outside.
+  leave-grace-seconds: 3
+  # The locks, in order: dial, wires, memory (any of them, 1-3).
+  minigames: [dial, wires, memory]
+  # Failed locks allowed before the robbery fails; each one raises the alarm (more and faster police).
+  max-failures: 3
+  # Wait before a failed lock can be tried again.
+  retry-seconds: 5
+  games:
+    dial:
+      numbers: 3
+      max: 20
+      guesses: 6
+    wires:
+      min: 4
+      max: 6
+    memory:
+      length: 5
+      show-seconds: 4
+  # After cracking: get this far from the bank (blocks)...
+  escape-distance: 150
+  # ...then this many seconds with no officer within lose-police-radius blocks.
+  lose-police-seconds: 20
+  lose-police-radius: 24
+  # Loot: this percent of the vault reserve, at least min and at most max (never more than the reserve).
+  loot:
+    percent: 25
+    min: 100
+    max: 2500
+  # Logging out mid-robbery: 'kill' (the robber dies where they stand and drops their items) or 'none'.
+  quit-penalty: kill
+  # Chat announcements (start, cracked, caught, escaped).
+  announce: true
+  # Deputies: when a robbery starts, online non-AFK players (not the robber) get a clickable call; /bank defend moves
+  # them near the bank. If the robber is caught (dies), the deputies still near the vault or where the robber fell
+  # share reward-percent of what the robber would have taken. It comes from the vault reserve, never from balances.
+  deputies:
+    enabled: true
+    reward-percent: 20
+    # Deputies per robbery.
+    max: 8
+    # Deputies further than this (blocks) from both the vault and where the robber fell get nothing.
+    present-radius: 96
+    # Send deputies back where they answered the call from when the robbery ends.
+    return-after: true
+  alarm-sound: minecraft:event.raid.horn
+  police:
+    # The MythicMobs mob used as officer when MythicMobs has it; otherwise the vanilla stand-in below.
+    mythic-mob: ArcanaPolice
+    mythic-level: 1
+    first-wave-seconds: 8
+    # Seconds between waves (4 fewer per alarm level, at least 5).
+    wave-seconds: 20
+    # Officers per wave, plus per-alarm for each alarm level.
+    per-wave: 2
+    per-alarm: 1
+    # Officers alive at once (plus one per alarm level).
+    max-alive: 8
+    # Where waves arrive while cracking (around the vault and the robber)...
+    spawn-radius: {min: 8, max: 16}
+    # ...and while escaping (around the robber, outside lose-police-radius).
+    escape-spawn-radius: {min: 28, max: 40}
+    # Officers further than this from the robber are sent home.
+    despawn-distance: 80
+    # The vanilla stand-in: a wandering trader (villager model, blue robe) that runs at the robber and hits them.
+    fallback:
+      name: '<#5B8CFF><b>Police Officer'
+      health: 24
+      # Damage per hit (2 = one heart), once per attack-cooldown-ticks.
+      damage: 4
+      attack-cooldown-ticks: 20
+      reach: 2.4
+      # Movement speed attribute. 0.33 is about 4.8 blocks/s: faster than walking (4.3), slower than sprinting (5.6);
+      # about 0.36 keeps up with a sprinting player. Horses are far faster.
+      speed: 0.33
+      held-item: iron_sword
+  travel:
+    # What the robber may ride. Everything else (boats, minecarts, pigs, striders, camels, llamas, happy ghasts,
+    # nautiluses, ModelEngine mounts, other players) is blocked.
+    allowed-mounts: [HORSE, DONKEY, MULE, SKELETON_HORSE, ZOMBIE_HORSE]
+    # Any teleport of the robber further than this, or into another world, is canceled.
+    max-teleport-distance: 3
+    # Moving faster than this (blocks per tick) outside a horse is pulled back (riptide, launchers, lunges).
+    max-speed: 1.6
+    # Commands the robber can't use (with or without a plugin: prefix). Teleports by other means are canceled anyway.
+    blocked-commands: [home, spawn, warp, back, rtp, wild, randomtp, tpa, tpask, call, top, tpo, tppos, jump, fly]

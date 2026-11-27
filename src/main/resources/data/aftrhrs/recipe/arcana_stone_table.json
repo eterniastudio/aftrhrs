@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  " W ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:smooth_stone_slab",
+  "W": "minecraft:stone_brick_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_table"
+ }
+}

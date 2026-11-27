@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZXZ",
+  " W "
+ ],
+ "key": {
+  "Z": "minecraft:polished_diorite_slab",
+  "X": "minecraft:water_bucket",
+  "W": "minecraft:diorite_wall"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_diorite_birdbath"
+ }
+}

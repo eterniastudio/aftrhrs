@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_dye",
+ "dye": "#minecraft:dyes",
+ "group": "fairy_tinsel_dyed",
+ "target": "aftrhrs:fairy_tinsel",
+ "result": {
+  "id": "aftrhrs:fairy_tinsel"
+ }
+}

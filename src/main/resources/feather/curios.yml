@@ -1,0 +1,156 @@
+# Curios: Supplementaries-style behavior for Arcana Oraxen furniture (modules.curios, needs Oraxen).
+# Everything is keyed by Oraxen furniture id. Ids take * as a wildcard (arcana_*_pedestal).
+# Item lists take a material (diamond_sword), a vanilla item tag (#minecraft:swords) or an Oraxen id
+# (oraxen:arcana_hat_*). An Oraxen item only matches oraxen: entries.
+#
+# Points are in MODEL pixels (0..16 per block, floor at y = 0, model north = the side facing the placer), the same
+# space the models are drawn in (Documents/Blockbench/models/arcana_items/curios/SPEC.md). Feather maps them through
+# the furniture's own display entity (its position, yaw and transformation), so overlays line up with the model.
+# Overlay ItemDisplays spawn at the base entity's location and yaw; an ItemDisplay draws its model turned 180 degrees
+# about Y, which this setting accounts for (leave it on).
+item-display-flip: true
+#
+# Claims: putting / taking items, plants and hidden items need container trust; rotating and doormat text need build
+# trust; wobbling a hat stand needs access trust.
+
+# Sneak + right-click with an EMPTY hand rotates furniture whose Oraxen mechanic says rotatable: false
+# (storage, tables...) instead of opening / using it. Plain right-click still opens it.
+rotate:
+  enabled: true
+  ids: ["arcana_*"]
+  # hat stands wobble and ropes pull up on sneak + empty hand, so they never turn
+  exclude: ["arcana_*_hat_stand", "arcana_rope", "arcana_rope_knot", "arcana_rope_bridge"]
+  # Degrees per click. Oraxen turns furniture in 45 degree steps.
+  step-degrees: 90
+  # For furniture with restricted_rotation: STRICT.
+  strict-step-degrees: 45
+  sound: block.wood.hit
+
+# Furniture that receives a short observer-detectable update (its barrier block flips to waterlogged for one tick)
+# when an item is put on or taken off. Only barrier furniture can be observed.
+observer-pulse: true
+
+pedestal:
+  enabled: true
+  ids: ["arcana_*_pedestal"]
+  # Stacked pedestals of the same kind connect: Feather swaps the column to these hidden ids (base id + suffix).
+  stack:
+    enabled: true
+    bottom: _bottom
+    middle: _middle
+    top: _top
+  # Where the item rests (model px).
+  item-point: [8, 16, 8]
+  # How an item stands, first match wins. rotate-z tilts the sprite (an item's tip points up-right), lift raises
+  # it above the point (blocks), spin-seconds turns it around the vertical axis (0 = still), tilt leans the spin
+  # axis (a globe). display: FIXED (like an item frame), NONE, GROUND, HEAD, GUI...
+  poses:
+    blade-down:
+      items: ["#minecraft:swords", trident, mace]
+      display: FIXED
+      rotate-z: -135
+      scale: 0.75
+      lift: 0.5
+    upright:
+      items: ["#minecraft:pickaxes", "#minecraft:axes", "#minecraft:shovels", "#minecraft:hoes", fishing_rod, carrot_on_a_stick, warped_fungus_on_a_stick, brush, blaze_rod, breeze_rod, stick, bone]
+      display: FIXED
+      rotate-z: 45
+      scale: 0.75
+      lift: 0.45
+    globe:
+      items: ["oraxen:arcana_desk_globe", "oraxen:*_globe"]
+      display: FIXED
+      scale: 0.6
+      lift: 0.3
+      spin-seconds: 10
+      tilt: 23.5
+    float:
+      items: ["*"]
+      display: FIXED
+      scale: 0.5
+      lift: 0.35
+      spin-seconds: 6
+  # Items on pedestals near an enchanting table count as bookshelves (same spots vanilla checks for bookshelves:
+  # two blocks out, at the table's height or one above, with air in between).
+  enchanting:
+    enabled: true
+    items: [end_crystal]
+    bookshelves-each: 3
+    max-bookshelves: 15
+
+hat-stand:
+  enabled: true
+  ids: ["arcana_*_hat_stand"]
+  # Helmets, heads, carved pumpkins and every Arcana hat.
+  hats: ["#minecraft:head_armor", "#minecraft:skulls", carved_pumpkin, "oraxen:arcana_hat_*"]
+  # Bottom of the head (model px). The hat is drawn like on a player's head: HEAD display, scaled and turned.
+  head-point: [8, 12, 8]
+  head-scale: 0.625
+  head-yaw: 0
+  # Sneak + right-click with an empty hand: a damped wobble, degrees per swing.
+  wobble: [14, -10, 7, -4.5, 2.5, -1, 0]
+  wobble-ticks-per-swing: 4
+
+statue:
+  enabled: true
+  ids: ["arcana_stone_statue"]
+  arm-item: arcana_curio_fx_statue_arm
+  # The arm model's shoulder sits at its own (8,8,8); it is placed on the statue's right shoulder.
+  shoulder: [14, 24, 8]
+  # The held item is placed like vanilla's third-person right hand (a player's hand is 10 px below the shoulder);
+  # this moves it further along the hanging arm (model px). The statue's hand is 11 px below its shoulder.
+  hand-offset: [0, -1, 0]
+  # Arm raised forward (degrees) per held item; the first match wins, "default" otherwise (also with nothing held).
+  poses:
+    sword:
+      items: ["#minecraft:swords", trident, mace]
+      raise: 50
+    tool:
+      items: ["#minecraft:pickaxes", "#minecraft:axes", "#minecraft:shovels", "#minecraft:hoes", fishing_rod, brush]
+      raise: 30
+    candle:
+      items: ["#minecraft:candles", torch, soul_torch, copper_torch, lantern, soul_lantern]
+      raise: 80
+    default:
+      raise: 0
+  # Redstone power at the statue or the block below it makes it wave.
+  wave:
+    raise: 150
+    swing: 22
+    ticks-per-swing: 8
+
+flower-box:
+  enabled: true
+  ids: ["arcana_*_flower_box"]
+  plants: ["#minecraft:small_flowers", "#minecraft:flowers", "#minecraft:saplings", fern, short_grass, large_fern, tall_grass, red_mushroom, brown_mushroom, crimson_fungus, warped_fungus, crimson_roots, warped_roots, dead_bush, azalea, flowering_azalea, sweet_berries]
+  # Plant slots (model px): where each plant's base stands.
+  slots: [[3, 5, 13], [8, 5, 13], [13, 5, 13]]
+  plant-scale: 0.5
+
+doormat:
+  enabled: true
+  ids: ["arcana_*doormat"]
+  # Right-click with one of these (or an empty hand) to write on the mat.
+  edit-items: ["#minecraft:signs", "#minecraft:hanging_signs", ink_sac, glow_ink_sac, feather]
+  edit-with-empty-hand: true
+  max-line-length: 20
+  text-color: "#3b2a1c"
+  text-height: 1.1
+  text-scale: 0.42
+  # Sneak + right-click with an item hides one under the mat; sneak + right-click with an empty hand takes it back.
+  hide-items: true
+
+messages:
+  claim: "<bad>You can't use that here.</bad>"
+  pedestal-full: "<muted>Take the item off first (empty hand).</muted>"
+  hat-full: "<muted>Take the hat off first (empty hand).</muted>"
+  not-a-hat: "<muted>Only helmets, heads and hats fit on a hat stand.</muted>"
+  flower-box-full: "<muted>This flower box is full.</muted>"
+  hidden: "<muted>You tucked <text><item></text> under the mat.</muted>"
+  hidden-full: "<muted>Something is already under the mat.</muted>"
+  doormat-title: "Doormat"
+  doormat-lines: "Write up to three lines on the mat."
+  doormat-save: "Save"
+  doormat-clear: "Clear"
+  doormat-saved: "<good>The mat says it now.</good>"
+  cannot-rotate: "<muted>This one can't be turned in place.</muted>"

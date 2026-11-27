@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_copper_lumber_axe",
+  "aftrhrs:arcana_diamond_lumber_axe",
+  "aftrhrs:arcana_golden_lumber_axe",
+  "aftrhrs:arcana_iron_lumber_axe",
+  "aftrhrs:arcana_netherite_lumber_axe",
+  "aftrhrs:arcana_relic_runebreaker"
+ ]
+}

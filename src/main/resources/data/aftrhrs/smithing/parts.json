@@ -1,0 +1,31 @@
+{
+  "_doc": "Anvil & Ember parts (SMITHING.md section 4). role: which material stats it uses (head, handle, binding, limb, grip, string, fletching, plating). cost: ingots (90 units) or carved pieces. makes: how many one craft gives. made: where (cast, anvil, carve). plan: anvil moves when forged (draw, flatten, bend, punch, fold).",
+  "parts": [
+    {"id": "pick_head", "role": "head", "cost": 2, "made": ["cast", "anvil", "carve"], "plan": ["draw", "draw", "bend", "flatten"]},
+    {"id": "axe_head", "role": "head", "cost": 2, "made": ["cast", "anvil", "carve"], "plan": ["flatten", "punch", "draw", "flatten"]},
+    {"id": "shovel_blade", "role": "head", "cost": 1, "made": ["cast", "anvil", "carve"], "plan": ["flatten", "flatten", "bend"]},
+    {"id": "hoe_blade", "role": "head", "cost": 1, "made": ["cast", "anvil", "carve"], "plan": ["draw", "flatten", "bend"]},
+    {"id": "blade", "role": "head", "cost": 2, "made": ["cast", "anvil"], "plan": ["draw", "draw", "flatten", "draw"]},
+    {"id": "broad_blade", "role": "head", "cost": 6, "made": ["anvil"], "plan": ["fold", "draw", "draw", "flatten", "draw", "flatten"]},
+    {"id": "hammer_face", "role": "head", "cost": 6, "made": ["cast", "anvil", "carve"], "plan": ["upset", "punch", "flatten", "flatten"]},
+    {"id": "broad_axe_head", "role": "head", "cost": 6, "made": ["anvil"], "plan": ["fold", "flatten", "punch", "draw", "flatten"]},
+    {"id": "large_plate", "role": "head", "cost": 4, "made": ["cast", "anvil"], "plan": ["flatten", "flatten", "flatten", "bend"]},
+    {"id": "spearhead", "role": "head", "cost": 2, "made": ["cast", "anvil"], "plan": ["draw", "draw", "punch", "flatten"]},
+    {"id": "guard", "role": "binding", "cost": 1, "made": ["cast", "anvil"], "plan": ["draw", "bend"]},
+    {"id": "pommel", "role": "binding", "cost": 1, "made": ["cast", "carve"], "plan": ["upset", "punch"]},
+    {"id": "binding", "role": "binding", "cost": 1, "made": ["carve", "anvil"], "plan": ["draw", "draw"]},
+    {"id": "tough_binding", "role": "binding", "cost": 3, "made": ["carve", "anvil"], "plan": ["draw", "draw", "bend"]},
+    {"id": "handle", "role": "handle", "cost": 1, "made": ["carve", "cast"], "plan": ["draw", "draw"]},
+    {"id": "tough_handle", "role": "handle", "cost": 3, "made": ["carve", "cast"], "plan": ["draw", "draw", "draw"]},
+    {"id": "grip", "role": "grip", "cost": 1, "made": ["carve"], "plan": []},
+    {"id": "bow_limb", "role": "limb", "cost": 2, "made": ["carve", "anvil"], "plan": ["draw", "draw", "bend", "bend"]},
+    {"id": "bowstring", "role": "string", "cost": 1, "made": ["carve"], "plan": []},
+    {"id": "arrowhead", "role": "head", "cost": 1, "makes": 4, "made": ["cast", "carve"], "plan": ["draw", "flatten"]},
+    {"id": "fletching", "role": "fletching", "cost": 1, "makes": 4, "made": ["carve"], "plan": []},
+    {"id": "helm_plate", "role": "plating", "cost": 3, "made": ["anvil"], "plan": ["flatten", "bend", "bend", "flatten"]},
+    {"id": "cuirass_plate", "role": "plating", "cost": 6, "made": ["anvil"], "plan": ["flatten", "flatten", "bend", "bend", "flatten"]},
+    {"id": "greave_plate", "role": "plating", "cost": 5, "made": ["anvil"], "plan": ["flatten", "flatten", "bend", "flatten"]},
+    {"id": "sabaton_plate", "role": "plating", "cost": 2, "made": ["anvil"], "plan": ["flatten", "bend", "flatten"]},
+    {"id": "mail", "role": "binding", "cost": 2, "made": ["anvil"], "plan": ["draw", "draw", "bend", "bend"]}
+  ]
+}

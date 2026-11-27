@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SIS",
+  "PCP",
+  "PPP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "I": "minecraft:iron_ingot",
+  "P": "minecraft:birch_planks",
+  "S": "minecraft:quartz_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_birch_vanity"
+ }
+}

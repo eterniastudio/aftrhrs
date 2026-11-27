@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:calcite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_calcite_slab",
+  "count": 6
+ }
+}

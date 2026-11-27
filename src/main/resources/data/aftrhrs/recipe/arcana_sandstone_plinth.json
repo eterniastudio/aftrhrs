@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:cut_sandstone_slab",
+  "A": "minecraft:chiseled_sandstone",
+  "B": "minecraft:cut_sandstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_plinth"
+ }
+}

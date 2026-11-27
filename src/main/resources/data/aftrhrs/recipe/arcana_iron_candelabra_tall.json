@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "KKK",
+  " I ",
+  "NIN"
+ ],
+ "key": {
+  "K": "minecraft:candle",
+  "I": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_iron_candelabra_tall"
+ }
+}

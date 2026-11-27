@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "  W",
+  "WWW",
+  "Z Z"
+ ],
+ "key": {
+  "W": "minecraft:orange_wool",
+  "Z": "minecraft:birch_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_orange_sun_lounger"
+ }
+}

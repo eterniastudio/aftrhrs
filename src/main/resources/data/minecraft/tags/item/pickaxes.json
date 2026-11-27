@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_copper_hammer",
+  "aftrhrs:arcana_diamond_hammer",
+  "aftrhrs:arcana_golden_hammer",
+  "aftrhrs:arcana_iron_hammer",
+  "aftrhrs:arcana_netherite_hammer"
+ ]
+}

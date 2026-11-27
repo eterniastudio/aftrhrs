@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PHP",
+  "S S"
+ ],
+ "key": {
+  "H": "minecraft:hay_block",
+  "P": "#minecraft:planks",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_feeding_trough"
+ }
+}

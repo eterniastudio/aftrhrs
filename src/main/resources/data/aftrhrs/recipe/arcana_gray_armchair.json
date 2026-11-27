@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "P P",
+  "WWW",
+  "S S"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "W": "minecraft:gray_wool",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_gray_armchair"
+ }
+}

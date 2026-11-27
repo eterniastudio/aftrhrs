@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " X ",
+  "TDT",
+  " T "
+ ],
+ "key": {
+  "X": "minecraft:cherry_sapling",
+  "T": "minecraft:terracotta",
+  "D": "minecraft:rooted_dirt"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_potted_cherry_blossom"
+ }
+}

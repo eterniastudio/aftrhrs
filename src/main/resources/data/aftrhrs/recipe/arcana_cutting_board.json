@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CNB",
+  "ZZZ"
+ ],
+ "key": {
+  "C": "minecraft:carrot",
+  "N": "minecraft:iron_nugget",
+  "B": "minecraft:beetroot",
+  "Z": "minecraft:oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_cutting_board"
+ }
+}

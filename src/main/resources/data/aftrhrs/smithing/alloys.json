@@ -1,0 +1,15 @@
+{
+ "_doc": "Crucible alloys (SMITHING.md 3.2). One batch takes 'inputs' (molten units per metal) plus 'additives' (items dissolved into the melt, any of 'items', 'count' per batch) and makes 'units' of the result. Needs the melt at 'heat' or hotter and three stirs. 'great': only in the Great Crucible.",
+ "alloys": [
+  {"id": "steel", "units": 90, "inputs": {"iron": 90}, "additives": [{"items": ["minecraft:charcoal", "minecraft:coal"], "count": 1}], "heat": 1350},
+  {"id": "rose_gold", "units": 90, "inputs": {"copper": 45, "gold": 45}, "additives": [], "heat": 1000},
+  {"id": "chime_bronze", "units": 90, "inputs": {"copper": 90}, "additives": [{"items": ["minecraft:amethyst_shard"], "count": 2}], "heat": 1100},
+  {"id": "tidebronze", "units": 90, "inputs": {"copper": 90}, "additives": [{"items": ["minecraft:prismarine_shard"], "count": 2}], "heat": 1100},
+  {"id": "rimesteel", "units": 90, "inputs": {"steel": 90}, "additives": [{"items": ["aftrhrs:arcana_permafrost_shard"], "count": 1}], "heat": 1350},
+  {"id": "emberforged_steel", "units": 90, "inputs": {"steel": 90}, "additives": [{"items": ["minecraft:blaze_powder"], "count": 2}], "heat": 1400},
+  {"id": "pearlsteel", "units": 90, "inputs": {"steel": 90}, "additives": [{"items": ["aftrhrs:arcana_black_pearl"], "count": 1}], "heat": 1350},
+  {"id": "echo_steel", "units": 90, "inputs": {"netherite": 90}, "additives": [{"items": ["minecraft:echo_shard"], "count": 2}], "heat": 1550, "great": true},
+  {"id": "voidgold", "units": 90, "inputs": {"gold": 90}, "additives": [{"items": ["minecraft:ender_pearl"], "count": 2}], "heat": 1500, "great": true},
+  {"id": "starforged", "units": 360, "inputs": {"netherite": 360}, "additives": [{"items": ["minecraft:nether_star"], "count": 1}], "heat": 1600, "great": true}
+ ]
+}

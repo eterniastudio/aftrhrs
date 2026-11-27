@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/decor/mailbox"},"facing=east":{"model":"aftrhrs:arcana/decor/mailbox","y":90},"facing=south":{"model":"aftrhrs:arcana/decor/mailbox","y":180},"facing=west":{"model":"aftrhrs:arcana/decor/mailbox","y":270}}}

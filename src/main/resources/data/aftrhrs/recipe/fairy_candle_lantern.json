@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "NCN",
+  "NNN"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "C": "#minecraft:candles"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_candle_lantern",
+  "count": 1
+ }
+}

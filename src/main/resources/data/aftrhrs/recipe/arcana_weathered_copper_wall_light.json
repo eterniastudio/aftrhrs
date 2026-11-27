@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CI",
+  " L"
+ ],
+ "key": {
+  "C": "minecraft:weathered_cut_copper",
+  "I": "minecraft:copper_ingot",
+  "L": "minecraft:weathered_copper_lantern"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_weathered_copper_wall_light"
+ }
+}

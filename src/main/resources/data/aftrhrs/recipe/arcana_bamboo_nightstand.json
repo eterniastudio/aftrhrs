@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ZZZ",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "P": "minecraft:bamboo_planks",
+  "Z": "minecraft:bamboo_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_nightstand"
+ }
+}

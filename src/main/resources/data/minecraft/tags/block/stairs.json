@@ -1,0 +1,24 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_blue_ice_brick_stairs",
+  "aftrhrs:arcana_blue_ice_tile_stairs",
+  "aftrhrs:arcana_calcite_brick_stairs",
+  "aftrhrs:arcana_calcite_stairs",
+  "aftrhrs:arcana_calcite_tile_stairs",
+  "aftrhrs:arcana_candy_cane_stairs",
+  "aftrhrs:arcana_driftwood_stairs",
+  "aftrhrs:arcana_gingerbread_brick_stairs",
+  "aftrhrs:arcana_gingerbread_stairs",
+  "aftrhrs:arcana_ice_brick_stairs",
+  "aftrhrs:arcana_ice_tile_stairs",
+  "aftrhrs:arcana_mushroom_stem_stairs",
+  "aftrhrs:arcana_polished_blue_ice_stairs",
+  "aftrhrs:arcana_polished_calcite_stairs",
+  "aftrhrs:arcana_polished_ice_stairs",
+  "aftrhrs:arcana_polished_snow_stairs",
+  "aftrhrs:arcana_snow_brick_stairs",
+  "aftrhrs:arcana_snow_tile_stairs",
+  "aftrhrs:arcana_stripped_poplar_wood_stairs"
+ ]
+}

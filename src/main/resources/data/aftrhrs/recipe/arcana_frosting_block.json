@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SS",
+  "SS"
+ ],
+ "key": {
+  "S": "minecraft:sugar"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_frosting_block"
+ }
+}

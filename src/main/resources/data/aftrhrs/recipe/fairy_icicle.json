@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  " L ",
+  " I "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "L": "minecraft:glowstone_dust",
+  "I": "minecraft:ice"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_icicle",
+  "count": 4
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_warped_fleece_block"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_warped_fleece",
+  "count": 4
+ }
+}

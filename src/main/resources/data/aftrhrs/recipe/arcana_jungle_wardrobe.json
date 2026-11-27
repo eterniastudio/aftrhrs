@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PLP",
+  "PCP"
+ ],
+ "key": {
+  "C": "minecraft:chest",
+  "L": "minecraft:stripped_jungle_log",
+  "P": "minecraft:jungle_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_jungle_wardrobe"
+ }
+}

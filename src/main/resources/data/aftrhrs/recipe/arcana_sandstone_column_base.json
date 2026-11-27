@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "B"
+ ],
+ "key": {
+  "W": "minecraft:sandstone_wall",
+  "B": "minecraft:cut_sandstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandstone_column_base",
+  "count": 2
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "H",
+  "T",
+  "B"
+ ],
+ "key": {
+  "B": "minecraft:blue_wool",
+  "H": "minecraft:red_wool",
+  "T": "minecraft:white_terracotta"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_red_garden_gnome"
+ }
+}

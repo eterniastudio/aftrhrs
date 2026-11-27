@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PCP",
+  "PGP",
+  "PPP"
+ ],
+ "key": {
+  "P": "minecraft:dark_oak_planks",
+  "C": "minecraft:clock",
+  "G": "minecraft:gold_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_grandfather_clock"
+ }
+}

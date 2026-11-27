@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "IFI",
+  "CRC"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "F": "minecraft:blast_furnace",
+  "C": "minecraft:copper_ingot",
+  "R": "minecraft:redstone_block"
+ },
+ "result": {
+  "id": "aftrhrs:feather_coal_generator"
+ }
+}

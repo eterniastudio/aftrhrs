@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GGG",
+  "GWG",
+  "PPP"
+ ],
+ "key": {
+  "G": "minecraft:glass",
+  "P": "minecraft:dark_oak_slab",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_aquarium_tank"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " C ",
+  "BOB",
+  "BGB"
+ ],
+ "key": {
+  "B": "minecraft:jungle_log",
+  "C": "minecraft:campfire",
+  "G": "minecraft:cyan_glazed_terracotta",
+  "O": "minecraft:orange_terracotta"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_jungle_tiki_statue"
+ }
+}

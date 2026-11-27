@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " W ",
+  "WTW",
+  " W "
+ ],
+ "key": {
+  "T": "minecraft:light_blue_terracotta",
+  "W": "minecraft:stripped_bamboo_block"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_bamboo_tiki_mask"
+ }
+}

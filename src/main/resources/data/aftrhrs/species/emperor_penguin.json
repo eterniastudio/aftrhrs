@@ -1,0 +1,966 @@
+{
+ "id": "emperor_penguin",
+ "mm_id": "ArcanaEmperorPenguin",
+ "kind": "pet",
+ "name": "Emperor Penguin",
+ "color": "f",
+ "health": 16,
+ "damage": 0,
+ "speed": 0.2,
+ "follow_range": 32,
+ "hostile": false,
+ "untameable": false,
+ "fights": false,
+ "flyer": false,
+ "egg_only": false,
+ "no_fall": false,
+ "no_nap": false,
+ "damage_mods": {
+  "DROWNING": 0.0,
+  "FREEZE": 0.0,
+  "FALL": 0.5
+ },
+ "note": "Tall, calm and golden-eared. Colonies gather on frozen shores; the grey fluffy chicks stay close to the grown-ups.",
+ "ability_desc": "Boat pusher and fishing buddy. Raised from a chick (feed it fish while it grows). A grown pet hops into the back seat of your boat: +40% boat speed on water for good (+50% at bond 5), and with it aboard the boat slides over snow like a sled. Wild ones swimming around your boat push it too (+10% each, up to 4). Feed any penguin a fish and it fishes beside you for a while: a 1 in 4 chance to double your catch (pets: up to 2 in 5 with bond), then it rests.",
+ "plush": "arcana_plush_emperor_penguin",
+ "hitbox": [
+  0.6,
+  0.95
+ ],
+ "eye": 0.82,
+ "heal": {
+  "item": "minecraft:cod",
+  "amount": 4
+ },
+ "sounds": {
+  "ambient": {
+   "id": "entity.goat.ambient",
+   "pitch": 0.7,
+   "volume": 0.6
+  },
+  "hurt": {
+   "id": "entity.goat.hurt",
+   "pitch": 0.9,
+   "volume": 0.9
+  },
+  "death": {
+   "id": "entity.goat.death",
+   "pitch": 0.8,
+   "volume": 1.0
+  },
+  "eat": {
+   "id": "entity.generic.eat",
+   "pitch": 1.0,
+   "volume": 0.7
+  },
+  "every": 180,
+  "chance": 0.4
+ },
+ "anims": {
+  "sit": "sit",
+  "sleep": "sleep",
+  "eat": "eat",
+  "happy": "happy",
+  "tame": "tame",
+  "ability": "ability",
+  "look_around": "look_around",
+  "hurt": "hurt",
+  "spawn": "spawn",
+  "run": "run",
+  "death": "death",
+  "greet": "greet",
+  "notice": "notice",
+  "shake": "shake",
+  "sit_down": "sit_down",
+  "stand_up": "stand_up",
+  "lie_down": "lie_down",
+  "wake_up": "wake_up"
+ },
+ "moods": {
+  "idle": [
+   [
+    "idle_sleepy",
+    "night"
+   ],
+   [
+    "idle_happy",
+    "happy"
+   ],
+   [
+    "idle_beg",
+    "owner_holding:minecraft:cod"
+   ],
+   [
+    "idle_swim",
+    "in_water"
+   ]
+  ],
+  "walk": [
+   [
+    "walk_happy",
+    "happy"
+   ],
+   [
+    "run",
+    "owner_sprinting"
+   ],
+   [
+    "run",
+    "in_combat"
+   ],
+   [
+    "swim",
+    "in_water"
+   ]
+  ]
+ },
+ "pools": {
+  "idle": [
+   "stretch",
+   "look_around"
+  ],
+  "idle_sleepy": [
+   "stretch"
+  ],
+  "idle_rain": [
+   "shake",
+   "shake"
+  ],
+  "idle_alert": [
+   "look_around"
+  ],
+  "idle_worried": [
+   "notice"
+  ],
+  "dawn": [
+   "stretch"
+  ]
+ },
+ "flourish_sounds": {},
+ "abilities": [
+  {
+   "mechanic": "particles",
+   "args": {
+    "p": "snowflake",
+    "amount": 14,
+    "hS": 0.3,
+    "vS": 0.4,
+    "y": 0.5
+   },
+   "target": "self",
+   "trigger": "ondeath",
+   "every": 0,
+   "conditions": [],
+   "chance": 1.0,
+   "line": "- particles{p=snowflake;amount=14;hS=0.3;vS=0.4;y=0.5} @self ~onDeath"
+  }
+ ],
+ "spawns": [
+  {
+   "dimension": "minecraft:overworld",
+   "biomes": [
+    "minecraft:snowy_beach",
+    "minecraft:frozen_ocean",
+    "minecraft:deep_frozen_ocean",
+    "minecraft:ice_spikes",
+    "minecraft:snowy_plains",
+    "minecraft:frozen_river",
+    "terralith:glacial_chasm",
+    "terralith:wintry_lowlands",
+    "terralith:cold_shrubland",
+    "terralith:ice_marsh"
+   ],
+   "rarity": "uncommon",
+   "position": "LAND",
+   "conditions": []
+  }
+ ],
+ "model": "emperor_penguin",
+ "clips": {
+  "idle": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "idle_look": {
+   "length": 5,
+   "loop": "loop"
+  },
+  "walk": {
+   "length": 1.1,
+   "loop": "loop"
+  },
+  "walk_happy": {
+   "length": 0.9,
+   "loop": "loop"
+  },
+  "run": {
+   "length": 0.6,
+   "loop": "loop"
+  },
+  "slide": {
+   "length": 1.2,
+   "loop": "loop"
+  },
+  "swim": {
+   "length": 0.9,
+   "loop": "loop"
+  },
+  "idle_swim": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "swim_roll": {
+   "length": 1.8,
+   "loop": "loop"
+  },
+  "sit": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "sleep": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "sit_look": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "boat_sit": {
+   "length": 3,
+   "loop": "loop"
+  },
+  "boat_push": {
+   "length": 0.8,
+   "loop": "loop"
+  },
+  "hurt": {
+   "length": 0.4,
+   "loop": "once"
+  },
+  "death": {
+   "length": 1.6,
+   "loop": "hold"
+  },
+  "eat": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "catch": {
+   "length": 1.7,
+   "loop": "once"
+  },
+  "ability": {
+   "length": 2.2,
+   "loop": "once"
+  },
+  "happy": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "tame": {
+   "length": 2,
+   "loop": "once"
+  },
+  "greet": {
+   "length": 1.6,
+   "loop": "once"
+  },
+  "notice": {
+   "length": 1,
+   "loop": "once"
+  },
+  "look_around": {
+   "length": 3,
+   "loop": "once"
+  },
+  "spawn": {
+   "length": 1.1,
+   "loop": "once"
+  },
+  "pet": {
+   "length": 1.8,
+   "loop": "once"
+  },
+  "idle_sleepy": {
+   "length": 4,
+   "loop": "loop"
+  },
+  "idle_happy": {
+   "length": 2,
+   "loop": "loop"
+  },
+  "idle_beg": {
+   "length": 1.6,
+   "loop": "loop"
+  },
+  "shake": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "preen": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "call": {
+   "length": 3.2,
+   "loop": "once"
+  },
+  "flap": {
+   "length": 1,
+   "loop": "once"
+  },
+  "head_tilt": {
+   "length": 1.4,
+   "loop": "once"
+  },
+  "stretch": {
+   "length": 2.6,
+   "loop": "once"
+  },
+  "sit_down": {
+   "length": 0.8,
+   "loop": "once"
+  },
+  "stand_up": {
+   "length": 0.7,
+   "loop": "once"
+  },
+  "lie_down": {
+   "length": 1.2,
+   "loop": "once"
+  },
+  "wake_up": {
+   "length": 1.3,
+   "loop": "once"
+  }
+ },
+ "scale": 1.0,
+ "model_hitbox": [
+  0.6,
+  0.95
+ ],
+ "shadow": 0.42,
+ "name_tag_y": 1.094,
+ "render_box": [
+  0.406,
+  0.969
+ ],
+ "head_bone": "h_head",
+ "glow_bones": [],
+ "glow_out": [],
+ "penguin": {
+  "family": "emperor",
+  "chick": "ArcanaEmperorPenguinChick",
+  "group": {
+   "adults": [
+    2,
+    4
+   ],
+   "chicks": [
+    1,
+    2
+   ]
+  },
+  "habitat": [
+   "snowy_beach",
+   "frozen_ocean",
+   "deep_frozen_ocean",
+   "ice_spikes",
+   "snowy_plains",
+   "frozen_river",
+   "terralith:ice_marsh",
+   "terralith:wintry_lowlands",
+   "terralith:glacial_chasm",
+   "terralith:cold_shrubland"
+  ],
+  "boat": 0.4,
+  "boat_bond": 0.02,
+  "buddy": 0.25,
+  "buddy_bond": 0.03,
+  "swim": 2.4
+ },
+ "raised": true,
+ "anim": {
+  "clips": {
+   "idle": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "drv": "ht"
+   },
+   "idle_look": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 5.0,
+    "drv": "h"
+   },
+   "walk": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.1,
+    "gait": "walk",
+    "drv": "hbt"
+   },
+   "walk_happy": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.9,
+    "gait": "walk",
+    "drv": "hbt"
+   },
+   "run": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.6,
+    "gait": "run",
+    "drv": "hbt"
+   },
+   "slide": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "hbt",
+    "gait": "walk"
+   },
+   "swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.9,
+    "gait": "swim",
+    "drv": "hbt"
+   },
+   "idle_swim": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "gait": "idle",
+    "drv": "hb"
+   },
+   "swim_roll": {
+    "p": "swimming",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "hbt"
+   },
+   "sit": {
+    "p": "sitting",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "sleep": {
+    "p": "lying",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "eyes": true,
+    "drv": "hbt"
+   },
+   "sit_look": {
+    "p": "sitting",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "boat_sit": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 3.0,
+    "drv": "hbt"
+   },
+   "boat_push": {
+    "p": "standing",
+    "move": true,
+    "loop": "loop",
+    "layer": "base",
+    "len": 0.8,
+    "drv": "hbt"
+   },
+   "hurt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 0.4,
+    "drv": "h"
+   },
+   "death": {
+    "p": "lying",
+    "move": true,
+    "loop": "hold",
+    "layer": "base",
+    "len": 1.6,
+    "eyes": true,
+    "drv": "hb"
+   },
+   "eat": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.4,
+    "drv": "h"
+   },
+   "catch": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.7,
+    "drv": "hb"
+   },
+   "ability": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.2,
+    "drv": "hb"
+   },
+   "happy": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hb"
+   },
+   "tame": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hb"
+   },
+   "greet": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "h"
+   },
+   "notice": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.0,
+    "drv": "hb"
+   },
+   "look_around": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 3.0,
+    "drv": "h"
+   },
+   "spawn": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.1,
+    "from": "standing",
+    "drv": "hb"
+   },
+   "pet": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.8,
+    "drv": "h"
+   },
+   "idle_sleepy": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 4.0,
+    "eyes": true,
+    "drv": "h"
+   },
+   "idle_happy": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 2.0,
+    "drv": "hb"
+   },
+   "idle_beg": {
+    "p": "standing",
+    "move": false,
+    "loop": "loop",
+    "layer": "base",
+    "len": 1.6,
+    "drv": "hb"
+   },
+   "shake": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.2,
+    "drv": "h"
+   },
+   "preen": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "h"
+   },
+   "call": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 3.2,
+    "drv": "hb"
+   },
+   "flap": {
+    "p": "airborne",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.0,
+    "gait": "fly"
+   },
+   "head_tilt": {
+    "p": "standing",
+    "move": true,
+    "loop": "once",
+    "layer": "overlay",
+    "len": 1.4,
+    "drv": "h"
+   },
+   "stretch": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 2.6,
+    "drv": "hb"
+   },
+   "sit_down": {
+    "p": "sitting",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.8,
+    "from": "standing",
+    "drv": "hbt"
+   },
+   "stand_up": {
+    "p": "standing",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 0.7,
+    "from": "sitting",
+    "drv": "hbt"
+   },
+   "lie_down": {
+    "p": "lying",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.2,
+    "from": "sitting",
+    "eyes": true,
+    "drv": "hbt"
+   },
+   "wake_up": {
+    "p": "sitting",
+    "move": false,
+    "loop": "once",
+    "layer": "base",
+    "len": 1.3,
+    "from": "lying",
+    "eyes": true,
+    "drv": "hbt"
+   }
+  },
+  "states": {
+   "idle": "idle",
+   "walk": "walk",
+   "run": "run",
+   "swim": "swim",
+   "swim_idle": "idle_swim",
+   "sit": "sit",
+   "sleep": "sleep",
+   "lie": "sleep",
+   "death": "death",
+   "hurt": "hurt"
+  },
+  "transitions": {
+   "standing>sitting": "sit_down",
+   "sitting>standing": "stand_up",
+   "sitting>lying": "lie_down",
+   "lying>sitting": "wake_up"
+  },
+  "idle": {
+   "standing": [
+    {
+     "clip": "@mood",
+     "w": 6,
+     "min": 6,
+     "max": 16
+    },
+    {
+     "clip": "look_around",
+     "w": 1,
+     "cd": 14
+    },
+    {
+     "clip": "idle_look",
+     "w": 3,
+     "min": 5,
+     "max": 10
+    },
+    {
+     "clip": "preen",
+     "w": 2,
+     "cd": 20,
+     "when": "!in_water"
+    },
+    {
+     "clip": "call",
+     "w": 1.2,
+     "cd": 40,
+     "when": "!in_water",
+     "boost": {
+      "herd_near": 1.5,
+      "dawn": 2
+     }
+    },
+    {
+     "clip": "flap",
+     "w": 1.5,
+     "cd": 14,
+     "when": "!in_water"
+    },
+    {
+     "clip": "head_tilt",
+     "w": 1.5,
+     "cd": 12,
+     "boost": {
+      "player_near": 2
+     }
+    },
+    {
+     "clip": "stretch",
+     "w": 1,
+     "cd": 30,
+     "when": "!in_water"
+    },
+    {
+     "clip": "swim_roll",
+     "w": 2,
+     "cd": 14,
+     "when": "in_water"
+    }
+   ],
+   "sitting": [
+    {
+     "clip": "@sit",
+     "w": 8,
+     "min": 8,
+     "max": 24
+    },
+    {
+     "clip": "look_around",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "head_tilt",
+     "w": 1,
+     "cd": 18
+    },
+    {
+     "clip": "sit_look",
+     "w": 2,
+     "cd": 14
+    }
+   ],
+   "lying": [
+    {
+     "clip": "@sleep",
+     "w": 1,
+     "min": 30,
+     "max": 90
+    }
+   ]
+  },
+  "procedural": {
+   "head": "h_head",
+   "body": "body",
+   "tail": [
+    "tail"
+   ],
+   "tail_sway": 3,
+   "breath": 0.01
+  },
+  "authored": [
+   "ability",
+   "boat_push",
+   "boat_sit",
+   "call",
+   "catch",
+   "death",
+   "eat",
+   "flap",
+   "greet",
+   "happy",
+   "head_tilt",
+   "hurt",
+   "idle",
+   "idle_beg",
+   "idle_happy",
+   "idle_look",
+   "idle_sleepy",
+   "idle_swim",
+   "lie_down",
+   "look_around",
+   "notice",
+   "pet",
+   "preen",
+   "run",
+   "shake",
+   "sit",
+   "sit_down",
+   "sit_look",
+   "sleep",
+   "slide",
+   "spawn",
+   "stand_up",
+   "stretch",
+   "swim",
+   "swim_roll",
+   "tame",
+   "wake_up",
+   "walk",
+   "walk_happy"
+  ]
+ },
+ "glowmask": false,
+ "sfx": {
+  "events": {
+   "ambient": {
+    "jitter": 0.07,
+    "layer": 5
+   },
+   "ambient_happy": {
+    "jitter": 0.06,
+    "layer": 4
+   },
+   "ambient_sleepy": {
+    "jitter": 0.05
+   },
+   "ambient_scared": {
+    "jitter": 0.06
+   },
+   "sleep": {
+    "jitter": 0.06
+   },
+   "wake": {
+    "jitter": 0.06
+   },
+   "pet": {
+    "jitter": 0.06,
+    "layer": 3
+   },
+   "happy": {
+    "jitter": 0.06,
+    "layer": 4
+   },
+   "bond_up": {
+    "jitter": 0.05
+   },
+   "bond_level": {
+    "jitter": 0.0,
+    "layer": 6
+   },
+   "tame": {
+    "jitter": 0.06,
+    "layer": 7
+   },
+   "tame_fail": {
+    "jitter": 0.06
+   },
+   "eat": {
+    "jitter": 0.06,
+    "layer": 10
+   },
+   "heal": {
+    "jitter": 0.06
+   },
+   "hurt": {
+    "jitter": 0.07
+   },
+   "death": {
+    "jitter": 0.06
+   },
+   "sit": {
+    "jitter": 0.06
+   },
+   "stand": {
+    "jitter": 0.06
+   },
+   "arrive": {
+    "jitter": 0.06
+   },
+   "revive": {
+    "jitter": 0.06,
+    "layer": 10
+   },
+   "ability": {
+    "jitter": 0.06,
+    "layer": 6
+   },
+   "snore": {
+    "jitter": 0.05
+   },
+   "splash": {
+    "jitter": 0.06,
+    "layer": 2
+   },
+   "step": {
+    "jitter": 0.08
+   }
+  },
+  "every": 260,
+  "particle": "minecraft:snowflake"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z Z",
+  "Z Z",
+  "Z Z"
+ ],
+ "key": {
+  "Z": "minecraft:pale_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_pale_oak_shutters"
+ }
+}

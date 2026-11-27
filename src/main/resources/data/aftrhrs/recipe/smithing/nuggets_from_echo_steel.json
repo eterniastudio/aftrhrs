@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "group": "smithing",
+ "ingredients": [
+  "aftrhrs:ingot_echo_steel"
+ ],
+ "result": {
+  "id": "aftrhrs:nugget_echo_steel",
+  "count": 9
+ }
+}

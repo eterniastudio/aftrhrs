@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "fairy_lights",
+ "pattern": [
+  " N ",
+  "FLF",
+  " F "
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "L": "minecraft:glowstone_dust",
+  "F": "#minecraft:small_flowers"
+ },
+ "result": {
+  "id": "aftrhrs:fairy_flower",
+  "count": 4
+ }
+}

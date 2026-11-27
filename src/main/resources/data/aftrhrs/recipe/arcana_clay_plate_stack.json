@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_clay_plate",
+  "aftrhrs:arcana_clay_plate",
+  "aftrhrs:arcana_clay_plate"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_clay_plate_stack"
+ }
+}

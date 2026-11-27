@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PSP",
+  "PDP",
+  "PPP"
+ ],
+ "key": {
+  "P": "minecraft:paper",
+  "S": "minecraft:string",
+  "D": "minecraft:green_dye"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_green_present"
+ }
+}

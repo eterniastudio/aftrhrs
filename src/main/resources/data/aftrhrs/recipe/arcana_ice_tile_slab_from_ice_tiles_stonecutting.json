@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "aftrhrs:arcana_ice_tiles",
+ "result": {
+  "id": "aftrhrs:arcana_ice_tile_slab",
+  "count": 2
+ }
+}

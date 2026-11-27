@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "T",
+  "B",
+  "B"
+ ],
+ "key": {
+  "B": "minecraft:bamboo",
+  "T": "minecraft:torch"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_tiki_torch"
+ }
+}

@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"aftrhrs:arcana/coastal/tide_pool_basin"},"facing=east":{"model":"aftrhrs:arcana/coastal/tide_pool_basin","y":90},"facing=south":{"model":"aftrhrs:arcana/coastal/tide_pool_basin","y":180},"facing=west":{"model":"aftrhrs:arcana/coastal/tide_pool_basin","y":270}}}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "B"
+ ],
+ "key": {
+  "W": "minecraft:diorite_wall",
+  "B": "minecraft:polished_diorite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_diorite_column_base",
+  "count": 2
+ }
+}

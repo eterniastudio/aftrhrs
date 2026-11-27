@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "JPB",
+  "ZZZ"
+ ],
+ "key": {
+  "J": "minecraft:glass_bottle",
+  "P": "aftrhrs:arcana_china_plate",
+  "B": "minecraft:bowl",
+  "Z": "minecraft:spruce_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_kitchen_shelf"
+ }
+}

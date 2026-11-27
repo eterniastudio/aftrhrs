@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " A ",
+  "AGA",
+  "PCP"
+ ],
+ "key": {
+  "A": "minecraft:amethyst_shard",
+  "G": "minecraft:glowstone_dust",
+  "P": "#minecraft:planks",
+  "C": "minecraft:copper_ingot"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_crystal_lamp"
+ }
+}

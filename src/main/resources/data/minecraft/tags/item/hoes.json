@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_copper_scythe",
+  "aftrhrs:arcana_diamond_scythe",
+  "aftrhrs:arcana_golden_scythe",
+  "aftrhrs:arcana_iron_scythe",
+  "aftrhrs:arcana_netherite_scythe"
+ ]
+}

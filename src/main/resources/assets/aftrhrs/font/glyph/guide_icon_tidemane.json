@@ -1,0 +1,13 @@
+{
+ "providers": [
+  {
+   "type": "bitmap",
+   "file": "aftrhrs:font/glyph/guide_icon_tidemane.png",
+   "ascent": 9,
+   "height": 10,
+   "chars": [
+    "\ue000"
+   ]
+  }
+ ]
+}

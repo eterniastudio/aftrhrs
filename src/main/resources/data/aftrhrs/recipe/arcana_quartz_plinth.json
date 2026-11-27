@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "Z",
+  "A",
+  "B"
+ ],
+ "key": {
+  "Z": "minecraft:quartz_slab",
+  "A": "minecraft:chiseled_quartz_block",
+  "B": "minecraft:quartz_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_quartz_plinth"
+ }
+}

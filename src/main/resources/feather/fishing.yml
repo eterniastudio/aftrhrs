@@ -1,0 +1,386 @@
+# Feather fishing (modules.fishing). Full documentation: docs/fishing.md. /feather reload re-reads this file.
+# Custom fish replace vanilla catches by biome group, climate, time, weather, open water, rod, bait, enchantments,
+# Lucky Lure and a following Ripplekit. Items are content items (arcana_fish_<id>, arcana_shellfish_*, ...); while one
+# is missing a plain stand-in (items.fallback-fish / items.fallback) is used, so nothing breaks before the art is in.
+# Data: plugins/Feather/data/fishing.yml (journals, records, a running tournament); crab pots live in chunk data.
+# Weights are grams everywhere in this file and in the data; players see pounds ("3.2 lb").
+
+catch:
+  # Of the common rolls, this share keeps the vanilla fish (cod, salmon ...) instead of a custom common.
+  vanilla-common-share: 0.5
+  # Rarity odds (relative) before the gear bonuses. A tier with nothing that can bite here is skipped.
+  # (Was 70/22/7/1: with the old open-water rule and three strikes, players saw almost only commons.)
+  rarity-weights: {common: 62, uncommon: 26, rare: 10, legendary: 2}
+  # From this rarity up a fish only bites in open water (vanilla's open-water check: no blocks around the bobber):
+  # none | rare | legendary. Replaces the old rare-needs-open-water switch.
+  open-water-from: legendary
+  # A species' liked bait (species.<id>.bait) multiplies its chance by this while that bait is on.
+  preferred-bait-bonus: 2.5
+  # "Underground": the bobber is below max-y with at most this much sky light.
+  underground: {max-y: 50, max-sky-light: 3}
+  # Salt water (biome groups below): a common/uncommon roll becomes a shellfish this often.
+  shellfish-chance: 0.04
+  shellfish: [arcana_shellfish_crab 45, arcana_shellfish_shrimp 35, arcana_shellfish_clam 20]
+  # Vanilla junk is swapped for a beach find this often (treasure always stays). "id weight" or "id min-max weight".
+  extras-chance: 0.5
+  extras:
+    salt: [arcana_seashell 30, arcana_sand_dollar 18, arcana_driftwood 14, arcana_message_bottle 6,
+           arcana_sea_glass_shard_white 5, arcana_sea_glass_shard_aqua 5, arcana_sea_glass_shard_green 5,
+           arcana_sea_glass_shard_blue 4, arcana_sea_glass_shard_amber 3]
+    fresh: [arcana_driftwood 40, arcana_message_bottle 4]
+  # Everyone hears about legendary catches.
+  broadcast-legendary: true
+
+# Fishing enchantments on the rod in use (main hand first). Per level:
+#   <rarity>-per-level: that rarity's odds x (1 + value x level)   (Luck of the Sea III: rare x1.9, legendary x2.05)
+#   weight-skew-per-level: the typical weight moves this share of the way (in log terms) toward the species' max
+#   trophy-chance-per-level: chance of a trophy roll (between the trophy line and the max) instead of a normal one
+#   fight-per-level: reel power in the reel-in fight (+5% per level)
+# Lure keeps vanilla's faster bites (5 s less waiting per level) and adds a smaller weight bonus. The Fish Journal
+# shows what the player's rod does ("Your rod (Luck of the Sea III): rare x1.90 ...").
+enchantments:
+  luck-of-the-sea:
+    uncommon-per-level: 0.10
+    rare-per-level: 0.30
+    legendary-per-level: 0.35
+    weight-skew-per-level: 0.12
+    trophy-chance-per-level: 0.04
+    fight-per-level: 0.05
+  lure:
+    weight-skew-per-level: 0.04
+    trophy-chance-per-level: 0.0
+  # Caps for everything together (skew 0.85 = the typical weight 85% of the way to the max).
+  max-weight-skew: 0.85
+  max-trophy-chance: 0.5
+
+# The reel-in fight (players with the Companion mod's fishing feature): rare and legendary fish, and any fish heavier
+# than heavy-grams, aren't landed on the click: a tension bar comes up. Hold to reel (tension rises, line comes in),
+# let go when it strains (tension falls, the fish takes line). Snap the line or let it take all the line and it's
+# gone. The server replays the client's inputs and decides; no answer within max-seconds (+ latency slack) loses it.
+# Heavier fish pull harder; Luck of the Sea and a rod's "fight" (rods: below) reel faster; Unbreaking strengthens the
+# line. enabled: false (or a client without the feature) falls back to the strike window below.
+fight:
+  enabled: true
+  min-rarity: rare
+  heavy-grams: 4000
+  max-seconds: 45
+  latency-slack-ms: 1500
+  unbreaking-line-per-level: 0.06
+
+# The strike window (fallback when there's no fight): rare fish give a distinct splash on the bite, reel within
+# window-ms or it escapes. Legendary: that many strikes in a row (after each strike the bobber stays in and the fish
+# bites again after rebite-ticks).
+strike:
+  enabled: true
+  window-ms: 1000
+  legendary-strikes: 2
+  rebite-ticks: [30, 70]
+  sound: entity.player.splash.high_speed 1.0 0.7
+  sound-legendary: entity.elder_guardian.flop 1.0 0.6
+  hit-sound: entity.fishing_bobber.retrieve 1.0 0.6
+
+# Player PDC feather:lucky_lure_until (epoch ms), set by the fountain coin toss (civic module).
+lucky-lure:
+  rare-multiplier: 1.5
+  legendary-multiplier: 1.5
+
+# A Ripplekit following its owner within radius: bites come faster, rare+ odds go up. Right-click your own Ripplekit
+# with a clam: it cracks it (a pearl, sometimes a black pearl).
+ripplekit:
+  mob: ArcanaRipplekit
+  radius: 12
+  bite-speed: 0.75
+  rare-weight: 1.3
+  clam: arcana_shellfish_clam
+  pearl: arcana_pearl
+  black-pearl: arcana_black_pearl
+  black-pearl-chance: 0.15
+  # ModelEngine clip the Ripplekit plays while cracking (its 2 s "sits up and knocks the clam" clip); none = off.
+  crack-animation: ability
+
+# Squallgull hotspots (wildlife module): a bobber that lands in one bites faster and rare+ odds go up. The numbers
+# live in wildlife.yml (hotspots.bite-speed-multiplier / rare-weight-multiplier); this only switches the bonus off.
+hotspots:
+  enabled: true
+
+# Rods (by content id). speed: bite wait multiplier (lower = faster). weights: rarity odds multipliers. fight: extra
+# reel power in the reel-in fight (0.15 = 15% faster).
+rods:
+  arcana_driftwood_rod: {speed: 0.75, fight: 0.05}
+  arcana_coral_rod: {weights: {rare: 1.6, legendary: 1.3}, fight: 0.10}
+  # The Abyssal Rod is the only rod the Abyssal Leviathan Eel takes (needs-rod below), and lifts legendary odds.
+  arcana_abyssal_rod: {weights: {rare: 1.2, legendary: 3.0}, fight: 0.20}
+
+# Bait in the off hand (rod in the main hand), one used per catch. when: any | salt | fresh | night | day | rain.
+# Species can like one bait (species.<id>.bait): its chance x catch.preferred-bait-bonus while it is on.
+bait:
+  arcana_worm_bait: {speed: 0.8, weights: {common: 1.4}}
+  arcana_grub_bait: {weights: {common: 0.6, uncommon: 1.7, rare: 1.2, legendary: 1.1}}
+  arcana_shrimp_bait: {when: salt, weights: {rare: 2.0, legendary: 1.3}}
+  arcana_glow_bait: {when: night, weights: {rare: 2.0, legendary: 1.3}}
+
+# Biome groups: '#tag' (a biome tag; Terralith adds its biomes to the vanilla is_* tags), 'pattern*' (glob on the
+# full key, so terralith:warm_river matches '*river*'), an exact key, '@group' (everything in another group), and any
+# of those with a leading '!' to leave biomes out ('*' with exclusions = "everything else"). A biome can be in several
+# groups. Water type: river, pond (still water: lakes, ponds, swamps), brackish (river mouths: beaches, mangroves),
+# coast / reef (shallow sea), ocean / deep_ocean (open sea). Temperature: tropical, temperate, cold (species
+# climate:). Vanilla rivers count as temperate (frozen rivers as cold); Terralith's warm_river is tropical.
+biome-groups:
+  ocean: ['#is_ocean', '*ocean*']
+  deep_ocean: ['#is_deep_ocean', '*deep*ocean*']
+  warm_ocean: ['minecraft:warm_ocean', '*lukewarm*', '*warm_ocean*', '*tropical*ocean*']
+  lukewarm_ocean: ['*lukewarm*']
+  cold_ocean: ['*cold_ocean*', '*frozen_ocean*']
+  cold_water: ['*cold_ocean*', '*frozen_ocean*', '*frozen_river*', '*ice_marsh*', '*glacial*']
+  beach: ['#is_beach', '*beach*', '*shore*']
+  river: ['#is_river', '*river*']
+  swamp: ['*swamp*', '*mangrove*', '*marsh*', '*bayou*']
+  jungle: ['#is_jungle', '*jungle*', '*rainforest*']
+  frozen: ['*frozen*', '*snowy*', '*ice*', '*glacial*', '*wintry*', '*siberian*', '*tundra*', 'minecraft:grove',
+           'minecraft:jagged_peaks', 'minecraft:snowy_slopes']
+  lush_caves: ['minecraft:lush_caves', 'minecraft:dripstone_caves', 'terralith:cave/*']
+  pond: ['*', '!@ocean', '!@river', '!@beach', '!#is_nether', '!#is_end', '!*nether*', '!*the_end*']
+  reef: ['@warm_ocean', '!@deep_ocean']
+  coast: ['@beach', '@ocean', '!@deep_ocean']
+  brackish: ['@beach', '*mangrove*', '*delta*', '*estuary*', '*bayou*']
+  tropical: ['#spawns_warm_variant_farm_animals', '*jungle*', '*tropical*', '*rainforest*', '*savanna*', '*desert*',
+             '*badlands*', '*mesa*', '*oasis*', '*mangrove*', '*warm*', '*hot_*', '*arid*', '*volcanic*', '*bayou*',
+             'terralith:ancient_sands', 'terralith:mirage_isles', 'terralith:sandstone_valley',
+             '#terralith:reference/temperature/warm', '!@frozen', '!*snowy*']
+  cold: ['#spawns_cold_variant_farm_animals', '@frozen', '@cold_water', '*taiga*', '*cold*', '*alpine*', '*glacial*',
+         '*tundra*', '*siberian*', '*snow*', '*frozen*', '*wintry*', '*windswept*', '*_peaks', 'minecraft:grove',
+         '#terralith:reference/temperature/cold', '#terralith:reference/temperature/frozen_all', '!@tropical']
+  temperate: ['*', '!@tropical', '!@cold']
+# Groups that are salt water (everything else is fresh).
+salt-water-groups: [ocean, beach]
+# How the journal's hints name the groups ("Bites in ponds and lakes in a tropical climate at night").
+hint-names:
+  ocean: the ocean
+  deep_ocean: the deep ocean
+  warm_ocean: warm seas
+  lukewarm_ocean: lukewarm seas
+  cold_ocean: cold seas
+  cold_water: icy water
+  beach: beaches
+  river: rivers
+  swamp: swamps
+  jungle: jungle waters
+  frozen: frozen lands
+  lush_caves: lush caves
+  pond: ponds and lakes
+  reef: warm reefs
+  coast: coastal shallows
+  brackish: river mouths
+  tropical: tropical
+  temperate: temperate
+  cold: cold
+
+# Species: name, rarity (common|uncommon|rare|legendary), chance (relative within its rarity, default 10),
+# water (any|fresh|salt), biomes (any of these groups; none = anywhere), climate (and any of these groups),
+# time (any|day|night|dawn|dusk|twilight), weather (any|clear|rain|thunder), underground (true: only underground,
+# false: never), needs-rod (content id), bait (the bait it likes), grams [min, typical, max] (real weights; log-normal
+# around typical), bonus (chance multipliers: rain, thunder, night, day, dawn, dusk, full-moon, clear, open-water,
+# underground, 'group:<group>'). Commons carry no weight on the item (so they stack); uncommon and up are weighed.
+# The fantasy fish keep their names; their weights follow the real fish they look like.
+species:
+  # --- fresh water: rivers, ponds and lakes, swamps ---------------------------------------------------------------
+  river_perch: {name: River Perch, rarity: common, water: fresh, chance: 12, biomes: [river, pond], climate: [temperate, cold], grams: [80, 300, 2000], bait: arcana_worm_bait, bonus: {'group:river': 1.5}}
+  minnow: {name: Minnow, rarity: common, water: fresh, chance: 10, biomes: [river, pond], climate: [temperate, cold], grams: [1, 4, 15]}
+  bitterling: {name: Bitterling, rarity: common, water: fresh, biomes: [pond, river], climate: [temperate], grams: [2, 4, 12]}
+  pale_chub: {name: Pale Chub, rarity: common, water: fresh, biomes: [river], climate: [temperate], grams: [8, 25, 80], bonus: {day: 1.5}}
+  crucian_carp: {name: Crucian Carp, rarity: common, water: fresh, biomes: [pond, swamp], climate: [temperate, cold], grams: [80, 400, 3000], bait: arcana_worm_bait}
+  dace: {name: Dace, rarity: common, water: fresh, biomes: [river], climate: [temperate, cold], grams: [30, 120, 600]}
+  goldfish: {name: Goldfish, rarity: common, water: fresh, chance: 7, biomes: [pond], climate: [temperate, tropical], grams: [10, 60, 900]}
+  killifish: {name: Killifish, rarity: common, biomes: [pond, swamp, brackish], climate: [temperate, tropical], grams: [1, 2, 8], bonus: {day: 1.5}}
+  crawfish: {name: Crawfish, rarity: common, water: fresh, biomes: [pond, swamp, river], climate: [temperate, tropical], grams: [10, 35, 150], bait: arcana_worm_bait}
+  tadpole: {name: Tadpole, rarity: common, water: fresh, chance: 8, biomes: [pond, swamp], climate: [temperate, tropical], grams: [1, 2, 20], bonus: {rain: 2.0}}
+  frog: {name: Frog, rarity: common, water: fresh, chance: 8, biomes: [pond, swamp], climate: [temperate, tropical], grams: [10, 60, 700], bonus: {rain: 2.0, night: 1.5}}
+  freshwater_goby: {name: Freshwater Goby, rarity: common, water: fresh, biomes: [river], climate: [temperate], grams: [2, 8, 60]}
+  loach: {name: Loach, rarity: common, water: fresh, biomes: [pond, swamp, river], climate: [temperate], grams: [3, 12, 45], bait: arcana_worm_bait, bonus: {rain: 1.5}}
+  bluegill: {name: Bluegill, rarity: common, water: fresh, chance: 14, biomes: [pond], climate: [temperate], grams: [30, 150, 2100], bait: arcana_worm_bait, bonus: {day: 1.3}}
+  tilapia: {name: Tilapia, rarity: common, water: fresh, chance: 12, biomes: [pond, river, swamp, jungle], climate: [tropical], grams: [150, 700, 4300]}
+  pond_smelt: {name: Pond Smelt, rarity: common, water: fresh, biomes: [pond], climate: [cold], grams: [3, 10, 30], bonus: {'group:frozen': 2.0}}
+  guppy: {name: Guppy, rarity: common, water: fresh, biomes: [pond, river, jungle], climate: [tropical], grams: [1, 1, 2]}
+  neon_tetra: {name: Neon Tetra, rarity: common, water: fresh, biomes: [jungle, river], climate: [tropical], grams: [1, 1, 1], bonus: {'group:jungle': 2.0}}
+  mudskipper: {name: Mudskipper, rarity: common, chance: 14, biomes: [swamp, brackish], climate: [tropical, temperate], grams: [6, 25, 120]}
+  carp: {name: Carp, rarity: uncommon, water: fresh, chance: 14, biomes: [pond, river, swamp], climate: [temperate, tropical], grams: [800, 4000, 45000], bait: arcana_worm_bait}
+  pop_eyed_goldfish: {name: Pop-eyed Goldfish, rarity: uncommon, water: fresh, chance: 6, biomes: [pond], climate: [temperate], grams: [15, 60, 250]}
+  ranchu_goldfish: {name: Ranchu Goldfish, rarity: uncommon, water: fresh, chance: 6, biomes: [pond], climate: [temperate], grams: [20, 80, 350]}
+  soft_shelled_turtle: {name: Soft-shelled Turtle, rarity: uncommon, water: fresh, chance: 7, biomes: [river, pond], climate: [temperate, tropical], grams: [300, 1500, 11000], bonus: {night: 1.5}}
+  black_bass: {name: Black Bass, rarity: uncommon, water: fresh, chance: 12, biomes: [pond, river], climate: [temperate, tropical], grams: [400, 1800, 10100], bonus: {dawn: 2.0, dusk: 2.0}}
+  pike: {name: Pike, rarity: uncommon, water: fresh, chance: 10, biomes: [river, pond], climate: [temperate, cold], grams: [700, 3500, 25000], bonus: {dawn: 1.5, dusk: 1.5}}
+  sweetfish: {name: Sweetfish (Ayu), rarity: uncommon, water: fresh, biomes: [river], climate: [temperate], time: day, grams: [40, 120, 400]}
+  cherry_salmon: {name: Cherry Salmon, rarity: uncommon, water: fresh, biomes: [river], climate: [temperate, cold], grams: [150, 900, 9000], bait: arcana_grub_bait}
+  char: {name: Char, rarity: uncommon, water: fresh, biomes: [river, pond], climate: [cold], grams: [300, 1500, 15000], bait: arcana_grub_bait}
+  salmon: {name: Atlantic Salmon, rarity: uncommon, chance: 12, biomes: [river, brackish], climate: [temperate, cold], grams: [1500, 4500, 30000], bait: arcana_grub_bait, bonus: {rain: 1.5}}
+  mitten_crab: {name: Mitten Crab, rarity: uncommon, chance: 7, biomes: [river, brackish], climate: [temperate], grams: [60, 180, 450], bonus: {night: 2.0}}
+  nibble_fish: {name: Nibble Fish, rarity: uncommon, water: fresh, chance: 8, biomes: [river, pond], climate: [tropical], grams: [3, 12, 40]}
+  angelfish: {name: Angelfish, rarity: uncommon, water: fresh, chance: 8, biomes: [river, pond, jungle], climate: [tropical], grams: [8, 25, 60], bonus: {'group:jungle': 2.0}}
+  betta: {name: Betta, rarity: uncommon, water: fresh, chance: 7, biomes: [pond, swamp, jungle], climate: [tropical], grams: [1, 2, 4]}
+  rainbowfish: {name: Rainbowfish, rarity: uncommon, water: fresh, chance: 8, biomes: [river, pond, jungle], climate: [tropical], grams: [2, 6, 15], bonus: {clear: 1.5}}
+  gar: {name: Gar, rarity: uncommon, water: fresh, chance: 8, biomes: [river, swamp, pond], climate: [temperate, tropical], grams: [1000, 4000, 22000]}
+  saddled_bichir: {name: Saddled Bichir, rarity: uncommon, water: fresh, chance: 6, biomes: [swamp, river, jungle], climate: [tropical], time: night, grams: [300, 900, 3000]}
+  rainbow_trout: {name: Rainbow Trout, rarity: uncommon, water: fresh, biomes: [river, pond], climate: [temperate, cold], grams: [250, 1200, 12000], bait: arcana_grub_bait, bonus: {rain: 2.0}}
+  whisker_catfish: {name: Whisker Catfish, rarity: uncommon, water: fresh, biomes: [swamp, pond, river], climate: [temperate, tropical], time: night, grams: [500, 2500, 26000], bait: arcana_worm_bait}
+  jungle_piranha: {name: Jungle Piranha, rarity: uncommon, water: fresh, biomes: [jungle, river], climate: [tropical], grams: [100, 600, 3500]}
+  cave_blindfish: {name: Cave Blindfish, rarity: uncommon, underground: true, grams: [4, 15, 40]}
+  koi: {name: Koi, rarity: rare, water: fresh, biomes: [pond], climate: [temperate], time: day, grams: [1000, 4000, 25000], bonus: {clear: 2.0}}
+  snapping_turtle: {name: Snapping Turtle, rarity: rare, water: fresh, biomes: [pond, swamp, river], climate: [temperate], time: night, grams: [3000, 9000, 34000]}
+  giant_snakehead: {name: Giant Snakehead, rarity: rare, water: fresh, biomes: [pond, swamp, river, jungle], climate: [tropical], grams: [1500, 6000, 20000], bonus: {dawn: 2.0}}
+  golden_trout: {name: Golden Trout, rarity: rare, water: fresh, biomes: [river, pond], climate: [cold], grams: [80, 300, 5000], bait: arcana_grub_bait, bonus: {clear: 2.0}}
+  stringfish: {name: Stringfish (Taimen), rarity: rare, water: fresh, biomes: [river], climate: [cold], grams: [3000, 15000, 56000], bonus: {dawn: 2.0, dusk: 2.0}}
+  king_salmon: {name: King Salmon, rarity: rare, biomes: [river, brackish], climate: [cold, temperate], grams: [3000, 10000, 57000], bait: arcana_grub_bait, bonus: {rain: 1.5}}
+  arowana: {name: Arowana, rarity: rare, water: fresh, biomes: [jungle, river], climate: [tropical], grams: [800, 2500, 6000], bonus: {day: 1.5}}
+  dorado: {name: Dorado, rarity: rare, water: fresh, biomes: [river, jungle], climate: [tropical], grams: [1500, 6000, 34000]}
+  sturgeon: {name: Sturgeon, rarity: rare, biomes: [river, brackish], climate: [temperate, cold], grams: [5000, 30000, 600000], bonus: {'group:brackish': 1.5}}
+  moonkoi: {name: Moonkoi, rarity: rare, water: fresh, time: night, grams: [800, 2800, 11000], bonus: {full-moon: 3.0}}
+  golden_carp: {name: Golden Carp, rarity: rare, biomes: [river], weather: rain, grams: [1000, 4500, 20000]}
+  crystal_crawdad: {name: Crystal Crawdad, rarity: rare, underground: true, biomes: [lush_caves], grams: [50, 180, 900]}
+  arapaima: {name: Arapaima, rarity: legendary, water: fresh, biomes: [jungle, river], climate: [tropical], grams: [30000, 100000, 200000], bonus: {day: 1.5}}
+  aurora_pike: {name: Aurora Pike, rarity: legendary, biomes: [frozen], time: night, grams: [3000, 12000, 28000]}
+
+  # --- salt water: reefs, coasts, open and deep ocean -------------------------------------------------------------
+  sea_butterfly: {name: Sea Butterfly, rarity: common, water: salt, chance: 6, biomes: [ocean], climate: [cold], grams: [1, 1, 1], bonus: {night: 1.5}}
+  anchovy: {name: Anchovy, rarity: common, water: salt, chance: 16, biomes: [ocean, beach], climate: [temperate, tropical], grams: [5, 20, 50]}
+  horse_mackerel: {name: Horse Mackerel, rarity: common, water: salt, chance: 12, biomes: [ocean, beach], climate: [temperate], grams: [60, 250, 2000]}
+  sea_bass: {name: Sea Bass, rarity: common, chance: 12, biomes: [coast, brackish], climate: [temperate], grams: [500, 2000, 12000], bait: arcana_shrimp_bait}
+  dab: {name: Dab, rarity: common, water: salt, biomes: [coast], climate: [temperate, cold], grams: [60, 200, 1000]}
+  squid: {name: Squid, rarity: common, water: salt, chance: 10, biomes: [ocean], grams: [80, 350, 1500], bait: arcana_glow_bait, bonus: {night: 2.0}}
+  butterfly_fish: {name: Butterfly Fish, rarity: common, water: salt, biomes: [reef], climate: [tropical], grams: [20, 80, 250]}
+  sea_bream: {name: Sea Bream, rarity: common, water: salt, biomes: [ocean], climate: [temperate, tropical], grams: [300, 900, 7000], bonus: {'group:lukewarm_ocean': 2.0}}
+  mackerel: {name: Mackerel, rarity: common, water: salt, biomes: [ocean], climate: [temperate, cold], grams: [200, 500, 3400], bonus: {'group:cold_ocean': 2.0}}
+  sea_horse: {name: Sea Horse, rarity: uncommon, water: salt, chance: 7, biomes: [reef, coast], climate: [tropical, temperate], grams: [2, 8, 30]}
+  clownfish: {name: Clownfish, rarity: uncommon, water: salt, biomes: [reef], climate: [tropical], grams: [3, 8, 25]}
+  surgeonfish: {name: Surgeonfish, rarity: uncommon, water: salt, biomes: [reef], climate: [tropical], grams: [80, 300, 600]}
+  zebra_turkeyfish: {name: Zebra Turkeyfish, rarity: uncommon, water: salt, biomes: [reef], climate: [tropical], grams: [150, 500, 1400], bonus: {dusk: 1.5}}
+  blowfish: {name: Blowfish, rarity: uncommon, water: salt, biomes: [reef, coast], climate: [tropical], time: night, grams: [200, 700, 2800]}
+  puffer_fish: {name: Tiger Puffer, rarity: uncommon, water: salt, biomes: [coast], climate: [temperate], grams: [400, 1500, 9000], bonus: {'group:cold_ocean': 0.5}}
+  barred_knifejaw: {name: Barred Knifejaw, rarity: uncommon, water: salt, biomes: [coast], climate: [temperate], grams: [300, 1200, 7000], bait: arcana_shrimp_bait}
+  olive_flounder: {name: Olive Flounder, rarity: uncommon, water: salt, biomes: [coast], climate: [temperate], grams: [500, 2000, 9100], bonus: {night: 1.5}}
+  moray_eel: {name: Moray Eel, rarity: uncommon, water: salt, chance: 8, biomes: [reef], climate: [tropical], time: night, grams: [800, 4000, 29000]}
+  ribbon_eel: {name: Ribbon Eel, rarity: uncommon, water: salt, chance: 5, biomes: [reef], climate: [tropical], grams: [20, 70, 200]}
+  mahi_mahi: {name: Mahi-mahi, rarity: uncommon, water: salt, chance: 8, biomes: [ocean], climate: [tropical, temperate], time: day, grams: [2000, 9000, 40000], bonus: {'group:deep_ocean': 1.5}}
+  ray: {name: Ray, rarity: uncommon, water: salt, chance: 8, biomes: [coast], climate: [temperate, tropical], grams: [1500, 7000, 45000]}
+  suckerfish: {name: Suckerfish, rarity: uncommon, water: salt, chance: 6, biomes: [ocean], climate: [tropical, temperate], grams: [200, 800, 2300], bonus: {'group:deep_ocean': 1.5}}
+  coral_snapper: {name: Coral Snapper, rarity: uncommon, water: salt, biomes: [reef, coast], climate: [tropical], grams: [600, 3000, 22000], bait: arcana_shrimp_bait}
+  icefin: {name: Icefin, rarity: uncommon, biomes: [cold_water], grams: [150, 700, 3500]}
+  sunfish: {name: Sunfish, rarity: uncommon, water: salt, chance: 6, biomes: [ocean], climate: [temperate, tropical], time: day, grams: [25000, 250000, 2300000], bonus: {clear: 1.5}}
+  napoleonfish: {name: Napoleon Fish, rarity: rare, water: salt, chance: 8, biomes: [reef], climate: [tropical], time: day, grams: [8000, 25000, 190000]}
+  tuna: {name: Tuna, rarity: rare, water: salt, chance: 12, biomes: [ocean], climate: [temperate, tropical], grams: [20000, 150000, 680000], bonus: {'group:deep_ocean': 2.0}}
+  blue_marlin: {name: Blue Marlin, rarity: rare, water: salt, chance: 8, biomes: [ocean], climate: [tropical], time: day, grams: [40000, 150000, 820000], bonus: {'group:deep_ocean': 2.0}}
+  giant_trevally: {name: Giant Trevally, rarity: rare, water: salt, chance: 10, biomes: [reef, coast], climate: [tropical], grams: [3000, 15000, 80000], bait: arcana_shrimp_bait, bonus: {dawn: 1.5, dusk: 1.5}}
+  saw_shark: {name: Saw Shark, rarity: rare, water: salt, chance: 7, biomes: [deep_ocean], climate: [temperate], grams: [2000, 5000, 10000]}
+  hammerhead_shark: {name: Hammerhead Shark, rarity: rare, water: salt, chance: 7, biomes: [ocean], climate: [tropical, temperate], grams: [20000, 80000, 450000], bonus: {dusk: 1.5}}
+  football_fish: {name: Football Fish, rarity: rare, water: salt, chance: 6, biomes: [deep_ocean], time: night, grams: [100, 600, 3000], bait: arcana_glow_bait}
+  barreleye: {name: Barreleye, rarity: rare, water: salt, chance: 6, biomes: [deep_ocean], time: night, grams: [20, 60, 150], bait: arcana_glow_bait}
+  glass_eel: {name: Glass Eel, rarity: rare, biomes: [deep_ocean], time: night, grams: [150, 600, 2500]}
+  stormray: {name: Stormray, rarity: rare, weather: thunder, chance: 14, grams: [3000, 15000, 90000]}
+  lantern_squid: {name: Lantern Squid, rarity: rare, biomes: [deep_ocean], time: night, grams: [500, 2500, 12000], bait: arcana_glow_bait}
+  great_white_shark: {name: Great White Shark, rarity: legendary, water: salt, biomes: [ocean], climate: [temperate], grams: [300000, 1100000, 2300000], bonus: {'group:coast': 1.5}}
+  whale_shark: {name: Whale Shark, rarity: legendary, water: salt, biomes: [ocean], climate: [tropical], time: day, grams: [4000000, 12000000, 21000000], bonus: {clear: 1.5}}
+  oarfish: {name: Oarfish, rarity: legendary, water: salt, biomes: [deep_ocean], grams: [30000, 120000, 272000], bonus: {thunder: 3.0, rain: 1.5}}
+  coelacanth: {name: Coelacanth, rarity: legendary, water: salt, biomes: [deep_ocean], climate: [tropical, temperate], weather: rain, grams: [30000, 80000, 110000], bonus: {night: 1.5}}
+  tidecrown_koi: {name: Tidecrown Koi, rarity: legendary, biomes: [warm_ocean], time: twilight, grams: [3000, 9000, 30000]}
+  sunken_king_crab: {name: Sunken King Crab, rarity: legendary, biomes: [deep_ocean], grams: [2000, 4500, 12700]}
+  abyssal_leviathan_eel: {name: Abyssal Leviathan Eel, rarity: legendary, biomes: [deep_ocean], time: night,
+                          needs-rod: arcana_abyssal_rod, chance: 6, grams: [10000, 40000, 120000]}
+
+items:
+  # Lore lines added under the item's own lore. <weight> is "3.2 lb", <name> the catcher.
+  rarity-lore:
+    common: '<#C9C2E8>★ Common'
+    uncommon: '<#86E8B0>★ Uncommon'
+    rare: '<#8FD3FF>★ Rare'
+    legendary: '<#FFD24A>★ Legendary'
+  rarity-color: {common: '<#C9C2E8>', uncommon: '<#86E8B0>', rare: '<#8FD3FF>', legendary: '<#FFD24A>'}
+  weight-lore: '<muted><weight>'
+  # A line under the weight by size class: juvenile (under 60% of the species' typical weight), adult, trophy (60% of
+  # the way, in log terms, from typical to the species' max). Empty = no line.
+  size-lore:
+    juvenile: '<dim>Juvenile'
+    adult: ''
+    trophy: '<#FFD24A>✦ Trophy size'
+  catcher-lore: '<dim>Caught by <name>'
+  # Stand-in for a fish whose item doesn't exist yet.
+  fallback-fish: COD
+  # Stand-ins for other items while their item is missing (without one here, that catch just doesn't happen).
+  fallback:
+    arcana_shellfish_crab: {material: COD, name: Crab}
+    arcana_shellfish_shrimp: {material: COD, name: Shrimp}
+    arcana_shellfish_clam: {material: COD, name: Clam}
+    arcana_pearl: {material: PRISMARINE_CRYSTALS, name: Pearl}
+    arcana_black_pearl: {material: PRISMARINE_CRYSTALS, name: Black Pearl}
+
+# Fish Journal (/fishing journal): coins when every species of a rarity is caught (once per player).
+journal:
+  rewards: {common: 40, uncommon: 100, rare: 250, legendary: 800}
+
+# Fishing furniture (content ids; '*' is a wildcard).
+furniture:
+  scales: [arcana_fish_scale]
+  plaques: ['arcana_*_trophy_plaque', 'arcana_trophy_plaque_*']
+  tanks: [arcana_aquarium_tank]
+  crab-pots: [arcana_crab_pot]
+
+# The records board above every fish scale (needs the holograms module).
+records-board:
+  height: 2.2
+  per-page: 6
+  page-seconds: 6
+  view-distance: 24
+
+# Trophy plaques: where the fish sits in the plaque's model (px, 0..16, model north = the front), its size, and the
+# label (Moonkoi · 6.2 lb · Name) above it. yaw-offset / roll turn the fish if the model needs it. The fish is drawn
+# at fish-scale times its weight's length scale (a heavier fish is bigger), kept within size-range so a minnow still
+# shows and a shark doesn't hang off the wall.
+plaque:
+  fish-point: [8, 9.5, 13]
+  fish-scale: 0.7
+  size-range: [0.55, 1.3]
+  yaw-offset: 0
+  roll: 0
+  label: true
+  label-point: [8, 17, 12]
+
+# Aquarium tanks: one point per fish (px in the tank's model; the length of this list is how many fit). Each fish is
+# drawn at fish-scale times its weight's length scale, kept within size-range (bigger fish turn less).
+tank:
+  points: [[4.5, 9, 6], [11.5, 11, 9], [7.5, 6.5, 11]]
+  fish-scale: 0.42
+  size-range: [0.55, 1.2]
+  bob: 0.04
+  turn-degrees: 9
+  # Animation step (ticks) and how near a player must be for the fish to move.
+  animate-ticks: 20
+  animate-distance: 32
+  # Vanilla fish that may go in a tank too (custom fish always can).
+  vanilla-fish: [COD, SALMON, TROPICAL_FISH, PUFFERFISH]
+
+# Crab pots: one catch every min-max minutes while in water, up to capacity held. Time runs on while unloaded and
+# across restarts. A species (arcana_fish_<id>) is only caught where it lives (its water, biomes and climate) and is
+# weighed and journaled like a rod catch when collected.
+crab-pots:
+  min-minutes: 6
+  max-minutes: 10
+  capacity: 5
+  catch: [arcana_shellfish_crab 45, arcana_shellfish_shrimp 35, arcana_shellfish_clam 20, arcana_fish_crawfish 30,
+          arcana_fish_mitten_crab 12]
+  bubble-distance: 24
+
+# Tournaments: the biggest single custom fish wins. prizes: coins for 1st, 2nd, 3rd ... (into the bank balance).
+tournament:
+  prizes: [500, 250, 100]
+  max-minutes: 1440
+  # Weekend tournaments, in config.yml daily.reset-zone.
+  schedule:
+    enabled: true
+    days: [SATURDAY, SUNDAY]
+    time: '20:00'
+    minutes: 60
+
+# Message bottles (right-click to open): one reward. "coins min-max weight", "minecraft:<item> min-max weight" or a
+# content id. The note is a random line from messages.yml fishing.bottle.notes.
+bottle:
+  item: arcana_message_bottle
+  rewards: [coins 3-8 40, minecraft:emerald 1-2 15, arcana_sea_glass_shard_aqua 1-2 10, arcana_seashell 1-3 10,
+            arcana_pearl 1 6, arcana_worm_bait 2-4 12, minecraft:nautilus_shell 1 3, minecraft:name_tag 1 4]

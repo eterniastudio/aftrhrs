@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "CSC",
+  " Z "
+ ],
+ "key": {
+  "C": "minecraft:cocoa_beans",
+  "S": "minecraft:sugar",
+  "Z": "minecraft:bamboo_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_coconut_drinks"
+ }
+}

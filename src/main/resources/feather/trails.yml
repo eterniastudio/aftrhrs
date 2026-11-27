@@ -1,0 +1,93 @@
+# Feather flight trails: particles behind players while they fly (/fly, creative flight). /feather reload applies changes.
+# Players pick a style with /trail (a menu) or /trail <style|off>. Needs feather.trails.
+
+# The style everyone starts with (a style id below, or none = off until they pick one).
+default: sparkle
+
+# Ticks between puffs (2 = ten times a second).
+interval-ticks: 2
+# Only while actually moving (hovering in place leaves no trail).
+only-when-moving: true
+# Also while gliding with an elytra.
+while-gliding: false
+# Also during creative-mode flight.
+in-creative: true
+# Players see their own trail.
+show-own: true
+# Blocks away other players can see trails from.
+view-distance: 48
+
+# Styles. Keys are the ids used in /trail <id>.
+#   name: label in the menu (MiniMessage)
+#   particle: a Minecraft particle id (https://minecraft.wiki/w/Particles)
+#   count / spread / speed: particles per puff, random offset in blocks, particle speed
+#   colors: for dust, dust_color_transition and entity_effect. Several colors take turns along the trail;
+#           dust_color_transition fades each puff from one color into the next.
+#   size: dust size (0.5 - 4)
+#   block: for block-type particles (falling_dust, block). item: for the item particle.
+#   permission: optional; without it everyone with feather.trails can pick the style.
+styles:
+  sparkle:
+    name: '<#fff3b0>✦ Sparkle'
+    particle: end_rod
+    count: 1
+    spread: 0.12
+    speed: 0.01
+  stardust:
+    name: '<gradient:#c3a6ff:#8fd3ff>✧ Stardust'
+    particle: dust_color_transition
+    colors: ['#c3a6ff', '#8fd3ff', '#ff9ad5']
+    size: 1.1
+    count: 3
+    spread: 0.18
+  rainbow:
+    name: '<rainbow>❀ Rainbow'
+    particle: dust
+    colors: ['#ff8fa3', '#ffd38a', '#fff3b0', '#86e8b0', '#8fd3ff', '#c3a6ff']
+    size: 1.3
+    count: 3
+    spread: 0.12
+  hearts:
+    name: '<#ff6b81>❤ Hearts'
+    particle: heart
+    count: 1
+    spread: 0.2
+  blossom:
+    name: '<#ffb7d5>✿ Blossom'
+    particle: cherry_leaves
+    count: 2
+    spread: 0.25
+  snow:
+    name: '<#e8f6ff>❄ Snow'
+    particle: snowflake
+    count: 2
+    spread: 0.15
+    speed: 0.01
+  spirit:
+    name: '<#7fe3ff>☄ Spirit'
+    particle: soul_fire_flame
+    count: 1
+    spread: 0.1
+    speed: 0.01
+  notes:
+    name: '<#86e8b0>♫ Notes'
+    particle: note
+    count: 1
+    spread: 0.3
+  sparks:
+    name: '<#fff7a8>⚡ Sparks'
+    particle: electric_spark
+    count: 3
+    spread: 0.2
+    speed: 0.05
+  glow:
+    name: '<#a8ffe6>◌ Glow'
+    particle: glow
+    count: 2
+    spread: 0.2
+  bubbles:
+    name: '<#9ad5ff>○ Bubbles'
+    particle: bubble_pop
+    count: 2
+    spread: 0.15
+    speed: 0.02

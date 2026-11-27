@@ -1,0 +1,6 @@
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "aftrhrs:block/storage/feather_inventory_connector"
+ }
+}

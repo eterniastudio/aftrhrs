@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "M M",
+  "MWM",
+  "MMM"
+ ],
+ "key": {
+  "M": "minecraft:stone_bricks",
+  "W": "minecraft:water_bucket"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_stone_fountain_basin"
+ }
+}

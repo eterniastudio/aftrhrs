@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "NNN",
+  "NWN",
+  "NNN"
+ ],
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "W": "aftrhrs:arcana_pilgrims_wick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_soul_wick_lamp"
+ }
+}

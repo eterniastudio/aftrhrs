@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "B"
+ ],
+ "key": {
+  "W": "minecraft:granite_wall",
+  "B": "minecraft:polished_granite"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_granite_column_base",
+  "count": 2
+ }
+}

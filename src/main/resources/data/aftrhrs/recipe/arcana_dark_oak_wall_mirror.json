@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "PGP",
+  "PPP"
+ ],
+ "key": {
+  "G": "minecraft:glass_pane",
+  "P": "minecraft:dark_oak_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_dark_oak_wall_mirror"
+ }
+}

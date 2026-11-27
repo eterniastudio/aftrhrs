@@ -1,0 +1,30 @@
+{
+ "replace": false,
+ "values": [
+  "aftrhrs:arcana_chiseled_snow",
+  "aftrhrs:arcana_flower_wheelbarrow",
+  "aftrhrs:arcana_frosting_block",
+  "aftrhrs:arcana_green_scarf_snowman",
+  "aftrhrs:arcana_hay_cart",
+  "aftrhrs:arcana_herb_planter",
+  "aftrhrs:arcana_kelp_lantern",
+  "aftrhrs:arcana_lantern_scarecrow",
+  "aftrhrs:arcana_polished_snow",
+  "aftrhrs:arcana_polished_snow_slab",
+  "aftrhrs:arcana_polished_snow_stairs",
+  "aftrhrs:arcana_red_scarf_snowman",
+  "aftrhrs:arcana_sandcastle",
+  "aftrhrs:arcana_scarecrow",
+  "aftrhrs:arcana_seaweed_line",
+  "aftrhrs:arcana_snow_brick_slab",
+  "aftrhrs:arcana_snow_brick_stairs",
+  "aftrhrs:arcana_snow_brick_wall",
+  "aftrhrs:arcana_snow_bricks",
+  "aftrhrs:arcana_snow_tile_slab",
+  "aftrhrs:arcana_snow_tile_stairs",
+  "aftrhrs:arcana_snow_tile_wall",
+  "aftrhrs:arcana_snow_tiles",
+  "aftrhrs:arcana_thatch_umbrella",
+  "aftrhrs:arcana_young_palm"
+ ]
+}

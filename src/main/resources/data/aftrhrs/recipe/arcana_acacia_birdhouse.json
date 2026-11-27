@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " Y ",
+  "PPP",
+  " S "
+ ],
+ "key": {
+  "P": "minecraft:acacia_planks",
+  "S": "minecraft:stick",
+  "Y": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_acacia_birdhouse"
+ }
+}

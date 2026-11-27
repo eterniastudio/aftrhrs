@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AAA",
+  "ASA",
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:sandstone",
+  "S": "aftrhrs:arcana_seashell"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_shell_sandstone",
+  "count": 8
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aftrhrs:arcana_driftwood_log"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_driftwood_planks",
+  "count": 4
+ }
+}

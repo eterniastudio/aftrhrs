@@ -1,0 +1,1686 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:charge_type",
+  "cases": [
+   {
+    "when": "arrow",
+    "model": {
+     "type": "minecraft:composite",
+     "models": [
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_0",
+       "cases": [
+        {
+         "when": "wood",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/wood_arrow"
+         }
+        },
+        {
+         "when": "bone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/bone_arrow"
+         }
+        },
+        {
+         "when": "bamboo",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/bamboo_arrow"
+         }
+        },
+        {
+         "when": "copper",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/copper_arrow"
+         }
+        },
+        {
+         "when": "iron",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_arrow"
+         }
+        },
+        {
+         "when": "steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/steel_arrow"
+         }
+        },
+        {
+         "when": "pearlsteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/pearlsteel_arrow"
+         }
+        },
+        {
+         "when": "netherite",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/netherite_arrow"
+         }
+        },
+        {
+         "when": "starforged",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/starforged_arrow"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_arrow"
+       }
+      },
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_1",
+       "cases": [
+        {
+         "when": "wood",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/wood_arrow"
+         }
+        },
+        {
+         "when": "stone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/stone_arrow"
+         }
+        },
+        {
+         "when": "flint",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/flint_arrow"
+         }
+        },
+        {
+         "when": "bone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/bone_arrow"
+         }
+        },
+        {
+         "when": "bamboo",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/bamboo_arrow"
+         }
+        },
+        {
+         "when": "leather",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/leather_arrow"
+         }
+        },
+        {
+         "when": "copper",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/copper_arrow"
+         }
+        },
+        {
+         "when": "deer_hide",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/deer_hide_arrow"
+         }
+        },
+        {
+         "when": "tufthorn_hide",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/tufthorn_hide_arrow"
+         }
+        },
+        {
+         "when": "iron",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_arrow"
+         }
+        },
+        {
+         "when": "gold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/gold_arrow"
+         }
+        },
+        {
+         "when": "obsidian",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/obsidian_arrow"
+         }
+        },
+        {
+         "when": "steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/steel_arrow"
+         }
+        },
+        {
+         "when": "rose_gold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/rose_gold_arrow"
+         }
+        },
+        {
+         "when": "chime_bronze",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/chime_bronze_arrow"
+         }
+        },
+        {
+         "when": "tidebronze",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/tidebronze_arrow"
+         }
+        },
+        {
+         "when": "rimesteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/rimesteel_arrow"
+         }
+        },
+        {
+         "when": "emberforged_steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/emberforged_steel_arrow"
+         }
+        },
+        {
+         "when": "pearlsteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/pearlsteel_arrow"
+         }
+        },
+        {
+         "when": "netherite",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/netherite_arrow"
+         }
+        },
+        {
+         "when": "echo_steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/echo_steel_arrow"
+         }
+        },
+        {
+         "when": "blazebone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/blazebone_arrow"
+         }
+        },
+        {
+         "when": "voidgold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/voidgold_arrow"
+         }
+        },
+        {
+         "when": "starforged",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/starforged_arrow"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_arrow"
+       }
+      },
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_2",
+       "cases": [
+        {
+         "when": "silk",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_arrow"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_arrow"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "when": "rocket",
+    "model": {
+     "type": "minecraft:composite",
+     "models": [
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_0",
+       "cases": [
+        {
+         "when": "wood",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/wood_firework"
+         }
+        },
+        {
+         "when": "bone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/bone_firework"
+         }
+        },
+        {
+         "when": "bamboo",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/bamboo_firework"
+         }
+        },
+        {
+         "when": "copper",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/copper_firework"
+         }
+        },
+        {
+         "when": "iron",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_firework"
+         }
+        },
+        {
+         "when": "steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/steel_firework"
+         }
+        },
+        {
+         "when": "pearlsteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/pearlsteel_firework"
+         }
+        },
+        {
+         "when": "netherite",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/netherite_firework"
+         }
+        },
+        {
+         "when": "starforged",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/starforged_firework"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_firework"
+       }
+      },
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_1",
+       "cases": [
+        {
+         "when": "wood",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/wood_firework"
+         }
+        },
+        {
+         "when": "stone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/stone_firework"
+         }
+        },
+        {
+         "when": "flint",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/flint_firework"
+         }
+        },
+        {
+         "when": "bone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/bone_firework"
+         }
+        },
+        {
+         "when": "bamboo",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/bamboo_firework"
+         }
+        },
+        {
+         "when": "leather",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/leather_firework"
+         }
+        },
+        {
+         "when": "copper",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/copper_firework"
+         }
+        },
+        {
+         "when": "deer_hide",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/deer_hide_firework"
+         }
+        },
+        {
+         "when": "tufthorn_hide",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/tufthorn_hide_firework"
+         }
+        },
+        {
+         "when": "iron",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_firework"
+         }
+        },
+        {
+         "when": "gold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/gold_firework"
+         }
+        },
+        {
+         "when": "obsidian",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/obsidian_firework"
+         }
+        },
+        {
+         "when": "steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/steel_firework"
+         }
+        },
+        {
+         "when": "rose_gold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/rose_gold_firework"
+         }
+        },
+        {
+         "when": "chime_bronze",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/chime_bronze_firework"
+         }
+        },
+        {
+         "when": "tidebronze",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/tidebronze_firework"
+         }
+        },
+        {
+         "when": "rimesteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/rimesteel_firework"
+         }
+        },
+        {
+         "when": "emberforged_steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/emberforged_steel_firework"
+         }
+        },
+        {
+         "when": "pearlsteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/pearlsteel_firework"
+         }
+        },
+        {
+         "when": "netherite",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/netherite_firework"
+         }
+        },
+        {
+         "when": "echo_steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/echo_steel_firework"
+         }
+        },
+        {
+         "when": "blazebone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/blazebone_firework"
+         }
+        },
+        {
+         "when": "voidgold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/voidgold_firework"
+         }
+        },
+        {
+         "when": "starforged",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/starforged_firework"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_firework"
+       }
+      },
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_2",
+       "cases": [
+        {
+         "when": "silk",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_firework"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_firework"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:condition",
+   "property": "minecraft:using_item",
+   "on_false": {
+    "type": "minecraft:composite",
+    "models": [
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_0",
+      "cases": [
+       {
+        "when": "wood",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/wood"
+        }
+       },
+       {
+        "when": "bone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/bone"
+        }
+       },
+       {
+        "when": "bamboo",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/bamboo"
+        }
+       },
+       {
+        "when": "copper",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/copper"
+        }
+       },
+       {
+        "when": "iron",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron"
+        }
+       },
+       {
+        "when": "steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/steel"
+        }
+       },
+       {
+        "when": "pearlsteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/pearlsteel"
+        }
+       },
+       {
+        "when": "netherite",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/netherite"
+        }
+       },
+       {
+        "when": "starforged",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/limb/starforged"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron"
+      }
+     },
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_1",
+      "cases": [
+       {
+        "when": "wood",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/wood"
+        }
+       },
+       {
+        "when": "stone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/stone"
+        }
+       },
+       {
+        "when": "flint",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/flint"
+        }
+       },
+       {
+        "when": "bone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/bone"
+        }
+       },
+       {
+        "when": "bamboo",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/bamboo"
+        }
+       },
+       {
+        "when": "leather",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/leather"
+        }
+       },
+       {
+        "when": "copper",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/copper"
+        }
+       },
+       {
+        "when": "deer_hide",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/deer_hide"
+        }
+       },
+       {
+        "when": "tufthorn_hide",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/tufthorn_hide"
+        }
+       },
+       {
+        "when": "iron",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron"
+        }
+       },
+       {
+        "when": "gold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/gold"
+        }
+       },
+       {
+        "when": "obsidian",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/obsidian"
+        }
+       },
+       {
+        "when": "steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/steel"
+        }
+       },
+       {
+        "when": "rose_gold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/rose_gold"
+        }
+       },
+       {
+        "when": "chime_bronze",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/chime_bronze"
+        }
+       },
+       {
+        "when": "tidebronze",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/tidebronze"
+        }
+       },
+       {
+        "when": "rimesteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/rimesteel"
+        }
+       },
+       {
+        "when": "emberforged_steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/emberforged_steel"
+        }
+       },
+       {
+        "when": "pearlsteel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/pearlsteel"
+        }
+       },
+       {
+        "when": "netherite",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/netherite"
+        }
+       },
+       {
+        "when": "echo_steel",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/echo_steel"
+        }
+       },
+       {
+        "when": "blazebone",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/blazebone"
+        }
+       },
+       {
+        "when": "voidgold",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/voidgold"
+        }
+       },
+       {
+        "when": "starforged",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/grip/starforged"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron"
+      }
+     },
+     {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "aftrhrs:smith_look_2",
+      "cases": [
+       {
+        "when": "silk",
+        "model": {
+         "type": "minecraft:model",
+         "model": "aftrhrs:item/smithing/tool/crossbow/string/silk"
+        }
+       }
+      ],
+      "fallback": {
+       "type": "minecraft:model",
+       "model": "aftrhrs:item/smithing/tool/crossbow/string/silk"
+      }
+     }
+    ]
+   },
+   "on_true": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:crossbow/pull",
+    "entries": [
+     {
+      "threshold": 0.58,
+      "model": {
+       "type": "minecraft:composite",
+       "models": [
+        {
+         "type": "minecraft:select",
+         "property": "minecraft:component",
+         "component": "aftrhrs:smith_look_0",
+         "cases": [
+          {
+           "when": "wood",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/wood_pulling_1"
+           }
+          },
+          {
+           "when": "bone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/bone_pulling_1"
+           }
+          },
+          {
+           "when": "bamboo",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/bamboo_pulling_1"
+           }
+          },
+          {
+           "when": "copper",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/copper_pulling_1"
+           }
+          },
+          {
+           "when": "iron",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_pulling_1"
+           }
+          },
+          {
+           "when": "steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/steel_pulling_1"
+           }
+          },
+          {
+           "when": "pearlsteel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/pearlsteel_pulling_1"
+           }
+          },
+          {
+           "when": "netherite",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/netherite_pulling_1"
+           }
+          },
+          {
+           "when": "starforged",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/starforged_pulling_1"
+           }
+          }
+         ],
+         "fallback": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_pulling_1"
+         }
+        },
+        {
+         "type": "minecraft:select",
+         "property": "minecraft:component",
+         "component": "aftrhrs:smith_look_1",
+         "cases": [
+          {
+           "when": "wood",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/wood_pulling_1"
+           }
+          },
+          {
+           "when": "stone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/stone_pulling_1"
+           }
+          },
+          {
+           "when": "flint",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/flint_pulling_1"
+           }
+          },
+          {
+           "when": "bone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/bone_pulling_1"
+           }
+          },
+          {
+           "when": "bamboo",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/bamboo_pulling_1"
+           }
+          },
+          {
+           "when": "leather",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/leather_pulling_1"
+           }
+          },
+          {
+           "when": "copper",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/copper_pulling_1"
+           }
+          },
+          {
+           "when": "deer_hide",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/deer_hide_pulling_1"
+           }
+          },
+          {
+           "when": "tufthorn_hide",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/tufthorn_hide_pulling_1"
+           }
+          },
+          {
+           "when": "iron",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_pulling_1"
+           }
+          },
+          {
+           "when": "gold",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/gold_pulling_1"
+           }
+          },
+          {
+           "when": "obsidian",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/obsidian_pulling_1"
+           }
+          },
+          {
+           "when": "steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/steel_pulling_1"
+           }
+          },
+          {
+           "when": "rose_gold",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/rose_gold_pulling_1"
+           }
+          },
+          {
+           "when": "chime_bronze",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/chime_bronze_pulling_1"
+           }
+          },
+          {
+           "when": "tidebronze",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/tidebronze_pulling_1"
+           }
+          },
+          {
+           "when": "rimesteel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/rimesteel_pulling_1"
+           }
+          },
+          {
+           "when": "emberforged_steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/emberforged_steel_pulling_1"
+           }
+          },
+          {
+           "when": "pearlsteel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/pearlsteel_pulling_1"
+           }
+          },
+          {
+           "when": "netherite",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/netherite_pulling_1"
+           }
+          },
+          {
+           "when": "echo_steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/echo_steel_pulling_1"
+           }
+          },
+          {
+           "when": "blazebone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/blazebone_pulling_1"
+           }
+          },
+          {
+           "when": "voidgold",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/voidgold_pulling_1"
+           }
+          },
+          {
+           "when": "starforged",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/starforged_pulling_1"
+           }
+          }
+         ],
+         "fallback": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_pulling_1"
+         }
+        },
+        {
+         "type": "minecraft:select",
+         "property": "minecraft:component",
+         "component": "aftrhrs:smith_look_2",
+         "cases": [
+          {
+           "when": "silk",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_pulling_1"
+           }
+          }
+         ],
+         "fallback": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_pulling_1"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "threshold": 1.0,
+      "model": {
+       "type": "minecraft:composite",
+       "models": [
+        {
+         "type": "minecraft:select",
+         "property": "minecraft:component",
+         "component": "aftrhrs:smith_look_0",
+         "cases": [
+          {
+           "when": "wood",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/wood_pulling_1"
+           }
+          },
+          {
+           "when": "bone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/bone_pulling_1"
+           }
+          },
+          {
+           "when": "bamboo",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/bamboo_pulling_1"
+           }
+          },
+          {
+           "when": "copper",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/copper_pulling_1"
+           }
+          },
+          {
+           "when": "iron",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_pulling_1"
+           }
+          },
+          {
+           "when": "steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/steel_pulling_1"
+           }
+          },
+          {
+           "when": "pearlsteel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/pearlsteel_pulling_1"
+           }
+          },
+          {
+           "when": "netherite",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/netherite_pulling_1"
+           }
+          },
+          {
+           "when": "starforged",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/limb/starforged_pulling_1"
+           }
+          }
+         ],
+         "fallback": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_pulling_1"
+         }
+        },
+        {
+         "type": "minecraft:select",
+         "property": "minecraft:component",
+         "component": "aftrhrs:smith_look_1",
+         "cases": [
+          {
+           "when": "wood",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/wood_pulling_2"
+           }
+          },
+          {
+           "when": "stone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/stone_pulling_2"
+           }
+          },
+          {
+           "when": "flint",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/flint_pulling_2"
+           }
+          },
+          {
+           "when": "bone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/bone_pulling_2"
+           }
+          },
+          {
+           "when": "bamboo",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/bamboo_pulling_2"
+           }
+          },
+          {
+           "when": "leather",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/leather_pulling_2"
+           }
+          },
+          {
+           "when": "copper",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/copper_pulling_2"
+           }
+          },
+          {
+           "when": "deer_hide",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/deer_hide_pulling_2"
+           }
+          },
+          {
+           "when": "tufthorn_hide",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/tufthorn_hide_pulling_2"
+           }
+          },
+          {
+           "when": "iron",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_pulling_2"
+           }
+          },
+          {
+           "when": "gold",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/gold_pulling_2"
+           }
+          },
+          {
+           "when": "obsidian",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/obsidian_pulling_2"
+           }
+          },
+          {
+           "when": "steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/steel_pulling_2"
+           }
+          },
+          {
+           "when": "rose_gold",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/rose_gold_pulling_2"
+           }
+          },
+          {
+           "when": "chime_bronze",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/chime_bronze_pulling_2"
+           }
+          },
+          {
+           "when": "tidebronze",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/tidebronze_pulling_2"
+           }
+          },
+          {
+           "when": "rimesteel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/rimesteel_pulling_2"
+           }
+          },
+          {
+           "when": "emberforged_steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/emberforged_steel_pulling_2"
+           }
+          },
+          {
+           "when": "pearlsteel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/pearlsteel_pulling_2"
+           }
+          },
+          {
+           "when": "netherite",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/netherite_pulling_2"
+           }
+          },
+          {
+           "when": "echo_steel",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/echo_steel_pulling_2"
+           }
+          },
+          {
+           "when": "blazebone",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/blazebone_pulling_2"
+           }
+          },
+          {
+           "when": "voidgold",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/voidgold_pulling_2"
+           }
+          },
+          {
+           "when": "starforged",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/grip/starforged_pulling_2"
+           }
+          }
+         ],
+         "fallback": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_pulling_2"
+         }
+        },
+        {
+         "type": "minecraft:select",
+         "property": "minecraft:component",
+         "component": "aftrhrs:smith_look_2",
+         "cases": [
+          {
+           "when": "silk",
+           "model": {
+            "type": "minecraft:model",
+            "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_pulling_2"
+           }
+          }
+         ],
+         "fallback": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_pulling_2"
+         }
+        }
+       ]
+      }
+     }
+    ],
+    "fallback": {
+     "type": "minecraft:composite",
+     "models": [
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_0",
+       "cases": [
+        {
+         "when": "wood",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/wood_pulling_0"
+         }
+        },
+        {
+         "when": "bone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/bone_pulling_0"
+         }
+        },
+        {
+         "when": "bamboo",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/bamboo_pulling_0"
+         }
+        },
+        {
+         "when": "copper",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/copper_pulling_0"
+         }
+        },
+        {
+         "when": "iron",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_pulling_0"
+         }
+        },
+        {
+         "when": "steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/steel_pulling_0"
+         }
+        },
+        {
+         "when": "pearlsteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/pearlsteel_pulling_0"
+         }
+        },
+        {
+         "when": "netherite",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/netherite_pulling_0"
+         }
+        },
+        {
+         "when": "starforged",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/limb/starforged_pulling_0"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/limb/iron_pulling_0"
+       }
+      },
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_1",
+       "cases": [
+        {
+         "when": "wood",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/wood_pulling_0"
+         }
+        },
+        {
+         "when": "stone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/stone_pulling_0"
+         }
+        },
+        {
+         "when": "flint",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/flint_pulling_0"
+         }
+        },
+        {
+         "when": "bone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/bone_pulling_0"
+         }
+        },
+        {
+         "when": "bamboo",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/bamboo_pulling_0"
+         }
+        },
+        {
+         "when": "leather",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/leather_pulling_0"
+         }
+        },
+        {
+         "when": "copper",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/copper_pulling_0"
+         }
+        },
+        {
+         "when": "deer_hide",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/deer_hide_pulling_0"
+         }
+        },
+        {
+         "when": "tufthorn_hide",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/tufthorn_hide_pulling_0"
+         }
+        },
+        {
+         "when": "iron",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_pulling_0"
+         }
+        },
+        {
+         "when": "gold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/gold_pulling_0"
+         }
+        },
+        {
+         "when": "obsidian",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/obsidian_pulling_0"
+         }
+        },
+        {
+         "when": "steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/steel_pulling_0"
+         }
+        },
+        {
+         "when": "rose_gold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/rose_gold_pulling_0"
+         }
+        },
+        {
+         "when": "chime_bronze",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/chime_bronze_pulling_0"
+         }
+        },
+        {
+         "when": "tidebronze",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/tidebronze_pulling_0"
+         }
+        },
+        {
+         "when": "rimesteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/rimesteel_pulling_0"
+         }
+        },
+        {
+         "when": "emberforged_steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/emberforged_steel_pulling_0"
+         }
+        },
+        {
+         "when": "pearlsteel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/pearlsteel_pulling_0"
+         }
+        },
+        {
+         "when": "netherite",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/netherite_pulling_0"
+         }
+        },
+        {
+         "when": "echo_steel",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/echo_steel_pulling_0"
+         }
+        },
+        {
+         "when": "blazebone",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/blazebone_pulling_0"
+         }
+        },
+        {
+         "when": "voidgold",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/voidgold_pulling_0"
+         }
+        },
+        {
+         "when": "starforged",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/grip/starforged_pulling_0"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/grip/iron_pulling_0"
+       }
+      },
+      {
+       "type": "minecraft:select",
+       "property": "minecraft:component",
+       "component": "aftrhrs:smith_look_2",
+       "cases": [
+        {
+         "when": "silk",
+         "model": {
+          "type": "minecraft:model",
+          "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_pulling_0"
+         }
+        }
+       ],
+       "fallback": {
+        "type": "minecraft:model",
+        "model": "aftrhrs:item/smithing/tool/crossbow/string/silk_pulling_0"
+       }
+      }
+     ]
+    }
+   }
+  }
+ }
+}

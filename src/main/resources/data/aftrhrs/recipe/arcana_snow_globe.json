@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " G ",
+  "GSG",
+  " P "
+ ],
+ "key": {
+  "G": "minecraft:glass",
+  "S": "minecraft:snowball",
+  "P": "minecraft:dark_oak_slab"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_snow_globe"
+ }
+}

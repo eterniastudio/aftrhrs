@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GGG",
+  "GAG",
+  "PCP"
+ ],
+ "key": {
+  "G": "minecraft:glass_pane",
+  "A": "minecraft:amethyst_shard",
+  "P": "#minecraft:planks",
+  "C": "minecraft:chest"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_curio_cabinet"
+ }
+}

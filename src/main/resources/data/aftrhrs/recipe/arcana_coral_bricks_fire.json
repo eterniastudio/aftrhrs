@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "AB",
+  "BA"
+ ],
+ "key": {
+  "A": "minecraft:fire_coral_block",
+  "B": "minecraft:stone_bricks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_coral_bricks_fire",
+  "count": 4
+ }
+}

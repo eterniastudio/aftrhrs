@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "LPL",
+  "P P",
+  "LPL"
+ ],
+ "key": {
+  "L": "minecraft:stripped_birch_log",
+  "P": "minecraft:birch_planks"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_birch_crate"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "B"
+ ],
+ "key": {
+  "W": "minecraft:polished_blackstone_wall",
+  "B": "minecraft:polished_blackstone"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_blackstone_column_base",
+  "count": 2
+ }
+}

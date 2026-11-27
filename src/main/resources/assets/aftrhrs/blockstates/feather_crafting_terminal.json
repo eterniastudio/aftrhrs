@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "aftrhrs:block/storage/feather_crafting_terminal"
+  },
+  "facing=east": {
+   "model": "aftrhrs:block/storage/feather_crafting_terminal",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "aftrhrs:block/storage/feather_crafting_terminal",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "aftrhrs:block/storage/feather_crafting_terminal",
+   "y": 270
+  }
+ }
+}

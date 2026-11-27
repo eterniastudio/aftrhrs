@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:bone",
+  "minecraft:gold_ingot",
+  "minecraft:lead"
+ ],
+ "result": {
+  "id": "aftrhrs:arcana_pet_whistle"
+ }
+}

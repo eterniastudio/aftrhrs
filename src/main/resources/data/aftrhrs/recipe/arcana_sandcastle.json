@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " T ",
+  "SBS"
+ ],
+ "key": {
+  "B": "minecraft:bucket",
+  "S": "minecraft:sand",
+  "T": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:arcana_sandcastle"
+ }
+}

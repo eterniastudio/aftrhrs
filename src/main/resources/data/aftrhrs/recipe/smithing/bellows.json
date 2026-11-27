@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "group": "smithing",
+ "pattern": [
+  "PPP",
+  "LLL",
+  "PSP"
+ ],
+ "key": {
+  "P": "#minecraft:planks",
+  "L": "minecraft:leather",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "aftrhrs:bellows",
+  "count": 1
+ }
+}
